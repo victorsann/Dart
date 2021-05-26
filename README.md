@@ -4,3 +4,19 @@
 </div>
 <br>
 <img src="https://img.shields.io/static/v1?label=dart&message=Language&color=blue&style=for-the-badge&logo=Dart"/>
+
+
+O Dart é uma linguagem de script, type safe, multiparadigma e orienta a objetos, desenvolvida e mantida pela Google. Utilizada em diversas stacks do desenvolvimento de aplicações, sendo mais assossiada ao Flutter, um de seus frameworks mais populares. Por ser multeplataformas,
+o Dart acompanha duas ferramentas que possibilitam o seu uso: o Dart Native e o Dart Web. Tendo como principal recurso a máquina virtual responsável por compilar a linguagem no Just-in-Time(JIT) process, além do AOT(Ahead-of-Time), esta sendo responsável por converter o código escrito em Dart para código nativo, seja em Android ou IOS, ou para JavaScript, falando específicamente do Dart Web.
+
+
+<h2>Hello World</h1>
+
+
+Uma forma prática de entender a estrutura mais básica de uma linguagem de programação é o popular Hello World, sendo este executado da seguinte forma em Dart:
+
+
+      void main() 
+    {
+      print('Hello World');
+    }
