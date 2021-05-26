@@ -23,9 +23,9 @@ O Dart-SDK é uma biblioteca de ferramentas de linha de comando, comumente utili
 
 * [Instalar Chocolatey](https://chocolatey.org/) - gerenciador de pacotes para o Windows:
 
- Executar PowerShell como administrador;
+* Executar PowerShell como administrador;
 
- Executar o seguinte comando:
+* Executar o seguinte comando:
 
   Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
