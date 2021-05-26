@@ -19,24 +19,30 @@ Antes de abortar a sintaxe da linguagem de forma aprofundada é preciso criar um
 <h2>Instalação do Dart-SDK</h1> 
 
 
-O Dart-SDK é uma biblioteca de ferramentas de linha de comando, comumente utilizada em aplicações Web, Server ou de criação de Script, ambiente mínimo para uso da linguagem. A seguir está descrito o processo de instalação e uso da ferramenta descrita:
+O Dart-SDK é uma biblioteca de ferramentas de linha de comando, comumente utilizada em aplicações Web, Server ou de criação de Script, ambiente mínimo para uso da linguagem. A seguir está descrito o processo de instalação e uso da ferramenta descrita.
+
+Os comandos a seguir devem ser executados no PowerShell com permição de administrador:
 
 - [Instalar Chocolatey](https://chocolatey.org/) - gerenciador de pacotes para o Windows:
-
-- Executar PowerShell como administrador;
-
-- Executar o seguinte comando:
 
   Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 - Verificar intalação:
 
-        choco -v;
+        choco -v
 
-- Instalar Dart-SDK
+- Instalar Dart-SDK 
 
-        choco install dart-sdk;
+        choco install dart-sdk
 
+
+<h2>App Dart-SDK</h1> 
+
+A partir desse ponto é possível utilizar os comandos Chocolatey para executar uma aplicação Dart-SDK. Acesse um diretório desejado e execute:
+
+    dart create -t console-full cli
+
+Após essa ação é possível escrever e compilar o código Dart.
 
 
 <h2>Hello World</h1>
