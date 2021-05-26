@@ -21,7 +21,7 @@ Antes de abortar a sintaxe da linguagem de forma aprofundada é preciso criar um
 
 O Dart-SDK é uma biblioteca de ferramentas de linha de comando, comumente utilizada em aplicações Web, Server ou de criação de Script. A seguir está descrito o processo de instalação e uso da ferramenta descrita:
 
-* Instalar [Chocolatey](https://chocolatey.org/) - gerenciador de pacotes para o Windows, semelhante ao Homebrew do macOS e o apt do Linux.
+* [Instalar Chocolatey](https://chocolatey.org/) - gerenciador de pacotes para o Windows;
 
 
 
