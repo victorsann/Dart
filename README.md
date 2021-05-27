@@ -42,7 +42,18 @@ A partir deste ponto é possível utilizar os comandos Chocolatey para executar 
 
     dart create -t console-full cli
 
-Para executar o app use:
+
+<h2>Extenção Dart</h2>
+
+
+Antes de executar o app criado, é importante ter instalado um editor de código, sendo o vscode o mais recomendado, e a extenção da linguagem utilizada:
+
+<div>
+  <img src="https://user-images.githubusercontent.com/61476935/119747559-5f9e8580-be69-11eb-94dd-10999257f7c9.png">
+</div>
+
+
+Com os pacotes o ambiente devidamente definidos e intalados, execute a comando a seguir para rodar a aplicação:
 
     cd cli
     dart run
