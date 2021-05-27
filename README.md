@@ -250,10 +250,110 @@ Com o Null safety todas as variáveis do código a seguir são non-nullable:
 
     // Com o Null-safe, nenhum destes podem ser null
 
-    var i = 42; // Inferred to be an int.
+    var i = 42;
     String name = getFileName();
     final b = Foo();
 
 Para indicar que uma variável aceita um nullable usa-se o marcador ? em conjunto com a declaração do seu tipo:
 
     int? aNullableInt = null;
+
+
+<h3>Dynamic</h3>
+
+
+O tipo dynamic define a aceitação de todos os demais tipos a uma variável, dando a linguagem Dart a característica de dinamicidade
+
+
+    dynamic nome = "Caio Rolla";
+    
+    dynamic idade = 22;
+    
+    print(nome); // Caio Rolla
+    
+    print(idade); // 22
+    
+    idade = "22 anos";
+    
+    print(idade); // 22 anos
+
+
+<h2>Variáveis</h2>
+
+
+Assim como em qualquer linguagem de programação, as variáveis em Dart são uma unidade de armazenamento e de referência de dados, tendo aqui algumas características importantes a serem mencionadas
+
+
+<h3>Declarando Variáveis</h3>
+
+
+A variável a seguir é inicializada com a palavra-chave var, reservada para essa função, um identificador e um valor inicial. Esta comtém uma referência ao valor que carrega
+
+    var data = 'Dart';
+
+A definição do tipo dessa variável é inferida pelo valor que ela carrega, sendo nesse caso um string. Por possuir uma tipagem forte, o Dart permite a definição de tipos de forma implícita e explícita. Sendo a variável acima um exemplo da tipagem explícita. A seguir estão alguns exemplos de variáveis com um tipo pré definido:
+
+    // O tipo Object não possui tipagem restrita, aceitando qualquer tipo
+
+    Object data = 'Dart';
+
+    // String
+
+    String data = 'Dart';
+
+    // Double
+
+    Double data = 1.78;
+
+    // Int
+
+    Int data = 1;
+
+    // O tipo num define que a variável aceita qualquer valor numérico, seja int ou double
+
+    num pi = 3;
+    pi = 3.14;
+
+
+<h3>Variáveis não Iniciadas</h3>
+
+
+Uma variável não iniciada é definida por uma unidade de armazenamento e referência cujo espaço na memória não foi ocupado no momendo da declaração, sendo possível oculpar este valor posteriormente
+
+    int empty;
+
+    empty = 1938;
+
+
+<h3>Variáveis Late</h3>
+
+
+O Dart possui, desde a versão 2.12, o modificador Late, que é usado em dois casos: 
+
+- Declaração de variáveis non-nullable que são iniciadas após sua delcaração;
+- Lazily initializing de uma variável;
+
+Normalmente o controle de análise de fluxo do Dart detecta quando uma variável é definida com valor non-nullable antes de ser utilizada, mas esse processo nem sempre é eficaz. Isso noramalmente ocorre com variáveis de alto nível e vaiáveis instanciadas.
+
+Caso o desenvolvedor esteja seguro de que a variável foi definida antes de ser usada, tendo a discordância do Dart, é possível corrigir o erro definindo a variável como late. Exemplo:
+
+    late String description;
+    
+    void main() {
+      description = 'Feijoada!';
+      print(description);
+    }
+
+
+<h3>Final e const</h3>
+
+
+Definir um valor como fixo ou constante demanda o uso da palavra chave final ou const, dando à unidade de armazenamento e referência a característica de imutabilidade do seu valor em tempo de compilação
+
+    // Sem definição de tipo
+
+    final name = 'Bob';
+
+    // Com definição de tipo
+
+    final String nickname = 'Bobby';
