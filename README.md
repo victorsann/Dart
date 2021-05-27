@@ -594,11 +594,17 @@ Retorna true caso o valor numerico do operando da esquerda seja menor ou igual a
 
 Os operadores type test definem tipos no processo compilação. Eles são definidos em três:
 
+
+<h3>as</h3>
+
+
     //Typecast
 
     (employee as Person).firstName = 'Bob';
 
-<br>
+
+<h3>is</h3>
+
 
     //Retorna true caso o objeto tenha o tipo especificado
 
@@ -607,7 +613,9 @@ Os operadores type test definem tipos no processo compilação. Eles são defini
       employee.firstName = 'Bob';
     }
 
-<br>
+
+<h3>is!</h3>
+
 
     //Retorna true caso o objeto tenha o tipo diferente do especificado
 
@@ -625,7 +633,6 @@ Operações que relacionam dois operandos de forma que o primeiro operando receb
      x  -=  y | O operando x recebe a subtração entre os operandos x e y
      x  /=  y | O operando x recebe a divisão entre os operandos x e y
      x  %=  y | O operando x recebe o resto da divisão entre os operandos x e y
-     x  ^=  y | O operando x recebe a subtração dos operandos x e y
      x  +=  y | O operando x recebe a soma entre os operandos x e y
      x  *=  y | O operando x recebe a multiplicação entre os operandos x e y
      x  ~/= y | O operando x recebe um int da divisão entre os operandos x e y
@@ -667,3 +674,74 @@ Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao val
 O operador de conjunção, também chamado de AND lógico define que o resultado de uma operação como true se ambos os operandos forem verdadeiros
 
 
+<h2>Functions</h2>
+
+
+Por ter fornte presença da orientação a objetos, mesmo as funções são objetos possuidores de tipos. Isso torna possível a atrubuir funções a variáveis ou que elas sejam passadas como argumentos em outras funções. Abaixo segue a estrutura básica de uma função no Dart:
+
+    type functionName(arguments) {
+      return value;
+    }
+
+Um ponto a se ater é que funções tipadas sempre devem possuir um valor equivalente a seu tipo como retorno. Além disso, funções podem ser definidas como type annotation ou void no Dart, podendo ser escritas de forma mais encurtada caso possuam apenas uma expressão:
+
+
+<h3>Type Annotation</h3>
+
+
+    //Omite o tipo de retorno
+
+    functionName(arguments) {
+      return value;
+    }
+
+
+<h3>Void Functions</h3>
+
+
+    //Não possui retorno
+
+    void functionName( ... ) {
+        ...
+    }
+
+
+<h3>Shorthand Syntaxs</h3>
+
+
+    //Caso a função tenha apenas uma expressão 
+
+    type functionName(arguments) => value;
+
+
+<h2>Parameters</h2>
+
+
+Uma função pode ter qualquer número de required positional parameters. Estes ainda podem ser seguidos de named parameters ou por optional positional parameters (mas não ambos)
+
+
+<h3>Named parameters</h3>
+
+
+Named Parameters são opcionais a não ser que sejam definidos como required. Abaixo há a definição da sintaxe de uma função com Named Functions
+
+    functionName(paramName: value, paramName: value);
+
+Ao definir uma função que recebe parâmetro use-se {param1, param2, ...}
+
+
+    void functionName({bool? bold, bool? hidden}) {
+
+      ...    
+        
+    }
+
+
+<h3>A Função main()</h3>
+
+
+Todas as aplicações devem conter a já mencionada função de alto-nível do tipo main(), cuja função é agir como o entrypoint do app. Retornando void, a função main também possui um parâmetro opcional do tipo List<String> como argumento
+
+    void main() {
+      print('Hello, World!');
+    }
