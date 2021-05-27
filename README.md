@@ -346,17 +346,17 @@ Estruturas de criação de um List com diferentes restrições
 
 Atributos de consulta dos lists
 
-|       Constructor      |    Valor de Retorno    |                                   Descrição                                     |
-| ---------------------- | ---------------------- | ------------------------------------------------------------------------------- |
-|  first                 |  E                     |  Retorna o primeiro elemento                                                    | 
-|  hashCode              |  int                   |  Retorna um intenger que representa o código hash para o objeto                 |
-|  isEmpty               |  bool                  |  Retorna um boolean true se não houver elementos nesta conllection              |
-|  isNotEmpty            |  bool                  |  Retorna um boolean true se houver amenos um elemento do collection             |
-|  iterator              |  iterator              |  Retorna um novo Iterator que permite iterar os elementos do Iterable           |
-|  last                  |  E                     |  Retorna o último elemento                                                      |
-|  length                |  int                   |  Retorna um intenger que representa o número de objetos no List                 |
-|  reversed              |  iterable<E>           |  Um Iterable do objeto List na ordem reversa                                    |
-|  single                |  E                     |  Verifica se há apenas um elemento no Iterable e retorna esse elemento          |
+|       Constructor      |    Valor de Retorno    |                                   Descrição                                      |
+| ---------------------- | ---------------------- | -------------------------------------------------------------------------------- |
+|  first                 |  E                     |  Retorna o primeiro elemento                                                     | 
+|  hashCode              |  int                   |  Retorna um intenger que representa o código hash para o objeto list em questão  |
+|  isEmpty               |  bool                  |  Retorna um boolean true se não houver elementos nesta conllection               |
+|  isNotEmpty            |  bool                  |  Retorna um boolean true se houver amenos um elemento do collection              |
+|  iterator              |  iterator              |  Retorna um novo Iterator que permite iterar os elementos do Iterable            |
+|  last                  |  E                     |  Retorna o último elemento                                                       |
+|  length                |  int                   |  Retorna um intenger que representa o número de objetos no List                  |
+|  reversed              |  iterable<E>           |  Um Iterable do objeto List na ordem reversa                                     |
+|  single                |  E                     |  Verifica se há apenas um elemento no Iterable e retorna esse elemento           |
  
 
 <h2>Sets</h2>
