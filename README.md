@@ -426,4 +426,18 @@ Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de 
 <h3>Aritméticos</h3>
 
 
+O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
+
+
+<h3>Adição + </h3>
+
+    int value1 = 1;
+    int value2 = 2;
+
+      void main()
+    {
+         int value3 = value1 + value2;
+         print(value3);
+    }
+ 
 
