@@ -503,3 +503,14 @@ O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
     a = 0;
     b = a--; 
     assert(a != b); // -1 != 0
+
+
+<h2>Operadores Relacionais</h2>
+
+
+    assert(2 == 2);
+    assert(2 != 3);
+    assert(3 > 2);
+    assert(2 < 3);
+    assert(3 >= 3);
+    assert(2 <= 3);
