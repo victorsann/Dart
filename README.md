@@ -507,10 +507,26 @@ O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
 
 <h2>Operadores Relacionais</h2>
 
+    //Igualdade
 
-    assert(2 == 2);
-    assert(2 != 3);
+    assert(2 == 2); 
+
+    //Diferença
+
+    assert(2 != 3); 
+
+    //Maior que
+
     assert(3 > 2);
+
+    //Menor que
+
     assert(2 < 3);
+
+    //Maior ou igual
+
     assert(3 >= 3);
+
+    //Menor ou igual
+
     assert(2 <= 3);
