@@ -384,7 +384,19 @@ Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou
 
     var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
 
-Métodos e atributos relacionados a Sets serão mais abordados a frente
+Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o type Set:
+
+
+<h3>Constructors</h3>
+
+
+Estruturas de criação de um Set com diferentes restrições
+
+|        Constructor                                      |                                   Descrição                                     |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------- |
+|  Set()                                                  |  Cria um Set vazio                                                              | 
+|  Set.from(Iterable elements)                            |  Cria um Set que contém todos os elements                                       |
+
 
 
 <h2>Maps</h2>
