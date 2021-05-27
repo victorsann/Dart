@@ -87,7 +87,7 @@ Uma forma prática de entender a estrutura mais básica de uma linguagem de prog
 
 Alguns pontos devem ser matidos em mente no processo de aprendizado do Dart, eles são:
 
-<ul>
+<!-- <ul>
  <li>Tudo o que pode ser acoplado a uma variável é um objeto, e todo objeto é uma instância de uma classe, mesmo números, funções e null são objetos;</li>
 
  <li>Apesar de ser fortemente tipada, a definição de tipos é opcional no Dart, já que a linguagem pode inferir tipos a partir dos dados recebidos;</li>
@@ -104,7 +104,7 @@ Alguns pontos devem ser matidos em mente no processo de aprendizado do Dart, ele
 
  <li>Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos;</li>
 
-</ul>
+</ul> -->
 
 
 <h1>Built-in Types</h1>
