@@ -513,6 +513,8 @@ Relacionam operandos tendo como retorno um boolean, sendo true caso a operação
 
     assert(2 == 2); 
 
+<br>
+
     //Diferença
 
     assert(2 != 3); 
