@@ -48,7 +48,7 @@ A partir deste ponto é possível utilizar os comandos Chocolatey para executar 
 
 Antes de executar o app criado, é importante ter instalado um editor de código, sendo o vscode o mais recomendado, e a extenção da linguagem utilizada:
 
-<div>
+<div align="center">
   <img src="https://user-images.githubusercontent.com/61476935/119747559-5f9e8580-be69-11eb-94dd-10999257f7c9.png">
 </div>
 
