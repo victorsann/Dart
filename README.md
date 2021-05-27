@@ -330,45 +330,45 @@ Assim como em boa parte das linguagens que tratam de vetores, há uma série de 
 
 <h3>Constructors</h3>
 
-// Cria um List de comprimento definido
-
-List[ type length ]
-
-<br>
-
-// Cria uma nova lista vazia de tamnho fixo
-
-List.empty()
+    // Cria um List de comprimento definido
+    
+    List[ type length ]
 
 <br>
 
-// Cria um List de comprimento definido e preenche cada posição
-
-List.filled( type length value )
-
-<br>
-
-// Cria um List contendo todos os elements
-
-List.from( iterables elements )
+    // Cria uma nova lista vazia de tamnho fixo
+    
+    List.empty()
 
 <br>
 
-// Gera uma lista de valores
-
-List.generate( type length, E generator(type index) )
-
-<br>
-
-// Cria um List a partir de elements
-
-List.of( iterable <E> elements )
+    // Cria um List de comprimento definido e preenche cada posição
+    
+    List.filled( type length value )
 
 <br>
 
-// Cria um List inalterável contendo todos os elements
+    // Cria um List contendo todos os elements
+    
+    List.from( iterables elements )
 
-List.unmodifiable( iterable elements )
+<br>
+
+    // Gera uma lista de valores
+    
+    List.generate( type length, E generator(type index) )
+
+<br>
+
+    // Cria um List a partir de elements
+    
+    List.of( iterable <E> elements )
+
+<br>
+
+    // Cria um List inalterável contendo todos os elements
+    
+    List.unmodifiable( iterable elements )
 
 
 <h3>Sets</h3>
