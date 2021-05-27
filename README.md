@@ -507,6 +507,8 @@ O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
 
 <h2>Operadores Relacionais</h2>
 
+Relacionam operandos tendo como retorno um boolean, sendo true caso a operação seja verdadeira e false caso seja falsa
+
     //Igualdade
 
     assert(2 == 2); 
