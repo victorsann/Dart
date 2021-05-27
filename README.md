@@ -82,7 +82,7 @@ Uma forma prática de entender a estrutura mais básica de uma linguagem de prog
 * <strong>;</strong> - Um detalhe muito importante da linguagem Dart é a presença constante do ponto e vírgula após o fim de um bloco de execução, do contrário é retornado um erro de sintaxe;
 
 
-<h2>Conceitos Importantes</h2>
+<h2>Conceitos</h2>
 
 
 Alguns pontos devem ser matidos em mente no processo de aprendizado do Dart, eles são:
@@ -161,54 +161,6 @@ Para representar valores bolean o Dart possui o marcador bool, com dois tipos de
     assert(iMeantToDoThis.isNaN);
 
 
-<h3>List</h3>
-
-
-Um array, vetor ou variável composta em Dart é definido como uma lista de objetos, portanto, são normalmente chamadas de List
-
-    var list = [1, 2, 3];
-
-Os Lists serão mais bem abordados a frente
-
-
-<h3>Sets</h3>
-
-
-Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. Exemplos do Set type:
-    
-    //Set vazio
-
-    Set<String> names = {}; 
-    var names = <String>{};
-
-    //Set preenchido
-
-    var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
-
-Métodos e atributos relacionados a Sets serão mais abordados a frente
-
-
-<h3>Maps</h3>
-
-
-Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo, não sendo possível repetir as chaves. O tipo Maps também possui métodos e atributos relacionados a edição, atribuição e exclusão das chaves e seus valores
-
-    var gifts = {
-
-    // Chave:   Valor
-
-      'first': 'partridge',
-      'second': 'turtledoves',
-      'fifth': 'golden rings'
-    };
-    
-    var nobleGases = {
-      2: 'helium',
-      10: 'neon',
-      18: 'argon',
-    };
-
-
 <h3>Runes</h3>
 
 
@@ -216,7 +168,7 @@ Em Dart as Runes expõem o código unicode de uma string. O unicode define um va
 
     \uXXXX
 
-Onde XXXX é um valor hexadecimal de 4 dígitos. Por exemplo: \u{1f606}, que respesenta o seguinte :satisfied:. O Dart possui um módulo específico para trabalhar esse tipo de dado, sendo definido abaixo:
+Onde XXXX é um valor hexadecimal de 4 dígitos. Por exemplo: \u{1f606}, que respesenta o seguinte emoji :satisfied:. O Dart possui um módulo específico para trabalhar esse tipo de dado, sendo definido abaixo:
 
     import 'package:characters/characters.dart'; <==
     ...
@@ -357,3 +309,53 @@ Definir um valor como fixo ou constante demanda o uso da palavra chave final ou 
     // Com definição de tipo
 
     final String nickname = 'Bobby';
+
+
+<h3>List</h3>
+
+
+Um array, vetor ou variável composta em Dart é definido como uma lista de objetos, portanto, são normalmente chamadas de List
+
+    var list = [1, 2, 3];
+
+Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estrutura. Abaixo estão listados alguns dos quais se relacionam com o tipo list
+
+
+
+
+<h3>Sets</h3>
+
+
+Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. Exemplos do Set type:
+    
+    //Set vazio
+
+    Set<String> names = {}; 
+    var names = <String>{};
+
+    //Set preenchido
+
+    var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+
+Métodos e atributos relacionados a Sets serão mais abordados a frente
+
+
+<h3>Maps</h3>
+
+
+Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo, não sendo possível repetir as chaves. O tipo Maps também possui métodos e atributos relacionados a edição, atribuição e exclusão das chaves e seus valores
+
+    var gifts = {
+
+    // Chave:   Valor
+
+      'first': 'partridge',
+      'second': 'turtledoves',
+      'fifth': 'golden rings'
+    };
+    
+    var nobleGases = {
+      2: 'helium',
+      10: 'neon',
+      18: 'argon',
+    };
