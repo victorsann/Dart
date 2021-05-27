@@ -115,22 +115,23 @@ O Dart possui os seguintes tipos internos:
 
 <h3>Numbers</h3>
 
-* int - 
+* int - Valores inteiros não maiores que 64 bits, dependendo da plataforma;
+* double - Valores decimais;
 
-<h2>Numbers</h2>
+<h3>String</h3>
 
-<h2>Numbers</h2>
+<h3>Booleans</h3>
 
-<h2>Numbers</h2>
+<h3>List</h3>
 
-<h2>Numbers</h2>
+<h3>Sets</h3>
 
-<h2>Numbers</h2>
+<h3>Maps</h3>
 
-<h2>Numbers</h2>
+<h3>Runes</h3>
 
-<h2>Numbers</h2>
+<h3>Symbols</h3>
 
-<h2>Numbers</h2>
+<h3>Null</h3>
 
 
