@@ -564,53 +564,18 @@ Os operadores type test definem tipos no processo compilação. Eles são defini
 
 Operações que relacionam dois operandos de forma que o primeiro operando recebe o valor da operação entre seu valor e o de um segundo operando
 
-     // Atribui o operando y ao operando x
-
-     x  =   y 
-
-     // O operando x recebe a subtração entre os operandos x e y
-
-     x  -=  y 
-
-     // O operando x recebe a divisão entre os operandos x e y
-
-     x  /=  y 
-
-     // O operando x recebe o resto da divisão entre os operandos x e y
-
-     x  %=  y
-
-     // O operando x recebe a subtração dos operandos x e y
-
-     x  >>= y 
-
-     // O operando x recebe a subtração dos operandos x e y
-
-     x  ^=  y 
-     
-     // O operando x recebe a soma entre os operandos x e y
-
-     x  +=  y 
-
-     // O operando x recebe a multiplicação entre os operandos x e y
-
-     x  *=  y 
-     
-     // O operando x recebe um int da divisão entre os operandos x e y
-
-     x  ~/= y 
-
-     // O operando x recebe a subtração dos operandos x e y
-
-     x  <<=	y 
-
-     // O operando x recebe a subtração dos operandos x e y
-
-     x  &=  y 
-     
-     // O operando x recebe a subtração dos operandos x e y
-
-     x  |=  y 
+     x  =   y | Atribui o operando y ao operando x
+     x  -=  y | O operando x recebe a subtração entre os operandos x e y
+     x  /=  y | O operando x recebe a divisão entre os operandos x e y
+     x  %=  y | O operando x recebe o resto da divisão entre os operandos x e y
+     x  >>= y | O operando x recebe a subtração dos operandos x e y
+     x  ^=  y | O operando x recebe a subtração dos operandos x e y
+     x  +=  y | O operando x recebe a soma entre os operandos x e y
+     x  *=  y | O operando x recebe a multiplicação entre os operandos x e y
+     x  ~/= y | O operando x recebe um int da divisão entre os operandos x e y
+     x  <<=	y | O operando x recebe a subtração dos operandos x e y
+     x  &=  y | O operando x recebe a subtração dos operandos x e y
+     x  |=  y | O operando x recebe a subtração dos operandos x e y
 
 
 <h2>Operadores de Teste</h2>
