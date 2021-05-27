@@ -57,11 +57,11 @@ Com os pacotes e o ambiente devidamente definidos e intalados, execute a comando
     cd cli
     dart run
 
-Uma forma mais simples de executar códigos dart é criar uma file com a extenção .dark, a executando com o <strong>dart run <nome></strong>,
-não sendo necessário a criação de um projeto para tal.
+Uma forma mais simples de executar códigos dart é criar uma file com a extenção .dark, a executando com o <strong>dart run <nome></strong>.
+Não sendo necessário a criação de um projeto para tal.
 
 
-<h2>Hello World</h1>
+<h2>Hello World</h2>
 
 
 Uma forma prática de entender a estrutura mais básica de uma linguagem de programação é o popular Hello World, sendo este executado da seguinte forma em Dart:
@@ -73,6 +73,12 @@ Uma forma prática de entender a estrutura mais básica de uma linguagem de prog
     }
 
 
+<h3>Explicando</h3>
 
+
+* <strong>void</strong> - Por ser uma linguagem fortemente tipada a definição de tipos se aplica inclusive aos métodos, sendo um método void definido por não retornar valor;
+* <strong>main()</strong> - Método de execução padrão do arquivo, sendo o primeiro a ser chamado no run time;
+* <strong>print()</strong> - Método padrão de impressão de valor;
+* <strong>;</strong> - Um ponto muito importante da linguagem Dart é a presença constante do ponto e vírgula após o fim de um bloco de execução, do contrário é retornado um erro de sintaxe;
 
 
