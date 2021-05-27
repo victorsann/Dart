@@ -507,29 +507,56 @@ O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
 
 <h2>Operadores Relacionais</h2>
 
-Relacionam operandos tendo como retorno um boolean, sendo true caso a operação seja verdadeira e false caso seja falsa, sendo eles listados a seguir: 
 
-    assert(2 == 2); //Igualdade
- 
-<br>
+Relacionam operandos tendo como retorno um boolean, sendo true caso a operação seja verdadeira e false caso seja falsa. Eles são:
 
-    assert(2 != 3); //Diferença 
 
-<br>
+<h3> Igualdade == </h3>
 
-    assert(3 > 2); //Maior que
 
-<br>
+Retorna true caso o valor numerico dos operandos seja igual
 
-     assert(2 < 3); //Menor que
+    assert(2 == 2); //output: true
 
-<br>
 
-     assert(3 >= 3); //Maior ou igual
+<h3> Diferença != </h3>
 
-<br>
 
-     assert(2 <= 3); //Menor ou igual
+Retorna true caso o valor numerico dos operandos for diferente 
+
+    assert(2 != 3); //output: true 
+
+
+<h3> Maior que > </h3>
+
+
+Retorna true caso o valor numerico do operando da esquerda seja maior que o da direita
+
+    assert(3 > 2); //output: true
+
+
+<h3> Menor que < </h3>
+
+
+Retorna true caso o valor numerico do operando da esquerda seja menor que o da direita
+
+     assert(2 < 3); //output: true
+
+
+<h3> Maior ou igual >= </h3>
+
+
+Retorna true caso o valor numerico do operando da esquerda seja maior ou igual ao do operando da direita
+
+     assert(3 >= 3); //output: true
+
+
+<h3>Menor ou igual <= </h3>
+
+
+Retorna true caso o valor numerico do operando da esquerda seja menor ou igual ao do operando da direita
+
+     assert(2 <= 3); //output: true
 
 
 <h2>Operadores de Teste</h2>
@@ -564,7 +591,7 @@ Os operadores type test definem tipos no processo compilação. Eles são defini
 
 Operações que relacionam dois operandos de forma que o primeiro operando recebe o valor da operação entre seu valor e o de um segundo operando
 
-     x  =   y | Atribui o operando y ao operando x
+     x  =   y | O operando x recebe o operando y
      x  -=  y | O operando x recebe a subtração entre os operandos x e y
      x  /=  y | O operando x recebe a divisão entre os operandos x e y
      x  %=  y | O operando x recebe o resto da divisão entre os operandos x e y
@@ -580,7 +607,7 @@ Operações que relacionam dois operandos de forma que o primeiro operando receb
 Os operadores lógicos definem um valor boolean como o retorno entre uma operação entre dois operandos, sempre retornando true ou false
 
 
-<h3>Negação !expr</h3>
+<h3>Negação !</h3>
 
 
     if(!data) {
@@ -608,3 +635,5 @@ Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao val
       }
 
 O operador de conjunção, também chamado de AND lógico define que o resultado de uma operação como true se ambos os operandos forem verdadeiros
+
+
