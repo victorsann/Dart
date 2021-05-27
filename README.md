@@ -519,17 +519,25 @@ Relacionam operandos tendo como retorno um boolean, sendo true caso a operação
 
     assert(2 != 3); 
 
+<br>
+
     //Maior que
 
     assert(3 > 2);
+
+<br>
 
     //Menor que
 
     assert(2 < 3);
 
+<br>
+
     //Maior ou igual
 
     assert(3 >= 3);
+
+<br>
 
     //Menor ou igual
 
