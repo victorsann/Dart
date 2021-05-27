@@ -568,14 +568,43 @@ Operações que relacionam dois operandos de forma que o primeiro operando receb
      x  -=  y | O operando x recebe a subtração entre os operandos x e y
      x  /=  y | O operando x recebe a divisão entre os operandos x e y
      x  %=  y | O operando x recebe o resto da divisão entre os operandos x e y
-     x  >>= y | O operando x recebe a subtração dos operandos x e y
      x  ^=  y | O operando x recebe a subtração dos operandos x e y
      x  +=  y | O operando x recebe a soma entre os operandos x e y
      x  *=  y | O operando x recebe a multiplicação entre os operandos x e y
      x  ~/= y | O operando x recebe um int da divisão entre os operandos x e y
-     x  <<=	y | O operando x recebe a subtração dos operandos x e y
-     x  &=  y | O operando x recebe a subtração dos operandos x e y
-     x  |=  y | O operando x recebe a subtração dos operandos x e y
+ 
+
+<h2>Operadores Lógicos</h2>
 
 
-<h2>Operadores de Teste</h2>
+Os operadores lógicos definem um valor boolean como o retorno entre uma operação entre dois operandos, sempre retornando true ou false
+
+
+<h3>Negação !expr</h3>
+
+
+    if(!data) {
+        ...
+    }
+
+Se o valor chamado data for definido como true, ele passa a ser false, e vice versa 
+
+
+<h3>Disjução ||</h3>
+
+
+    if(!data || value) {
+        ...
+    }
+
+Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao valor boolean true
+
+
+<h3>Conjunção &&</h3>
+
+
+    if(!data && value) {
+          ...
+      }
+
+O operador de conjunção, também chamado de AND lógico define que o resultado de uma operação como true se ambos os operandos forem verdadeiros
