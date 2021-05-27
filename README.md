@@ -236,7 +236,7 @@ O tipo dynamic define a aceitação de todos os demais tipos a uma variável, da
 Assim como em qualquer linguagem de programação, as variáveis em Dart são uma unidade de armazenamento e de referência de dados, tendo aqui algumas características importantes a serem mencionadas
 
 
-<h3>Declarando Variáveis</h3>
+<h2>Declarando Variáveis</h2>
 
 
 A variável a seguir é inicializada com a palavra-chave var, reservada para essa função, um identificador e um valor inicial. Esta comtém uma referência ao valor que carrega
@@ -267,7 +267,7 @@ A definição do tipo dessa variável é inferida pelo valor que ela carrega, se
     pi = 3.14;
 
 
-<h3>Variáveis não Iniciadas</h3>
+<h2>Variáveis não Iniciadas</h2>
 
 
 Uma variável não iniciada é definida por uma unidade de armazenamento e referência cujo espaço na memória não foi ocupado no momendo da declaração, sendo possível oculpar este valor posteriormente
@@ -277,7 +277,7 @@ Uma variável não iniciada é definida por uma unidade de armazenamento e refer
     empty = 1938;
 
 
-<h3>Variáveis Late</h3>
+<h2>Variáveis Late</h2>
 
 
 O Dart possui, desde a versão 2.12, o modificador Late, que é usado em dois casos: 
@@ -297,7 +297,7 @@ Caso o desenvolvedor esteja seguro de que a variável foi definida antes de ser 
     }
 
 
-<h3>Final e const</h3>
+<h2>Final e const</h2>
 
 
 Definir um valor como fixo ou constante demanda o uso da palavra chave final ou const, dando à unidade de armazenamento e referência a característica de imutabilidade do seu valor em tempo de compilação
