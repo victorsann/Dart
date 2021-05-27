@@ -27,7 +27,7 @@ Os comandos a seguir devem ser executados no PowerShell com permição de admini
 
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]  ::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-Verificar intalação:
+Verificar intalação
 
     choco -v
 
@@ -38,11 +38,14 @@ Instalar Dart-SDK
 
 <h2>App Dart-SDK</h1> 
 
-A partir desse ponto é possível utilizar os comandos Chocolatey para executar uma aplicação Dart-SDK. Acesse um diretório desejado e execute:
+A partir deste ponto é possível utilizar os comandos Chocolatey para executar uma aplicação Dart-SDK. Acesse um diretório desejado através do cmd e execute:
 
     dart create -t console-full cli
 
-Após essa ação é possível escrever e compilar o código Dart.
+Para executar o app use:
+
+    cd cli
+    dart run
 
 
 <h2>Hello World</h1>
