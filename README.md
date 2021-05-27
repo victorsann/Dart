@@ -677,13 +677,13 @@ O operador de conjunção, também chamado de AND lógico define que o resultado
 <h2>Functions</h2>
 
 
-Por ter fornte presença da orientação a objetos, mesmo as funções são objetos possuidores de tipos. Isso torna possível a atrubuir funções a variáveis ou que elas sejam passadas como argumentos em outras funções. Abaixo segue a estrutura básica de uma função no Dart:
+Por ter uma forte presença da orientação a objetos, mesmo as funções são objetos possuidoras de tipos. Isso torna possível a atribuir funções a variáveis ou torná-las argumentos em outras funções. Abaixo segue a estrutura básica de uma função no Dart:
 
     type functionName(arguments) {
       return value;
     }
 
-Um ponto a se ater é que funções tipadas sempre devem possuir um valor equivalente a seu tipo como retorno. Além disso, funções podem ser definidas como type annotation ou void no Dart, podendo ser escritas de forma mais encurtada caso possuam apenas uma expressão:
+Um ponto a se ater é que funções tipadas sempre devem possuir um valor equivalente a seu tipo como retorno. Além disso, funções podem ser definidas como type annotation ou void no Dart, podendo ser escritas de forma mais encurtada, caso possuam apenas uma expressão:
 
 
 <h3>Type Annotation</h3>
@@ -701,7 +701,7 @@ Um ponto a se ater é que funções tipadas sempre devem possuir um valor equiva
 
     //Não possui retorno
 
-    void functionName( ... ) {
+    void functionName(arguments) {
         ...
     }
 
@@ -720,12 +720,13 @@ Um ponto a se ater é que funções tipadas sempre devem possuir um valor equiva
 Uma função pode ter qualquer número de required positional parameters. Estes ainda podem ser seguidos de named parameters ou por optional positional parameters (mas não ambos)
 
 
-<h3>Named parameters</h3>
+<h3>Named Parameters</h3>
 
 
 Named Parameters são opcionais a não ser que sejam definidos como required. Abaixo há a definição da sintaxe de uma função com Named Functions
 
     functionName(paramName: value, paramName: value);
+
 
 Ao definir uma função que recebe parâmetro use-se {param1, param2, ...}
 
@@ -735,6 +736,14 @@ Ao definir uma função que recebe parâmetro use-se {param1, param2, ...}
       ...    
         
     }
+
+
+<h3>Required Parameters</h3>
+
+
+São definados quando o valor recebido via parâmetro é obrigatório, gerando um issue caso não seja disponibilizado
+
+    type functionName({Key? key, required Widget child})
 
 
 <h3>A Função main()</h3>
