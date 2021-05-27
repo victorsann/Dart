@@ -482,28 +482,24 @@ O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
 <h2>Incremento</h2>
 
 
-<h3>++var</h3>
-
-
-    var = var + 1 (o valor da expressão é var + 1)
-
-
-<h3>var++</h3>
-
-
-    var = var + 1 (o valor da expressão é var)
+    var a, b;
+    
+    a = 0;
+    b = ++a; 
+    assert(a == b); // 1 == 1
+    
+    a = 0;
+    b = a++; 
+    assert(a != b); // 1 != 0
 
 
 <h2>Decremento</h2>
 
 
-<h3> --var</h3>
-
-
-    var = var – 1 (o valor da expressão é var – 1)
-
-
-<h3>var-- </h3>
-
-
-    var = var – 1 (o valor da expressão é var)
+    a = 0;
+    b = --a; 
+    assert(a == b); // -1 == -1
+    
+    a = 0;
+    b = a--; 
+    assert(a != b); // -1 != 0
