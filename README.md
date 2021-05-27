@@ -107,13 +107,13 @@ Alguns pontos devem ser matidos em mente no processo de aprendizado do Dart, ele
 </ul> -->
 
 
-<h1>Built-in Types</h1>
+<h2>Built-in Types</h2>
 
 
 O Dart possui os seguintes tipos internos:
 
 
-<h2>Numbers</h2>
+<h3>Numbers</h3>
 
 * int - 
 
