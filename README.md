@@ -168,13 +168,13 @@ Um array, vetor ou variável composta em Dart é definido como uma lista de obje
 
     var list = [1, 2, 3];
 
-Os arrays serão mais bem abordados a frente
+Os Lists serão mais bem abordados a frente
 
 
 <h3>Sets</h3>
 
 
-Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. Exemplos de Set type:
+Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. Exemplos do Set type:
     
     //Set vazio
 
@@ -211,7 +211,38 @@ Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de 
 
 <h3>Runes</h3>
 
+
+Em Dart as Runes expõem o código unicode de uma string. O unicode define um valor numerico único para cada letra, dígito e símbolo usado em todo o sistema de escrita. Um unicode é normalmente representado da seguinte forma:
+
+    \uXXXX
+
+Onde XXXX é um valor hexadecimal de 4 dígitos. Por exemplo: \u{1f606}, que respesenta um emoji
+
+O Dart possui um módulo específico para trabalhar esse tipo de dado, sendo definido abaixo:
+
+    import 'package:characters/characters.dart'; <==
+    ...
+    var hi = 'Hi 🇩🇰';
+    print(hi);
+    print('The end of the string: ${hi.substring(hi.length - 1)}');
+    print('The last character: ${hi.characters.last}\n');
+
+    //Console
+
+    $ dart bin/main.dart
+    Hi 🇩🇰
+    The end of the string: ???
+    The last character: 🇩🇰
+
 <h3>Symbols</h3>
+
+
+Um objeto Symbol representa um operador ou idetificador declarado em um programa Dart, dificilmente utilizados fora de contextos específicos de desenvolvimento. Para definir um Symbol como identificador usa-se # seguido do identificador
+
+    #radix
+    #bar
+
+
 
 <h3>Null</h3>
 
