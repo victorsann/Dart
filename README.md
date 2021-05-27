@@ -572,9 +572,9 @@ Os operadores type test definem tipos no processo compilação. Eles são defini
     }
 
 
-<h2>Operadores de Incremento<h2>
+<h2>Operadores de Incremento</h2>
 
-     a  =   b
+     a  =   b |
      a  -=  b | a  =  a  -  b
      a  /=  b | a  =  a  /  b
      a  %=  b | a  =  a  %  b
