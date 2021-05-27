@@ -216,7 +216,7 @@ Em Dart as Runes expõem o código unicode de uma string. O unicode define um va
 
     \uXXXX
 
-Onde XXXX é um valor hexadecimal de 4 dígitos. Por exemplo: \u{1f606}, que respesenta um emoji
+Onde XXXX é um valor hexadecimal de 4 dígitos. Por exemplo: \u{1f606}, que respesenta um emoji :satisfied:
 
 O Dart possui um módulo específico para trabalhar esse tipo de dado, sendo definido abaixo:
 
