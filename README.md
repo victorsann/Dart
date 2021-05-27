@@ -6,7 +6,7 @@
 <img src="https://img.shields.io/static/v1?label=dart&message=Language&color=blue&style=for-the-badge&logo=Dart"/>
 
 
-O Dart é uma linguagem de script, type safe, multiparadigma e orienta a objetos, desenvolvida e mantida pela Google. Utilizada em diversas stacks do desenvolvimento de aplicações, sendo mais assossiada ao Flutter, um de seus frameworks mais populares, e por consequência ao desenvolvimento mobile. Por ser multeplataformas, o Dart acompanha duas ferramentas, ou soluções, que possibilitam o seu uso: o Dart Native e o Dart Web. Tendo como principal recurso a máquina virtual responsável por compilar a linguagem no Just-in-Time(JIT) process, além do AOT(Ahead-of-Time), esta sendo responsável por converter o código escrito em Dart para machine code/código nativo, seja em Android ou IOS, ou para JavaScript, falando específicamente do Dart Web.
+O Dart é uma linguagem de script, type safe, multiparadigma e orienta a objetos, desenvolvida e mantida pela Google. Utilizada em diversas stacks do desenvolvimento de aplicações, sendo mais associada ao Flutter, um de seus frameworks mais populares, e por consequência ao desenvolvimento mobile. Por ser multeplataformas, o Dart acompanha duas ferramentas, ou soluções, que possibilitam o seu uso: o Dart Native e o Dart Web. Tendo como principal recurso a máquina virtual responsável por compilar a linguagem no Just-in-Time(JIT) process, além do AOT(Ahead-of-Time), esta sendo responsável por converter o código escrito em Dart para machine code/código nativo, seja em Android ou IOS, ou para JavaScript, falando específicamente do Dart Web.
 
 
 <h2>Preparando Ambiente</h1>
@@ -115,22 +115,99 @@ O Dart possui os seguintes tipos internos:
 
 <h3>Numbers</h3>
 
-int - Valores inteiros não maiores que 64 bits, dependendo da plataforma;
-double - Valores decimais;
+
+int - Valores inteiros não maiores que 64 bits, dependendo da plataforma
 
     var x = 1;
     var hex = 0xDEADBEEF;
     var exponent = 8e5;
 
+double - Valores decimais
+
+    var y = 1.1;
+    var exponents = 1.42e5;
+
+
 <h3>String</h3>
+
+
+Uma string Dart (object String) contém uma sequência de unidades de código UTF-16
+
+    var s1 = 'Single quotes work well for string literals.';
+    var s2 = "Double quotes work just as well.";
+    var s3 = 'It\'s easy to escape the string delimiter.';
+    var s4 = "It's even easier to use the other delimiter.";
+
 
 <h3>Booleans</h3>
 
+
+Para representar valores bolean o Dart possui o marcador bool, com dois tipos definidos: true e false. Exemplos de definição de bool:
+
+    // Check for an empty string.
+    var fullName = '';
+    assert(fullName.isEmpty);
+    
+    // Check for zero.
+    var hitPoints = 0;
+    assert(hitPoints <= 0);
+    
+    // Check for null.
+    var unicorn;
+    assert(unicorn == null);
+    
+    // Check for NaN.
+    var iMeantToDoThis = 0 / 0;
+    assert(iMeantToDoThis.isNaN);
+
+
 <h3>List</h3>
+
+
+Um array, vetor ou variável composta em Dart é definido como uma lista de objetos, portanto, são normalmente chamadas de List
+
+    var list = [1, 2, 3];
+
+Os arrays serão mais bem abordados a frente
+
 
 <h3>Sets</h3>
 
+
+Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. Exemplos de Set type:
+    
+    //Set vazio
+
+    Set<String> names = {}; 
+    var names = <String>{};
+
+    //Set preenchido
+
+    var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+
+Métodos e atributos relacionados a Sets serão mais abordados a frente
+
+
 <h3>Maps</h3>
+
+
+Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo, não sendo possível repetir as chaves. O tipo Maps também possui métodos e atributos relacionados a edição, atribuição e exclusão das chaves e seus valores
+
+    var gifts = {
+
+    // Chave:   Valor
+
+      'first': 'partridge',
+      'second': 'turtledoves',
+      'fifth': 'golden rings'
+    };
+    
+    var nobleGases = {
+      2: 'helium',
+      10: 'neon',
+      18: 'argon',
+    };
+
 
 <h3>Runes</h3>
 
