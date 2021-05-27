@@ -507,7 +507,7 @@ O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
 
 <h2>Operadores Relacionais</h2>
 
-Relacionam operandos tendo como retorno um boolean, sendo true caso a operação seja verdadeira e false caso seja falsa
+Relacionam operandos tendo como retorno um boolean, sendo true caso a operação seja verdadeira e false caso seja falsa, sendo eles listados a seguir: 
 
     //Igualdade
 
@@ -542,3 +542,47 @@ Relacionam operandos tendo como retorno um boolean, sendo true caso a operação
     //Menor ou igual
 
     assert(2 <= 3);
+
+
+<h2>Operadores de Teste</h2>
+
+
+Os operadores type test definem tipos no processo compilação. Eles são definidos em três:
+
+    //Typecast
+
+    (employee as Person).firstName = 'Bob';
+
+<br>
+
+    //Retorna true caso o objeto tenha o tipo especificado
+
+    if (employee is Person) {
+      // Type check
+      employee.firstName = 'Bob';
+    }
+
+<br>
+
+    //Retorna true caso o objeto tenha o tipo diferente do especificado
+
+    if (employee is! Person) {
+      // Type check
+      employee.firstName = 'Bob';
+    }
+
+
+<h2>Operadores de Incremento<h2>
+
+     a  =   b
+     a  -=  b | a  =  a  -  b
+     a  /=  b | a  =  a  /  b
+     a  %=  b | a  =  a  %  b
+     a  >>= b | a  =  a  >= n
+     a  ^=  b | a  =  a  ^  b
+     a  +=  b | a  =  a  +  b
+     a  *=  b | a  =  a  *  b
+     a  ~/= b | a  =  a  ~/ b
+     a  <<=	b | a  =  a  << b
+     a  &=  b | a  =  a  &  b
+     a  |=  b | a  =  a  |  b
