@@ -311,10 +311,7 @@ Definir um valor como fixo ou constante demanda o uso da palavra chave final ou 
     final String nickname = 'Bobby';
 
 
-<h2>Unidades de Armazenamento Compostas</h2>
-
-
-<h3>List</h3>
+<h2>List</h2>
 
 
 Um array, vetor ou variável composta em Dart é definido como uma lista de objetos, portanto, são normalmente chamadas de List
@@ -328,8 +325,11 @@ Uma outra definição para uma List é uma coleção indexável de objetos com u
 
 Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o tipos de list:
 
+
 <h3>Constructors</h3>
 
+
+Estruturas de criação de um List com diferentes restrições
 
 |        Constructor                                      |                                   Descrição                                     |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------- |
@@ -342,7 +342,24 @@ Assim como em boa parte das linguagens que tratam de vetores, há uma série de 
 |  List.unmodifiable( iterable elements )                 |  Cria um List inalterável contendo todos os elements                            |
 
 
-<h3>Sets</h3>
+<h3>Proprieties</h3>
+
+Atributos de consulta dos lists
+
+|        Constructor         |                                   Descrição                                     |
+| -------------------------- | ------------------------------------------------------------------------------- |
+|  first                     |  Retorna o primeiro elemento                                                    | 
+|  hashCode > int            |  O código hash para o objeto                                                    |
+|  isEmpty > bool            |  Retorna true se não houver elementos nesta conllection                         |
+|  isNotEmpty > bool         |  Retorna true se houver amenos um elemento do collection                        |
+|  iterator > iterator       |  Retorna um novo Iterator que permite iterar os elementos do Iterable           |
+|  last                      |  Retorna o último elemento                                                      |
+|  length > int              |  Retorna o número de objetos no List                                            |
+|  reversed > iterable       |  Um Iterable do objeto List na ordem reversa                                    |
+|  single                    |  Verifica se há apenas um elemento no Iterable e retorna esse elemento          |
+
+
+<h2>Sets</h2>
 
 
 Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. Exemplos do Set type:
@@ -359,7 +376,7 @@ Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou
 Métodos e atributos relacionados a Sets serão mais abordados a frente
 
 
-<h3>Maps</h3>
+<h2>Maps</h2>
 
 
 Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo, não sendo possível repetir as chaves. O tipo Maps também possui métodos e atributos relacionados a edição, atribuição e exclusão das chaves e seus valores
