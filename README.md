@@ -57,6 +57,9 @@ Com os pacotes e o ambiente devidamente definidos e intalados, execute a comando
     cd cli
     dart run
 
+Uma forma mais simples de executar códigos dart é criar uma file com a extenção .dark, a executando com o <strong>dart run <nome></strong>,
+não sendo necessário a criação de um projeto para tal.
+
 
 <h2>Hello World</h1>
 
