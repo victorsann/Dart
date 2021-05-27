@@ -428,6 +428,7 @@ O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
 
 <h3>Adição + </h3>
 
+
     //Soma os operandos
 
     assert(2 + 3 == 5);
@@ -481,13 +482,28 @@ O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
 
 <h2>Incremento</h2>
 
+O operador de incremento incrementa seu operando em 1. O operador de incremento é suportado em duas formas: o operador de incremento pós-fixado, x++, e o operador de incremento de pré-fixo, ++x.
+
+
+<h3>Pré Fixado ++X</h3>
+
+
+O resultado de ++ x é o valor de x após a operação, como mostra o exemplo a seguir:
 
     var a, b;
     
     a = 0;
     b = ++a; 
     assert(a == b); // 1 == 1
-    
+
+
+<h3>Pós Fixado X++</h3>
+
+
+O resultado de x ++ é o valor de x antes da operação, como mostra o exemplo a seguir:
+
+    var a, b;
+
     a = 0;
     b = a++; 
     assert(a != b); // 1 != 0
@@ -524,7 +540,7 @@ Retorna true caso o valor numerico dos operandos seja igual
 
 Retorna true caso o valor numerico dos operandos for diferente 
 
-    assert(2 != 3); //output: true 
+    assert(3 != 3); //output: false 
 
 
 <h3> Maior que > </h3>
@@ -540,7 +556,7 @@ Retorna true caso o valor numerico do operando da esquerda seja maior que o da d
 
 Retorna true caso o valor numerico do operando da esquerda seja menor que o da direita
 
-     assert(2 < 3); //output: true
+     assert(4 < 3); //output: false
 
 
 <h3> Maior ou igual >= </h3>
@@ -556,7 +572,7 @@ Retorna true caso o valor numerico do operando da esquerda seja maior ou igual a
 
 Retorna true caso o valor numerico do operando da esquerda seja menor ou igual ao do operando da direita
 
-     assert(2 <= 3); //output: true
+     assert(4 <= 3); //output: false
 
 
 <h2>Operadores de Teste</h2>
@@ -587,7 +603,7 @@ Os operadores type test definem tipos no processo compilação. Eles são defini
     }
 
 
-<h2>Operadores de Incremento</h2>
+<h2>Operadores de Auto Atribuição</h2>
 
 Operações que relacionam dois operandos de forma que o primeiro operando recebe o valor da operação entre seu valor e o de um segundo operando
 
