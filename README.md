@@ -509,10 +509,8 @@ O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
 
 Relacionam operandos tendo como retorno um boolean, sendo true caso a operação seja verdadeira e false caso seja falsa, sendo eles listados a seguir: 
 
-    //Igualdade
-
-    assert(2 == 2); 
-
+    assert(2 == 2); //Igualdade
+ 
 <br>
 
     //Diferença
@@ -573,6 +571,8 @@ Os operadores type test definem tipos no processo compilação. Eles são defini
 
 
 <h2>Operadores de Incremento</h2>
+
+Operações que relacionam dois operandos de forma que o primeiro operando recebe o valor da operação entre seu valor e o de um segundo operando
 
      a  =   b |
      a  -=  b | a  =  a  -  b
