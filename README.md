@@ -513,33 +513,23 @@ Relacionam operandos tendo como retorno um boolean, sendo true caso a operação
  
 <br>
 
-    //Diferença
-
-    assert(2 != 3); 
+    assert(2 != 3); //Diferença 
 
 <br>
 
-    //Maior que
-
-    assert(3 > 2);
+    assert(3 > 2); //Maior que
 
 <br>
 
-    //Menor que
-
-    assert(2 < 3);
+     assert(2 < 3); //Menor que
 
 <br>
 
-    //Maior ou igual
-
-    assert(3 >= 3);
+     assert(3 >= 3); //Maior ou igual
 
 <br>
 
-    //Menor ou igual
-
-    assert(2 <= 3);
+     assert(2 <= 3); //Menor ou igual
 
 
 <h2>Operadores de Teste</h2>
