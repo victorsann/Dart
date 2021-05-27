@@ -512,10 +512,24 @@ O resultado de x ++ é o valor de x antes da operação, como mostra o exemplo a
 <h2>Decremento</h2>
 
 
+O operador de decremento diminui seu operando em 1. O operador de decremento é suportado em duas formas: o operador de decremento pós-fixado, x--, e o operador de decremento de pré-fixo, --x.
+
+
+<h3>Pré Fixado --X</h3>
+
+
+O resultado de --x é o valor de x após a operação, como mostra o exemplo a seguir:
+
     a = 0;
     b = --a; 
     assert(a == b); // -1 == -1
     
+
+<h3>Pós Fixado X--</h3>
+
+
+O resultado de x-- é o valor de x antes da operação, como mostra o exemplo a seguir:
+
     a = 0;
     b = a--; 
     assert(a != b); // -1 != 0
