@@ -418,3 +418,12 @@ Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de 
       10: 'neon',
       18: 'argon',
     };
+
+
+<h2>Operadores</h2>
+
+
+<h3>Aritméticos</h3>
+
+
+
