@@ -349,12 +349,12 @@ Atributos de consulta dos lists
 |        Constructor         |                                   Descrição                                     |
 | -------------------------- | ------------------------------------------------------------------------------- |
 |  first                     |  Retorna o primeiro elemento                                                    | 
-|  hashCode > int            |  O código hash para o objeto                                                    |
-|  isEmpty > bool            |  Retorna true se não houver elementos nesta conllection                         |
-|  isNotEmpty > bool         |  Retorna true se houver amenos um elemento do collection                        |
+|  hashCode > int            |  Retorna um intenger que representa o código hash para o objeto                 |
+|  isEmpty > bool            |  Retorna um boolean true se não houver elementos nesta conllection              |
+|  isNotEmpty > bool         |  Retorna um boolean true se houver amenos um elemento do collection             |
 |  iterator > iterator       |  Retorna um novo Iterator que permite iterar os elementos do Iterable           |
 |  last                      |  Retorna o último elemento                                                      |
-|  length > int              |  Retorna o número de objetos no List                                            |
+|  length > int              |  Retorna um intenger que representa o número de objetos no List                 |
 |  reversed > iterable       |  Um Iterable do objeto List na ordem reversa                                    |
 |  single                    |  Verifica se há apenas um elemento no Iterable e retorna esse elemento          |
 
