@@ -323,7 +323,7 @@ Uma outra definição para uma List é uma coleção indexável de objetos com u
 - Lists de Comprimentos Fixos;
 - Lists de Comprimento Cultivaveis ou de Tamanho não Fixo;
 
-Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o tipos de list:
+<!-- Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o tipos de list:
 
 
 <h3>Constructors</h3>
@@ -367,7 +367,7 @@ Métodos de execução de um List
 |         Methods         |                                    Descrição                                      |
 | ----------------------  |  -------------------------------------------------------------------------------- |
 |  add(value)             |   Adiciona um valor ao final do List, extendendo o tamanho em 1                   | 
-|                         |                                                                                   |
+|                         |                                                                                   | -->
 
 
 <h2>Sets</h2>
@@ -384,7 +384,7 @@ Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou
 
     var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
 
-Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o type Set:
+<!-- Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o type Set:
 
 
 <h3>Constructors</h3>
@@ -396,7 +396,7 @@ Estruturas de criação de um Set com diferentes restrições
 | ------------------------------------------------------- | ------------------------------------------------------------------------------- |
 |  Set()                                                  |  Cria um Set vazio                                                              | 
 |  Set.from(Iterable elements)                            |  Cria um Set que contém todos os elements                                       |
-
+ -->
 
 
 <h2>Maps</h2>
