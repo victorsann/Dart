@@ -87,15 +87,15 @@ Uma forma prática de entender a estrutura mais básica de uma linguagem de prog
 
 Alguns pontos devem ser matidos em mente no processo de aprendizado do Dart, eles são:
 
-* Tudo o que pode ser acoplado em uma variável é um objeto, e todo objeto é uma instância de uma classe, mesmo números, funções e null são objetos;
+* Tudo o que pode ser acoplado a uma variável é um objeto, e todo objeto é uma instância de uma classe, mesmo números, funções e null são objetos;
 
 * Apesar de ser fortemente tipada, a definição de tipos é opcional no Dart, já que a linguagem pode inferir tipos a partir dos dados recebidos;
 
-* É possível tornar uma variável nullable usarndo o marcador (?) no fim da sua definição de tipo. O oposto disso é definir o marcador (!). Por exemplo: int?(integers ou nullable) / int x = nullableButNotNullInt!;
+* É possível tornar uma variável nullable usando o marcador (?) no fim da sua definição de tipo. O oposto disso é definir o marcador (!). Por exemplo: int? (integers ou nullable)  /  int x = nullableButNotNullInt!;
 
 * O Dart suporta tipagem genérica, como List<int>(uma lista de integers) ou List<Object>(uma lista de objetos de qualquer tipo);
 
-* O Dart suporta funções de alto nível(como main()), assim como funções amarradas a classes ou objetos(static e instâncias de métodos, respectivamente). Também é possível criar funções dentro de funções(funções aninhadas ou locais);
+* O Dart suporta funções de alto nível(como main( )), assim como funções amarradas a classes ou objetos(static e instâncias de métodos, respectivamente). Também é possível criar funções dentro de funções(funções aninhadas ou locais);
 
 * Da mesma forma, o Dart suporta variáveis de alto nível, assim como variáveis amarradas a uma classe ou objeto(static e variáveis instanciadas). Variáveis intanciadas são muitas vezes conhecidas como fields ou propriedades;
 
@@ -104,8 +104,30 @@ Alguns pontos devem ser matidos em mente no processo de aprendizado do Dart, ele
 * Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos;
 
 
-<h1>Data Type</h1>
+<h1>Built-in Types</h1>
 
 
+O Dart possui os seguintes tipos internos:
+
+
+<h2>Numbers</h2>
+
+* int - 
+
+<h2>Numbers</h2>
+
+<h2>Numbers</h2>
+
+<h2>Numbers</h2>
+
+<h2>Numbers</h2>
+
+<h2>Numbers</h2>
+
+<h2>Numbers</h2>
+
+<h2>Numbers</h2>
+
+<h2>Numbers</h2>
 
 
