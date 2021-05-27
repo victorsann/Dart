@@ -244,3 +244,16 @@ Um objeto Symbol representa um operador ou idetificador declarado em um programa
 <h3>Null</h3>
 
 
+O Dart possui um recurso chamado de Null Safety, o qual define que as variáveis de um código Dart são non-nullable, ou não anuláveis, a menos que sejam definidas como tal.
+
+Com o Null safety todas as variáveis do código a seguir são non-nullable:
+
+    // Com o Null-safe, nenhum destes podem ser null
+
+    var i = 42; // Inferred to be an int.
+    String name = getFileName();
+    final b = Foo();
+
+Para indicar que uma variável aceita um nullable usa-se o marcador ? em conjunto com a declaração do seu tipo:
+
+    int? aNullableInt = null;
