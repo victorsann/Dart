@@ -420,10 +420,7 @@ Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de 
     };
 
 
-<h2>Operadores</h2>
-
-
-<h3>Aritméticos</h3>
+<h2>Operadores Aritméticos</h2>
 
 
 O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
@@ -431,13 +428,82 @@ O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
 
 <h3>Adição + </h3>
 
-    int value1 = 1;
-    int value2 = 2;
+    //Soma os operandos
 
-      void main()
-    {
-         int value3 = value1 + value2;
-         print(value3);
-    }
+    assert(2 + 3 == 5);
  
 
+<h3>Subitração - </h3>
+
+
+    //Subtrai os operandos
+
+    assert(2 - 3 == -1);
+
+
+<h3>-expr</h3>
+
+
+    //Inverte o sinal da expressão
+
+
+<h3>Multiplicação * </h3>
+
+
+    //Multiplica os operandos
+
+    assert(2 * 3 == 6);
+
+
+<h3>Divisão / </h3>
+
+
+    //Divide os operandos
+
+    assert(5 / 2 == 2.5); // Resulta em um double
+
+
+<h3>Divisão ~/ </h3>
+
+
+    //Retorna um integer
+
+    assert(5 ~/ 2 == 2); // Resulta em um int
+
+
+<h3>Resto % </h3>
+
+
+    //Retorna o resto da operação
+
+    assert(5 % 2 == 1); // Resto
+
+
+<h2>Incremento</h2>
+
+
+<h3>++var</h3>
+
+
+    var = var + 1 (o valor da expressão é var + 1)
+
+
+<h3>var++</h3>
+
+
+    var = var + 1 (o valor da expressão é var)
+
+
+<h2>Decremento</h2>
+
+
+<h3> --var</h3>
+
+
+    var = var – 1 (o valor da expressão é var – 1)
+
+
+<h3>var-- </h3>
+
+
+    var = var – 1 (o valor da expressão é var)
