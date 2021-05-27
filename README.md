@@ -115,12 +115,12 @@ O Dart possui os seguintes tipos internos:
 
 <h3>Numbers</h3>
 
-* int - Valores inteiros não maiores que 64 bits, dependendo da plataforma;
-* double - Valores decimais;
+int - Valores inteiros não maiores que 64 bits, dependendo da plataforma;
+double - Valores decimais;
 
-        var x = 1;
-        var hex = 0xDEADBEEF;
-        var exponent = 8e5;
+    var x = 1;
+    var hex = 0xDEADBEEF;
+    var exponent = 8e5;
 
 <h3>String</h3>
 
