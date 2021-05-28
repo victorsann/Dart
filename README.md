@@ -267,6 +267,11 @@ A definição do tipo dessa variável é inferida pelo valor que ela carrega, se
     pi = 3.14;
 
 
+<div align="center">
+  <h1>Unidades de Armazenamento</h1>
+</div>
+
+
 <h2>Variáveis não Iniciadas</h2>
 
 
