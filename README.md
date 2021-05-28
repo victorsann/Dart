@@ -434,7 +434,7 @@ O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
     assert(2 + 3 == 5);
  
 
-<h3>Subitração - </h3>
+<h3>Subtração - </h3>
 
 
     //Subtrai os operandos
