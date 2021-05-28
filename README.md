@@ -768,7 +768,7 @@ Boa parte das funções são definidas como named, ou nomeadas, como a própria 
 
     ([[Type] param1[, …]]) {
 
-      ...;
+      ...
 
     };
 
