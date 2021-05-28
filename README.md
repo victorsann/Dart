@@ -629,7 +629,7 @@ Métodos de execução de um List
 |                         |                                                                                   | -->
 
 
-<h2>Sets</h2>
+<h2>Set</h2>
 
 
 Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. Exemplos do Set type:
@@ -658,7 +658,7 @@ Estruturas de criação de um Set com diferentes restrições
  -->
 
 
-<h2>Maps</h2>
+<h2>Map</h2>
 
 
 Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo, não sendo possível repetir as chaves. O tipo Maps também possui métodos e atributos relacionados a edição, atribuição e exclusão das chaves e seus valores
@@ -816,7 +816,7 @@ O Dart é uma linguagem com escopo léxico, o que significa que o escopo das var
 <h2>Declarações de Controle de Fluxo</h2>
 
 
-O controle do fluxo de dados é em suma um dois aspectos mais importantes da programação. O Dart possui as seguintes estruturas para controle de fluxo de dados 
+O controle do fluxo de dados é em suma um dos aspectos mais importantes da programação. O Dart possui as seguintes estruturas para controle de fluxo de dados 
 
 
 <h2>If else</h2>
