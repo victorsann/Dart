@@ -810,3 +810,213 @@ O Dart é uma linguagem com escopo léxico, o que significa que o escopo das var
         }
       }
     }
+
+
+<h1>Declarações de Controle de Fluxo</h1>
+
+
+O controle do fluxo de dados é em suma um dois aspectos mais importantes da programação. O Dart possui as seguintes estruturas para controle de fluxo de dados 
+
+
+<h2>If else</h2>
+
+
+    if ( booleanExpression ) {
+      
+      ...
+      
+    } else if ( anotherBooleanExpression ) {
+      
+      ...
+
+
+    } else {
+      
+      ...
+
+    }
+
+
+<h2>Exepressões Condicionais</h2>
+
+
+Além dos expressões padrão if else o Dart conta com dois operadores lógicos que exercem a mesma função, substituindo-as em determinadas situiações
+
+
+<h3>condition ? expr1 : expr2</h3>
+
+
+Se condition tiver true como valor, o valor de expr1 é retornado, de outra forma, o valor de expr2 é retornado
+
+    var visibility = isPublic ? 'public' : 'private';
+
+
+<h3>expr1 ?? expr2</h3>
+
+
+O valor de expr1 é retornado caso ele seja diferente de null, de outra forma, o valor de expr2 é retornado
+
+    String playerName(String? name) => name ?? 'Guest';
+
+
+<h2>For Loops</h2>
+
+
+    var message = StringBuffer('Dart is fun');
+    for (var i = 0; i < 5; i++) {
+      message.write('!');
+    }
+
+Os fechamentos dentro dos loops for do DART capturam o valor do índice, evitando uma armadilha comum encontrada no JavaScript. Por exemplo, considere:
+
+    var callbacks = [];
+    for (var i = 0; i < 2; i++) {
+      callbacks.add(() => print(i));
+    }
+    callbacks.forEach((c) => c());
+
+O output seria 0 e depois 1, como esperado. Em contraste, se o exemplo fosse feito em JavaScript, o retorno seria 2 e depois 2 
+
+
+<h3>For-in</h3>
+
+
+Se o objeto de interação for um iterable(como um List ou Set), e se não é preciso saber o contador de interação atual, é possível utilizar o for-in
+
+    for (var varName in iterable) {
+      
+      ...
+
+    } 
+
+
+<h2>While e do-while</h2>
+
+
+Um loop while avalia a condição antes do loop
+
+    while (booleanExpression) {
+
+      ...
+
+    }
+
+Um do-while avalia a condição depois do loop
+
+
+    do {
+      
+      ...
+
+    } while (booleanExpression);
+
+
+<h3>Break e continue</h3>
+
+
+O break é utilizado para quebrar um loop em execução quando o valor definido em uma condicional é encrontrado
+
+    while (true) {
+      if (shutDownRequested()) break;
+      processIncomingRequests();
+    }
+
+O continue é utilizado para pular para o próximo loop quando o valor definido em uma condicional é encrontrado
+
+    for (int i = 0; i < candidates.length; i++) {
+      var candidate = candidates[i];
+      if (candidate.yearsExperience < 5) {
+        continue;
+      }
+      candidate.interview();
+
+
+<h2>Switch-case</h2>
+
+
+O Switch no Dart compara integer, string ou constantes de tempo de compilação usando o operador de igualdade(==). Todos os objetos comparados devem ser instâncias da mesma classe(e não de qualquer um de seus subtipos), e a classe não pode sobrepor o operador. 
+
+Todas as clausulas case non-empty têm como regra terminar com um break. Outros meios válidos para termiar um non-empty case é usando o continue, o throw ou um return
+
+Caso nenhum case combine com o valor de comparação, executa-se uma clausula default:
+
+    var command = 'OPEN';
+    switch (command) {
+      case 'CLOSED':
+        executeClosed();
+        break;
+      case 'PENDING':
+        executePending();
+        break;
+      case 'APPROVED':
+        executeApproved();
+        break;
+      case 'DENIED':
+        executeDenied();
+        break;
+      case 'OPEN':
+        executeOpen();
+        break;
+      default:
+        executeUnknown();
+    }
+
+
+<h2>Try-Catch</h2>
+
+
+O Catch captura uma uma execeção, impedindo essa exceção de se propagar,a menos que ela seja relançada. Capturar essa exceção permite que ela seja tratada
+
+    try {
+      
+      ...
+
+    } on Exception {
+     
+      ...
+     
+    }
+
+Para tratar um código que pode lançar mais de um tipo de exceção, é possível especificar multiplas clausulas catch. A primeira clausula que combinar com o tipo de objeto lançado trata a exceção. Se a clausula catch não especificar um tipo ela pode tratar qualquer objeto lançado
+
+    try {
+      
+      ...
+
+    } on Exception {
+
+      // Uma exceção expecífica
+
+      ...
+
+    } on Exception catch (e) {
+
+      // Qualque outra exceção
+
+      print(e);
+
+    } catch (e) {
+
+      // Clausula de tipo não especificado, trata todos
+
+      print(e);
+
+    }
+
+
+<h3>Finally</h3>
+
+
+Para garantir que o trecho de código será executado mesmo se uma exceção for lançada, usa-se a clausula finally. Se a exceção não combinar com a nenhum dos cases, a exceção é propagada depois que a clausula finilly for executada
+
+    try {
+      
+      ...
+
+    } finally {
+
+      // Sempre ocorre, mesmo se uma exceção for lançada
+      
+      ...
+
+    }
