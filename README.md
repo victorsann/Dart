@@ -728,7 +728,7 @@ Named Parameters são opcionais a não ser que sejam definidos como required. Ab
     functionName(paramName: value, paramName: value);
 
 
-Ao definir uma função que recebe parâmetro use-se {param1, param2, ...}
+Ao definir uma função que recebe parâmetros use-se {param1, param2, ...}
 
 
     void functionName({bool? bold, bool? hidden}) {
@@ -753,4 +753,55 @@ Todas as aplicações devem conter a já mencionada função de alto-nível do t
 
     void main() {
       print('Hello, World!');
+    }
+
+
+<h3>Funções Anônimas</h3>
+
+
+Boa parte das funções são definidas como named, ou nomeadas, como a própria main(). Uma froma alternativa de criação de funções é omitindo seu nome ou identificador, sendo assim chamada de anonymous function, lambda ou closure. 
+
+    ([[Type] param1[, …]]) {
+
+      ...;
+
+    };
+
+O exemplo abaixo define uma função anônima com um parâmetro de tipo anônimo. A funçãoo, invocada para cada item da lista, printa uma string incluindo o valor no index especificado
+
+
+    const list = ['apples', 'bananas', 'oranges'];
+    list.forEach((item) {
+      print('${list.indexOf(item)}: $item');
+    });
+
+    //Output:
+
+    0: apples
+    1: bananas
+    2: oranges
+
+
+<h3>Lexical scope</h3>
+
+
+O Dart é uma linguagem com escopo léxico, o que significa que o escopo das variáveis é determinado estaticamente, seguindo o layout do código escrito. Basicamente, as variáveis declaradas anteriormente, ou dentro dentro das chaves de uma estrutura de código, são definidas como parte do escopo
+
+    bool topLevel = true;
+    
+    void main() {
+      var insideMain = true;
+    
+      void myFunction() {
+        var insideFunction = true;
+    
+        void nestedFunction() {
+          var insideNestedFunction = true;
+    
+          assert(topLevel);
+          assert(insideMain);
+          assert(insideFunction);
+          assert(insideNestedFunction);
+        }
+      }
     }
