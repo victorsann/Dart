@@ -841,7 +841,7 @@ O controle do fluxo de dados é em suma um dois aspectos mais importantes da pro
 <h2>Exepressões Condicionais</h2>
 
 
-Além dos expressões padrão if else o Dart conta com dois operadores lógicos que exercem a mesma função, substituindo-as em determinadas situiações
+Além dos expressões padrão if else o Dart conta com dois operadores lógicos que exercem a mesma função, substituindo-as em determinadas situações
 
 
 <h3>condition ? expr1 : expr2</h3>
@@ -868,7 +868,7 @@ O valor de expr1 é retornado caso ele seja diferente de null, de outra forma, o
       message.write('!');
     }
 
-Os fechamentos dentro dos loops for do DART capturam o valor do índice, evitando uma armadilha comum encontrada no JavaScript. Por exemplo, considere:
+Os fechamentos dentro dos loops for do DART capturam o valor do índice, evitando uma armadilha comum encontrada no JavaScript.
 
     var callbacks = [];
     for (var i = 0; i < 2; i++) {
@@ -918,16 +918,20 @@ Um do-while avalia a condição depois do loop
 O break é utilizado para quebrar um loop em execução quando o valor definido em uma condicional é encrontrado
 
     while (true) {
-      if (shutDownRequested()) break;
-      processIncomingRequests();
+      if (booleanExpression) break;
+      
+      ...
+
     }
 
 O continue é utilizado para pular para o próximo loop quando o valor definido em uma condicional é encrontrado
 
     for (int i = 0; i < candidates.length; i++) {
       var candidate = candidates[i];
-      if (candidate.yearsExperience < 5) {
+      if (booleanExpression) {
+
         continue;
+
       }
       candidate.interview();
 
@@ -966,7 +970,7 @@ Caso nenhum case combine com o valor de comparação, executa-se uma clausula de
 <h2>Try-Catch</h2>
 
 
-O Catch captura uma uma execeção, impedindo essa exceção de se propagar,a menos que ela seja relançada. Capturar essa exceção permite que ela seja tratada
+O Catch captura uma uma exceção, impedindo essa exceção de se propagar,a menos que ela seja relançada. Capturar essa exceção permite que ela seja tratada
 
     try {
       
