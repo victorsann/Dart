@@ -812,7 +812,8 @@ O Dart é uma linguagem com escopo léxico, o que significa que o escopo das var
     }
 
 
-<h1>Declarações de Controle de Fluxo</h1>
+
+<h2>Declarações de Controle de Fluxo</h2>
 
 
 O controle do fluxo de dados é em suma um dois aspectos mais importantes da programação. O Dart possui as seguintes estruturas para controle de fluxo de dados 
