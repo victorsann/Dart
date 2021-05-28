@@ -230,6 +230,13 @@ O tipo dynamic define a aceitação de todos os demais tipos a uma variável, da
     print(idade); // 22 anos
 
 
+
+<div align="center">
+  <h1>Unidades de Armazenamento</h1>
+</div>
+
+
+
 <h2>Variáveis</h2>
 
 
@@ -265,11 +272,6 @@ A definição do tipo dessa variável é inferida pelo valor que ela carrega, se
 
     num pi = 3;
     pi = 3.14;
-
-
-<div align="center">
-  <h1>Unidades de Armazenamento</h1>
-</div>
 
 
 <h2>Variáveis não Iniciadas</h2>
