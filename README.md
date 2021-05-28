@@ -230,203 +230,6 @@ O tipo dynamic define a aceitação de todos os demais tipos a uma variável, da
     print(idade); // 22 anos
 
 
-
-<div align="center">
-  <h1>Unidades de Armazenamento</h1>
-</div>
-
-
-
-<h2>Variáveis</h2>
-
-
-Assim como em qualquer linguagem de programação, as variáveis em Dart são uma unidade de armazenamento e de referência de dados, tendo aqui algumas características importantes a serem mencionadas
-
-
-<h2>Declarando Variáveis</h2>
-
-
-A variável a seguir é inicializada com a palavra-chave var, reservada para essa função, um identificador e um valor inicial. Esta comtém uma referência ao valor que carrega
-
-    var data = 'Dart';
-
-A definição do tipo dessa variável é inferida pelo valor que ela carrega, sendo nesse caso um string. Por possuir uma tipagem forte, o Dart permite a definição de tipos de forma implícita e explícita. Sendo a variável acima um exemplo da tipagem explícita. A seguir estão alguns exemplos de variáveis com um tipo pré definido:
-
-    // O tipo Object não possui tipagem restrita, aceitando qualquer tipo
-
-    Object data = 'Dart';
-
-    // String
-
-    String data = 'Dart';
-
-    // Double
-
-    Double data = 1.78;
-
-    // Int
-
-    Int data = 1;
-
-    // O tipo num define que a variável aceita qualquer valor numérico, seja int ou double
-
-    num pi = 3;
-    pi = 3.14;
-
-
-<h2>Variáveis não Iniciadas</h2>
-
-
-Uma variável não iniciada é definida por uma unidade de armazenamento e referência cujo espaço na memória não foi ocupado no momendo da declaração, sendo possível oculpar este valor posteriormente
-
-    int empty;
-
-    empty = 1938;
-
-
-<h2>Variáveis Late</h2>
-
-
-O Dart possui, desde a versão 2.12, o modificador Late, que é usado em dois casos: 
-
-- Declaração de variáveis non-nullable que são iniciadas após sua delcaração;
-- Lazily initializing de uma variável;
-
-Normalmente o controle de análise de fluxo do Dart detecta quando uma variável é definida com valor non-nullable antes de ser utilizada, mas esse processo nem sempre é eficaz. Isso noramalmente ocorre com variáveis de alto nível e vaiáveis instanciadas.
-
-Caso o desenvolvedor esteja seguro de que a variável foi definida antes de ser usada, tendo a discordância do Dart, é possível corrigir o erro definindo a variável como late. Exemplo:
-
-    late String description;
-    
-    void main() {
-      description = 'Feijoada!';
-      print(description);
-    }
-
-
-<h2>Final e const</h2>
-
-
-Definir um valor como fixo ou constante demanda o uso da palavra chave final ou const, dando à unidade de armazenamento e referência a característica de imutabilidade do seu valor em tempo de compilação
-
-    // Sem definição de tipo
-
-    final name = 'Bob';
-
-    // Com definição de tipo
-
-    final String nickname = 'Bobby';
-
-
-<h2>List</h2>
-
-
-Um array, vetor ou variável composta em Dart é definido como uma lista de objetos, portanto, são normalmente chamadas de List
-
-    var list = [1, 2, 3];
-
-Uma outra definição para uma List é uma coleção indexável de objetos com um lenght, cujos principais tipos são:
-
-- Lists de Comprimentos Fixos;
-- Lists de Comprimento Cultivaveis ou de Tamanho não Fixo;
-
-<!-- Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o tipos de list:
-
-
-<h3>Constructors</h3>
-
-
-Estruturas de criação de um List com diferentes restrições
-
-|        Constructor                                      |                                   Descrição                                     |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------- |
-|  List[ type length ]                                    |  Cria um List de comprimento definido                                           | 
-|  List.empty()                                           |  Cria uma nova lista vazia de tamnho fixo                                       |
-|  List.filled( type length value )                       |  Cria um List de tamanho fixo com comprimento definido e preenche cada posição  |
-|  List.from( iterables elements )                        |  Cria um List de tamanho cultivável contendo todos os elements                  |
-|  List.generate( type length, E generator(type index) )  |  Gera uma lista de tamanho cultivável com valores                               |
-|  List.of( iterable <E> elements )                       |  Cria um List de tamanho cultivável a partir de elements                        |
-|  List.unmodifiable( iterable elements )                 |  Cria um List inalterável contendo todos os elements                            |
-
-
-<h3>Proprieties</h3>
-
-
-Atributos de consulta dos lists
-
-|       Proprieties       |    Valor de Retorno    |                                   Descrição                                      |
-| ----------------------  | ---------------------- | -------------------------------------------------------------------------------- |
-|  .first                 |  E                     |  Retorna o primeiro elemento                                                     | 
-|  .hashCode              |  int                   |  Retorna um intenger que representa o código hash para o objeto list em questão  |
-|  .isEmpty               |  bool                  |  Retorna um boolean true se não houver elementos nesta conllection               |
-|  .isNotEmpty            |  bool                  |  Retorna um boolean true se houver amenos um elemento do collection              |
-|  .iterator              |  iterator              |  Retorna um novo Iterator que permite iterar os elementos do Iterable            |
-|  .last                  |  E                     |  Retorna o último elemento                                                       |
-|  .length                |  int                   |  Retorna um intenger que representa o número de objetos no List                  |
-|  .reversed              |  iterable<E>           |  Um Iterable do objeto List na ordem reversa                                     |
-|  .single                |  E                     |  Verifica se há apenas um elemento no Iterable e retorna esse elemento           |
- 
-
-<h3>Methods</h3>
-
-Métodos de execução de um List
-
-|         Methods         |                                    Descrição                                      |
-| ----------------------  |  -------------------------------------------------------------------------------- |
-|  add(value)             |   Adiciona um valor ao final do List, extendendo o tamanho em 1                   | 
-|                         |                                                                                   | -->
-
-
-<h2>Sets</h2>
-
-
-Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. Exemplos do Set type:
-    
-    //Set vazio
-
-    Set<String> names = {}; 
-    var names = <String>{};
-
-    //Set preenchido
-
-    var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
-
-<!-- Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o type Set:
-
-
-<h3>Constructors</h3>
-
-
-Estruturas de criação de um Set com diferentes restrições
-
-|        Constructor                                      |                                   Descrição                                     |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------- |
-|  Set()                                                  |  Cria um Set vazio                                                              | 
-|  Set.from(Iterable elements)                            |  Cria um Set que contém todos os elements                                       |
- -->
-
-
-<h2>Maps</h2>
-
-
-Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo, não sendo possível repetir as chaves. O tipo Maps também possui métodos e atributos relacionados a edição, atribuição e exclusão das chaves e seus valores
-
-    var gifts = {
-
-    // Chave:   Valor
-
-      'first': 'partridge',
-      'second': 'turtledoves',
-      'fifth': 'golden rings'
-    };
-    
-    var nobleGases = {
-      2: 'helium',
-      10: 'neon',
-      18: 'argon',
-    };
-
-
 <h2>Operadores Aritméticos</h2>
 
 
@@ -679,6 +482,201 @@ Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao val
       }
 
 O operador de conjunção, também chamado de AND lógico define que o resultado de uma operação como true se ambos os operandos forem verdadeiros
+
+
+<div align="center">
+  <h1>Unidades de Armazenamento</h1>
+</div>
+
+
+<h2>Variáveis</h2>
+
+
+Assim como em qualquer linguagem de programação, as variáveis em Dart são uma unidade de armazenamento e de referência de dados, tendo aqui algumas características importantes a serem mencionadas
+
+
+<h2>Declarando Variáveis</h2>
+
+
+A variável a seguir é inicializada com a palavra-chave var, reservada para essa função, um identificador e um valor inicial. Esta comtém uma referência ao valor que carrega
+
+    var data = 'Dart';
+
+A definição do tipo dessa variável é inferida pelo valor que ela carrega, sendo nesse caso um string. Por possuir uma tipagem forte, o Dart permite a definição de tipos de forma implícita e explícita. Sendo a variável acima um exemplo da tipagem explícita. A seguir estão alguns exemplos de variáveis com um tipo pré definido:
+
+    // O tipo Object não possui tipagem restrita, aceitando qualquer tipo
+
+    Object data = 'Dart';
+
+    // String
+
+    String data = 'Dart';
+
+    // Double
+
+    Double data = 1.78;
+
+    // Int
+
+    Int data = 1;
+
+    // O tipo num define que a variável aceita qualquer valor numérico, seja int ou double
+
+    num pi = 3;
+    pi = 3.14;
+
+
+<h2>Variáveis não Iniciadas</h2>
+
+
+Uma variável não iniciada é definida por uma unidade de armazenamento e referência cujo espaço na memória não foi ocupado no momendo da declaração, sendo possível oculpar este valor posteriormente
+
+    int empty;
+
+    empty = 1938;
+
+
+<h2>Variáveis Late</h2>
+
+
+O Dart possui, desde a versão 2.12, o modificador Late, que é usado em dois casos: 
+
+- Declaração de variáveis non-nullable que são iniciadas após sua delcaração;
+- Lazily initializing de uma variável;
+
+Normalmente o controle de análise de fluxo do Dart detecta quando uma variável é definida com valor non-nullable antes de ser utilizada, mas esse processo nem sempre é eficaz. Isso noramalmente ocorre com variáveis de alto nível e vaiáveis instanciadas.
+
+Caso o desenvolvedor esteja seguro de que a variável foi definida antes de ser usada, tendo a discordância do Dart, é possível corrigir o erro definindo a variável como late. Exemplo:
+
+    late String description;
+    
+    void main() {
+      description = 'Feijoada!';
+      print(description);
+    }
+
+
+<h2>Final e const</h2>
+
+
+Definir um valor como fixo ou constante demanda o uso da palavra chave final ou const, dando à unidade de armazenamento e referência a característica de imutabilidade do seu valor em tempo de compilação
+
+    // Sem definição de tipo
+
+    final name = 'Bob';
+
+    // Com definição de tipo
+
+    final String nickname = 'Bobby';
+
+
+<h2>List</h2>
+
+
+Um array, vetor ou variável composta em Dart é definido como uma lista de objetos, portanto, são normalmente chamadas de List
+
+    var list = [1, 2, 3];
+
+Uma outra definição para uma List é uma coleção indexável de objetos com um lenght, cujos principais tipos são:
+
+- Lists de Comprimentos Fixos;
+- Lists de Comprimento Cultivaveis ou de Tamanho não Fixo;
+
+<!-- Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o tipos de list:
+
+
+<h3>Constructors</h3>
+
+
+Estruturas de criação de um List com diferentes restrições
+
+|        Constructor                                      |                                   Descrição                                     |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------- |
+|  List[ type length ]                                    |  Cria um List de comprimento definido                                           | 
+|  List.empty()                                           |  Cria uma nova lista vazia de tamnho fixo                                       |
+|  List.filled( type length value )                       |  Cria um List de tamanho fixo com comprimento definido e preenche cada posição  |
+|  List.from( iterables elements )                        |  Cria um List de tamanho cultivável contendo todos os elements                  |
+|  List.generate( type length, E generator(type index) )  |  Gera uma lista de tamanho cultivável com valores                               |
+|  List.of( iterable <E> elements )                       |  Cria um List de tamanho cultivável a partir de elements                        |
+|  List.unmodifiable( iterable elements )                 |  Cria um List inalterável contendo todos os elements                            |
+
+
+<h3>Proprieties</h3>
+
+
+Atributos de consulta dos lists
+
+|       Proprieties       |    Valor de Retorno    |                                   Descrição                                      |
+| ----------------------  | ---------------------- | -------------------------------------------------------------------------------- |
+|  .first                 |  E                     |  Retorna o primeiro elemento                                                     | 
+|  .hashCode              |  int                   |  Retorna um intenger que representa o código hash para o objeto list em questão  |
+|  .isEmpty               |  bool                  |  Retorna um boolean true se não houver elementos nesta conllection               |
+|  .isNotEmpty            |  bool                  |  Retorna um boolean true se houver amenos um elemento do collection              |
+|  .iterator              |  iterator              |  Retorna um novo Iterator que permite iterar os elementos do Iterable            |
+|  .last                  |  E                     |  Retorna o último elemento                                                       |
+|  .length                |  int                   |  Retorna um intenger que representa o número de objetos no List                  |
+|  .reversed              |  iterable<E>           |  Um Iterable do objeto List na ordem reversa                                     |
+|  .single                |  E                     |  Verifica se há apenas um elemento no Iterable e retorna esse elemento           |
+ 
+
+<h3>Methods</h3>
+
+Métodos de execução de um List
+
+|         Methods         |                                    Descrição                                      |
+| ----------------------  |  -------------------------------------------------------------------------------- |
+|  add(value)             |   Adiciona um valor ao final do List, extendendo o tamanho em 1                   | 
+|                         |                                                                                   | -->
+
+
+<h2>Sets</h2>
+
+
+Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. Exemplos do Set type:
+    
+    //Set vazio
+
+    Set<String> names = {}; 
+    var names = <String>{};
+
+    //Set preenchido
+
+    var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+
+<!-- Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o type Set:
+
+
+<h3>Constructors</h3>
+
+
+Estruturas de criação de um Set com diferentes restrições
+
+|        Constructor                                      |                                   Descrição                                     |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------- |
+|  Set()                                                  |  Cria um Set vazio                                                              | 
+|  Set.from(Iterable elements)                            |  Cria um Set que contém todos os elements                                       |
+ -->
+
+
+<h2>Maps</h2>
+
+
+Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo, não sendo possível repetir as chaves. O tipo Maps também possui métodos e atributos relacionados a edição, atribuição e exclusão das chaves e seus valores
+
+    var gifts = {
+
+    // Chave:   Valor
+
+      'first': 'partridge',
+      'second': 'turtledoves',
+      'fifth': 'golden rings'
+    };
+    
+    var nobleGases = {
+      2: 'helium',
+      10: 'neon',
+      18: 'argon',
+    };
 
 
 <h2>Functions</h2>
