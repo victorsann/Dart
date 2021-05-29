@@ -118,14 +118,14 @@ O Dart possui os seguintes tipos internos:
 
 int - Valores inteiros não maiores que 64 bits, dependendo da plataforma
 
-    var x = 1;
-    var hex = 0xDEADBEEF;
-    var exponent = 8e5;
+    int x = 1;
+    int hex = 0xDEADBEEF;
+    int exponent = 8e5;
 
 double - Valores decimais
 
-    var y = 1.1;
-    var exponents = 1.42e5;
+    double y = 1.1;
+    double exponents = 1.42e5;
 
 
 <h3>String</h3>
@@ -133,10 +133,25 @@ double - Valores decimais
 
 Uma string Dart (object String) contém uma sequência de unidades de código UTF-16
 
-    var s1 = 'Single quotes work well for string literals.';
-    var s2 = "Double quotes work just as well.";
-    var s3 = 'It\'s easy to escape the string delimiter.';
-    var s4 = "It's even easier to use the other delimiter.";
+    string s1 = 'Single quotes work well for string literals.';
+    string s2 = "Double quotes work just as well.";
+    string s3 = 'It\'s easy to escape the string delimiter.';
+    string s4 = "It's even easier to use the other delimiter.";
+
+
+<h3>Interpolação de String</h3> 
+
+
+A interpolação permite acessar valores identificados por unidades de armazenamento dentro de um string type
+
+    string greeting = "String";
+    string value = "Interpolation";
+    
+    print('${greeting}, ${person}!');
+    
+    //Output: String Interpolation
+
+ Obs: a interpolação é feita tanto entre aspas simples quanto entre aspas duplas
 
 
 <h3>Booleans</h3>

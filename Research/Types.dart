@@ -1,13 +1,18 @@
-var x = 1;
-var hex = 0xDEADBEEF;
-var exponent = 8e5;
-
-var s1 = 'Single quotes work well for string literals.';
-var s2 = "Double quotes work just as well.";
-var s3 = 'It\'s easy to escape the string delimiter.';
-var s4 = "It's even easier to use the other delimiter.";
+//int
+int integer = 1;
+//double
+double decimal = 5.56;
+//String
+String string = 'an string';
+//Boolean
+bool boolean = true;
+//Null
+int? aNullableint = null;
 
 void main() {
-  print(hex);
-  print(s1);
+  print('int: ${integer}');
+  print('double: ${decimal}');
+  print('string: ${string}');
+  print('bool: ${boolean}');
+  print('Null: ${aNullableint}');
 }
