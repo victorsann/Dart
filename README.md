@@ -159,19 +159,23 @@ A interpolação permite acessar valores identificados por unidades de armazenam
 
 Para representar valores bolean o Dart possui o marcador bool, com dois tipos definidos: true e false. Exemplos de definição de bool:
 
-    // Check for an empty string.
+    // Verifica string vazio
+
     var fullName = '';
     assert(fullName.isEmpty);
     
-    // Check for zero.
+    // Verifica valor 0
+
     var hitPoints = 0;
     assert(hitPoints <= 0);
     
-    // Check for null.
+    // Verifica valor null
+
     var unicorn;
     assert(unicorn == null);
     
-    // Check for NaN.
+    // Verifica NaN
+    
     var iMeantToDoThis = 0 / 0;
     assert(iMeantToDoThis.isNaN);
 
@@ -198,6 +202,7 @@ Onde XXXX é um valor hexadecimal de 4 dígitos. Por exemplo: \u{1f606}, que res
     Hi 🇩🇰
     The end of the string: ???
     The last character: 🇩🇰
+
 
 <h3>Symbols</h3>
 
