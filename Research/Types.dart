@@ -8,6 +8,8 @@ String string = 'an string';
 bool boolean = true;
 //Null
 int? aNullableint = null;
+//Dynamic
+dynamic aDynamicValue = 345;
 
 void main() {
   print('int: ${integer}');
@@ -15,4 +17,5 @@ void main() {
   print('string: ${string}');
   print('bool: ${boolean}');
   print('Null: ${aNullableint}');
+  print('dynamic: ${aDynamicValue = 'new value'}');
 }
