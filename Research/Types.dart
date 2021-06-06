@@ -12,10 +12,10 @@ int? aNullableint = null;
 dynamic aDynamicValue = 345;
 
 void main() {
-  print('int: ${integer}');
-  print('double: ${decimal}');
-  print('string: ${string}');
-  print('bool: ${boolean}');
-  print('Null: ${aNullableint}');
+  print('int: $integer');
+  print('double: $decimal');
+  print('string: $string');
+  print('bool: $boolean');
+  print('Null: $aNullableint');
   print('dynamic: ${aDynamicValue = 'new value'}');
 }
