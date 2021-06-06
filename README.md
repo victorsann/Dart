@@ -1060,43 +1060,42 @@ Para garantir que o trecho de código será executado mesmo se uma exceção for
 Por ser uma linguagem orintada a objetos, o Dart conta com todos os recurso padão do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. Sendo uma classe a matriz de criação de um objeto, pode-se dizer que os objetos possuem membros, sendo estes os métodos ou funções, e os dados ou atributos. A declaração e uso de uma classe em Dart se dá pelo modelo a seguir
 
 
-       Class ClasseName {
+    Class ClasseName {
+      
+     //Attributes
 
-        //Attributes
+     ...
 
-        ...
-
-        //Methods
-
-        ...
-
-
-       }
+     //Methods
+     
+     ...
+    
+    }
 
 
 Ao definir uma classe e seus membros é possível utilizá-la como a definição de tipo de um novo objeto. Com isso, os atributos e métodos da classe são herdados por esse objeto. Para gerar um objeto com base em determinada classe no Dart, se faz uso do identificador dessa classe seguido de um identificar para o objeto em si. E opcionalmente o uso da keyword <strong>new</strong>, sendo seguida do tipo recebido pelo objto, este sendo obrigatório
 
 
-     Class ClasseName {
+    Class ClasseName {
 
-        //Attributes
+       //Attributes
 
-        String identifire;
+       String identifire;
 
-        //Methods
+       //Methods
 
-        ...
+       ...
 
+      }
 
-       }
-
-     ClassName objectName = <new> ClassName();
-     objectName.identifire = 'Some data';
+    ClassName objectName = <new> ClassName();
+    objectName.identifire = 'Some data';
 
 
 Um padrão da orintação a objetos em muitas linguagens programação é a herança por instanciação, ou uso do (.) para acessar membros da classe, esta sendo usada como matriz de criação do objeto. Este recurso é usado acima de forma bastante simples, onde o objeto(objectName) herda o atributo(identifire) da classe(ClassName). O mesmo conceito poderia ser aplicado a um método ou subclasse, mas não a um constructor
 
 
 <h3>Usansdo Constructors</h3>
+
 
 A definição 
