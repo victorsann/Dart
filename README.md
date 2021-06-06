@@ -1111,13 +1111,13 @@ Sendo um membro da classe, um método define o comportamento dos objetos criados
 
        void classMethod() {
 
-        this.identifire = 'text';
+        this.anotherClassMethod();
 
        }
 
        void anotherClassMethod() {
 
-          this.classMethod();
+          this.identifire = 'text';
 
        }
 
