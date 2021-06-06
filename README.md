@@ -757,17 +757,17 @@ Uma função pode ter qualquer número de required positional parameters. Estes 
 
 Named Parameters são opcionais a não ser que sejam definidos como required. Abaixo há a definição da sintaxe de uma função com Named Functions
 
-    functionName(paramName: value, paramName: value);
-
-
-Ao definir uma função que recebe parâmetros use-se {param1, param2, ...}
-
-
-    void functionName({bool? bold, bool? hidden}) {
+    void functionName({type <paramName>, type <paramName>}) {
 
       ...    
         
     }
+
+
+Ao instânciar uma função que recebe parâmetros opcionais, usa-se o identificar do parâmetro e o valor a ser passado
+
+
+    functionName(paramName: value, paramName: value);
 
 
 <h3>Required Parameters</h3>
