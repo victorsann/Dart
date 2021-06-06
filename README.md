@@ -6,7 +6,9 @@
 <img src="https://img.shields.io/static/v1?label=dart&message=Language&color=blue&style=for-the-badge&logo=Dart"/>
 
 
-O Dart é uma linguagem de script, type safe, multiparadigma e orienta a objetos, desenvolvida e mantida pela Google. Utilizada em diversas stacks do desenvolvimento de aplicações, sendo mais associada ao Flutter, um de seus frameworks mais populares, e por consequência ao desenvolvimento mobile. Por ser multeplataformas, o Dart acompanha duas ferramentas, ou soluções, que possibilitam o seu uso: o Dart Native e o Dart Web. Tendo como principal recurso a máquina virtual responsável por compilar a linguagem no Just-in-Time(JIT) process, além do AOT(Ahead-of-Time), esta sendo responsável por converter o código escrito em Dart para machine code/código nativo, seja em Android ou IOS, ou para JavaScript, falando específicamente do Dart Web.
+O Dart é uma linguagem de script, type safe, multiparadigma e orienta a objetos, desenvolvida e mantida pela Google. Utilizada em diversas stacks do desenvolvimento de aplicações, sendo mais associada ao Flutter, um de seus frameworks mais populares, e por consequência ao desenvolvimento mobile.
+
+Por ser multeplataformas, o Dart acompanha duas ferramentas, ou soluções, que possibilitam o seu uso: o Dart Native e o Dart Web. Tendo como principal recurso a máquina virtual responsável por compilar a linguagem no Just-in-Time(JIT) process, além do AOT(Ahead-of-Time), esta sendo responsável por converter o código escrito em Dart para machine code/código nativo, seja em Android ou IOS, ou para JavaScript, falando específicamente do Dart Web.
 
 
 <h2>Preparando Ambiente</h1>
@@ -37,7 +39,7 @@ Instalar Dart-SDK
 <h2>App Dart-SDK</h1> 
 
 
-A partir deste ponto é possível utilizar os comandos Chocolatey para executar uma aplicação Dart-SDK. Acesse um diretório desejado através do cmd e execute:
+A partir deste ponto, é possível utilizar os comandos Chocolatey para executar uma aplicação Dart-SDK. Sendo assim, acesse um diretório desejado através do cmd e execute:
 
     dart create -t console-full cli
 
@@ -45,14 +47,14 @@ A partir deste ponto é possível utilizar os comandos Chocolatey para executar 
 <h2>Extensão Dart</h2>
 
 
-Antes de executar o app criado, é importante ter instalado um editor de código, sendo o vscode o mais recomendado, e a extenção da linguagem utilizada:
+Antes de executar o app criado, é importante ter instalado um editor de código(sendo o vscode o mais recomendado) e a extensão da linguagem utilizada:
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/61476935/120421361-844c9e80-c33c-11eb-9507-c10fa62f84f7.png">
 </div>
 
 
-Com os pacotes e o ambiente devidamente definidos e intalados, execute a comando a seguir para rodar a aplicação:
+Com os pacotes e o ambiente devidamente definidos e intalados, execute os comandos a seguir para rodar a aplicação:
 
     cd cli
     dart run
@@ -87,7 +89,7 @@ Uma forma prática de entender a estrutura mais básica de uma linguagem de prog
 
 Alguns pontos devem ser matidos em mente no processo de aprendizado do Dart, eles são:
 
-<!-- <ul>
+<ul>
  <li>Tudo o que pode ser acoplado a uma variável é um objeto, e todo objeto é uma instância de uma classe, mesmo números, funções e null são objetos;</li>
 
  <li>Apesar de ser fortemente tipada, a definição de tipos é opcional no Dart, já que a linguagem pode inferir tipos a partir dos dados recebidos;</li>
@@ -104,7 +106,7 @@ Alguns pontos devem ser matidos em mente no processo de aprendizado do Dart, ele
 
  <li>Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos;</li>
 
-</ul> -->
+</ul>
 
 
 <h2>Built-in Types</h2>
