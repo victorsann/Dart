@@ -1098,20 +1098,20 @@ Um padrão da orintação a objetos em muitas linguagens programação é a hera
 <h3>Métodos de Uma Classe</h3>
 
 
-Sendo um membro da classe, um método define o comportamento dos objetos criados a partir dela, ou mais específicamente dos dados correspondentes aos atributos desses objetos. Como já foi dito, a instanciação de um método pode ser feita com o uso do (.), mas dentro da classe um método só pode ser instanciado se este estiver dentro do escopo da classe, sendo precedido da keyword this. A keyword this define que um membro da própria classe é quem está sofrendo a instância 
+Sendo um membro da classe, um método define o comportamento dos objetos criados a partir dela, ou mais específicamente dos dados correspondentes aos atributos desses objetos. Como já foi dito, a instanciação de um método pode ser feita com o uso do (.), mas dentro da classe um método só pode ser instanciado se este estiver dentro do escopo da classe, sendo precedido da keyword this. A keyword this define que um membro da própria classe é quem está sofrendo a instância, também se aplicando a atributos
 
 
     Class ClasseName {
 
        //Attributes
 
-       ...
+       String identifire;
 
        //Methods
 
        void classMethod() {
 
-         ...
+        this.identifire = 'text';
 
        }
 
@@ -1120,11 +1120,11 @@ Sendo um membro da classe, um método define o comportamento dos objetos criados
           this.classMethod();
 
        }
-       
+
       }
 
 
-<h3>Usansdo Constructors</h3>
+<h3>Usando Constructors</h3>
 
 
 A definição 
