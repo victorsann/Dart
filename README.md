@@ -90,9 +90,9 @@ Uma forma prática de entender a estrutura mais básica de uma linguagem de prog
 Alguns pontos devem ser matidos em mente no processo de aprendizado do Dart, eles são:
 
 
-- Tudo o que pode ser acoplado a uma variável é um objeto, e todo objeto é uma instância de uma classe, mesmo números, funções e null são objetos;
+<!-- - Tudo o que pode ser acoplado a uma variável é um objeto, e todo objeto é uma instância de uma classe, mesmo números, funções e null são objetos;
 
-<!-- - Apesar de ser fortemente tipada, a definição de tipos é opcional no Dart, já que a linguagem pode inferir tipos a partir dos dados recebidos;
+- Apesar de ser fortemente tipada, a definição de tipos é opcional no Dart, já que a linguagem pode inferir tipos a partir dos dados recebidos;
 
 - É possível tornar uma variável nullable usando o marcador (?) no fim da sua definição de tipo. O oposto disso é definir o marcador (!). Por exemplo: int? (integers ou nullable)  /  int x = nullableButNotNullInt!;
 
@@ -104,7 +104,7 @@ Alguns pontos devem ser matidos em mente no processo de aprendizado do Dart, ele
 
 - Diferente da linguagem Java, o Dart não possui as palavras-chave public, protected e private. Se um identificador inicia com uma underline(_), ele passa a ser private;
 
-- Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos; -->
+- Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos; --> 
 
 
 <h2>Built-in Types</h2>
@@ -113,7 +113,7 @@ Alguns pontos devem ser matidos em mente no processo de aprendizado do Dart, ele
 O Dart possui os seguintes tipos internos:
 
 
-<h3>Numbers</h3>
+<h3>Number</h3>
 
 
 int - Valores inteiros não maiores que 64 bits, dependendo da plataforma
@@ -157,14 +157,14 @@ A interpolação permite acessar valores identificados por unidades de armazenam
 <h3>Booleans</h3>
 
 
-Para representar valores bolean o Dart possui o marcador bool, com dois tipos definidos: true e false. Exemplos de definição de bool:
+Para representar valores boolean o Dart possui o marcador bool, com dois tipos definidos: true e false. Exemplos de definição de um bool:
 
     // Verifica string vazio
 
     var fullName = '';
     assert(fullName.isEmpty);
     
-    // Verifica valor 0
+    // Verifica valor menor ou igual a 0
 
     var hitPoints = 0;
     assert(hitPoints <= 0);
@@ -183,7 +183,7 @@ Para representar valores bolean o Dart possui o marcador bool, com dois tipos de
 <h3>Runes</h3>
 
 
-Em Dart as Runes expõem o código unicode de uma string. O unicode define um valor numerico único para cada letra, dígito e símbolo usado em todo o sistema de escrita. Um unicode é normalmente representado da seguinte forma:
+Em Dart as Runes expõem o código unicode de uma string. O unicode define um valor numérico único para cada letra, dígito e símbolo usado em todo o sistema de escrita. Um unicode é normalmente representado da seguinte forma:
 
     \uXXXX
 
@@ -294,7 +294,7 @@ O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
     assert(5 / 2 == 2.5); // Resulta em um double
 
 
-<h3>Divisão ~/ </h3>
+<h3>Divisão Inteira ~/ </h3>
 
 
     //Retorna um integer
@@ -312,7 +312,8 @@ O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
 
 <h2>Incremento</h2>
 
-O operador de incremento incrementa seu operando em 1. O operador de incremento é suportado em duas formas: o operador de incremento pós-fixado, x++, e o operador de incremento de pré-fixo, ++x.
+
+O operador de incremento incrementa seu operando em 1. O operador de incremento é suportado em duas formas: 
 
 
 <h3>Pré Fixado ++X</h3>
@@ -342,7 +343,7 @@ O resultado de x ++ é o valor de x antes da operação, como mostra o exemplo a
 <h2>Decremento</h2>
 
 
-O operador de decremento diminui seu operando em 1. O operador de decremento é suportado em duas formas: o operador de decremento pós-fixado, x--, e o operador de decremento de pré-fixo, --x.
+O operador de decremento diminui seu operando em 1. O operador de decremento é suportado em duas formas: 
 
 
 <h3>Pré Fixado --X</h3>
@@ -374,7 +375,7 @@ Relacionam operandos tendo como retorno um boolean, sendo true caso a operação
 <h3> Igualdade == </h3>
 
 
-Retorna true caso o valor numerico dos operandos seja igual
+Retorna true caso o valor numérico dos operandos seja igual
 
     assert(2 == 2); //output: true
 
@@ -382,7 +383,7 @@ Retorna true caso o valor numerico dos operandos seja igual
 <h3> Diferença != </h3>
 
 
-Retorna true caso o valor numerico dos operandos for diferente 
+Retorna true caso o valor numérico dos operandos for diferente 
 
     assert(3 != 3); //output: false 
 
@@ -390,7 +391,7 @@ Retorna true caso o valor numerico dos operandos for diferente
 <h3> Maior que > </h3>
 
 
-Retorna true caso o valor numerico do operando da esquerda seja maior que o da direita
+Retorna true caso o valor numérico do operando da esquerda seja maior que o da direita
 
     assert(3 > 2); //output: true
 
@@ -398,7 +399,7 @@ Retorna true caso o valor numerico do operando da esquerda seja maior que o da d
 <h3> Menor que < </h3>
 
 
-Retorna true caso o valor numerico do operando da esquerda seja menor que o da direita
+Retorna true caso o valor numérico do operando da esquerda seja menor que o da direita
 
      assert(4 < 3); //output: false
 
@@ -406,7 +407,7 @@ Retorna true caso o valor numerico do operando da esquerda seja menor que o da d
 <h3> Maior ou igual >= </h3>
 
 
-Retorna true caso o valor numerico do operando da esquerda seja maior ou igual ao do operando da direita
+Retorna true caso o valor numérico do operando da esquerda seja maior ou igual ao do operando da direita
 
      assert(3 >= 3); //output: true
 
@@ -414,7 +415,7 @@ Retorna true caso o valor numerico do operando da esquerda seja maior ou igual a
 <h3>Menor ou igual <= </h3>
 
 
-Retorna true caso o valor numerico do operando da esquerda seja menor ou igual ao do operando da direita
+Retorna true caso o valor numérico do operando da esquerda seja menor ou igual ao do operando da direita
 
      assert(4 <= 3); //output: false
 
@@ -518,7 +519,7 @@ Assim como em qualquer linguagem de programação, as variáveis em Dart são um
 <h2>Declarando Variáveis</h2>
 
 
-A variável a seguir é inicializada com a palavra-chave var, reservada para essa função, um identificador e um valor inicial. Esta comtém uma referência ao valor que carrega
+A variável a seguir é inicializada com a palavra-chave var(reservada para essa função), um identificador e um valor inicial. Esta comtém uma referência ao valor que carrega
 
     var data = 'Dart';
 
@@ -595,9 +596,15 @@ Definir um valor como fixo ou constante demanda o uso da palavra chave final ou 
 
 Um array, vetor ou variável composta em Dart é definido como uma lista de objetos, portanto, são normalmente chamadas de List
 
+    // Sem definição de tipo
+
     var list = [1, 2, 3];
 
-Uma outra definição para uma List é uma coleção indexável de objetos com um lenght, cujos principais tipos são:
+    // Com definição de tipo
+
+    List numbers = [1, 2, 3];
+
+Uma outra definição para uma List é uma coleção indexável de objetos com um length, cujos principais tipos são:
 
 - Lists de Comprimentos Fixos;
 - Lists de Comprimento Cultivaveis ou de Tamanho não Fixo;
@@ -681,7 +688,7 @@ Estruturas de criação de um Set com diferentes restrições
 <h2>Map</h2>
 
 
-Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo, não sendo possível repetir as chaves. O tipo Maps também possui métodos e atributos relacionados a edição, atribuição e exclusão das chaves e seus valores
+Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo, não sendo possível repetir as chaves. O tipo Map também possui métodos e atributos relacionados a edição, atribuição e exclusão das chaves e seus valores
 
     var gifts = {
 
@@ -792,7 +799,7 @@ Boa parte das funções são definidas como named, ou nomeadas, como a própria 
 
     };
 
-O exemplo abaixo define uma função anônima com um parâmetro de tipo anônimo. A funçãoo, invocada para cada item da lista, printa uma string incluindo o valor no index especificado
+O exemplo abaixo define uma função anônima com um parâmetro de tipo anônimo. A função, invocada para cada item da lista, printa uma string incluindo o valor no index especificado
 
 
     const list = ['apples', 'bananas', 'oranges'];
@@ -810,7 +817,7 @@ O exemplo abaixo define uma função anônima com um parâmetro de tipo anônimo
 <h3>Lexical scope</h3>
 
 
-O Dart é uma linguagem com escopo léxico, o que significa que o escopo das variáveis é determinado estaticamente, seguindo o layout do código escrito. Basicamente, as variáveis declaradas anteriormente, ou dentro dentro das chaves de uma estrutura de código, são definidas como parte do escopo
+O Dart é uma linguagem com escopo léxico, o que significa que o escopo das variáveis é determinado estaticamente, seguindo o layout do código escrito. Basicamente, as variáveis declaradas anteriormente, ou dentro das chaves de uma estrutura de código, são definidas como parte do escopo
 
     bool topLevel = true;
     
@@ -836,10 +843,10 @@ O Dart é uma linguagem com escopo léxico, o que significa que o escopo das var
 <h2>Declarações de Controle de Fluxo</h2>
 
 
-O controle do fluxo de dados é em suma um dos aspectos mais importantes da programação. O Dart possui as seguintes estruturas para controle de fluxo de dados 
+O controle do fluxo de dados é, em suma, um dos aspectos mais importantes da programação. O Dart possui as seguintes estruturas para controle de fluxo de dados 
 
 
-<h2>If else</h2>
+<h2>If-else</h2>
 
 
     if ( booleanExpression ) {
@@ -861,7 +868,7 @@ O controle do fluxo de dados é em suma um dos aspectos mais importantes da prog
 <h2>Exepressões Condicionais</h2>
 
 
-Além dos expressões padrão if else o Dart conta com dois operadores lógicos que exercem a mesma função, substituindo-as em determinadas situações
+Além dos expressões padrão if-else o Dart conta com dois operadores lógicos que exercem a mesma função, substituindo-as em determinadas situações
 
 
 <h3>condition ? expr1 : expr2</h3>
@@ -990,7 +997,7 @@ Caso nenhum case combine com o valor de comparação, executa-se uma clausula de
 <h2>Try-Catch</h2>
 
 
-O Catch captura uma uma exceção, impedindo essa exceção de se propagar,a menos que ela seja relançada. Capturar essa exceção permite que ela seja tratada
+O Catch captura uma uma exceção, impedindo essa exceção de se propagar, a menos que ela seja relançada. Capturar essa exceção permite que ela seja tratada
 
     try {
       
