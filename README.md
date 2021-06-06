@@ -1057,7 +1057,7 @@ Para garantir que o trecho de código será executado mesmo se uma exceção for
 <h2>Classes</h2>
 
 
-Por ser uma linguagem orintada a objetos, o Dart conta com todos os recurso padão do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. Sendo uma classe a matriz de criação de um objeto, pode-se dizer que os objetos possuem membros, sendo estes os métodos ou funções, e os dados ou atributos. A declaração e uso de uma classe em Dart se dá pelo modelo a seguir
+Por ser uma linguagem orintada a objetos, o Dart conta com todos os recurso padão do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. Sendo uma classe a matriz de criação de um objeto, pode-se dizer que os objetos possuem membros, sendo estes os métodos ou funções, e os dados ou atributos. A declaração e uso de uma classe no Dart se dá pelo modelo a seguir
 
 
     Class ClasseName {
@@ -1093,6 +1093,35 @@ Ao definir uma classe e seus membros é possível utilizá-la como a definição
 
 
 Um padrão da orintação a objetos em muitas linguagens programação é a herança por instanciação, ou uso do (.) para acessar membros da classe, esta sendo usada como matriz de criação do objeto. Este recurso é usado acima de forma bastante simples, onde o objeto(objectName) herda o atributo(identifire) da classe(ClassName). O mesmo conceito poderia ser aplicado a um método ou subclasse, mas não a um constructor
+
+
+<h3>Métodos de Uma Classe</h3>
+
+
+Sendo um membro da classe, um método define o comportamento dos objetos criados a partir dela, ou mais específicamente dos dados correspondentes aos atributos desses objetos. Como já foi dito, a instanciação de um método pode ser feita com o uso do (.), mas dentro da classe um método só pode ser instanciado se este estiver dentro do escopo da classe, sendo precedido da keyword this. A keyword this define que um membro da própria classe é quem está sofrendo a instância 
+
+
+    Class ClasseName {
+
+       //Attributes
+
+       ...
+
+       //Methods
+
+       void classMethod() {
+
+         ...
+
+       }
+
+       void anotherClassMethod() {
+
+          this.classMethod();
+
+       }
+       
+      }
 
 
 <h3>Usansdo Constructors</h3>
