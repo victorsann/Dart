@@ -4,6 +4,7 @@ void main() {
   decremento();
   relacionais();
   teste();
+  logicos();
 }
 
 void aritmeticos() {
@@ -60,4 +61,23 @@ void teste() {
 
   print(teste is double);
   print(teste is! bool);
+}
+
+void logicos() {
+  var log = false;
+  var logTwo = true;
+
+  print('\nOperadores Lógicos\n');
+
+  if (!log) {
+    print('Negação');
+  }
+
+  if (!log || logTwo) {
+    print('Dijunção');
+  }
+
+  if (!log && logTwo) {
+    print('Conjunção');
+  }
 }
