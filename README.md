@@ -108,6 +108,7 @@ Alguns pontos devem ser matidos em mente no processo de aprendizado do Dart, ele
 
 </ul>
 
+<br>
 
 <h2>Built-in Types</h2>
 
