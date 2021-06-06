@@ -1198,7 +1198,7 @@ Um constructor é definido por inicializar um objeto no processo de criação do
 No exmplo acima o cronstructor recebe via parâmetro os valores correspondentes a senha e ao nome do usuário em uma tela de login. Aqui os valores só são passados dessa maneira com o propósito explicativo. Perceba que os valores citados são passados no momento em que o objeto é criado, ou seja, no momento em que um constructor é definido, a declaração de um objeto passa a referencia-lo
 
 
-<h3>Named Cosntructor</h3>
+<h3>Named Constructor</h3>
 
 
 Um named constructor é uma definição de identificador para o constructor de uma class, não possuindo diferenças diretas na sua função ou forma de execução. Exemplo:
