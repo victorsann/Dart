@@ -1060,7 +1060,7 @@ Para garantir que o trecho de código será executado mesmo se uma exceção for
 Por ser uma linguagem orintada a objetos, o Dart conta com todos os recurso padão do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. Sendo uma classe a matriz de criação de um objeto, pode-se dizer que os objetos possuem membros, sendo estes os métodos ou funções, e os dados ou atributos. A declaração e uso de uma classe no Dart se dá pelo modelo a seguir
 
 
-    Class ClasseName {
+    class ClasseName {
       
      //Attributes
 
@@ -1076,17 +1076,17 @@ Por ser uma linguagem orintada a objetos, o Dart conta com todos os recurso pad�
 Ao definir uma classe e seus membros é possível utilizá-la como a definição de tipo de um novo objeto. Com isso, os atributos e métodos da classe são herdados por esse objeto. Para gerar um objeto com base em determinada classe no Dart, se faz uso do identificador dessa classe seguido de um identificar para o objeto em si. E opcionalmente o uso da keyword <strong>new</strong>, sendo seguida do tipo recebido pelo objto, este sendo obrigatório
 
 
-    Class ClasseName {
+    class ClasseName {
 
-       //Attributes
+      //Attributes
 
-       String identifire;
+      String identifire;
 
-       //Methods
+      //Methods
 
-       ...
+      ...
 
-      }
+    }
 
     ClassName objectName = <new> ClassName();
     objectName.identifire = 'Some data';
@@ -1101,30 +1101,131 @@ Um padrão da orintação a objetos em muitas linguagens programação é a hera
 Sendo um membro da classe, um método define o comportamento dos objetos criados a partir dela, ou mais específicamente dos dados correspondentes aos atributos desses objetos. Como já foi dito, a instanciação de um método pode ser feita com o uso do (.), mas dentro da classe um método só pode ser instanciado se este estiver dentro do escopo da classe, sendo precedido da keyword this. A keyword this define que um membro da própria classe é quem está sofrendo a instância, também se aplicando a atributos
 
 
-    Class ClasseName {
+    class ClasseName {
 
-       //Attributes
+      //Attributes
 
-       String identifire;
+      String identifire;
 
-       //Methods
+      //Methods
 
-       void classMethod() {
+      void classMethod() {
 
-        this.anotherClassMethod();
-
-       }
-
-       void anotherClassMethod() {
-
-          this.identifire = 'text';
-
-       }
+      this.anotherClassMethod();
 
       }
+
+      void anotherClassMethod() {
+
+        this.identifire = 'text';
+
+      }
+
+    }
 
 
 <h3>Usando Constructors</h3>
 
 
-A definição 
+Um constructor é definido por inicializar um objeto no processo de criação do mesmo, definindo valores, carregando informações que possuem devida importancia, etc. Um constructor também é definido como o primeiro método a ser chamado quando uma classe é instanciada, não sendo obrigatoriamente necessário criá-lo, já que, por padrão, classes já possuem um constructor mesmo que ele não seja criado. Um constructor possui o ClasseName como seu identificador
+
+
+    class ClasseName {
+
+      //Attributes
+
+        ...
+
+      //Constructor
+
+      ClassName() {
+
+        ...
+
+      }
+
+      //Methods
+
+        ...
+
+    }
+
+    ClassName objectName = <new> ClassName();
+
+
+<h3>Exemplo de Uso de Um Constructors</h3>
+
+
+    class Usuarios {
+      // Atributos
+    
+      var usuario;
+      var password;
+    
+      // Constructor
+    
+      Usuarios(String usuario, String password) {
+        this.usuario = usuario;
+        this.password = password;
+      }
+
+      ------------------- ou -------------------
+    
+       Usuarios(this.usuario, this.password)
+
+      // Método
+    
+      authentication() {
+        if (this.usuario == usuario && this.password == password) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+    
+    void main() {
+      Usuarios auth = new Usuarios('Victor', 'rgwgwrgwrg');
+    
+      if (auth.authentication()) {
+        print('Usuário Autenticado');
+      } else {
+        print('Usuário não Autenticado');
+      }
+    }
+
+
+No exmplo acima o cronstructor recebe via parâmetro os valores correspondentes a senha e ao nome do usuário em uma tela de login. Aqui os valores só são passados dessa maneira com o propósito explicativo. Perceba que os valores citados são passados no momento em que o objeto é criado, ou seja, no momento em que um constructor é definido, a declaração de um objeto passa a referencia-lo
+
+
+<h3>Named Cosntructor</h3>
+
+
+Um named constructor é uma definição de identificador para o constructor de uma class, não possuindo diferenças diretas na sua função ou forma de execução. Exemplo:
+
+
+    class ClassName {
+
+      //Attributes
+
+        ...
+
+      //Constructor
+
+      ClassName.ConstructorName() {
+
+        ...
+
+      }
+
+      //Methods
+
+        ...
+
+    }
+
+
+<h2>Getter</h2>
+
+
+<h2>Setter</h2>
