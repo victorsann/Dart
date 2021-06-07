@@ -1250,7 +1250,7 @@ O Dart, assim como muitas linguagens de programação modernas possui um recurso
     }
 
 
-Com isso é possível acessar o atributo _attributeName por meio da variável get, que assume para si o papel de referenciar o atributo privado. E por sua vez, o set configura o que acontece com o atributo em questão, gerando um processo de validação para o mesmo. A seguir há uma exemplo mais detalhado:
+Com isso é possível acessar o atributo _attributeName por meio da variável get, que assume para si o papel de referenciar o atributo privado. E por sua vez, o set configura o que acontece com o atributo em questão, gerando um processo de validação para o mesmo. A seguir há um exemplo mais detalhado:
 
 
     class Banco {
@@ -1286,3 +1286,48 @@ Com isso é possível acessar o atributo _attributeName por meio da variável ge
 
 
 O exemplo acima usa os conceitos de Getter e Setter para simular um saque em uma conta bancária, tendo como private o valor a ser sacado. Este passa a ser acessível através de um get, sendo posteriormente configurado através de um set
+
+
+<h2>Herança</h2>
+
+
+A herança é um dos pilares da orientação a objetos. Desenvolver visando o reaproveitamento de código é extremamente recomendado no contexo da POO, e o Dart possui seu meio para tornar isso possível. Com isso, tendo em mente como as classes são criadas e cosumidas para criar objetos, a seguir veremos como classes filhas podem herdar membros de uma classes pais aplicando o conseito de herança
+
+
+<h3>Extends</h3>
+
+
+O extends cria um relação entre duas classes distintas, sendo uma chamada de classe pai(doadora), e outra chamada de filha(herdeira)
+
+
+    class Parent {
+    
+      ...
+    
+    }
+    
+    class Child extends Parent {
+    
+      ...
+      
+    }
+
+
+Isso estabelece que cada método ou atributo definido como parte das classe Parente será herdado pela classe Child. A seguir há um exemplo mais detalhado da herança entre classes:
+
+
+    class Parent {
+      String surname = 'Corleone';
+      String title = 'Don';
+    }
+    
+    class Child extends Parent {
+      String name = 'Michael';
+    }
+    
+    void main() {
+      Child child = new Child();
+      print('Sobrenome: ${child.surname}');
+      print('Título: ${child.title}');
+      print('Nome: ${child.name}');
+    }
