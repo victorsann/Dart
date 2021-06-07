@@ -1057,7 +1057,7 @@ Para garantir que o trecho de código será executado mesmo se uma exceção for
 <h2>Classes</h2>
 
 
-Por ser uma linguagem orintada a objetos, o Dart conta com todos os recurso padão do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. Sendo uma classe a matriz de criação de um objeto, pode-se dizer que os objetos possuem membros, sendo estes os métodos ou funções, e os dados ou atributos. A declaração e uso de uma classe no Dart se dá pelo modelo a seguir
+Por ser uma linguagem orintada a objetos, o Dart conta com todos os recursos padrões do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. Sendo uma classe a matriz de criação de um objeto, pode-se dizer que os objetos possuem membros, sendo estes os métodos ou funções, e os dados ou atributos que a classe permite. A declaração de uma classe no Dart se dá pelo modelo a seguir
 
 
     class ClasseName {
@@ -1073,7 +1073,7 @@ Por ser uma linguagem orintada a objetos, o Dart conta com todos os recurso pad�
     }
 
 
-Ao definir uma classe e seus membros é possível utilizá-la como a definição de tipo de um novo objeto. Com isso, os atributos e métodos da classe são herdados por esse objeto. Para gerar um objeto com base em determinada classe no Dart, se faz uso do identificador dessa classe seguido de um identificar para o objeto em si. E opcionalmente o uso da keyword <strong>new</strong>, sendo seguida do tipo recebido pelo objto, este sendo obrigatório
+Ao definir uma classe e seus membros, é possível utilizá-la como a definição de tipo de um novo objeto. Com isso, os atributos e métodos da classe são herdados por esse objeto. Para gerar um objeto com base em determinada classe no Dart, se faz uso do identificador dessa classe seguido de um identificar para o objeto em si. E, opcionalmente, usa-se a keyword <strong>new</strong>, sendo seguida do tipo recebido pelo objto, este sendo obrigatório
 
 
     class ClasseName {
@@ -1092,13 +1092,13 @@ Ao definir uma classe e seus membros é possível utilizá-la como a definição
     objectName.identifire = 'Some data';
 
 
-Um padrão da orintação a objetos em muitas linguagens programação é a herança por instanciação, ou uso do (.) para acessar membros da classe, esta sendo usada como matriz de criação do objeto. Este recurso é usado acima de forma bastante simples, onde o objeto(objectName) herda o atributo(identifire) da classe(ClassName). O mesmo conceito poderia ser aplicado a um método ou subclasse, mas não a um constructor
+Um padrão da orintação a objetos em muitas linguagens de programação é a herança por instanciação, ou uso do (.) para acessar membros da classe, esta sendo usada como matriz de criação do objeto. Este recurso é usado acima de forma bastante simples, onde o objeto(objectName) herda o atributo(identifire) da classe(ClassName). O mesmo conceito pode ser aplicado a um método ou subclasse, mas não a um constructor
 
 
-<h3>Métodos de Uma Classe</h3>
+<h3>Membros de Uma Classe</h3>
 
 
-Sendo um membro da classe, um método define o comportamento dos objetos criados a partir dela, ou mais específicamente dos dados correspondentes aos atributos desses objetos. Como já foi dito, a instanciação de um método pode ser feita com o uso do (.), mas dentro da classe um método só pode ser instanciado se este estiver dentro do escopo da classe, sendo precedido da keyword this. A keyword this define que um membro da própria classe é quem está sofrendo a instância, também se aplicando a atributos
+Os membros de uma classe são os já citados métodos e atributos, respectivamente responsáveis por definir o comportamento dos objetos criados e armazenar e referênciar os atributos dos mesmos, ou mais específicamente dos dados correspondentes aos atributos desses objetos. Estes possuem um nível de acesso distinto de métodos ou variáveis que não compêm o escopo de uma classe. Diferente do padrão de instanciação, dentro de uma classe um membro só pode ser instanciado se este estiver dentro do escopo, sendo precedido da keyword this. A keyword this define que um membro da própria classe é quem está sofrendo a instância
 
 
     class ClasseName {
@@ -1127,7 +1127,7 @@ Sendo um membro da classe, um método define o comportamento dos objetos criados
 <h3>Usando Constructors</h3>
 
 
-Um constructor é definido por inicializar um objeto no processo de criação do mesmo, definindo valores, carregando informações que possuem devida importancia, etc. Um constructor também é definido como o primeiro método a ser chamado quando uma classe é instanciada, não sendo obrigatoriamente necessário criá-lo, já que, por padrão, classes já possuem um constructor mesmo que ele não seja criado. Um constructor possui o ClasseName como seu identificador
+Um constructor é definido por inicializar um objeto no processo de criação do mesmo, definindo valores, carregando informações que possuem devida importancia, etc. Um constructor também é definido como o primeiro método a ser chamado quando uma classe é instanciada, não sendo obrigatoriamente necessário criá-lo, já que, por padrão, classes já possuem um constructor mesmo que ele não seja definido. Um constructor possui o ClasseName como seu identificador
 
 
     class ClasseName {
@@ -1195,7 +1195,7 @@ Um constructor é definido por inicializar um objeto no processo de criação do
     }
 
 
-No exmplo acima o cronstructor recebe via parâmetro os valores correspondentes a senha e ao nome do usuário em uma tela de login. Aqui os valores só são passados dessa maneira com o propósito explicativo. Perceba que os valores citados são passados no momento em que o objeto é criado, ou seja, no momento em que um constructor é definido, a declaração de um objeto passa a referencia-lo
+No exemplo acima o cronstructor recebe via parâmetro os valores correspondentes a senha e ao nome do usuário em uma tela de login. Aqui os valores só são passados dessa maneira com o propósito explicativo. Perceba que os valores citados são passados no momento em que o objeto é criado, ou seja, no momento em que um constructor é definido, a declaração de um objeto passa a referencia-lo e não mais á classe
 
 
 <h3>Named Constructor</h3>
@@ -1240,6 +1240,10 @@ O Dart, assim como muitas linguagens de programação modernas possui um recurso
       Type get attribute {
         return _attributeName;
       }
+      
+      ------------------ ou -------------------
+
+      Type get atribute => _attributeName;
 
       set attributeName(type attributeName) {
 
@@ -1291,13 +1295,13 @@ O exemplo acima usa os conceitos de Getter e Setter para simular um saque em uma
 <h2>Herança</h2>
 
 
-A herança é um dos pilares da orientação a objetos. Desenvolver visando o reaproveitamento de código é extremamente recomendado no contexo da POO, e o Dart possui seu meio para tornar isso possível. Com isso, tendo em mente como as classes são criadas e cosumidas para criar objetos, a seguir veremos como classes filhas podem herdar membros de uma classes pais aplicando o conseito de herança
+A herança é um dos pilares da orientação a objetos. Desenvolver visando o reaproveitamento de código é extremamente recomendado no contexo da POO, e o Dart possui seu meio para tornar isso possível. Com isso, tendo em mente como as classes são criadas e cosumidas para criar objetos, a seguir veremos como classes filhas podem herdar membros de classes pais aplicando o conseito de herança
 
 
 <h3>Extends</h3>
 
 
-O extends cria um relação entre duas classes distintas, sendo uma chamada de classe pai(doadora) ou SuperClasse, e outra chamada de filha(herdeira)
+O extends cria uma relação entre duas classes distintas, sendo uma chamada de classe pai(doadora) ou SuperClasse, e outra chamada de filha(herdeira)
 
 
     class SuperClasse {
@@ -1333,6 +1337,9 @@ Isso estabelece que cada método ou atributo definido como parte da SuperClasse 
     }
 
 
+Perceba que mesmo sendo uma classe herdeira, a classe Child possui um atributo próprio. Isso permite criar um maior nível de abstração e aproveitamento de um código já criado, não sendo necessário criar os mesmos atributos em classe relacionadas
+
+
 <h3>@override</h3>
 
 
@@ -1342,7 +1349,7 @@ O @override é um recurso ligado diretamente com classes e herança de métodos.
     class SuperClasse {
     
        void method() {
-         print('Somethisng');
+         print('Something');
        }
     
     }
@@ -1351,12 +1358,12 @@ O @override é um recurso ligado diretamente com classes e herança de métodos.
       
        @override
        void method() {
-         print('another thing');
+         print('Something new');
        }
     }
 
 
-Quando a classe filha for intanciada, o método herdade será sobrescrito pelo método precedido do @override. A seguir há um exemplo mais detalhado da @override de um método herdado:
+Quando a classe filha for intanciada, o método herdado será sobrescrito pelo método precedido do @override. A seguir há um exemplo mais detalhado da @override de um método herdado:
 
 
     class Food {
