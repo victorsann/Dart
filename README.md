@@ -1333,7 +1333,7 @@ Isso estabelece que cada método ou atributo definido como parte da SuperClasse 
     }
 
 
-<h2>@override</h2>
+<h3>@override</h3>
 
 
 O @override é um recurso ligado diretamente com classes e herança de métodos. Com o processo de desenvolvimento de um código, há uma série de problemas que surgem, como repetição de identificadores por exemplo, ou a redefinição de um método específico. O @override é responsável por sobrescrever um método, definindo uma nova função para o mesmo. Exemplo:
