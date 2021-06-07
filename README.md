@@ -1284,7 +1284,6 @@ Com isso é possível acessar o atributo _attributeName por meio da variável ge
     
     void main() {
       Banco conta = Banco();
-    
       conta.saque = 10;
     }
 
@@ -1336,6 +1335,12 @@ Isso estabelece que cada método ou atributo definido como parte da SuperClasse 
       print('Nome: ${child.name}');
     }
 
+    //OutPut:
+
+    Sobrenome: Corleone
+    Título: Don
+    Nome: Michael
+
 
 Perceba que mesmo sendo uma classe herdeira, a classe Child possui um atributo próprio. Isso permite criar um maior nível de abstração e aproveitamento de um código já criado, não sendo necessário criar os mesmos atributos em classe relacionadas
 
@@ -1367,19 +1372,90 @@ Quando a classe filha for intanciada, o método herdado será sobrescrito pelo m
 
 
     class Food {
-      String definition() {
-        return 'Something edible';
+      definition() {
+        print('Something edible');
       }
     }
     
     class Apple extends Food {
       @override
-      String definition() {
-        return 'A fruit';
+      definition() {
+        print('A fruit');
       }
     }
     
     void main() {
       Apple apple = new Apple();
-      print(apple.definition());
+      apple.definition();
     }
+    
+    void main() {
+      Apple apple = new Apple();
+      apple.definition();
+    }
+
+    //OutPut:
+
+    A fruit
+
+
+<h3>super.method()</h3>
+
+
+Em contraponto ao @override, o super é utilizado para tornar acessível um método sobrescrito de uma SuperClasse. Tendo o mesmo principio, porém, aplicado de forma invertida. Exemplo:
+
+
+    class SuperClasse {
+    
+       void method() {
+         print('Something');
+       }
+    
+    }
+    
+    class Child extends SuperClasse {
+      
+       @override
+       void method() {
+         super.method();
+         print('Something new');
+       }
+    }
+
+
+Um super deve ser declarado dentro de um membro da classe herdeira, específicamente em um método. A seguir há um exemplo mais detalhado do uso do super
+
+
+    class Food {
+      definition() {
+        print('Something edible');
+      }
+    }
+    
+    class Apple extends Food {
+      @override
+      definition() {
+        super.definition();
+        print('A fruit');
+      }
+    }
+    
+    class HotDog extends Food {
+      @override
+      definition() {
+        print('A fastfood');
+      }
+    }
+    
+    void main() {
+      Apple apple = new Apple();
+      apple.definition();
+      HotDog hotDog = new HotDog();
+      hotDog.definition();
+    }
+
+    //OutPut:
+
+    Something edible
+    A fruit
+    A fastfood
