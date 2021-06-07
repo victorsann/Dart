@@ -1300,7 +1300,7 @@ A herança é um dos pilares da orientação a objetos. Desenvolver visando o re
 <h3>Extends</h3>
 
 
-O extends cria uma relação entre duas classes distintas, sendo uma chamada de classe pai(doadora) ou SuperClasse, e outra chamada de filha(herdeira)
+O extends cria uma relação entre duas classes distintas, sendo uma chamada de classe SuperClasse(doadora), e outra chamada de subClasse(herdeira)
 
 
     class SuperClasse {
@@ -1309,14 +1309,14 @@ O extends cria uma relação entre duas classes distintas, sendo uma chamada de 
     
     }
     
-    class Child extends SuperClasse {
+    class SubClasse extends SuperClasse {
     
       ...
       
     }
 
 
-Isso estabelece que cada método ou atributo definido como parte da SuperClasse será herdado pela classe Child. A seguir há um exemplo mais detalhado da herança entre classes:
+Isso estabelece que cada método ou atributo definido como parte da SuperClasse será herdado pela subClasse. A seguir há um exemplo mais detalhado da herança entre classes:
 
 
     class SuperClasse {
@@ -1324,15 +1324,15 @@ Isso estabelece que cada método ou atributo definido como parte da SuperClasse 
       String title = 'Don';
     }
     
-    class Child extends SuperClasse {
+    class SubClasse extends SuperClasse {
       String name = 'Michael';
     }
     
     void main() {
-      Child child = new Child();
-      print('Sobrenome: ${child.surname}');
-      print('Título: ${child.title}');
-      print('Nome: ${child.name}');
+      SubClasse subClasse = new SubClasse();
+      print('Sobrenome: ${subClasse.surname}');
+      print('Título: ${subClasse.title}');
+      print('Nome: ${subClasse.name}');
     }
 
     //OutPut:
@@ -1342,7 +1342,7 @@ Isso estabelece que cada método ou atributo definido como parte da SuperClasse 
     Nome: Michael
 
 
-Perceba que mesmo sendo uma classe herdeira, a classe Child possui um atributo próprio. Isso permite criar um maior nível de abstração e aproveitamento de um código já criado, não sendo necessário criar os mesmos atributos em classe relacionadas
+Perceba que mesmo sendo uma classe herdeira, a subClasse possui um atributo próprio. Isso permite criar um maior nível de abstração e aproveitamento de um código já criado, não sendo necessário criar os mesmos atributos em classe relacionadas
 
 
 <h3>@override</h3>
@@ -1359,7 +1359,7 @@ O @override é um recurso ligado diretamente com classes e herança de métodos.
     
     }
     
-    class Child extends SuperClasse {
+    class SubClasse extends SuperClasse {
       
        @override
        void method() {
@@ -1368,7 +1368,7 @@ O @override é um recurso ligado diretamente com classes e herança de métodos.
     }
 
 
-Quando a classe filha for intanciada, o método herdado será sobrescrito pelo método precedido do @override. A seguir há um exemplo mais detalhado da @override de um método herdado:
+Quando a subClasse for intanciada, o método herdado será sobrescrito pelo método precedido do @override. A seguir há um exemplo mais detalhado da @override de um método herdado:
 
 
     class Food {
@@ -1402,7 +1402,7 @@ Quando a classe filha for intanciada, o método herdado será sobrescrito pelo m
 <h3>super.method()</h3>
 
 
-Em contraponto ao @override, o super é utilizado para tornar acessível um método sobrescrito de uma SuperClasse. Tendo o mesmo principio, porém, aplicado de forma invertida. Exemplo:
+Em contraponto ao @override, o super é utilizado para tornar acessível um método sobrescrito de uma SuperClasse. Tendo o mesmo princípio, porém, aplicado de forma invertida. Exemplo:
 
 
     class SuperClasse {
@@ -1413,7 +1413,7 @@ Em contraponto ao @override, o super é utilizado para tornar acessível um mét
     
     }
     
-    class Child extends SuperClasse {
+    class SubClasse extends SuperClasse {
       
        @override
        void method() {
@@ -1459,3 +1459,39 @@ Um super deve ser declarado dentro de um membro da classe herdeira, específicam
     Something edible
     A fruit
     A fastfood
+
+
+<h3>constructor() : super()</h3>
+
+
+O super também pode definir uma relação entre classes atráves dos constructors, definindo a passagem de dados de uma subClasse para uma SuperClasse. Exemplo:
+
+
+    class Pizza {
+      String sabor;
+    
+      Pizza(this.sabor);
+
+      definition() {
+        print(this.sabor);
+      }
+    }
+    
+    class Margherita extends Pizza {
+      String sabor;
+    
+      Margherita(this.sabor) : super(sabor);
+
+    }
+    
+    void main() {
+      Margherita margherita = new Margherita('Margherita');
+      margherita.definition();
+    }
+
+    //OutPut:
+
+    Margherita
+
+
+Isso se dá quando uma subClasse é instanciada, tendo um valor recebito em seu constructor, sendo necessário ter este mesmo valor na SuperClasse. No caso acima essa informação é o sabor da pizza criada

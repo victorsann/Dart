@@ -19,9 +19,34 @@ class HotDog extends Food {
   }
 }
 
+//Uso do Super em conjunto com um constructor
+
+class Pizza {
+  String sabor;
+
+  Pizza(this.sabor);
+  definition() {
+    print(this.sabor);
+  }
+}
+
+class Margherita extends Pizza {
+  String sabor;
+
+  Margherita(this.sabor) : super(sabor);
+
+  // @override
+  // definition() {
+  //   print('Margherita');
+  // }
+}
+
 void main() {
   Apple apple = new Apple();
   apple.definition();
   HotDog hotDog = new HotDog();
   hotDog.definition();
+
+  Margherita margherita = new Margherita('Margherita');
+  margherita.definition();
 }
