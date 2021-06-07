@@ -1233,15 +1233,15 @@ O Dart, assim como muitas linguagens de programação modernas possui um recurso
 
     class ClassName {
 
-      String _attributes // Atributo privado
+      String _attributeName // Atributo privado
     
       // Getter
 
-      Type get attributes {
-        return _attributes;
+      Type get attribute {
+        return _attributeName;
       }
 
-      set attributes(type attributes) {
+      set attributeName(type attributeName) {
 
             ...
 
@@ -1250,7 +1250,7 @@ O Dart, assim como muitas linguagens de programação modernas possui um recurso
     }
 
 
-Com isso é possível acessar o atributo _attributes por meio da variável get, que assume para si o papel de referenciar o atributo privado. E por sua vez, o set configura o que acontece com o atributo em questão, gerando um processo de validação para o mesmo. A seguir há uma exemplo mais detalhado:
+Com isso é possível acessar o atributo _attributeName por meio da variável get, que assume para si o papel de referenciar o atributo privado. E por sua vez, o set configura o que acontece com o atributo em questão, gerando um processo de validação para o mesmo. A seguir há uma exemplo mais detalhado:
 
 
     class Banco {
