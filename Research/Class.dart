@@ -27,7 +27,7 @@ class Usuarios {
 }
 
 void main() {
-  Usuarios auth = new Usuarios('Victor', 'rgwgwrgwrg');
+  Usuarios auth = new Usuarios('Victor', '123456');
 
   if (auth.authentication()) {
     print('Usuário Autenticado');

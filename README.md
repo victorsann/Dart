@@ -1185,7 +1185,7 @@ Um constructor é definido por inicializar um objeto no processo de criação do
     }
     
     void main() {
-      Usuarios auth = new Usuarios('Victor', 'rgwgwrgwrg');
+      Usuarios auth = new Usuarios('Victor', '123456');
     
       if (auth.authentication()) {
         print('Usuário Autenticado');
@@ -1201,7 +1201,7 @@ No exmplo acima o cronstructor recebe via parâmetro os valores correspondentes 
 <h3>Named Constructor</h3>
 
 
-Um named constructor é uma definição de identificador para o constructor de uma class, não possuindo diferenças diretas na sua função ou forma de execução. Exemplo:
+Um named constructor é uma definição de identificador para o constructor de uma class, não possuindo diferenças diretas na sua função ou forma de execução, normalmente utilizado quando uma classe precisa de multiplos constructors. Exemplo:
 
 
     class ClassName {
@@ -1225,7 +1225,64 @@ Um named constructor é uma definição de identificador para o constructor de u
     }
 
 
-<h2>Getter</h2>
+<h2>Getter e Setter</h2>
 
 
-<h2>Setter</h2>
+O Dart, assim como muitas linguagens de programação modernas possui um recurso de nivelamento de acesso, podendo restringir o contato entre partes do código, deixando o mesmo mais seguro. Uma dessas restrições é tornar um atributo privado, só permitindo seu acesso no escopo da classe que o contém. O getter e o setter executam respectivamente as funções de obter e configurar essas partes, permitindo seu acesso de forma segura
+
+
+    class ClassName {
+
+      String _attributes // Atributo privado
+    
+      // Getter
+
+      Type get attributes {
+        return _attributes;
+      }
+
+      set attributes(type attributes) {
+
+            ...
+
+      }
+
+    }
+
+
+Com isso é possível acessar o atrivuto _value por meio da variável get, que assume para si o papel de referenciar o atributo privado. E por sua vez, o set configura o que acontece com o atributo em questão, gerando um processo de validação para o mesmo. A seguir há uma exemplo mais detalhado:
+
+
+    class Banco {
+    double saldo = 100;
+    double _saque = 0;
+  
+    // Getter
+  
+    double get saque {
+      return _saque;
+    }
+  
+    // Setter
+  
+    set saque(double saque) {
+      if (saque <= 500 || saque < saldo) {
+        this.saldo = saldo - saque;
+        print('\n Valor sacado: $saque\n');
+        print(' -------------------\n');
+        print(' Saldo atual:  $saldo');
+      } else {
+        print('O valor máximo de saque é 500');
+      }
+     }
+
+    }
+    
+    void main() {
+      Banco conta = Banco();
+    
+      conta.saque = 10;
+    }
+
+
+O exemplo acima usa os conceitos de Getter e Setter para simular um saque em uma conta bancária, tendo como private o valor a ser sacado. Este passa a ser acessível através de um get, sendo posteriormente configurado através de um set
