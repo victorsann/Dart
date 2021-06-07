@@ -1297,31 +1297,31 @@ A herança é um dos pilares da orientação a objetos. Desenvolver visando o re
 <h3>Extends</h3>
 
 
-O extends cria um relação entre duas classes distintas, sendo uma chamada de classe pai(doadora), e outra chamada de filha(herdeira)
+O extends cria um relação entre duas classes distintas, sendo uma chamada de classe pai(doadora) ou SuperClasse, e outra chamada de filha(herdeira)
 
 
-    class Parent {
+    class SuperClasse {
     
       ...
     
     }
     
-    class Child extends Parent {
+    class Child extends SuperClasse {
     
       ...
       
     }
 
 
-Isso estabelece que cada método ou atributo definido como parte das classe Parente será herdado pela classe Child. A seguir há um exemplo mais detalhado da herança entre classes:
+Isso estabelece que cada método ou atributo definido como parte da SuperClasse será herdado pela classe Child. A seguir há um exemplo mais detalhado da herança entre classes:
 
 
-    class Parent {
+    class SuperClasse {
       String surname = 'Corleone';
       String title = 'Don';
     }
     
-    class Child extends Parent {
+    class Child extends SuperClasse {
       String name = 'Michael';
     }
     
@@ -1330,4 +1330,49 @@ Isso estabelece que cada método ou atributo definido como parte das classe Pare
       print('Sobrenome: ${child.surname}');
       print('Título: ${child.title}');
       print('Nome: ${child.name}');
+    }
+
+
+<h2>@override</h2>
+
+
+O @override é um recurso ligado diretamente com classes e herança de métodos. Com o processo de desenvolvimento de um código, há uma série de problemas que surgem, como repetição de identificadores por exemplo, ou a redefinição de um método específico. O @override é responsável por sobrescrever um método, definindo uma nova função para o mesmo. Exemplo:
+
+
+    class SuperClasse {
+    
+       void method() {
+         print('Somethisng');
+       }
+    
+    }
+    
+    class Child extends SuperClasse {
+      
+       @override
+       void method() {
+         print('another thing');
+       }
+    }
+
+
+Quando a classe filha for intanciada, o método herdade será sobrescrito pelo método precedido do @override. A seguir há um exemplo mais detalhado da @override de um método herdado:
+
+
+    class Food {
+      String definition() {
+        return 'Something edible';
+      }
+    }
+    
+    class Apple extends Food {
+      @override
+      String definition() {
+        return 'A fruit';
+      }
+    }
+    
+    void main() {
+      Apple apple = new Apple();
+      print(apple.definition());
     }
