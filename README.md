@@ -1787,4 +1787,4 @@ O mixin é um método de definição de acesso a recursos de uma classe de forma
     Cash
 
 
-O exemplo define dois tipos de clientes, um Premium e um Common. Por possuir mais privilégios, um cliente Premium possuiria acesso ao mixin Score, tendo acesso exclusivo ao método credit. O mixin é exetremamente importante no processo de declaração de relações e acesso a informação entre classes, tornando o código ainda mais seguro
+O exemplo define dois tipos de clientes, um Premium e um Common. Por possuir mais privilégios, um cliente Premium possuiria acesso ao mixin Score, tendo acesso exclusivo ao método credit. O mixin é extremamente importante no processo de declaração de relações e acesso a informação entre classes, tornando o código ainda mais seguro
