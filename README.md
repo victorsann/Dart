@@ -577,18 +577,20 @@ Caso o desenvolvedor esteja seguro de que a variável foi definida antes de ser 
     }
 
 
-<h2>Final e const</h2>
+<h2>Const</h2>
 
 
-Definir um valor como fixo ou constante demanda o uso da palavra chave final ou const, dando à unidade de armazenamento e referência a característica de imutabilidade do seu valor em tempo de compilação
+Definir um valor como fixo ou constante demanda o uso da palavra chave const, dando à unidade de armazenamento e referência a característica de imutabilidade do seu valor em tempo de compilação
 
     // Sem definição de tipo
 
-    final name = 'Bob';
+    const name = 'Bob';
 
     // Com definição de tipo
 
-    final String nickname = 'Bobby';
+    const String nickname = 'Bobby';
+
+
 
 
 <h2>List</h2>
@@ -1098,7 +1100,7 @@ Um padrão da orintação a objetos em muitas linguagens de programação é a h
 <h3>Membros de Uma Classe</h3>
 
 
-Os membros de uma classe são os já citados métodos e atributos, respectivamente responsáveis por definir o comportamento dos objetos criados e armazenar e referênciar os atributos dos mesmos, ou mais específicamente dos dados correspondentes aos atributos desses objetos. Estes possuem um nível de acesso distinto de métodos ou variáveis que não compêm o escopo de uma classe. Diferente do padrão de instanciação, dentro de uma classe um membro só pode ser instanciado se este estiver dentro do escopo, sendo precedido da keyword this. A keyword this define que um membro da própria classe é quem está sofrendo a instância
+Os membros de uma classe são os já citados métodos e atributos, respectivamente responsáveis por definir o comportamento dos objetos criados, armazenar e referênciar os atributos dos mesmos, ou mais específicamente dos dados correspondentes aos atributos desses objetos. Estes possuem um nível de acesso distinto de métodos ou variáveis que não compêm o escopo de uma classe. Diferente do padrão de instanciação, dentro de uma classe um membro só pode ser instanciado se este estiver dentro do escopo, sendo precedido da keyword this. A keyword this define que um membro da própria classe é quem está sofrendo a instância
 
 
     class ClasseName {
@@ -1122,6 +1124,61 @@ Os membros de uma classe são os já citados métodos e atributos, respectivamen
       }
 
     }
+
+
+<h3>Métodos e Atributos Estáticos</h3>
+
+
+Para fazer uso de um membro de uma classe é preciso, antes de mais nada, criar uma instância da classe a qual ele pertence. Isso se o membro em questão for definido como não estático. Um atributo ou método estático, precedido da palavra chave <strong>static</strong>, descarta a necessidade de uma instanciação da classe de origem. Exemplo:
+
+
+    class ClassName {
+    
+    static String identifire = 'Static';
+    static method() {
+      print('Modifier');
+    }
+
+    }
+    
+    void main() {
+    
+      print(ClassName.identifire);
+      ClassName.method();
+    }
+    
+    //OutPut:
+    
+    Static
+    Modifier
+
+
+Com o a definição de tipo static, a única referência necessária é ao nome da classe
+
+
+<h3>Final</h3>
+
+
+O modificador final define um valor fixo para determinada unidade de código, não permitindo a redefinição desse valor após sua declaração. Tomando como exemplo um atributo de uma classe, pode-se definir que o modificador final age da seguinte forma:
+
+
+    class Filme {
+      final String title = 'O Poderoso Chafão II';
+    }
+    
+    void main() {
+      final Filme filme = new Filme();
+      filme.title = 'O Poderoso Chafão III'; //Erro
+    
+    }
+
+    //Erro
+
+    "'title' can't be used as a setter because it's final.
+    Try finding a different setter, or making 'title' non-final."
+
+
+O final é utilizado como mecanismo de alerta ao desenvolvedor, definindo que o valor correspondente a um final é imutável, sendo o valor final daquela unidade de código
 
 
 <h3>Usando Constructors</h3>
@@ -1495,3 +1552,8 @@ O super também pode definir uma relação entre classes atráves dos constructo
 
 
 Isso se dá quando uma subClasse é instanciada, tendo um valor recebito em seu constructor, sendo necessário ter este mesmo valor na SuperClasse. No caso acima essa informação é o sabor da pizza criada
+
+
+<h2>Classes Abstratas</h2>
+
+

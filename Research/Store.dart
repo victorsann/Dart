@@ -22,11 +22,9 @@ var booleanExplicito = true;
 
 var textExplicito = 'texto';
 
-// Final e Const
+// Const
 
 const valorConstante = 452343;
-
-final valorFixo = 452343;
 
 // Late
 

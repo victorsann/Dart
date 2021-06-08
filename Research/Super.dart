@@ -34,11 +34,6 @@ class Margherita extends Pizza {
   String sabor;
 
   Margherita(this.sabor) : super(sabor);
-
-  // @override
-  // definition() {
-  //   print('Margherita');
-  // }
 }
 
 void main() {
