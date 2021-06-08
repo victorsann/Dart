@@ -1073,22 +1073,27 @@ Métodos de execução de um List
 <h2>Map</h2>
 
 
-Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo, não sendo possível repetir as chaves. O tipo Map também possui métodos e atributos relacionados a edição, atribuição e exclusão das chaves e seus valores
+Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo. Bastente parecido com um List, o Map possui a propriedade de ter indices customizaveis únicos, o que os diferencia. A seguir há exemplos de declarações de Maps:
 
-    var gifts = {
 
+    var movies = {
     // Chave:   Valor
-
-      'first': 'partridge',
-      'second': 'turtledoves',
-      'fifth': 'golden rings'
+    
+      'first': 'The God Father',
+      'second': 'Good Fellas',
+      'third': 'The Irishman'
     };
     
-    var nobleGases = {
-      2: 'helium',
-      10: 'neon',
-      18: 'argon',
+    var characters = {
+      1: 'Vito Corleone',
+      2: 'Jimmy Conway',
+      3: 'Frank Sheeran',
     };
+    
+    void main() {
+      print(movies['first']);
+      print(characters[1]);
+    }
 
 
 <h2>Set</h2>

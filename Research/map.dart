@@ -1,18 +1,18 @@
-var gifts = {
+var movies = {
 // Chave:   Valor
 
-  'first': 'partridge',
-  'second': 'turtledoves',
-  'fifth': 'golden rings'
+  'first': 'The God Father',
+  'second': 'Good Fellas',
+  'third': 'The Irishman'
 };
 
-var nobleGases = {
-  2: 'helium',
-  10: 'neon',
-  18: 'argon',
+var characters = {
+  1: 'Vito Corleone',
+  2: 'Jimmy Conway',
+  3: 'Frank Sheeran',
 };
 
 void main() {
-  print(gifts['first']);
-  print(nobleGases[2]);
+  print(movies['first']);
+  print(characters[1]);
 }
