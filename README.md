@@ -1077,6 +1077,7 @@ Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de 
 
 
     var movies = {
+
     // Chave:   Valor
     
       'first': 'The God Father',
@@ -1095,11 +1096,17 @@ Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de 
       print(characters[1]);
     }
 
+    //OutPut:
+
+    The God Father
+    Vito Corleone
+
 
 <h2>Set</h2>
 
 
 Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. Exemplos do Set type:
+    
     
     //Set vazio
 
