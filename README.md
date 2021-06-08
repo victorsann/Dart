@@ -1057,7 +1057,7 @@ Para garantir que o trecho de código será executado mesmo se uma exceção for
 
 
 <div align="center">
-  <h2>Orientação a Objetos</h2>
+  <h1>Orientação a Objetos</h1>
 </div>
 
 
