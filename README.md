@@ -1521,12 +1521,7 @@ Quando a subClasse for intanciada, o método herdado será sobrescrito pelo mét
         print('A fruit');
       }
     }
-    
-    void main() {
-      Apple apple = new Apple();
-      apple.definition();
-    }
-    
+
     void main() {
       Apple apple = new Apple();
       apple.definition();
