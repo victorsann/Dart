@@ -1649,7 +1649,7 @@ Uma classe abstrata é precedida do modificador abstract, este impede a instanci
     }
 
 
-Um detalhe importante sobre classes abstratas é que seus membros também passam a ser abstratos. Um método abstrato, diferente de um método concreto, quando declarado, depende de um @override para poder ser mantido. Do contrario é gerado um erro, exigindo a que o método seja sobrscrito 
+Um detalhe importante sobre classes abstratas é que seus membros também passam a ser abstratos. Um método abstrato, diferente de um método concreto, quando declarado, depende de um @override para poder ser mantido. Do contrario é gerado um erro, exigindo a que o método seja sobrescrito 
 
 
     abstract class Lapis {
