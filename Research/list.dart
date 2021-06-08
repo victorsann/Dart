@@ -1,7 +1,5 @@
 // Sem definição de tipo
 
-import 'Class.dart';
-
 List number = [1, 2, 3];
 
 // Com definição de tipo
@@ -40,25 +38,37 @@ List<Products> listaDeCompras = [
 ];
 
 void main() {
-  print('Tipo implícito $number'); // Sem definição de tipo
-  print('Tipo explícito $numbers'); // Com definição de tipo
-  listarAlunos(); // List de Maps
-  print(names.length); // Spread Operator
-  listarCompras(); // Assiciado a uma Classe
+  print('\nTipo implícito : $number'); // Sem definição de tipo
+  print('Tipo explícito : $numbers'); // Com definição de tipo
+  listarFuncionarios(); // List de Maps
+  listarNomes(); // Spread Operator
+  listarCompras(); // List de Objetos
 }
 
 // List de Maps
 
-listarAlunos() {
+listarFuncionarios() {
+  print('\nList de Maps\n');
   for (var i = 0; employees.length > i; i++) {
     print(employees[i]['Nome']);
   }
 }
 
-// Assiciado a uma Classe
+// Spread Operator
+
+listarNomes() {
+  print('\nSpread Operator\n');
+  for (var i = 0; names.length > i; i++) {
+    print(names[i]);
+  }
+  print('Length: ${names.length}');
+}
+
+// List de Objetos
 
 listarCompras() {
+  print('\nList de Objetos\n');
   for (Products product in listaDeCompras) {
-    // print(listaDeCompras[product]);
+    print('${product.nome} : ${product.preco}');
   }
 }

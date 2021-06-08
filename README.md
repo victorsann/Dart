@@ -984,7 +984,6 @@ Um array, vetor ou variável composta em Dart é definido como uma lista de obje
 
     // List de Objetos
 
-
     class Products {
       String nome;
       double preco;
