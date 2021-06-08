@@ -1562,3 +1562,59 @@ Isso se dá quando uma subClasse é instanciada, tendo um valor recebito em seu 
 <h2>Classes Abstratas</h2>
 
 
+Uma classe abstrata é precedida do modificador abstract, este impede a instanciação de membros e da própria classe. Observe um exemplo estrutural de classe abstrata:
+
+ 
+    abstract class ClassName {
+ 
+      String identifire;
+ 
+      void method() {
+ 
+        ...
+        
+      }
+ 
+    }
+
+
+Um detalhe importante sobre classes abstratas é que seus membros também passam a ser abstratos. Um método abstrato, diferente de um método concreto, quando declarado, depende de um @override para poder ser mantido. Do contrario é gerado um erro, exigindo a que o método seja sobrscrito 
+
+
+    abstract class Lapis {
+      void escrever();
+    }
+    
+    class Caneta extends Lapis { //Erro
+    
+    }
+
+    //Erro
+
+    "Missing concrete implementation of 'Lapis.escrever'.
+    Try implementing the missing method, or make the class"
+
+
+Perceba que um método abstrato pode ser declarado sem corpo. Isso ocorre graças a natureza abstrata do mesmo, pois ele sempre vai sofrer um @override. Corrigindo o erro:
+
+
+    abstract class Lapis {
+      void escrever();
+    }
+    
+    class Caneta extends Lapis {
+      @override
+      void escrever() {
+        print('Texto');
+      }
+    }
+    
+    void main() {
+      Caneta caneta = new Caneta();
+      caneta.escrever();
+    }
+  
+    //OutPut:
+
+    Texto
+
