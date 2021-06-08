@@ -1056,6 +1056,11 @@ Para garantir que o trecho de código será executado mesmo se uma exceção for
     }
 
 
+<div align="center">
+  <h2>Orientação a Objetos</h2>
+</div>
+
+
 <h2>Classes</h2>
 
 
