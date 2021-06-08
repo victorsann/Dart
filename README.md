@@ -1622,7 +1622,7 @@ Perceba que um método abstrato pode ser declarado sem corpo. Isso ocorre graça
 <h2>Interfaces</h2>
 
 
-Um interface por definição é uma SuperClasse abstrata cujos membros só são herdados por subClasses concretas que os implementem. Como um contrato que deve ter seus termos aceitos após a assinatura, os métodos ou atributos de uma interface devem sofrer um @override na subClasse que os implementa. Do contrário não podem ser utilizados. Para uma melhor definição observe:
+Um interface por definição é uma SuperClasse abstrata cujos membros só são herdados por subClasses concretas que os implementem, como um contrato que deve ter seus termos aceitos após a assinatura. Os métodos ou atributos de uma interface devem sofrer um @override na subClasse que os implementa, do contrário não podem ser utilizados. Para uma melhor definição observe:
 
    
     abstract class Machine {
