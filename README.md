@@ -1665,3 +1665,55 @@ Um interface por definição é uma SuperClasse abstrata cujos membros só são 
 Perceba que não há uma relação direta de herança entre as classes, o que ocorre é a implementação de um modelo de classe(Machine) nos demais. Isso ocorre porquê muitas vezes um trecho de código é definido como estrutura padrão de um sistema(não necessariamente sendo utilizado da mesma forma). O interface evita a repetição desnecessária de código
 
 Um outro ponto é que uma classe pode tanto implementar quanto herdar de classes distintas sem mais problemas, sendo uma alternativa a impossibilidade de herança múltipla
+
+
+<h2>Mixin</h2>
+
+
+O mixin é um método de definição de acesso a recursos de uma classe de forma restrinta. Assim como um interface, só é possível acessar um mixin caso a relação entre ele e uma outra classe for explícita, esta sendo declarada pela keyword <strong>with</strong>:
+
+
+    abstract class Cash {
+      balance();
+    }
+    
+    class Bank extends Cash {
+      @override
+      balance() {
+        print('Cash');
+      }
+    }
+    
+    mixin Score {
+      void credit() {
+        print('Credit');
+      }
+    }
+    
+    class PremiumCustomer extends Bank with Score {}
+    
+    class CommonCustomer extends Bank {}
+    
+    void main() {
+      print('\nO Cliente Premium tem: \n');
+      PremiumCustomer premium = new PremiumCustomer();
+      premium.balance();
+      premium.credit();
+      print('\nO Cliente Common tem: \n');
+      CommonCustomer common = new CommonCustomer();
+      common.balance();
+    }
+
+    //OutPut:
+
+    O Cliente Premium tem: 
+
+    Cash
+    Credit
+    
+    O Cliente Common tem: 
+    
+    Cash
+
+
+O exemplo define dois tipos de clientes, um Premium e um Common. Por possuir mais privilégios, um cliente Premium possuiria acesso ao mixin Score, tendo acesso exclusivo ao método credit. O mixin é exetremamente importante no processo de declaração de relações e acesso a informação entre classes, tornando o código ainda mais seguro
