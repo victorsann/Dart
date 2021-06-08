@@ -958,6 +958,7 @@ Um array, vetor ou variável composta em Dart é definido como uma lista de obje
 
     List numbers = [1, 2, 3];
 
+<br>
 
     // Com definição de tipo
 
@@ -967,6 +968,7 @@ Um array, vetor ou variável composta em Dart é definido como uma lista de obje
 
     List<String> names = ["Victor", "Carla", "Pedro"];
 
+<br>
 
     // List de collections
 
@@ -978,8 +980,26 @@ Um array, vetor ou variável composta em Dart é definido como uma lista de obje
 
     ];
 
+<br>
 
     // List de Objetos
+
+
+    class Products {
+      String nome;
+      double preco;
+    
+      Products(this.nome, this.preco);
+    }
+    
+    List<Products> listaDeCompras = [
+      // Products(item, preco)
+    
+      Products("Feijão", 7.80),
+      Products("Arroz", 4.50),
+      Products("Macarrão", 3.45),
+      Products("Frango", 8.90)
+    ];
 
 
 <h3>Spread Operator</h3>
