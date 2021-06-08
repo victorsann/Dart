@@ -591,123 +591,6 @@ Definir um valor como fixo ou constante demanda o uso da palavra chave const, da
     const String nickname = 'Bobby';
 
 
-
-
-<h2>List</h2>
-
-
-Um array, vetor ou variável composta em Dart é definido como uma lista de objetos, portanto, são normalmente chamadas de List
-
-    // Sem definição de tipo
-
-    var list = [1, 2, 3];
-
-    // Com definição de tipo
-
-    List numbers = [1, 2, 3];
-
-Uma outra definição para uma List é uma coleção indexável de objetos com um length, cujos principais tipos são:
-
-- Lists de Comprimentos Fixos;
-- Lists de Comprimento Cultivaveis ou de Tamanho não Fixo;
-
-<!-- Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o tipos de list:
-
-
-<h3>Constructors</h3>
-
-
-Estruturas de criação de um List com diferentes restrições
-
-|        Constructor                                      |                                   Descrição                                     |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------- |
-|  List[ type length ]                                    |  Cria um List de comprimento definido                                           | 
-|  List.empty()                                           |  Cria uma nova lista vazia de tamnho fixo                                       |
-|  List.filled( type length value )                       |  Cria um List de tamanho fixo com comprimento definido e preenche cada posição  |
-|  List.from( iterables elements )                        |  Cria um List de tamanho cultivável contendo todos os elements                  |
-|  List.generate( type length, E generator(type index) )  |  Gera uma lista de tamanho cultivável com valores                               |
-|  List.of( iterable <E> elements )                       |  Cria um List de tamanho cultivável a partir de elements                        |
-|  List.unmodifiable( iterable elements )                 |  Cria um List inalterável contendo todos os elements                            |
-
-
-<h3>Proprieties</h3>
-
-
-Atributos de consulta dos lists
-
-|       Proprieties       |    Valor de Retorno    |                                   Descrição                                      |
-| ----------------------  | ---------------------- | -------------------------------------------------------------------------------- |
-|  .first                 |  E                     |  Retorna o primeiro elemento                                                     | 
-|  .hashCode              |  int                   |  Retorna um intenger que representa o código hash para o objeto list em questão  |
-|  .isEmpty               |  bool                  |  Retorna um boolean true se não houver elementos nesta conllection               |
-|  .isNotEmpty            |  bool                  |  Retorna um boolean true se houver amenos um elemento do collection              |
-|  .iterator              |  iterator              |  Retorna um novo Iterator que permite iterar os elementos do Iterable            |
-|  .last                  |  E                     |  Retorna o último elemento                                                       |
-|  .length                |  int                   |  Retorna um intenger que representa o número de objetos no List                  |
-|  .reversed              |  iterable<E>           |  Um Iterable do objeto List na ordem reversa                                     |
-|  .single                |  E                     |  Verifica se há apenas um elemento no Iterable e retorna esse elemento           |
- 
-
-<h3>Methods</h3>
-
-Métodos de execução de um List
-
-|         Methods         |                                    Descrição                                      |
-| ----------------------  |  -------------------------------------------------------------------------------- |
-|  add(value)             |   Adiciona um valor ao final do List, extendendo o tamanho em 1                   | 
-|                         |                                                                                   | -->
-
-
-<h2>Set</h2>
-
-
-Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. Exemplos do Set type:
-    
-    //Set vazio
-
-    Set<String> names = {}; 
-    var names = <String>{};
-
-    //Set preenchido
-
-    var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
-
-<!-- Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o type Set:
-
-
-<h3>Constructors</h3>
-
-
-Estruturas de criação de um Set com diferentes restrições
-
-|        Constructor                                      |                                   Descrição                                     |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------- |
-|  Set()                                                  |  Cria um Set vazio                                                              | 
-|  Set.from(Iterable elements)                            |  Cria um Set que contém todos os elements                                       |
- -->
-
-
-<h2>Map</h2>
-
-
-Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo, não sendo possível repetir as chaves. O tipo Map também possui métodos e atributos relacionados a edição, atribuição e exclusão das chaves e seus valores
-
-    var gifts = {
-
-    // Chave:   Valor
-
-      'first': 'partridge',
-      'second': 'turtledoves',
-      'fifth': 'golden rings'
-    };
-    
-    var nobleGases = {
-      2: 'helium',
-      10: 'neon',
-      18: 'argon',
-    };
-
-
 <h2>Functions</h2>
 
 
@@ -1054,6 +937,167 @@ Para garantir que o trecho de código será executado mesmo se uma exceção for
       ...
 
     }
+
+<h2>Collections</h2>
+
+Collections são implementações de estruturas de dados, normalmente associadas ao armazenamento de informações. Cada collection possui um tipo associado e define um tipo, sendo possível agrupa-los gerando collections que armazenam collections por exemplo. O Dart possui os collections a seguir:
+
+
+<h3>List</h3>
+
+
+A definição para uma List é uma coleção indexável de objetos com um length, basicamente um Array, cujos principais tipos são:
+
+- Lists de Comprimentos Fixos;
+- Lists de Comprimento Cultivaveis ou de Tamanho não Fixo;
+
+Um array, vetor ou variável composta em Dart é definido como uma lista de objetos, portanto, recebendo dá linguagem o identificador <strong>List</strong>, que pode agrupar basicamente qualquer built-in type do Dart. Há formas distintas de declarar um List em Dart:
+
+
+    // Sem definição de tipo
+
+    List numbers = [1, 2, 3];
+
+
+    // Com definição de tipo
+
+    List <num> numbers = [1, 2, 3];
+
+    List<int> numbers = [1, 2, 3];
+
+    List<String> names = ["Victor", "Carla", "Pedro"];
+
+
+    // List de collections
+
+    List<Map> employees = [
+
+      {'Nome': 'Victor Santos', 'idade': 20, 'Profissao': 'Dev'},
+      {'Nome': 'Felipe Maia', 'idade': 38, 'Profissao': 'Líder Técnico'},
+      {'Nome': 'Luana Martins', 'idade': 21, 'Profissao': 'UI/UX Designer'}
+
+    ];
+
+
+    // List de Objetos
+
+
+<h3>Spread Operator</h3>
+
+
+O Spread define uma associação entre lists, tendo como resultado um liste apenas. O length dessa associação é equivalente aos indices de ambas as listas somados
+
+
+    List name = ['Victor'];
+    List names = ['Maria', 'Marcos', ...name];
+
+    void main() {
+
+      print(names.length); // Spread Operator
+
+    }
+
+    //OutPut: 
+
+    3
+
+
+Um list pode  
+<!-- Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o tipos de list:
+
+
+<h3>Constructors</h3>
+
+
+Estruturas de criação de um List com diferentes restrições
+
+|        Constructor                                      |                                   Descrição                                     |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------- |
+|  List[ type length ]                                    |  Cria um List de comprimento definido                                           | 
+|  List.empty()                                           |  Cria uma nova lista vazia de tamnho fixo                                       |
+|  List.filled( type length value )                       |  Cria um List de tamanho fixo com comprimento definido e preenche cada posição  |
+|  List.from( iterables elements )                        |  Cria um List de tamanho cultivável contendo todos os elements                  |
+|  List.generate( type length, E generator(type index) )  |  Gera uma lista de tamanho cultivável com valores                               |
+|  List.of( iterable <E> elements )                       |  Cria um List de tamanho cultivável a partir de elements                        |
+|  List.unmodifiable( iterable elements )                 |  Cria um List inalterável contendo todos os elements                            |
+
+
+<h3>Proprieties</h3>
+
+
+Atributos de consulta dos lists
+
+|       Proprieties       |    Valor de Retorno    |                                   Descrição                                      |
+| ----------------------  | ---------------------- | -------------------------------------------------------------------------------- |
+|  .first                 |  E                     |  Retorna o primeiro elemento                                                     | 
+|  .hashCode              |  int                   |  Retorna um intenger que representa o código hash para o objeto list em questão  |
+|  .isEmpty               |  bool                  |  Retorna um boolean true se não houver elementos nesta conllection               |
+|  .isNotEmpty            |  bool                  |  Retorna um boolean true se houver amenos um elemento do collection              |
+|  .iterator              |  iterator              |  Retorna um novo Iterator que permite iterar os elementos do Iterable            |
+|  .last                  |  E                     |  Retorna o último elemento                                                       |
+|  .length                |  int                   |  Retorna um intenger que representa o número de objetos no List                  |
+|  .reversed              |  iterable<E>           |  Um Iterable do objeto List na ordem reversa                                     |
+|  .single                |  E                     |  Verifica se há apenas um elemento no Iterable e retorna esse elemento           |
+ 
+
+<h3>Methods</h3>
+
+Métodos de execução de um List
+
+|         Methods         |                                    Descrição                                      |
+| ----------------------  |  -------------------------------------------------------------------------------- |
+|  add(value)             |   Adiciona um valor ao final do List, extendendo o tamanho em 1                   | 
+|                         |                                                                                   | -->
+
+
+<h3>Map</h3>
+
+
+Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo, não sendo possível repetir as chaves. O tipo Map também possui métodos e atributos relacionados a edição, atribuição e exclusão das chaves e seus valores
+
+    var gifts = {
+
+    // Chave:   Valor
+
+      'first': 'partridge',
+      'second': 'turtledoves',
+      'fifth': 'golden rings'
+    };
+    
+    var nobleGases = {
+      2: 'helium',
+      10: 'neon',
+      18: 'argon',
+    };
+
+
+<h3>Set</h3>
+
+
+Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. Exemplos do Set type:
+    
+    //Set vazio
+
+    Set<String> names = {}; 
+    var names = <String>{};
+
+    //Set preenchido
+
+    var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+
+<!-- Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o type Set:
+
+
+<h3>Constructors</h3>
+
+
+Estruturas de criação de um Set com diferentes restrições
+
+|        Constructor                                      |                                   Descrição                                     |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------- |
+|  Set()                                                  |  Cria um Set vazio                                                              | 
+|  Set.from(Iterable elements)                            |  Cria um Set que contém todos os elements                                       |
+ -->
 
 
 <div align="center">
@@ -1670,7 +1714,7 @@ Um outro ponto é que uma classe pode tanto implementar quanto herdar de classes
 <h2>Mixin</h2>
 
 
-O mixin é um método de definição de acesso a recursos de uma classe de forma restrinta. Assim como um interface, só é possível acessar um mixin caso a relação entre ele e uma outra classe for explícita, esta sendo declarada pela keyword <strong>with</strong>:
+O mixin é um método de definição de acesso a recursos de uma classe de forma restrita. Assim como um interface, só é possível acessar um mixin caso a relação entre ele e uma outra classe for explícita, esta sendo declarada pela keyword <strong>with</strong>:
 
 
     abstract class Cash {
