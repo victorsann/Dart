@@ -1011,7 +1011,7 @@ O Catch captura uma uma exceção, impedindo essa exceção de se propagar, a me
      
     }
 
-Para tratar um código que pode lançar mais de um tipo de exceção, é possível especificar multiplas clausulas catch. A primeira clausula que combinar com o tipo de objeto lançado trata a exceção. Se a clausula catch não especificar um tipo ela pode tratar qualquer objeto lançado
+Para tratar um código que pode lançar mais de um tipo de exceção, é possível especificar múltiplas clausulas catch. A primeira clausula que combinar com o tipo de objeto lançado trata a exceção. Se a clausula catch não especificar um tipo ela pode tratar qualquer objeto lançado
 
     try {
       
@@ -1263,7 +1263,7 @@ No exemplo acima o cronstructor recebe via parâmetro os valores correspondentes
 <h3>Named Constructor</h3>
 
 
-Um named constructor é uma definição de identificador para o constructor de uma class, não possuindo diferenças diretas na sua função ou forma de execução, normalmente utilizado quando uma classe precisa de multiplos constructors. Exemplo:
+Um named constructor é uma definição de identificador para o constructor de uma class, não possuindo diferenças diretas na sua função ou forma de execução, normalmente utilizado quando uma classe precisa de múltiplos constructors. Exemplo:
 
 
     class ClassName {
@@ -1618,3 +1618,50 @@ Perceba que um método abstrato pode ser declarado sem corpo. Isso ocorre graça
 
     Texto
 
+
+<h2>Interfaces</h2>
+
+
+Um interface por definição é uma SuperClasse abstrata cujos membros só são herdados por subClasses concretas que os implementem. Como um contrato que deve ter seus termos aceitos após a assinatura, os métodos ou atributos de uma interface devem sofrer um @override na subClasse que os implementa. Do contrário não podem ser utilizados. Para uma melhor definição observe:
+
+   
+    abstract class Machine {
+      write();
+      read();
+    }
+    
+    class SoftwareEngineer implements Machine {
+      @override
+      write() {
+        print('Dart');
+      }
+    
+      @override
+      read() {
+        print('Machine Code');
+      }
+    }
+    
+    class DataAnalyst implements Machine {
+      @override
+      write() {
+        print('Pyton');
+      }
+    
+      @override
+      read() {
+        print('Machine Code');
+      }
+    }
+    
+    void main() {
+      SoftwareEngineer softwareEngineer = new SoftwareEngineer();
+      softwareEngineer.write();
+      DataAnalyst dataAnalyst = new DataAnalyst();
+      dataAnalyst.write();
+    }
+
+
+Perceba que não há uma relação direta de herança entre as classes, o que ocorre é a implementação de um modelo de classe(Machine) nos demais. Isso ocorre porquê muitas vezes um trecho de código é definido como estrutura padrão de um sistema(não necessariamente sendo utilizado da mesma forma). O interface evita a repetição desnecessária de código
+
+Um outro ponto é que uma classe pode tanto implementar quanto herdar de classes distintas sem mais problemas, sendo uma alternativa a impossibilidade de herança múltipla

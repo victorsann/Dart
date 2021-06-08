@@ -2,7 +2,7 @@ class Cafe {
   static String tipo = 'Café Solúvel';
 
   static descricao() {
-    print('é horrível');
+    print('É horrível');
   }
 }
 
