@@ -954,14 +954,13 @@ A definição para uma List é uma coleção indexável de objetos com um length
 Um array, vetor ou variável composta em Dart é definido como uma lista de objetos, portanto, recebendo da linguagem o identificador <strong>List</strong>, que pode agrupar basicamente qualquer built-in type do Dart. Há formas distintas de declarar um List em Dart:
 
 
-<h3>Sem Definição de Tipo</h3>
-
+    // Sem definição de tipo
 
     List numbers = [1, 2, 3];
 
+<br>
 
-<h3>Com definição de tipo</h3>
-
+    // Com definição de tipo
 
     List <num> numbers = [1, 2, 3];
 
@@ -969,9 +968,9 @@ Um array, vetor ou variável composta em Dart é definido como uma lista de obje
 
     List<String> names = ["Victor", "Carla", "Pedro"];
 
+<br>
 
-<h3>List de Collections</h3>
-
+    // List de collections
 
     List<Map> employees = [
 
@@ -981,8 +980,9 @@ Um array, vetor ou variável composta em Dart é definido como uma lista de obje
 
     ];
 
+<br>
 
-<h3>List de Objetos</h3>
+    // List de Objetos
 
 
     class Products {
