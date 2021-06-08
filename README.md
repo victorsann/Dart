@@ -591,7 +591,7 @@ Definir um valor como fixo ou constante demanda o uso da palavra chave const, da
     const String nickname = 'Bobby';
 
 
-<h2>Functions</h2>
+<h1>Functions</h1>
 
 
 Por ter uma forte presença da orientação a objetos, mesmo as funções são objetos possuidoras de tipos. Isso torna possível a atribuir funções a variáveis ou torná-las argumentos em outras funções. Abaixo segue a estrutura básica de uma função no Dart:
@@ -725,7 +725,7 @@ O Dart é uma linguagem com escopo léxico, o que significa que o escopo das var
 
 
 
-<h2>Declarações de Controle de Fluxo</h2>
+<h1>Declarações de Controle de Fluxo</h1>
 
 
 O controle do fluxo de dados é, em suma, um dos aspectos mais importantes da programação. O Dart possui as seguintes estruturas para controle de fluxo de dados 
@@ -938,12 +938,12 @@ Para garantir que o trecho de código será executado mesmo se uma exceção for
 
     }
 
-<h2>Collections</h2>
+<h1>Collections</h1>
 
 Collections são implementações de estruturas de dados, normalmente associadas ao armazenamento de informações. Cada collection possui um tipo associado e define um tipo, sendo possível agrupa-los gerando collections que armazenam collections por exemplo. O Dart possui os collections a seguir:
 
 
-<h3>List</h3>
+<h2>List</h2>
 
 
 A definição para uma List é uma coleção indexável de objetos com um length, basicamente um Array, cujos principais tipos são:
@@ -1070,7 +1070,7 @@ Métodos de execução de um List
 |                         |                                                                                   | -->
 
 
-<h3>Map</h3>
+<h2>Map</h2>
 
 
 Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo, não sendo possível repetir as chaves. O tipo Map também possui métodos e atributos relacionados a edição, atribuição e exclusão das chaves e seus valores
@@ -1091,7 +1091,7 @@ Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de 
     };
 
 
-<h3>Set</h3>
+<h2>Set</h2>
 
 
 Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. Exemplos do Set type:
@@ -1351,7 +1351,7 @@ Um named constructor é uma definição de identificador para o constructor de u
     }
 
 
-<h2>Getter e Setter</h2>
+<h3>Getter e Setter</h3>
 
 
 O Dart, assim como muitas linguagens de programação modernas possui um recurso de nivelamento de acesso, podendo restringir o contato entre partes do código, deixando o mesmo mais seguro. Uma dessas restrições é tornar um atributo privado, só permitindo seu acesso no escopo da classe que o contém. O getter e o setter executam respectivamente as funções de obter e configurar essas partes, permitindo seu acesso de forma segura
