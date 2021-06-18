@@ -1457,27 +1457,26 @@ O extends cria uma relação entre duas classes distintas, sendo uma chamada de 
 Isso estabelece que cada método ou atributo definido como parte da SuperClasse será herdado pela subClasse. A seguir há um exemplo mais detalhado da herança entre classes:
 
 
-    class SuperClasse {
+    class Parent {
+      String name = 'Vito';
       String surname = 'Corleone';
-      String title = 'Don';
     }
     
-    class SubClasse extends SuperClasse {
+    class Child extends Parent {
       String name = 'Michael';
     }
     
     void main() {
-      SubClasse subClasse = new SubClasse();
-      print('Sobrenome: ${subClasse.surname}');
-      print('Título: ${subClasse.title}');
-      print('Nome: ${subClasse.name}');
+      Child child = new Child();
+      print('Nome: ${child.name}');
+      print('Sobrenome: ${child.surname}');
     }
+
 
     //OutPut:
 
-    Sobrenome: Corleone
-    Título: Don
     Nome: Michael
+    Sobrenome: Corleone
 
 
 Perceba que mesmo sendo uma classe herdeira, a subClasse possui um atributo próprio. Isso permite criar um maior nível de abstração e aproveitamento de um código já criado, não sendo necessário criar os mesmos atributos em classe relacionadas

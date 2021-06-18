@@ -1,6 +1,6 @@
 class Parent {
+  String name = 'Vito';
   String surname = 'Corleone';
-  String title = 'Don';
 }
 
 class Child extends Parent {
@@ -9,7 +9,6 @@ class Child extends Parent {
 
 void main() {
   Child child = new Child();
-  print('Sobrenome: ${child.surname}');
-  print('Título: ${child.title}');
   print('Nome: ${child.name}');
+  print('Sobrenome: ${child.surname}');
 }
