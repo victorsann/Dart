@@ -102,10 +102,10 @@ Um detalhe muito importante da linguagem Dart é a presença constante do ponto 
 <h2>Conceitos</h2>
 
 
-Alguns pontos devem ser matidos em mente no processo de aprendizado do Dart, eles são:
+Nesse ponto iremos entender as estruturas e os aspectos que compõem a linguagem Dart, seus tipos e variações. É bastante importante manter esses aspectos em mente durenate o decorrer da leitura:
 
 
-<!-- - Tudo o que pode ser acoplado a uma variável é um objeto, e todo objeto é uma instância de uma classe, mesmo números, funções e null são objetos;
+- Tudo o que pode ser acoplado a uma variável é um objeto, e todo objeto é uma instância de uma classe, mesmo números, funções e null são objetos;
 
 - Apesar de ser fortemente tipada, a definição de tipos é opcional no Dart, já que a linguagem pode inferir tipos a partir dos dados recebidos;
 
@@ -113,13 +113,13 @@ Alguns pontos devem ser matidos em mente no processo de aprendizado do Dart, ele
 
 - O Dart suporta tipagem genérica, como List<int>(uma lista de integers) ou List<Object>(uma lista de objetos de qualquer tipo);
 
-- O Dart suporta funções de alto nível(como main( )), assim como funções amarradas a classes ou objetos(static e instâncias de métodos, respectivamente). Também é possível criar funções dentro de funções(funções aninhadas ou locais);
+- O Dart suporta funções de alto nível(como main()), assim como funções amarradas a classes ou objetos(static e instâncias de métodos, respectivamente). Também é possível criar funções dentro de funções(funções aninhadas ou locais);
 
 - Da mesma forma, o Dart suporta variáveis de alto nível, assim como variáveis amarradas a uma classe ou objeto(static e variáveis instanciadas). Variáveis intanciadas são muitas vezes conhecidas como fields ou propriedades;
 
 - Diferente da linguagem Java, o Dart não possui as palavras-chave public, protected e private. Se um identificador inicia com uma underline(_), ele passa a ser private;
 
-- Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos; --> 
+- Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos; 
 
 
 <h2>Built-in Types</h2>
