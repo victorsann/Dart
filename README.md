@@ -105,7 +105,7 @@ Um detalhe muito importante da linguagem Dart é a presença constante do ponto 
 Nesse ponto iremos entender as estruturas e os aspectos que compõem a linguagem Dart, seus tipos e variações. É bastante importante manter esses aspectos em mente durenate o decorrer da leitura:
 
 
- Tudo o que pode ser acoplado a uma variável é um objeto, e todo objeto é uma instância de uma classe, mesmo números, funções e null são objetos;
+ <h4>Tudo o que pode ser acoplado a uma variável é um objeto, e todo objeto é uma instância de uma classe, mesmo números, funções e null são objetos;<h4>
 
  Apesar de ser fortemente tipada, a definição de tipos é opcional no Dart, já que a linguagem pode inferir tipos a partir dos dados recebidos;
 
