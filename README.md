@@ -14,7 +14,7 @@ Por ser multeplataformas, o Dart acompanha duas ferramentas, ou soluções, que 
 <h2>Preparando o Ambiente</h1>
 
 
-A seguir estão dispostos uma série de passos para a instalação das ferramentas e preparo do ambiente de desenvolvimento. Não sendo cem porcento necessário seguir as intalações para iniciar o estudo da linguagem, mas recomendado. Uma forma mais simples de executar códigos dart é ter uma IDE(recomendo o vscode) e plugins que aceitem a sintaxe do dart. Com isso só é preciso criar uma file com a extenção .dark e executá-la com o comando [dart run]. Não sendo necessário a criação de um projeto para tal.
+A seguir estão dispostos uma série de passos para a instalação das ferramentas e preparo do ambiente de desenvolvimento. Não sendo cem porcento necessário seguir as intalações para iniciar o estudo da linguagem, mas recomendado. Uma forma mais simples de executar códigos dart é ter uma IDE(recomendo o vscode) e plugins que aceitem a sintaxe do dart. Com isso só é preciso criar uma file com a extenção .dark e executá-la com o comando [dart run](). Não sendo necessário a criação de um projeto para tal.
 
 
 <h2>Instalação do Dart-SDK</h1> 
@@ -26,10 +26,7 @@ O Dart-SDK é uma biblioteca de ferramentas de linha de comando, comumente utili
 <h3>Chocolatey</h3>
 
 
-O Chocolatey é um gerenciador de pacotes para o Windows, necessário no processo de instalação do Dart Software Development Kit. O link a seguir indica o passo a passo pra obter a ferramenta:
-
-
-[Instalar Chocolatey](https://chocolatey.org/install) - 
+O Chocolatey é um gerenciador de pacotes para o Windows, necessário no processo de instalação do Dart Software Development Kit. O link a seguir indica o passo a passo pra obter a ferramenta: [Instalar Chocolatey](https://chocolatey.org/install).
 
   
 Verificar instalação
