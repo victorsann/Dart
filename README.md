@@ -33,9 +33,12 @@ O Chocolatey é um gerenciador de pacotes para o Windows, necessário no process
   
 Verificar instalação
 
+
     choco -v
 
+
 Instalar Dart-SDK 
+
 
     choco install dart-sdk
 
@@ -44,6 +47,7 @@ Instalar Dart-SDK
 
 
 A partir deste ponto, é possível utilizar os comandos Chocolatey para executar uma aplicação Dart-SDK. Sendo assim, acesse um diretório desejado através do cmd e execute:
+
 
     dart create -t console-full cli
 
@@ -60,11 +64,9 @@ Antes de executar o app criado, é importante ter instalado um editor de código
 
 Com os pacotes e o ambiente devidamente definidos e intalados, execute os comandos a seguir para rodar a aplicação:
 
+
     cd cli
     dart run
-
-<!-- Uma forma mais simples de executar códigos dart é criar uma file com a extenção .dark, a executando com o <strong>dart run <nome></strong>.
-Não sendo necessário a criação de um projeto para tal. -->
 
 
 <h2>Hello World</h2>
@@ -131,13 +133,16 @@ O Dart possui os seguintes tipos internos:
 <h3>Number</h3>
 
 
-int - Valores inteiros não maiores que 64 bits, dependendo da plataforma
+int - Valores inteiros não maiores que 64 bits, dependendo da plataforma:
+
 
     int x = 1;
     int hex = 0xDEADBEEF;
     int exponent = 8e5;
 
-double - Valores decimais
+
+double - Valores decimais:
+
 
     double y = 1.1;
     double exponents = 1.42e5;
@@ -146,7 +151,8 @@ double - Valores decimais
 <h3>String</h3>
 
 
-Uma string Dart (object String) contém uma sequência de unidades de código UTF-16
+Uma string Dart (object String) contém uma sequência de unidades de código UTF-16:
+
 
     string s1 = 'Single quotes work well for string literals.';
     string s2 = "Double quotes work just as well.";
@@ -157,7 +163,8 @@ Uma string Dart (object String) contém uma sequência de unidades de código UT
 <h3>Interpolação de String</h3> 
 
 
-A interpolação permite acessar valores identificados por unidades de armazenamento dentro de um string type
+A interpolação permite acessar valores identificados por unidades de armazenamento dentro de um string type:
+
 
     string greeting = "String";
     string person = "Interpolation";
@@ -166,13 +173,17 @@ A interpolação permite acessar valores identificados por unidades de armazenam
     
     //Output: String Interpolation
 
- Obs: a interpolação é feita tanto entre aspas simples quanto entre aspas duplas
+
+ <div align="center">
+  Obs: a interpolação é feita tanto entre aspas simples quanto entre aspas duplas
+ </div>
 
 
 <h3>Booleans</h3>
 
 
 Para representar valores boolean o Dart possui o marcador bool, com dois tipos definidos: true e false. Exemplos de definição de um bool:
+
 
     // Verifica string vazio
 
@@ -200,9 +211,12 @@ Para representar valores boolean o Dart possui o marcador bool, com dois tipos d
 
 Em Dart as Runes expõem o código unicode de uma string. O unicode define um valor numérico único para cada letra, dígito e símbolo usado em todo o sistema de escrita. Um unicode é normalmente representado da seguinte forma:
 
+
     \uXXXX
 
+
 Onde XXXX é um valor hexadecimal de 4 dígitos. Por exemplo: \u{1f606}, que respesenta o seguinte emoji :satisfied:. O Dart possui um módulo específico para trabalhar esse tipo de dado, sendo definido abaixo:
+
 
     import 'package:characters/characters.dart'; <==
     ...
@@ -222,7 +236,8 @@ Onde XXXX é um valor hexadecimal de 4 dígitos. Por exemplo: \u{1f606}, que res
 <h3>Symbols</h3>
 
 
-Um objeto Symbol representa um operador ou idetificador declarado em um programa Dart, dificilmente utilizados fora de contextos específicos de desenvolvimento. Para definir um Symbol como identificador usa-se # seguido do identificador
+Um objeto Symbol representa um operador ou idetificador declarado em um programa Dart, dificilmente utilizados fora de contextos específicos de desenvolvimento. Para definir um Symbol como identificador usa-se # seguido do identificador:
+
 
     #radix
     #bar
@@ -235,6 +250,7 @@ O Dart possui um recurso chamado de Null Safety, o qual define que as variáveis
 
 Com o Null safety todas as variáveis do código a seguir são non-nullable:
 
+
     // Com o Null-safe, nenhum destes podem ser null
 
     var i = 42;
@@ -243,13 +259,14 @@ Com o Null safety todas as variáveis do código a seguir são non-nullable:
 
 Para indicar que uma variável aceita um nullable usa-se o marcador ? em conjunto com a declaração do seu tipo:
 
+
     int? aNullableInt = null;
 
 
 <h3>Dynamic</h3>
 
 
-O tipo dynamic define a aceitação de todos os demais tipos a uma variável, dando a linguagem Dart a característica de dinamicidade
+O tipo dynamic define a aceitação de todos os demais tipos a uma variável, dando a linguagem Dart a característica de dinamicidade:
 
 
     dynamic nome = "Caio Rolla";
@@ -268,7 +285,7 @@ O tipo dynamic define a aceitação de todos os demais tipos a uma variável, da
 <h2>Operadores Aritméticos</h2>
 
 
-O Dart suporta os operadores aritméticos usuais, como mostrado abaixo
+O Dart suporta os operadores aritméticos usuais, como mostrado abaixo:
 
 
 <h3>Adição + </h3>
@@ -336,6 +353,7 @@ O operador de incremento incrementa seu operando em 1. O operador de incremento 
 
 O resultado de ++ x é o valor de x após a operação, como mostra o exemplo a seguir:
 
+
     var a, b;
     
     a = 0;
@@ -347,6 +365,7 @@ O resultado de ++ x é o valor de x após a operação, como mostra o exemplo a 
 
 
 O resultado de x ++ é o valor de x antes da operação, como mostra o exemplo a seguir:
+
 
     var a, b;
 
@@ -366,6 +385,7 @@ O operador de decremento diminui seu operando em 1. O operador de decremento é 
 
 O resultado de --x é o valor de x após a operação, como mostra o exemplo a seguir:
 
+
     a = 0;
     b = --a; 
     assert(a == b); // -1 == -1
@@ -375,6 +395,7 @@ O resultado de --x é o valor de x após a operação, como mostra o exemplo a s
 
 
 O resultado de x-- é o valor de x antes da operação, como mostra o exemplo a seguir:
+
 
     a = 0;
     b = a--; 
@@ -390,7 +411,8 @@ Relacionam operandos tendo como retorno um boolean, sendo true caso a operação
 <h3> Igualdade == </h3>
 
 
-Retorna true caso o valor numérico dos operandos seja igual
+Retorna true caso o valor numérico dos operandos seja igual:
+
 
     assert(2 == 2); //output: true
 
@@ -398,7 +420,8 @@ Retorna true caso o valor numérico dos operandos seja igual
 <h3> Diferença != </h3>
 
 
-Retorna true caso o valor numérico dos operandos for diferente 
+Retorna true caso o valor numérico dos operandos for diferente:
+
 
     assert(3 != 3); //output: false 
 
@@ -406,7 +429,8 @@ Retorna true caso o valor numérico dos operandos for diferente
 <h3> Maior que > </h3>
 
 
-Retorna true caso o valor numérico do operando da esquerda seja maior que o da direita
+Retorna true caso o valor numérico do operando da esquerda seja maior que o da direita:
+
 
     assert(3 > 2); //output: true
 
@@ -414,7 +438,8 @@ Retorna true caso o valor numérico do operando da esquerda seja maior que o da 
 <h3> Menor que < </h3>
 
 
-Retorna true caso o valor numérico do operando da esquerda seja menor que o da direita
+Retorna true caso o valor numérico do operando da esquerda seja menor que o da direita:
+
 
      assert(4 < 3); //output: false
 
@@ -422,7 +447,8 @@ Retorna true caso o valor numérico do operando da esquerda seja menor que o da 
 <h3> Maior ou igual >= </h3>
 
 
-Retorna true caso o valor numérico do operando da esquerda seja maior ou igual ao do operando da direita
+Retorna true caso o valor numérico do operando da esquerda seja maior ou igual ao do operando da direita:
+
 
      assert(3 >= 3); //output: true
 
@@ -430,7 +456,8 @@ Retorna true caso o valor numérico do operando da esquerda seja maior ou igual 
 <h3>Menor ou igual <= </h3>
 
 
-Retorna true caso o valor numérico do operando da esquerda seja menor ou igual ao do operando da direita
+Retorna true caso o valor numérico do operando da esquerda seja menor ou igual ao do operando da direita:
+
 
      assert(4 <= 3); //output: false
 
@@ -473,7 +500,8 @@ Os operadores type test definem tipos no processo compilação. Eles são defini
 
 <h2>Operadores de Auto Atribuição</h2>
 
-Operações que relacionam dois operandos de forma que o primeiro operando recebe o valor da operação entre seu valor e o de um segundo operando
+Operações que relacionam dois operandos de forma que o primeiro operando recebe o valor da operação entre seu valor e o de um segundo operando:
+
 
      x  =   y | O operando x recebe o operando y
      x  -=  y | O operando x recebe a subtração entre os operandos x e y
@@ -487,7 +515,7 @@ Operações que relacionam dois operandos de forma que o primeiro operando receb
 <h2>Operadores Lógicos</h2>
 
 
-Os operadores lógicos definem um valor boolean como o retorno entre uma operação entre dois operandos, sempre retornando true ou false
+Os operadores lógicos definem um valor boolean como o retorno entre uma operação entre dois operandos, sempre retornando true ou false:
 
 
 <h3>Negação !</h3>
@@ -497,7 +525,8 @@ Os operadores lógicos definem um valor boolean como o retorno entre uma operaç
         ...
     }
 
-Se o valor chamado data for definido como true, ele passa a ser false, e vice versa 
+
+Se o valor chamado data for definido como true, ele passa a ser false, e vice versa. 
 
 
 <h3>Disjução ||</h3>
@@ -507,7 +536,8 @@ Se o valor chamado data for definido como true, ele passa a ser false, e vice ve
         ...
     }
 
-Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao valor boolean true
+
+Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao valor boolean true.
 
 
 <h3>Conjunção &&</h3>
@@ -517,7 +547,8 @@ Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao val
           ...
       }
 
-O operador de conjunção, também chamado de AND lógico define que o resultado de uma operação como true se ambos os operandos forem verdadeiros
+
+O operador de conjunção, também chamado de AND lógico define que o resultado de uma operação como true se ambos os operandos forem verdadeiros.
 
 
 <div align="center">
@@ -528,17 +559,20 @@ O operador de conjunção, também chamado de AND lógico define que o resultado
 <h2>Variáveis</h2>
 
 
-Assim como em qualquer linguagem de programação, as variáveis em Dart são uma unidade de armazenamento e de referência de dados, tendo aqui algumas características importantes a serem mencionadas
+Assim como em qualquer linguagem de programação, as variáveis em Dart são uma unidade de armazenamento e de referência de dados, tendo aqui algumas características importantes a serem mencionadas.
 
 
 <h2>Declarando Variáveis</h2>
 
 
-A variável a seguir é inicializada com a palavra-chave var(reservada para essa função), um identificador e um valor inicial. Esta comtém uma referência ao valor que carrega
+A variável a seguir é inicializada com a palavra-chave var(reservada para essa função), um identificador e um valor inicial. Esta comtém uma referência ao valor que carrega:
+
 
     var data = 'Dart';
 
+
 A definição do tipo dessa variável é inferida pelo valor que ela carrega, sendo nesse caso um string. Por possuir uma tipagem forte, o Dart permite a definição de tipos de forma implícita e explícita. Sendo a variável acima um exemplo da tipagem explícita. A seguir estão alguns exemplos de variáveis com um tipo pré definido:
+
 
     // O tipo Object não possui tipagem restrita, aceitando qualquer tipo
 
@@ -565,7 +599,8 @@ A definição do tipo dessa variável é inferida pelo valor que ela carrega, se
 <h2>Variáveis não Iniciadas</h2>
 
 
-Uma variável não iniciada é definida por uma unidade de armazenamento e referência cujo espaço na memória não foi ocupado no momendo da declaração, sendo possível oculpar este valor posteriormente
+Uma variável não iniciada é definida por uma unidade de armazenamento e referência cujo espaço na memória não foi ocupado no momendo da declaração, sendo possível oculpar este valor posteriormente:
+
 
     int empty;
 
@@ -584,6 +619,7 @@ Normalmente o controle de análise de fluxo do Dart detecta quando uma variável
 
 Caso o desenvolvedor esteja seguro de que a variável foi definida antes de ser usada, tendo a discordância do Dart, é possível corrigir o erro definindo a variável como late. Exemplo:
 
+
     late String description;
     
     void main() {
@@ -595,7 +631,8 @@ Caso o desenvolvedor esteja seguro de que a variável foi definida antes de ser 
 <h2>Const</h2>
 
 
-Definir um valor como fixo ou constante demanda o uso da palavra chave const, dando à unidade de armazenamento e referência a característica de imutabilidade do seu valor em tempo de compilação
+Definir um valor como fixo ou constante demanda o uso da palavra chave const, dando à unidade de armazenamento e referência a característica de imutabilidade do seu valor em tempo de compilação:
+
 
     // Sem definição de tipo
 
@@ -611,9 +648,11 @@ Definir um valor como fixo ou constante demanda o uso da palavra chave const, da
 
 Por ter uma forte presença da orientação a objetos, mesmo as funções são objetos possuidoras de tipos. Isso torna possível a atribuir funções a variáveis ou torná-las argumentos em outras funções. Abaixo segue a estrutura básica de uma função no Dart:
 
+
     type functionName(arguments) {
       return value;
     }
+
 
 Um ponto a se ater é que funções tipadas sempre devem possuir um valor equivalente a seu tipo como retorno. Além disso, funções podem ser definidas como type annotation ou void no Dart, podendo ser escritas de forma mais encurtada, caso possuam apenas uma expressão:
 
@@ -649,13 +688,14 @@ Um ponto a se ater é que funções tipadas sempre devem possuir um valor equiva
 <h2>Parameters</h2>
 
 
-Uma função pode ter qualquer número de required positional parameters. Estes ainda podem ser seguidos de named parameters ou por optional positional parameters (mas não ambos)
+Uma função pode ter qualquer número de required positional parameters. Estes ainda podem ser seguidos de named parameters ou por optional positional parameters (mas não ambos):
 
 
 <h3>Named Parameters</h3>
 
 
-Named Parameters são opcionais a não ser que sejam definidos como required. Abaixo há a definição da sintaxe de uma função com Named Functions
+Named Parameters são opcionais a não ser que sejam definidos como required. Abaixo há a definição da sintaxe de uma função com Named Functions:
+
 
     void functionName({type <paramName>, type <paramName>}) {
 
@@ -664,7 +704,7 @@ Named Parameters são opcionais a não ser que sejam definidos como required. Ab
     }
 
 
-Ao instânciar uma função que recebe parâmetros opcionais, usa-se o identificar do parâmetro e o valor a ser passado
+Ao instânciar uma função que recebe parâmetros opcionais, usa-se o identificar do parâmetro e o valor a ser passado:
 
 
     functionName(paramName: value, paramName: value);
@@ -673,7 +713,8 @@ Ao instânciar uma função que recebe parâmetros opcionais, usa-se o identific
 <h3>Required Parameters</h3>
 
 
-São definados quando o valor recebido via parâmetro é obrigatório, gerando um issue caso não seja disponibilizado
+São definados quando o valor recebido via parâmetro é obrigatório, gerando um issue caso não seja disponibilizado:
+
 
     type functionName({Key? key, required Widget child})
 
@@ -681,7 +722,8 @@ São definados quando o valor recebido via parâmetro é obrigatório, gerando u
 <h3>A Função main()</h3>
 
 
-Todas as aplicações devem conter a já mencionada função de alto-nível do tipo main(), cuja função é agir como o entrypoint do app. Retornando void, a função main também possui um parâmetro opcional do tipo List<String> como argumento
+Todas as aplicações devem conter a já mencionada função de alto-nível do tipo main(), cuja função é agir como o entrypoint do app. Retornando void, a função main também possui um parâmetro opcional do tipo List<String> como argumento:
+
 
     void main() {
       print('Hello, World!');
@@ -693,13 +735,15 @@ Todas as aplicações devem conter a já mencionada função de alto-nível do t
 
 Boa parte das funções são definidas como named, ou nomeadas, como a própria main(). Uma froma alternativa de criação de funções é omitindo seu nome ou identificador, sendo assim chamada de anonymous function, lambda ou closure. 
 
+
     ([[Type] param1[, …]]) {
 
       ...
 
     };
 
-O exemplo abaixo define uma função anônima com um parâmetro de tipo anônimo. A função, invocada para cada item da lista, printa uma string incluindo o valor no index especificado
+
+O exemplo abaixo define uma função anônima com um parâmetro de tipo anônimo. A função, invocada para cada item da lista, printa uma string incluindo o valor no index especificado:
 
 
     const list = ['apples', 'bananas', 'oranges'];
@@ -717,7 +761,8 @@ O exemplo abaixo define uma função anônima com um parâmetro de tipo anônimo
 <h3>Lexical scope</h3>
 
 
-O Dart é uma linguagem com escopo léxico, o que significa que o escopo das variáveis é determinado estaticamente, seguindo o layout do código escrito. Basicamente, as variáveis declaradas anteriormente, ou dentro das chaves de uma estrutura de código, são definidas como parte do escopo
+O Dart é uma linguagem com escopo léxico, o que significa que o escopo das variáveis é determinado estaticamente, seguindo o layout do código escrito. Basicamente, as variáveis declaradas anteriormente, ou dentro das chaves de uma estrutura de código, são definidas como parte do escopo:
+
 
     bool topLevel = true;
     
@@ -739,11 +784,10 @@ O Dart é uma linguagem com escopo léxico, o que significa que o escopo das var
     }
 
 
-
 <h1>Declarações de Controle de Fluxo</h1>
 
 
-O controle do fluxo de dados é, em suma, um dos aspectos mais importantes da programação. O Dart possui as seguintes estruturas para controle de fluxo de dados 
+O controle do fluxo de dados é, em suma, um dos aspectos mais importantes da programação. O Dart possui as seguintes estruturas para controle de fluxo de dados:
 
 
 <h2>If-else</h2>
@@ -768,13 +812,14 @@ O controle do fluxo de dados é, em suma, um dos aspectos mais importantes da pr
 <h2>Exepressões Condicionais</h2>
 
 
-Além dos expressões padrão if-else o Dart conta com dois operadores lógicos que exercem a mesma função, substituindo-as em determinadas situações
+Além dos expressões padrão if-else o Dart conta com dois operadores lógicos que exercem a mesma função, substituindo-as em determinadas situações:
 
 
 <h3>condition ? expr1 : expr2</h3>
 
 
-Se condition tiver true como valor, o valor de expr1 é retornado, de outra forma, o valor de expr2 é retornado
+Se condition tiver true como valor, o valor de expr1 é retornado, de outra forma, o valor de expr2 é retornado:
+
 
     var visibility = isPublic ? 'public' : 'private';
 
@@ -782,7 +827,8 @@ Se condition tiver true como valor, o valor de expr1 é retornado, de outra form
 <h3>expr1 ?? expr2</h3>
 
 
-O valor de expr1 é retornado caso ele seja diferente de null, de outra forma, o valor de expr2 é retornado
+O valor de expr1 é retornado caso ele seja diferente de null, de outra forma, o valor de expr2 é retornado:
+
 
     String playerName(String? name) => name ?? 'Guest';
 
@@ -795,7 +841,9 @@ O valor de expr1 é retornado caso ele seja diferente de null, de outra forma, o
       message.write('!');
     }
 
+
 Os fechamentos dentro dos loops for do DART capturam o valor do índice, evitando uma armadilha comum encontrada no JavaScript.
+
 
     var callbacks = [];
     for (var i = 0; i < 2; i++) {
@@ -803,13 +851,15 @@ Os fechamentos dentro dos loops for do DART capturam o valor do índice, evitand
     }
     callbacks.forEach((c) => c());
 
-O output seria 0 e depois 1, como esperado. Em contraste, se o exemplo fosse feito em JavaScript, o retorno seria 2 e depois 2 
+
+O output seria 0 e depois 1, como esperado. Em contraste, se o exemplo fosse feito em JavaScript, o retorno seria 2 e depois 2.
 
 
 <h3>For-in</h3>
 
 
-Se o objeto de interação for um iterable(como um List ou Set), e se não é preciso saber o contador de interação atual, é possível utilizar o for-in
+Se o objeto de interação for um iterable(como um List ou Set), e se não é preciso saber o contador de interação atual, é possível utilizar o for-in:
+
 
     for (var varName in iterable) {
       
@@ -821,7 +871,8 @@ Se o objeto de interação for um iterable(como um List ou Set), e se não é pr
 <h2>While e do-while</h2>
 
 
-Um loop while avalia a condição antes do loop
+Um loop while avalia a condição antes do loop:
+
 
     while (booleanExpression) {
 
@@ -829,7 +880,8 @@ Um loop while avalia a condição antes do loop
 
     }
 
-Um do-while avalia a condição depois do loop
+
+Um do-while avalia a condição depois do loop:
 
 
     do {
@@ -842,7 +894,8 @@ Um do-while avalia a condição depois do loop
 <h3>Break e continue</h3>
 
 
-O break é utilizado para quebrar um loop em execução quando o valor definido em uma condicional é encrontrado
+O break é utilizado para quebrar um loop em execução quando o valor definido em uma condicional é encrontrado:
+
 
     while (true) {
       if (booleanExpression) break;
@@ -851,7 +904,9 @@ O break é utilizado para quebrar um loop em execução quando o valor definido 
 
     }
 
-O continue é utilizado para pular para o próximo loop quando o valor definido em uma condicional é encrontrado
+
+O continue é utilizado para pular para o próximo loop quando o valor definido em uma condicional é encrontrado:
+
 
     for (int i = 0; i < candidates.length; i++) {
       var candidate = candidates[i];
@@ -868,9 +923,10 @@ O continue é utilizado para pular para o próximo loop quando o valor definido 
 
 O Switch no Dart compara integer, string ou constantes de tempo de compilação usando o operador de igualdade(==). Todos os objetos comparados devem ser instâncias da mesma classe(e não de qualquer um de seus subtipos), e a classe não pode sobrepor o operador. 
 
-Todas as clausulas case non-empty têm como regra terminar com um break. Outros meios válidos para termiar um non-empty case é usando o continue, o throw ou um return
+Todas as clausulas case non-empty têm como regra terminar com um break. Outros meios válidos para termiar um non-empty case é usando o continue, o throw ou um return.
 
 Caso nenhum case combine com o valor de comparação, executa-se uma clausula default:
+
 
     var command = 'OPEN';
     switch (command) {
@@ -897,7 +953,8 @@ Caso nenhum case combine com o valor de comparação, executa-se uma clausula de
 <h2>Try-Catch</h2>
 
 
-O Catch captura uma uma exceção, impedindo essa exceção de se propagar, a menos que ela seja relançada. Capturar essa exceção permite que ela seja tratada
+O Catch captura uma uma exceção, impedindo essa exceção de se propagar, a menos que ela seja relançada. Capturar essa exceção permite que ela seja tratada:
+
 
     try {
       
@@ -909,7 +966,9 @@ O Catch captura uma uma exceção, impedindo essa exceção de se propagar, a me
      
     }
 
-Para tratar um código que pode lançar mais de um tipo de exceção, é possível especificar múltiplas clausulas catch. A primeira clausula que combinar com o tipo de objeto lançado trata a exceção. Se a clausula catch não especificar um tipo ela pode tratar qualquer objeto lançado
+
+Para tratar um código que pode lançar mais de um tipo de exceção, é possível especificar múltiplas clausulas catch. A primeira clausula que combinar com o tipo de objeto lançado trata a exceção. Se a clausula catch não especificar um tipo ela pode tratar qualquer objeto lançado:
+
 
     try {
       
@@ -939,7 +998,8 @@ Para tratar um código que pode lançar mais de um tipo de exceção, é possív
 <h3>Finally</h3>
 
 
-Para garantir que o trecho de código será executado mesmo se uma exceção for lançada, usa-se a clausula finally. Se a exceção não combinar com a nenhum dos cases, a exceção é propagada depois que a clausula finilly for executada
+Para garantir que o trecho de código será executado mesmo se uma exceção for lançada, usa-se a clausula finally. Se a exceção não combinar com a nenhum dos cases, a exceção é propagada depois que a clausula finilly for executada:
+
 
     try {
       
@@ -952,6 +1012,7 @@ Para garantir que o trecho de código será executado mesmo se uma exceção for
       ...
 
     }
+    
 
 <h1>Collections</h1>
 
