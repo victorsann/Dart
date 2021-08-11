@@ -83,9 +83,12 @@ Uma forma prática de entender a estrutura mais básica de uma linguagem de prog
 
 
 <strong>void</strong> - Por ser uma linguagem fortemente tipada a definição de tipos se aplica inclusive aos métodos, sendo um método void definido por não retornar valor;<br>
+
 <strong>main()</strong> - Método de execução padrão do arquivo, sendo o primeiro a ser chamado no run time;<br>
+
 <strong>print()</strong> - Método padrão de impressão de valor;<br>
-<strong>;</strong> - Um detalhe muito importante da linguagem Dart é a presença constante do ponto e vírgula após o fim de um bloco de execução, do contrário é retornado um erro de sintaxe;
+
+<h3>;</h3> - Um detalhe muito importante da linguagem Dart é a presença constante do ponto e vírgula após o fim de um bloco de execução, do contrário é retornado um erro de sintaxe;
 
 
 <h2>Conceitos</h2>
