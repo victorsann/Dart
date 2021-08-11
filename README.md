@@ -14,7 +14,9 @@ Por ser multeplataformas, o Dart acompanha duas ferramentas, ou soluções, que 
 <h2>Preparando o Ambiente</h1>
 
 
-A seguir estão dispostos uma série de passos para a instalação das ferramentas e preparo do ambiente de desenvolvimento. Não sendo cem porcento necessário seguir as intalações para iniciar o estudo da linguagem, mas recomendado. Uma forma mais simples de executar códigos dart é ter uma IDE(recomendo o vscode) e plugins que aceitem a sintaxe do dart. Com isso só é preciso criar uma file com a extenção .dark e executá-la com o comando <b><i>dart run</i></b>. Não sendo necessário a criação de um projeto para tal.
+A seguir estão dispostos uma série de passos para a instalação das ferramentas e preparo do ambiente de desenvolvimento. Não sendo cem porcento necessário seguir as intalações para iniciar o estudo da linguagem, mas recomendado. 
+
+Uma forma mais simples de executar códigos dart é ter uma IDE(recomendo o vscode) e plugins que aceitem a sintaxe do dart. Com isso só é preciso criar uma file com a extenção .dark e executá-la com o comando <b><i>dart run</i></b>. Não sendo necessário a criação de um projeto para tal.
 
 
 <h2>Instalação do Dart-SDK</h1> 
