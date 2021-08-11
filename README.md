@@ -28,7 +28,7 @@ O Dart-SDK é uma biblioteca de ferramentas de linha de comando, comumente utili
 <h3>Chocolatey</h3>
 
 
-O Chocolatey é um gerenciador de pacotes para o Windows, necessário no processo de instalação do Dart Software Development Kit. O link a seguir indica o passo a passo pra obter a ferramenta: [Instalar Chocolatey](https://chocolatey.org/install).
+O Chocolatey é um gerenciador de pacotes para o Windows, necessário no processo de instalação do Dart Software Development Kit. O link a seguir indica o passo a passo pra obter a ferramenta: <i>[Instalar Chocolatey](https://chocolatey.org/install)</i>.
 
   
 Verificar instalação
