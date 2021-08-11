@@ -70,7 +70,7 @@ Não sendo necessário a criação de um projeto para tal. -->
 <h2>Hello World</h2>
 
 
-Uma forma prática de entender a estrutura mais básica de uma linguagem de programação é o popular Hello World, sendo este executado da seguinte forma em Dart:
+Uma forma prática de entender a estrutura mais básica de uma linguagem de programação é o popular Hello World, sendo este executado da seguinte forma no Dart:
 
 
       void main() 
@@ -82,10 +82,10 @@ Uma forma prática de entender a estrutura mais básica de uma linguagem de prog
 <h3>Explicando</h3>
 
 
-* <strong>void</strong> - Por ser uma linguagem fortemente tipada a definição de tipos se aplica inclusive aos métodos, sendo um método void definido por não retornar valor;
-* <strong>main()</strong> - Método de execução padrão do arquivo, sendo o primeiro a ser chamado no run time;
-* <strong>print()</strong> - Método padrão de impressão de valor;
-* <strong>;</strong> - Um detalhe muito importante da linguagem Dart é a presença constante do ponto e vírgula após o fim de um bloco de execução, do contrário é retornado um erro de sintaxe;
+<strong>void</strong> - Por ser uma linguagem fortemente tipada a definição de tipos se aplica inclusive aos métodos, sendo um método void definido por não retornar valor;
+<strong>main()</strong> - Método de execução padrão do arquivo, sendo o primeiro a ser chamado no run time;
+<strong>print()</strong> - Método padrão de impressão de valor;
+<strong>;</strong> - Um detalhe muito importante da linguagem Dart é a presença constante do ponto e vírgula após o fim de um bloco de execução, do contrário é retornado um erro de sintaxe;
 
 
 <h2>Conceitos</h2>
