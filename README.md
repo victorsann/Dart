@@ -121,6 +121,7 @@ Nesse ponto iremos entender as estruturas e os aspectos que compõem a linguagem
 
 * Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos; 
 
+<br>
 
 <h2>Built-in Types</h2>
 
