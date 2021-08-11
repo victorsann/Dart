@@ -6,27 +6,32 @@
 <img src="https://img.shields.io/static/v1?label=dart&message=Language&color=blue&style=for-the-badge&logo=Dart"/>
 
 
-O Dart é uma linguagem de script, type safe, multiparadigma e orienta a objetos, desenvolvida e mantida pela Google. Utilizada em diversas stacks do desenvolvimento de aplicações, sendo mais associada ao Flutter, um de seus frameworks mais populares, e por consequência ao desenvolvimento mobile.
+O Dart é uma linguagem de script, type safe, multiparadigma e orienta a objetos, desenvolvida e mantida pela Google. Tem ganhado bastante popularidade por ser utilizada em conjunto com o Flutter, um dos FrameWorks mais populares da atualidade para desenvolver aplicações mobile nativas.
 
-Por ser multeplataformas, o Dart acompanha duas ferramentas, ou soluções, que possibilitam o seu uso: o Dart Native e o Dart Web. Tendo como principal recurso a máquina virtual responsável por compilar a linguagem no Just-in-Time(JIT) process, além do AOT(Ahead-of-Time), esta sendo responsável por converter o código escrito em Dart para machine code/código nativo, seja em Android ou IOS, ou para JavaScript, falando específicamente do Dart Web.
+Por ser multeplataformas, o Dart acompanha duas ferramentas, ou soluções, que possibilitam o seu uso: o Dart Native e o Dart Web. Tendo como principal recurso a máquina virtual responsável por compilar a linguagem no Just-in-Time(JIT) process, além do AOT(Ahead-of-Time), este sendo responsável por converter o código escrito em Dart para machine code/código nativo, seja em Android ou IOS, ou para JavaScript, falando específicamente do Dart Web.
 
 
 <h2>Preparando o Ambiente</h1>
 
 
-Antes de abortar a sintaxe da linguagem de forma aprofundada é preciso criar um ambiente propício para tal. A seguir estão dispostos uma série de passos para a instalação das ferramentas e preparo do ambiente de desenvolvimento.
+A seguir estão dispostos uma série de passos para a instalação das ferramentas e preparo do ambiente de desenvolvimento. Não sendo cem porcento necessário seguir as intalações para iniciar o estudo da linguagem, mas recomendado. Uma forma mais simples de executar códigos dart é ter uma IDE(recomendo o vscode) e plugins que aceitem a sintaxe do dart. Com isso só é preciso criar uma file com a extenção .dark e executá-la com o comando [dart run]. Não sendo necessário a criação de um projeto para tal.
 
 
 <h2>Instalação do Dart-SDK</h1> 
 
 
-O Dart-SDK é uma biblioteca de ferramentas de linha de comando, comumente utilizada em aplicações Web, Server ou de criação de Script, sendo o ambiente mínimo para uso da linguagem. Os comandos a seguir devem ser executados no PowerShell com permição de administrador:
+O Dart-SDK é uma biblioteca de ferramentas de linha de comando, comumente utilizada em aplicações Web, Server ou de criação de Script, sendo um ambiente recomendado(não obrigatório) para uso da linguagem.
 
 
-[Instalar Chocolatey](https://chocolatey.org/) - gerenciador de pacotes para o Windows:
+<h3>Chocolatey</h3>
 
-    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]  ::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
+O Chocolatey é um gerenciador de pacotes para o Windows, necessário no processo de instalação do Dart Software Development Kit. O link a seguir indica o passo a passo pra obter a ferramenta:
+
+
+[Instalar Chocolatey](https://chocolatey.org/install) - 
+
+  
 Verificar instalação
 
     choco -v
@@ -59,8 +64,8 @@ Com os pacotes e o ambiente devidamente definidos e intalados, execute os comand
     cd cli
     dart run
 
-Uma forma mais simples de executar códigos dart é criar uma file com a extenção .dark, a executando com o <strong>dart run <nome></strong>.
-Não sendo necessário a criação de um projeto para tal.
+<!-- Uma forma mais simples de executar códigos dart é criar uma file com a extenção .dark, a executando com o <strong>dart run <nome></strong>.
+Não sendo necessário a criação de um projeto para tal. -->
 
 
 <h2>Hello World</h2>
@@ -145,7 +150,7 @@ Uma string Dart (object String) contém uma sequência de unidades de código UT
 A interpolação permite acessar valores identificados por unidades de armazenamento dentro de um string type
 
     string greeting = "String";
-    string value = "Interpolation";
+    string person = "Interpolation";
     
     print('${greeting}, ${person}!');
     
