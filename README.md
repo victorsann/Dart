@@ -1098,14 +1098,16 @@ O Spread define uma associação entre lists, tendo como resultado um liste apen
     3
 
 
-Um list pode  
-Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o tipos de list:
+<h3>Trantando Lists</h3>
+
+
+Assim como em boa parte das linguagens que tratam de vetores, o dart conta com uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o tipos de list:
 
 
 <h3>Constructors</h3>
 
 
-Estruturas de criação de um List com diferentes restrições
+Estruturas de criação de um List com diferentes restrições:
 
 |        Constructor                                      |                                   Descrição                                     |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------- |
@@ -1121,7 +1123,7 @@ Estruturas de criação de um List com diferentes restrições
 <h3>Proprieties</h3>
 
 
-Atributos de consulta dos lists
+Atributos de consulta dos lists:
 
 |       Proprieties       |    Valor de Retorno    |                                   Descrição                                      |
 | ----------------------  | ---------------------- | -------------------------------------------------------------------------------- |
@@ -1138,12 +1140,23 @@ Atributos de consulta dos lists
 
 <h3>Methods</h3>
 
-Métodos de execução de um List
+Métodos de execução de um List:
 
-|         Methods         |                                    Descrição                                      |
-| ----------------------  |  -------------------------------------------------------------------------------- |
-|  add(value)             |   Adiciona um valor ao final do List, extendendo o tamanho em 1                   | 
-|                         |                                                                                   |
+|         Methods         |                                    Descrição                                            |
+| ----------------------  |  -------------------------------------------------------------------------------------- |
+|  add(value)             |   Adiciona um valor ao final do List, extendendo o tamanho em 1                         | 
+|  addAll(Interable)      |   Adiciona todos os objetos de um interable ao fim de uma list, extendendo seu tamanho  |
+|                         |                                      |
+|                         |                                      |
+|                         |                                      |
+|                         |                                      |
+|                         |                                      |
+|                         |                                      |
+|                         |                                      |
+|                         |                                      |
+|                         |                                      |
+|                         |                                      |
+|                         |                                      |
 
 
 <h2>Map</h2>
