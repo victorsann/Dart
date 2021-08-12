@@ -1208,14 +1208,18 @@ Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou
 
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/61476935/129132771-db53a2d1-9b16-4370-bf68-b762da33799d.png">
+  <h1>Orientação a Objetos</h1>
 </div>
+
+<!-- <div align="center">
+  <img src="https://user-images.githubusercontent.com/61476935/129132771-db53a2d1-9b16-4370-bf68-b762da33799d.png">
+</div> -->
 
 
 <h2>Classes</h2>
 
 
-Por ser uma linguagem orintada a objetos, o Dart conta com todos os recursos padrões do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. Sendo uma classe a matriz de criação de um objeto, pode-se dizer que os objetos possuem membros, sendo estes os métodos ou funções, e os dados ou atributos que a classe permite. A declaração de uma classe no Dart se dá pelo modelo a seguir:
+Por ser uma linguagem orintada a objetos, o Dart conta com todos os recursos padrões do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. Sendo uma classe a matriz de criação de um objeto, pode-se dizer que os objetos possuem membros, sendo estes os métodos ou funções, e os dados ou atributos que a classe permite. A declaração de uma classe no Dart se dá pelo modelo a seguir
 
 
     class ClasseName {
@@ -1231,7 +1235,7 @@ Por ser uma linguagem orintada a objetos, o Dart conta com todos os recursos pad
     }
 
 
-Ao definir uma classe e seus membros, é possível utilizá-la como a definição de tipo de um novo objeto. Com isso, os atributos e métodos da classe são herdados por esse objeto. Para gerar um objeto com base em determinada classe no Dart, se faz uso do identificador dessa classe seguido de um identificar para o objeto em si. E, opcionalmente, usa-se a keyword <strong>new</strong>, sendo seguida do tipo recebido pelo objto, este sendo obrigatório
+Ao definir uma classe e seus membros, é possível utilizá-la como a definição de tipo de um novo objeto. Com isso, os atributos e métodos da classe são herdados por esse objeto. Para gerar um objeto com base em determinada classe no Dart, se faz uso do identificador dessa classe seguido de um identificar para o objeto em si. E, opcionalmente, usa-se a keyword <strong>new</strong>, sendo seguida do tipo recebido pelo objto, este sendo obrigatório:
 
 
     class ClasseName {
@@ -1250,13 +1254,13 @@ Ao definir uma classe e seus membros, é possível utilizá-la como a definiçã
     objectName.identifire = 'Some data';
 
 
-Um padrão da orintação a objetos em muitas linguagens de programação é a herança por instanciação, ou uso do (.) para acessar membros da classe, esta sendo usada como matriz de criação do objeto. Este recurso é usado acima de forma bastante simples, onde o objeto(objectName) herda o atributo(identifire) da classe(ClassName). O mesmo conceito pode ser aplicado a um método ou subclasse, mas não a um constructor
+Um padrão da orintação a objetos em muitas linguagens de programação é a herança por instanciação, ou uso do (.) para acessar membros da classe, esta sendo usada como matriz de criação do objeto. Este recurso é usado acima de forma bastante simples, onde o objeto(objectName) herda o atributo(identifire) da classe(ClassName). O mesmo conceito pode ser aplicado a um método ou subclasse, mas não a um constructor.
 
 
-<h3>Membros de Uma Classe</h3>
+<h2>Membros de Uma Classe</h2>
 
 
-Os membros de uma classe são os já citados métodos e atributos, respectivamente responsáveis por definir o comportamento dos objetos criados, armazenar e referênciar os atributos dos mesmos, ou mais específicamente dos dados correspondentes aos atributos desses objetos. Estes possuem um nível de acesso distinto de métodos ou variáveis que não compêm o escopo de uma classe. Diferente do padrão de instanciação, dentro de uma classe um membro só pode ser instanciado se este estiver dentro do escopo, sendo precedido da keyword this. A keyword this define que um membro da própria classe é quem está sofrendo a instância
+Os membros de uma classe são os já citados métodos e atributos, respectivamente responsáveis por definir o comportamento dos objetos criados, armazenar e referênciar os atributos dos mesmos, ou mais específicamente dos dados correspondentes aos atributos desses objetos. Estes possuem um nível de acesso distinto de métodos ou variáveis que não compõem o escopo de uma classe. Diferente do padrão de instanciação, dentro de uma classe um membro só pode ser instanciado se este estiver dentro do escopo, sendo precedido da keyword <b><i>this</i></b>. A keyword this define que um membro da própria classe é quem está sofrendo a instância:
 
 
     class ClasseName {
@@ -1282,7 +1286,7 @@ Os membros de uma classe são os já citados métodos e atributos, respectivamen
     }
 
 
-<h3>Métodos e Atributos Estáticos</h3>
+<h2>Métodos e Atributos Estáticos</h2>
 
 
 Para fazer uso de um membro de uma classe é preciso, antes de mais nada, criar uma instância da classe a qual ele pertence. Isso se o membro em questão for definido como não estático. Um atributo ou método estático, precedido da palavra chave <strong>static</strong>, descarta a necessidade de uma instanciação da classe de origem. Exemplo:
@@ -1309,10 +1313,12 @@ Para fazer uso de um membro de uma classe é preciso, antes de mais nada, criar 
     Modifier
 
 
-Com o a definição de tipo static, a única referência necessária é ao nome da classe
+<div align="center">
+ Com o a definição de tipo static, a única referência necessária é ao nome da classe.
+</div>
 
 
-<h3>Final</h3>
+<h2>Final</h2>
 
 
 O modificador final define um valor fixo para determinada unidade de código, não permitindo a redefinição desse valor após sua declaração. Tomando como exemplo um atributo de uma classe, pode-se definir que o modificador final age da seguinte forma:
@@ -1337,10 +1343,10 @@ O modificador final define um valor fixo para determinada unidade de código, n�
 O final é utilizado como mecanismo de alerta ao desenvolvedor, definindo que o valor correspondente a um final é imutável, sendo o valor final daquela unidade de código
 
 
-<h3>Usando Constructors</h3>
+<h2>Usando Constructors</h2>
 
 
-Um constructor é definido por inicializar um objeto no processo de criação do mesmo, definindo valores, carregando informações que possuem devida importancia, etc. Um constructor também é definido como o primeiro método a ser chamado quando uma classe é instanciada, não sendo obrigatoriamente necessário criá-lo, já que, por padrão, classes já possuem um constructor mesmo que ele não seja definido. Um constructor possui o ClasseName como seu identificador
+Um constructor é definido por inicializar um objeto no processo de criação do mesmo, definindo valores, carregando informações que possuem devida importancia, etc. Um constructor também é definido como o primeiro método a ser chamado quando uma classe é instanciada, não sendo obrigatoriamente necessário criá-lo, já que, por padrão, classes já possuem um constructor mesmo que ele não seja definido. Um constructor possui o ClasseName como seu identificador:
 
 
     class ClasseName {
@@ -1366,7 +1372,7 @@ Um constructor é definido por inicializar um objeto no processo de criação do
     ClassName objectName = <new> ClassName();
 
 
-<h3>Exemplo de Uso de Um Constructors</h3>
+<h2>Exemplo de Uso de Um Constructors</h2>
 
 
     class Usuarios {
@@ -1408,10 +1414,10 @@ Um constructor é definido por inicializar um objeto no processo de criação do
     }
 
 
-No exemplo acima o cronstructor recebe via parâmetro os valores correspondentes a senha e ao nome do usuário em uma tela de login. Aqui os valores só são passados dessa maneira com o propósito explicativo. Perceba que os valores citados são passados no momento em que o objeto é criado, ou seja, no momento em que um constructor é definido, a declaração de um objeto passa a referencia-lo e não mais á classe
+No exemplo acima o cronstructor recebe via parâmetro os valores correspondentes a senha e ao nome do usuário em uma tela de login. Aqui os valores só são passados dessa maneira com o propósito explicativo. Perceba que os valores citados são passados no momento em que o objeto é criado, ou seja, no momento em que um constructor é definido, a declaração de um objeto passa a referencia-lo e não mais à classe.
 
 
-<h3>Named Constructor</h3>
+<h2>Named Constructor</h2>
 
 
 Um named constructor é uma definição de identificador para o constructor de uma class, não possuindo diferenças diretas na sua função ou forma de execução, normalmente utilizado quando uma classe precisa de múltiplos constructors. Exemplo:
@@ -1438,10 +1444,10 @@ Um named constructor é uma definição de identificador para o constructor de u
     }
 
 
-<h3>Getter e Setter</h3>
+<h2>Getter e Setter</h2>
 
 
-O Dart, assim como muitas linguagens de programação modernas possui um recurso de nivelamento de acesso, podendo restringir o contato entre partes do código, deixando o mesmo mais seguro. Uma dessas restrições é tornar um atributo privado, só permitindo seu acesso no escopo da classe que o contém. O getter e o setter executam respectivamente as funções de obter e configurar essas partes, permitindo seu acesso de forma segura
+O Dart, assim como muitas linguagens de programação modernas possui um recurso de nivelamento de acesso, podendo restringir o contato entre partes do código, deixando o mesmo mais seguro. Uma dessas restrições é tornar um atributo privado, só permitindo seu acesso no escopo da classe que o contém. O getter e o setter executam respectivamente as funções de obter e configurar essas partes, permitindo seu acesso de forma segura:
 
 
     class ClassName {
@@ -1491,7 +1497,7 @@ Com isso é possível acessar o atributo _attributeName por meio da variável ge
       } else {
         print('O valor máximo de saque é 500');
       }
-     }
+    }
 
     }
     
@@ -1501,19 +1507,19 @@ Com isso é possível acessar o atributo _attributeName por meio da variável ge
     }
 
 
-O exemplo acima usa os conceitos de Getter e Setter para simular um saque em uma conta bancária, tendo como private o valor a ser sacado. Este passa a ser acessível através de um get, sendo posteriormente configurado através de um set
+O exemplo acima usa os conceitos de Getter e Setter para simular um saque em uma conta bancária, tendo como private o valor a ser sacado. Este passa a ser acessível através de um get, sendo posteriormente configurado através de um set.
 
 
 <h2>Herança</h2>
 
 
-A herança é um dos pilares da orientação a objetos. Desenvolver visando o reaproveitamento de código é extremamente recomendado no contexo da POO, e o Dart possui seu meio para tornar isso possível. Com isso, tendo em mente como as classes são criadas e cosumidas para criar objetos, a seguir veremos como classes filhas podem herdar membros de classes pais aplicando o conseito de herança
+A herança é um dos pilares da orientação a objetos. Desenvolver visando o reaproveitamento de código é extremamente recomendado no contexo da POO, e o Dart possui seu meio para tornar isso possível. Com isso, tendo em mente como as classes são criadas e cosumidas para criar objetos, a seguir veremos como classes filhas podem herdar membros de classes pais aplicando o conseito de herança:
 
 
 <h3>Extends</h3>
 
 
-O extends cria uma relação entre duas classes distintas, sendo uma chamada de classe SuperClasse(doadora), e outra chamada de subClasse(herdeira)
+O extends cria uma relação entre duas classes distintas, sendo uma chamada de classe SuperClasse(doadora), e outra chamada de subClasse(herdeira):
 
 
     class SuperClasse {
@@ -1554,13 +1560,13 @@ Isso estabelece que cada método ou atributo definido como parte da SuperClasse 
     Sobrenome: Corleone
 
 
-Perceba que mesmo sendo uma classe herdeira, a subClasse possui um atributo próprio. Isso permite criar um maior nível de abstração e aproveitamento de um código já criado, não sendo necessário criar os mesmos atributos em classe relacionadas
+Perceba que mesmo sendo uma classe herdeira, a subClasse possui um atributo próprio. Isso permite criar um maior nível de abstração e aproveitamento de um código já criado, não sendo necessário criar os mesmos atributos em classe relacionadas.
 
 
-<h3>@override</h3>
+<h2>@override</h2>
 
 
-O @override é um recurso ligado diretamente com classes e herança de métodos. Com o processo de desenvolvimento de um código, há uma série de problemas que surgem, como repetição de identificadores por exemplo, ou a redefinição de um método específico. O @override é responsável por sobrescrever um método, definindo uma nova função para o mesmo. Exemplo:
+O @override é um recurso ligado diretamente com classes e a herança de seus membros por outras classes. Com o processo de desenvolvimento de um código há uma série de problemas que surgem, como repetição de identificadores por exemplo, ou a redefinição de um método específico. O @override é responsável por sobrescrever um método, definindo uma nova função para o mesmo. Exemplo:
 
 
     class SuperClasse {
@@ -1606,7 +1612,7 @@ Quando a subClasse for intanciada, o método herdado será sobrescrito pelo mét
     A fruit
 
 
-<h3>super.method()</h3>
+<h2>super.method()</h2>
 
 
 Em contraponto ao @override, o super é utilizado para tornar acessível um método sobrescrito de uma SuperClasse. Tendo o mesmo princípio, porém, aplicado de forma invertida. Exemplo:
@@ -1630,7 +1636,7 @@ Em contraponto ao @override, o super é utilizado para tornar acessível um mét
     }
 
 
-Um super deve ser declarado dentro de um membro da classe herdeira, específicamente em um método. A seguir há um exemplo mais detalhado do uso do super
+Um <b><i>super</i></b> deve ser declarado dentro de um membro da classe herdeira, específicamente em um método. A seguir há um exemplo mais detalhado do uso do super:
 
 
     class Food {
@@ -1668,7 +1674,7 @@ Um super deve ser declarado dentro de um membro da classe herdeira, específicam
     A fastfood
 
 
-<h3>constructor() : super()</h3>
+<h2>constructor() : super()</h2>
 
 
 O super também pode definir uma relação entre classes atráves dos constructors, definindo a passagem de dados de uma subClasse para uma SuperClasse. Exemplo:
@@ -1701,7 +1707,7 @@ O super também pode definir uma relação entre classes atráves dos constructo
     Margherita
 
 
-Isso se dá quando uma subClasse é instanciada, tendo um valor recebito em seu constructor, sendo necessário ter este mesmo valor na SuperClasse. No caso acima essa informação é o sabor da pizza criada
+Isso se dá quando uma subClasse é instanciada tendo um valor recebito em seu constructor, sendo necessário ter este mesmo valor na SuperClasse. No caso acima essa informação é o sabor da pizza criada.
 
 
 <h2>Classes Abstratas</h2>
@@ -1723,7 +1729,7 @@ Uma classe abstrata é precedida do modificador abstract, este impede a instanci
     }
 
 
-Um detalhe importante sobre classes abstratas é que seus membros também passam a ser abstratos. Um método abstrato, diferente de um método concreto, quando declarado, depende de um @override para poder ser mantido. Do contrario é gerado um erro, exigindo a que o método seja sobrescrito 
+Um detalhe importante sobre classes abstratas é que seus membros também passam a ser abstratos. Um método abstrato, diferente de um método concreto, quando declarado, depende de um @override para poder ser mantido. Do contrario é gerado um erro, exigindo que o método seja sobrescrito:
 
 
     abstract class Lapis {
@@ -1740,7 +1746,10 @@ Um detalhe importante sobre classes abstratas é que seus membros também passam
     Try implementing the missing method, or make the class"
 
 
-Perceba que um método abstrato pode ser declarado sem corpo. Isso ocorre graças a natureza abstrata do mesmo, pois ele sempre vai sofrer um @override. Corrigindo o erro:
+Perceba que um método abstrato pode ser declarado sem corpo. Isso ocorre graças a natureza abstrata do mesmo, pois ele sempre vai sofrer um @override. 
+
+
+<h3>Corrigindo o Erro</h3>
 
 
     abstract class Lapis {
@@ -1767,7 +1776,7 @@ Perceba que um método abstrato pode ser declarado sem corpo. Isso ocorre graça
 <h2>Interfaces</h2>
 
 
-Um interface por definição é uma SuperClasse abstrata cujos membros só são herdados por subClasses concretas que os implementem, como um contrato que deve ter seus termos aceitos após a assinatura. Os métodos ou atributos de uma interface devem sofrer um @override na subClasse que os implementa, do contrário não podem ser utilizados. Para uma melhor definição observe:
+Um interface por definição é uma SuperClasse abstrata cujos membros só são herdados por subClasses concretas que os implementem; como um contrato que deve ter seus termos aceitos após a assinatura. Os métodos ou atributos de uma interface devem sofrer um @override na subClasse que os implementa, do contrário não podem ser utilizados. Para uma melhor definição observe:
 
    
     abstract class Machine {
@@ -1807,15 +1816,15 @@ Um interface por definição é uma SuperClasse abstrata cujos membros só são 
     }
 
 
-Perceba que não há uma relação direta de herança entre as classes, o que ocorre é a implementação de um modelo de classe(Machine) nos demais. Isso ocorre porquê muitas vezes um trecho de código é definido como estrutura padrão de um sistema(não necessariamente sendo utilizado da mesma forma). O interface evita a repetição desnecessária de código
+Perceba que não há uma relação direta de herança entre as classes, o que ocorre é a implementação de um modelo de classe(Machine) nos demais. Isso ocorre porquê muitas vezes um trecho de código é definido como estrutura padrão de um sistema(não necessariamente sendo utilizado da mesma forma). O interface evita a repetição desnecessária de código.
 
-Um outro ponto é que uma classe pode tanto implementar quanto herdar de classes distintas sem mais problemas, sendo uma alternativa a impossibilidade de herança múltipla
+Um outro ponto é que uma classe pode tanto implementar quando herdar de classes distintas sem mais problemas, sendo uma alternativa a impossibilidade de herança múltipla
 
 
 <h2>Mixin</h2>
 
 
-O mixin é um método de definição de acesso a recursos de uma classe de forma restrita. Assim como um interface, só é possível acessar um mixin caso a relação entre ele e uma outra classe for explícita, esta sendo declarada pela keyword <strong>with</strong>:
+O mixin é um método de definição de acesso a recursos de uma classe de forma restrita. Assim como um interface, só é possível acessar um mixin caso a relação entre ele e uma classe for explícita, esta sendo declarada pela keyword <b><i>with</i></b>:
 
 
     abstract class Cash {
@@ -1861,4 +1870,10 @@ O mixin é um método de definição de acesso a recursos de uma classe de forma
     Cash
 
 
-O exemplo define dois tipos de clientes, um Premium e um Common. Por possuir mais privilégios, um cliente Premium possuiria acesso ao mixin Score, tendo acesso exclusivo ao método credit. O mixin é extremamente importante no processo de declaração de relações e acesso a informação entre classes, tornando o código ainda mais seguro
+O exemplo define dois tipos de clientes, um Premium e um Common. Por possuir mais privilégios, um cliente Premium possuiria acesso ao mixin Score, tendo acesso exclusivo ao método credit. O mixin é extremamente importante no processo de declaração de relações e acesso a informação entre classes, tornando o código ainda mais seguro.
+
+
+<h1>Programação Assíncrona</h1>
+
+
+<h2>Por que o código assíncrono é importante</h2>
