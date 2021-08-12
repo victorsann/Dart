@@ -842,7 +842,7 @@ O valor de expr1 é retornado caso ele seja diferente de null, de outra forma, o
     }
 
 
-Os fechamentos dentro dos loops for do DART capturam o valor do índice, evitando uma armadilha comum encontrada no JavaScript.
+Os fechamentos dentro dos loops for do DART capturam o valor do índice, evitando uma armadilha comum encontrada no JavaScript:
 
 
     var callbacks = [];
@@ -894,7 +894,7 @@ Um do-while avalia a condição depois do loop:
 <h3>Break e continue</h3>
 
 
-O break é utilizado para quebrar um loop em execução quando o valor definido em uma condicional é encrontrado:
+O <b><i>break</i></b> é utilizado para quebrar um loop em execução quando o valor definido em uma condicional é encrontrado:
 
 
     while (true) {
@@ -905,7 +905,7 @@ O break é utilizado para quebrar um loop em execução quando o valor definido 
     }
 
 
-O continue é utilizado para pular para o próximo loop quando o valor definido em uma condicional é encrontrado:
+O <b><i>continue</i></b> é utilizado para pular para o próximo loop quando o valor definido em uma condicional é encrontrado:
 
 
     for (int i = 0; i < candidates.length; i++) {
@@ -921,11 +921,11 @@ O continue é utilizado para pular para o próximo loop quando o valor definido 
 <h2>Switch-case</h2>
 
 
-O Switch no Dart compara integer, string ou constantes de tempo de compilação usando o operador de igualdade(==). Todos os objetos comparados devem ser instâncias da mesma classe(e não de qualquer um de seus subtipos), e a classe não pode sobrepor o operador. 
+O Switch no Dart compara integers, strings ou constantes de tempo de compilação usando o operador de igualdade(==). Todos os objetos comparados devem ser instâncias da mesma classe(e não de qualquer um de seus subtipos), e a classe não pode sobrepor o operador. 
 
-Todas as clausulas case non-empty têm como regra terminar com um break. Outros meios válidos para termiar um non-empty case é usando o continue, o throw ou um return.
+Qualquer uma das clausulas <b><i>case non-empty</i></b> têm como regra terminar com um <b><i>break</i></b>. Outros meios válidos para termiar um non-empty case é usando o <b><i>continue</i></b>, o <b><i>throw</i></b> ou um <b><i>return</i></b>.
 
-Caso nenhum case combine com o valor de comparação, executa-se uma clausula default:
+Caso nenhum case combine com o valor de comparação, é executada uma clausula <b><i>default</i></b>:
 
 
     var command = 'OPEN';
@@ -953,7 +953,7 @@ Caso nenhum case combine com o valor de comparação, executa-se uma clausula de
 <h2>Try-Catch</h2>
 
 
-O Catch captura uma uma exceção, impedindo essa exceção de se propagar, a menos que ela seja relançada. Capturar essa exceção permite que ela seja tratada:
+O Catch captura uma exceção e impede que ela se propague, a menos que ela seja relançada. Capturar essa exceção permite que ela seja tratada:
 
 
     try {
@@ -967,7 +967,7 @@ O Catch captura uma uma exceção, impedindo essa exceção de se propagar, a me
     }
 
 
-Para tratar um código que pode lançar mais de um tipo de exceção, é possível especificar múltiplas clausulas catch. A primeira clausula que combinar com o tipo de objeto lançado trata a exceção. Se a clausula catch não especificar um tipo ela pode tratar qualquer objeto lançado:
+Para tratar um código que pode lançar mais de um tipo de exceção, é possível especificar múltiplas clausulas catch. A primeira clausula que combinar com o tipo de objeto lançado trata a exceção. Se a clausula catch não especificar um tipo, qualquer objeto lançado pode ser tratado por ela:
 
 
     try {
@@ -1027,7 +1027,7 @@ A definição para uma List é uma coleção indexável de objetos com um length
 - Lists de Comprimentos Fixos;
 - Lists de Comprimento Cultivaveis ou de Tamanho não Fixo;
 
-Um array, vetor ou variável composta em Dart é definido como uma lista de objetos, portanto, recebendo da linguagem o identificador <strong>List</strong>, que pode agrupar basicamente qualquer built-in type do Dart. Há formas distintas de declarar um List em Dart:
+Um array, vetor ou variável composta em Dart é definido como uma lista de objetos, portanto, recebendo da linguagem o identificador <b><i>List</i></b>, que pode agrupar basicamente qualquer built-in type do Dart. Há formas distintas de declarar um List em Dart:
 
 
     // Sem definição de tipo
@@ -1081,7 +1081,7 @@ Um array, vetor ou variável composta em Dart é definido como uma lista de obje
 <h3>Spread Operator</h3>
 
 
-O Spread define uma associação entre lists, tendo como resultado um liste apenas. O length dessa associação é equivalente aos indices de ambas as listas somados
+O Spread define uma associação entre lists, tendo como resultado um liste apenas. O length dessa associação é equivalente aos indices de ambas as listas somados:
 
 
     List name = ['Victor'];
@@ -1099,7 +1099,7 @@ O Spread define uma associação entre lists, tendo como resultado um liste apen
 
 
 Um list pode  
-<!-- Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o tipos de list:
+Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o tipos de list:
 
 
 <h3>Constructors</h3>
@@ -1143,7 +1143,7 @@ Métodos de execução de um List
 |         Methods         |                                    Descrição                                      |
 | ----------------------  |  -------------------------------------------------------------------------------- |
 |  add(value)             |   Adiciona um valor ao final do List, extendendo o tamanho em 1                   | 
-|                         |                                                                                   | -->
+|                         |                                                                                   |
 
 
 <h2>Map</h2>
