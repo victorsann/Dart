@@ -1162,12 +1162,12 @@ Métodos de execução de um List:
 <h2>Map</h2>
 
 
-Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de qualquer tipo. Bastente parecido com um List, o Map possui a propriedade de ter indices customizaveis únicos, o que os diferencia. A seguir há exemplos de declarações de Maps:
+Em geral um map é um objeto que associa chaves e valores, ambos podendo ser de qualquer tipo. Bastente parecido com um List, o Map possui a propriedade de ter indices customizaveis únicos, o que os diferencia. A seguir há exemplos de declarações de Maps:
 
 
     var movies = {
 
-    // Chave:   Valor
+    // Chave: Valor
     
       'first': 'The God Father',
       'second': 'Good Fellas',
@@ -1194,7 +1194,7 @@ Em geral um map é um objeto que associa Chaves e valores, ambos podendo ser de 
 <h2>Set</h2>
 
 
-Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. Exemplos do Set type:
+Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou objeto, com métodos e atributos próprios. Estes usados para adicionar, excluir e alterar elementos. A seguir há exemplos de declarações do Set type:
     
     
     //Set vazio
@@ -1206,30 +1206,16 @@ Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou
 
     var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
 
-<!-- Assim como em boa parte das linguagens que tratam de vetores, há uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o type Set:
-
-
-<h3>Constructors</h3>
-
-
-Estruturas de criação de um Set com diferentes restrições
-
-|        Constructor                                      |                                   Descrição                                     |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------- |
-|  Set()                                                  |  Cria um Set vazio                                                              | 
-|  Set.from(Iterable elements)                            |  Cria um Set que contém todos os elements                                       |
- -->
-
 
 <div align="center">
-  <h1>Orientação a Objetos</h1>
+  <img src="https://user-images.githubusercontent.com/61476935/129132771-db53a2d1-9b16-4370-bf68-b762da33799d.png">
 </div>
 
 
 <h2>Classes</h2>
 
 
-Por ser uma linguagem orintada a objetos, o Dart conta com todos os recursos padrões do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. Sendo uma classe a matriz de criação de um objeto, pode-se dizer que os objetos possuem membros, sendo estes os métodos ou funções, e os dados ou atributos que a classe permite. A declaração de uma classe no Dart se dá pelo modelo a seguir
+Por ser uma linguagem orintada a objetos, o Dart conta com todos os recursos padrões do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. Sendo uma classe a matriz de criação de um objeto, pode-se dizer que os objetos possuem membros, sendo estes os métodos ou funções, e os dados ou atributos que a classe permite. A declaração de uma classe no Dart se dá pelo modelo a seguir:
 
 
     class ClasseName {
