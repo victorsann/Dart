@@ -1289,7 +1289,7 @@ Os membros de uma classe são os já citados métodos e atributos, respectivamen
 <h2>Métodos e Atributos Estáticos</h2>
 
 
-Para fazer uso de um membro de uma classe é preciso, antes de mais nada, criar uma instância da classe a qual ele pertence. Isso se o membro em questão for definido como não estático. Um atributo ou método estático, precedido da palavra chave <strong>static</strong>, descarta a necessidade de uma instanciação da classe de origem. Exemplo:
+Para fazer uso de um membro de uma classe é preciso, antes de mais nada, criar uma instância da classe a qual ele pertence. Isso se o membro em questão for definido como não estático. Um atributo ou método estático, precedido da palavra-chave <strong>static</strong>, descarta a necessidade de uma instanciação da classe de origem. Exemplo:
 
 
     class ClassName {
@@ -1876,4 +1876,209 @@ O exemplo define dois tipos de clientes, um Premium e um Common. Por possuir mai
 <h1>Programação Assíncrona</h1>
 
 
+Com a necessidade de acesso a recursos externos, os modelos de comunicação e execução visando performance se tornaram cada vez mais importantes para os desenvolvedores. Termos como Threads são bastentes conhecidos dos que já possuem certa experiência, porém, os modelos que envolvem single-thread, multi-thread e outros, ainda são desconhecidos por muitos. Os modelos síncronos e assíncronos possibilitam o uso de diferentes meios para criar um sistema que se comunique, trate e use as informações obtidas.
+
+
 <h2>Por que o código assíncrono é importante</h2>
+
+
+O modelo assíncrono, associado ao multi-thread, conta com a vantegem de permitir a execução de uma tarefa enquanto aguarda a finalização de outra. Esta que pode estar buscando ou respondendo uma aplicação externa, sendo mantida em hold enquanto não há uma resposta. Quando há um retorno, a tarefa é retomada do ponto em que havia sido suspensa, permitindo um processo de execução muito mais fluido e eficaz do que o modelo single-thread ofereceria.
+
+Por ser uma linguagem moderna, o Dart conta com um modelo de execução que suporta a programação assíncrona, permitindo que o desenvolvedor trate com muito mais eficácia suas requisições e possíveis erros no processo de consumo de API's exeternas.
+A seguir iremos abordar os mecanismos que a linguagem provê na prática:
+
+
+<h2>O que é uma Future ?</h2>
+
+
+Uma <b><i>Future</i></b> é a representação do resultado de uma operação assícrona, podendo ter dois estados: uncompleted e completed.
+
+
+<h3>Uncompleted</h3>
+
+
+Quando uma chamada em uma função assíncrona é feita, seu resultado é retornado como uma <b><i>uncompleted</i></b> future. Essa future passa a esperar o fim da operação ou lança um erro.
+
+
+<h3>Completed</h3>
+
+
+Se a operação assíncrona for bem sucedida, a future resulta em um valor de retorno, caso contrário, resulta em um erro.
+
+
+<h3>Retornando um Valor</h3>
+
+
+Uma future de tipo resulta em um valor do tipo <b>T</b>. Por exemplo, uma future de tipo <b><i>Future String </i></b> porduz uma string como valor. Caso uma future não retorne um valor utilizável, esta pode ser declarada como <b><i>Future void </i></b>. 
+
+A seguir temos um exemplo de declaração e uso de uma função Future que retorna um valor:
+
+
+    Future<void> fetchUserOrder() {
+
+      // Imagine que esta função está nuscando informações de um usuário de um service ou base de dados
+
+      return Future.delayed(const Duration(seconds: 2), 
+      
+      () => print('Café'));
+    }
+    
+    void main() {
+      fetchUserOrder();
+      print('Buscando o pedido do usuário...');
+    }
+
+    // OutPut: 
+
+    Buscando o pedido do usuário...
+    Café  
+
+
+Por possuir um delay proposital, o método <b><i>fetchUserOrde()</i></b> é declarado como uma Future, indicando que essa função pode ser executada em segundo plano e que as demais não precisam esperá-la terminar para serem executadas.
+
+
+<h3>Retornando um Erro</h3>
+
+
+Se por alguma razão uma operação assíncrona cair ou achar uma exception, a future irá completar a execução com um erro. A seguir temos um exemplo de declaração de uma Future que completa a execução com uma exception:
+
+
+    Future<void> fetchUserOrder() {
+
+    // Imagine que esta função está buscando informações de um usuário mas encontrou um bug
+
+      return Future.delayed(const Duration(seconds: 2),
+          () => throw Exception('Logout failed: user ID is invalid'));
+    }
+    
+    void main() {
+      fetchUserOrder();
+      print('Buscando o pedido do usuário...');
+    }
+
+    //Output:
+
+    Buscando o pedido do usuário...
+    Unhandled exception:
+    Exception: Logout failed: user ID is invalid
+
+
+ A função indica que o ID do usuário é invalido, portanto há uma exception.
+
+
+ <h2>async e await</h2>
+
+
+ As palavras-chave <b><i>async</i></b> e <b><i>await</i></b> fornecem um meio declarativo de definição de funções assíncronas e de uso de seus resultados. É importante se ater às seguintes regras ao fazer uso de async e await:
+
+ * Para definir uma função async, adicione async antes do corpo da função.
+ * A palavra-chave await só funciona em funções async.
+
+ A seguir temos um exemplo de declaração de função async:
+
+
+    void myMethod() async { ... }
+
+
+Caso a função criada possua uma declaração de tipo, ou seja, um retorno, declare a função como Future T , onde T é o tipo correspondente a seu valor de retorno. Caso o valor de retorno não seja explícito, defina a função como Future void :
+
+
+    Future<void> myMethod() async { ··· }
+
+
+Uma função async passa a aceitar a declaração de um await quando definida. O exemplo a seguir mostra como declarar um await:
+
+
+    Future<void> myMethod() async { 
+      print( await createMessage());
+    }
+
+    String createMessage() {
+      return 'Go learn some code';
+    }
+
+    main() {
+      myMethod();
+    }
+    
+    //Output:
+  
+    Go lurn some code
+
+
+O exemplo a seguir compara as declarções de uma série de funções síncronas e seu resultado com as mesmas funções, porém, declaradas como assíncronas:
+
+
+<h3>Exemplo de Função Síncrona</h3>
+
+
+    String createOrderMessage() {
+      var order = fetchUserOrder();
+      return 'Seu pedido é: $order';
+    }
+    
+    Future<String> fetchUserOrder() =>
+
+       // Imagine uma função mais complexa e lenta
+
+        Future.delayed(
+          const Duration(seconds: 2),
+          () => 'Café',
+        );
+    
+    void main() {
+      print('Buscando o pedido do usuário...');
+      print(createOrderMessage());
+    }
+
+    //Output:
+
+    Buscando o pedido do usuário...
+    Seu pedido é: Instance of 'Future<String>'
+
+  
+ <h3>Exemplo de Função Assíncrona com async e await</h3>
+
+
+    Future<String> createOrderMessage() async {
+      var order = await fetchUserOrder();
+      return 'Seu pedido é: $order';
+    }
+    
+    Future<String> fetchUserOrder() =>
+
+        // Imagine uma função mais complexa e lenta
+
+        Future.delayed(
+          const Duration(seconds: 2),
+          () => 'Café',
+        );
+    
+    Future<void> main() async {
+      print('Buscando o pedido do usuário...');
+      print(await createOrderMessage());
+    }
+
+    //Output:
+
+    Buscando o pedido do usuário...
+    Seu pedido é: Café
+
+
+O exemplo assíncrono é diferente de três formas:
+
+* O tipo de retorno para createOrderMessage() muda de um simple String para um Future do tipo String.
+* A palavra-chave async aparece antes dos corpos das funções createOrderMessage() e main().
+* A palavra-chave await aparece antes da chamada das funções assíncronas fetchUserOrder() and createOrderMessage().
+
+
+<h3>Fluxo de Execução com async e await</h3>
+
+
+Uma função async roda sincronicamente até o primeiro await. Isso significa que dentro de um corpo de função assíncrona, todo o código síncrono antes da primeira palavra-chave await é executado imediatamente.
+
+
+<h2>Tratando Erros</h2>
+
+
+O meio mais utilizado e recomendado para tratar erros em funções async é utilizando o try-catch:
