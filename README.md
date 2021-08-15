@@ -2079,10 +2079,72 @@ O exemplo assíncrono é diferente de três formas:
 <h3>Fluxo de Execução com async e await</h3>
 
 
-Uma função async roda sincronicamente até o primeiro await. Isso significa que dentro de um corpo de função assíncrona, todo o código síncrono antes da primeira palavra-chave await é executado imediatamente.
+Uma função async roda sincronicamente até o primeiro await. Isso significa que dentro de um corpo de função assíncrona, todo o código síncrono antes da primeira palavra-chave await é executado imediatamente. A seguir há um exemplo com o qual é possível entender melhor o fluxo de execução assíncrono:
+
+
+    Future<void> printOrderMessage() async {
+      print('Aguardando pedido do usuário...');
+      var order = await fetchUserOrder();
+      print('Seu pedido é: $order');
+    }
+    
+    Future<String> fetchUserOrder() {
+      return Future.delayed(const Duration(seconds: 4), () => 'Café');
+    }
+    
+    Future<void> main() async {
+      countSeconds(4);
+      await printOrderMessage();
+    }
+    
+    // Você pode ignorar esse método - Sua função é todar o delay visível
+    void countSeconds(int s) {
+      for (var i = 1; i <= s; i++) {
+        Future.delayed(Duration(seconds: i), () => print(i));
+      }
+    }
+
+
+Aqui temos basicamente quatro métodos. Três deles, incluindo o main method, são de execução assícrona, ou seja, são Futures que executam ações de acordo com o tempo de retorno das chamadas. O quarto método torna visível o delay de quatro segundos que cada await demora para retornar um valor.
+
+
+    //Output:
+
+    Aguardando pedido do usuário...
+    1
+    2
+    3
+    4
+    Seu pedido é: Café
+
+
+O run inicia no main method, cuja função aqui é executar as demais Futures. Com isso, perceba que por mais que a função print('Aguardando pedido do usuário...') esteja dentro de uma função assíncrona, ela é executado imediatamente após a chamada do método printOrderMessage(). Isso ocorre graças a natureza síncrona da print() function. Já na chamada do método fetchUserOrder(), que também é definido como await, há um delay proposital que demostra sua natureza assíncrona.
 
 
 <h2>Tratando Erros</h2>
 
 
-O meio mais utilizado e recomendado para tratar erros em funções async é utilizando o try-catch:
+O meio mais utilizado e recomendado para tratar erros em funções async é utilizando o try-catch, graças a possibilidade de tratar erros distintos de diferentes formas. A seguir há um exemplo de uso do try-catch em uma operação assíncrona:
+
+
+    Future<String> fetchUserOrder() {
+       return Future.delayed(const Duration(seconds: 4), () => 'Café');
+    }
+     
+    Future<void> main() async {
+     try {
+       print('Aguardando pedido do usuário...');
+       var order = await fetchUserOrder();
+       print(order);
+     
+     } catch (err) {
+       print('Caught error: $err');
+     }
+    }
+
+    //Output:
+    
+    Aguardando pedido do usuário...
+    //seconds: 4
+    Café
+
