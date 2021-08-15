@@ -2149,4 +2149,6 @@ O meio mais utilizado e recomendado para tratar erros em funções async é util
     Café
 
 
-Caso haja um exception, o catch irá executar um print do erro encontrado.
+<div align="center">
+  Caso haja um exception, o catch irá executar um print do erro encontrado.
+</div>
