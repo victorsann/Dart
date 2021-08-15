@@ -2118,7 +2118,7 @@ Aqui temos basicamente quatro métodos. Três deles, incluindo o main method, s�
     Seu pedido é: Café
 
 
-O run inicia no main method, cuja função aqui é executar as demais Futures. Com isso, perceba que por mais que a função print('Aguardando pedido do usuário...') esteja dentro de uma função assíncrona, ela é executado imediatamente após a chamada do método printOrderMessage(). Isso ocorre graças a natureza síncrona da print() function. Já na chamada do método fetchUserOrder(), que também é definido como await, há um delay proposital que demostra sua natureza assíncrona.
+O run inicia no main method, cuja função aqui é executar as demais Futures. Com isso, perceba que por mais que a função print('Aguardando pedido do usuário...') esteja dentro de uma função assíncrona, ela é executado imediatamente após a chamada do método printOrderMessage(). Isso ocorre graças a natureza síncrona da print() function. Já na chamada do método fetchUserOrder(), que também é definido como await, há um delay proposital que demonstra sua natureza assíncrona.
 
 
 <h2>Tratando Erros</h2>
@@ -2147,4 +2147,6 @@ O meio mais utilizado e recomendado para tratar erros em funções async é util
     Aguardando pedido do usuário...
     //seconds: 4
     Café
+    
 
+Caso haja um exception, o carch irá executar um print do erro encontrado.
