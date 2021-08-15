@@ -2147,6 +2147,6 @@ O meio mais utilizado e recomendado para tratar erros em funções async é util
     Aguardando pedido do usuário...
     //seconds: 4
     Café
-    
 
-Caso haja um exception, o carch irá executar um print do erro encontrado.
+
+Caso haja um exception, o catch irá executar um print do erro encontrado.
