@@ -1916,7 +1916,7 @@ A seguir temos um exemplo de declaração e uso de uma função Future que retor
 
     Future<void> fetchUserOrder() {
 
-      // Imagine que esta função está nuscando informações de um usuário de um service ou base de dados
+      // Imagine que esta função está buscando informações de um usuário de um service ou base de dados
 
       return Future.delayed(const Duration(seconds: 2), 
       
@@ -1931,6 +1931,7 @@ A seguir temos um exemplo de declaração e uso de uma função Future que retor
     // OutPut: 
 
     Buscando o pedido do usuário...
+    //seconds: 2
     Café  
 
 
@@ -1959,11 +1960,12 @@ Se por alguma razão uma operação assíncrona cair ou achar uma exception, a f
     //Output:
 
     Buscando o pedido do usuário...
+    //seconds: 2
     Unhandled exception:
     Exception: Logout failed: user ID is invalid
 
 
- A função indica que o ID do usuário é invalido, portanto há uma exception.
+ A função indica que o ID do usuário é invalido, portanto, há uma exception.
 
 
  <h2>async e await</h2>
@@ -2034,6 +2036,7 @@ O exemplo a seguir compara as declarções de uma série de funções síncronas
     //Output:
 
     Buscando o pedido do usuário...
+    //seconds: 2
     Seu pedido é: Instance of 'Future<String>'
 
   
@@ -2062,6 +2065,7 @@ O exemplo a seguir compara as declarções de uma série de funções síncronas
     //Output:
 
     Buscando o pedido do usuário...
+    //seconds: 2
     Seu pedido é: Café
 
 
