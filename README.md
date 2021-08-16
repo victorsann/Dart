@@ -124,9 +124,8 @@ Nesse ponto iremos entender as estruturas e os aspectos que compõem a linguagem
  Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos; 
 
 
-<div align="center">
- <h1>Built-in Types</h1>
-</div>
+<h1>Built-in Types</h1>
+
 
 O Dart possui os seguintes tipos internos:
 
