@@ -551,12 +551,7 @@ Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao val
 O operador de conjunção, também chamado de AND lógico define que o resultado de uma operação como true se ambos os operandos forem verdadeiros.
 
 
-<div align="center">
-  <h1>Unidades de Armazenamento</h1>
-</div>
-
-
-<h2>Variáveis</h2>
+<h1>Unidades de Armazenamento</h1>
 
 
 Assim como em qualquer linguagem de programação, as variáveis em Dart são uma unidade de armazenamento e de referência de dados, tendo aqui algumas características importantes a serem mencionadas.
@@ -1169,7 +1164,7 @@ Em geral um map é um objeto que associa chaves e valores, ambos podendo ser de 
 
     // Chave: Valor
     
-      'first': 'The God Father',
+      'first': 'The GodFather',
       'second': 'Good Fellas',
       'third': 'The Irishman'
     };
@@ -1187,7 +1182,7 @@ Em geral um map é um objeto que associa chaves e valores, ambos podendo ser de 
 
     //OutPut:
 
-    The God Father
+    The GodFather
     Vito Corleone
 
 
@@ -1211,15 +1206,14 @@ Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou
   <h1>Orientação a Objetos</h1>
 </div>
 
-<!-- <div align="center">
-  <img src="https://user-images.githubusercontent.com/61476935/129132771-db53a2d1-9b16-4370-bf68-b762da33799d.png">
-</div> -->
+
+Por ser uma linguagem orintada a objetos, o Dart conta com todos os recursos padrões do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. A seguir iremos entender como aplicar os conceitos da OOP com o Dart.
 
 
 <h2>Classes</h2>
 
 
-Por ser uma linguagem orintada a objetos, o Dart conta com todos os recursos padrões do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. Sendo uma classe a matriz de criação de um objeto, pode-se dizer que os objetos possuem membros, sendo estes os métodos ou funções, e os dados ou atributos que a classe permite. A declaração de uma classe no Dart se dá pelo modelo a seguir
+Sendo uma classe a matriz de criação de um objeto, pode-se dizer que os objetos possuem membros, sendo estes os métodos ou funções, e os dados ou atributos que a classe permite. A declaração de uma classe no Dart se dá pelo modelo a seguir
 
 
     class ClasseName {
@@ -1235,7 +1229,7 @@ Por ser uma linguagem orintada a objetos, o Dart conta com todos os recursos pad
     }
 
 
-Ao definir uma classe e seus membros, é possível utilizá-la como a definição de tipo de um novo objeto. Com isso, os atributos e métodos da classe são herdados por esse objeto. Para gerar um objeto com base em determinada classe no Dart, se faz uso do identificador dessa classe seguido de um identificar para o objeto em si. E, opcionalmente, usa-se a keyword <strong>new</strong>, sendo seguida do tipo recebido pelo objto, este sendo obrigatório:
+Ao definir uma classe e seus membros, é possível utilizá-la como a definição de tipo de um novo objeto. Com isso, os atributos e métodos da classe são herdados por esse objeto. Para gerar um objeto com base em determinada classe no Dart, se faz uso do identificador dessa classe seguido de um identificar para o objeto em si. E, opcionalmente, usa-se a keyword <b><i>new</i></b>, sendo seguida do tipo recebido pelo objto, este sendo obrigatório:
 
 
     class ClasseName {
@@ -1340,7 +1334,7 @@ O modificador final define um valor fixo para determinada unidade de código, n�
     Try finding a different setter, or making 'title' non-final."
 
 
-O final é utilizado como mecanismo de alerta ao desenvolvedor, definindo que o valor correspondente a um final é imutável, sendo o valor final daquela unidade de código
+O final é utilizado como mecanismo de alerta ao desenvolvedor, definindo que o valor correspondente a um final é imutável, sendo o valor final daquela unidade de código.
 
 
 <h2>Usando Constructors</h2>
@@ -1473,12 +1467,13 @@ O Dart, assim como muitas linguagens de programação modernas possui um recurso
     }
 
 
-Com isso é possível acessar o atributo _attributeName por meio da variável get, que assume para si o papel de referenciar o atributo privado. E por sua vez, o set configura o que acontece com o atributo em questão, gerando um processo de validação para o mesmo. A seguir há um exemplo mais detalhado:
+Com isso é possível acessar o atributo <b><i>_attributeName</i></b> por meio da variável get, que assume para si o papel de referenciar o atributo privado. E por sua vez, o set configura o que acontece com o atributo em questão, gerando um processo de validação para o mesmo. A seguir há um exemplo mais detalhado:
 
 
-    class Banco {
-    double saldo = 100;
-    double _saque = 0;
+    class Conta {
+
+     double saldo = 100;
+     double _saque = 0;
   
     // Getter
   
@@ -1502,24 +1497,33 @@ Com isso é possível acessar o atributo _attributeName por meio da variável ge
     }
     
     void main() {
-      Banco conta = Banco();
+      Conta conta = Conta();
       conta.saque = 10;
     }
 
 
-O exemplo acima usa os conceitos de Getter e Setter para simular um saque em uma conta bancária, tendo como private o valor a ser sacado. Este passa a ser acessível através de um get, sendo posteriormente configurado através de um set.
+O exemplo acima usa os conceitos de Getter e Setter para simular um saque em uma conta bancária, tendo como private o valor a ser sacado. Este passa a ser acessível através de um get, sendo posteriormente configurado através de um set. A seguir temos o resultado do exemplo acima:
+
+  
+    //Output:
+
+    Valor sacado: 10.0
+
+    -------------------
+
+    Saldo atual:  90.0
 
 
 <h2>Herança</h2>
 
 
-A herança é um dos pilares da orientação a objetos. Desenvolver visando o reaproveitamento de código é extremamente recomendado no contexo da POO, e o Dart possui seu meio para tornar isso possível. Com isso, tendo em mente como as classes são criadas e cosumidas para criar objetos, a seguir veremos como classes filhas podem herdar membros de classes pais aplicando o conseito de herança:
+A herança é um dos pilares da orientação a objetos. Desenvolver visando o reaproveitamento de código é extremamente recomendado no contexo da OOP, e o Dart possui seu meio para tornar isso possível. Com isso, tendo em mente como as classes são criadas e cosumidas para criar objetos, a seguir veremos como classes filhas podem herdar membros de classes pais aplicando o conseito de herança:
 
 
-<h3>Extends</h3>
+<h2>Extends</h2>
 
 
-O extends cria uma relação entre duas classes distintas, sendo uma chamada de classe SuperClasse(doadora), e outra chamada de subClasse(herdeira):
+O extends cria uma relação entre duas classes distintas, sendo uma chamada de SuperClasse(doadora), e outra chamada de subClasse(herdeira):
 
 
     class SuperClasse {
@@ -1549,15 +1553,13 @@ Isso estabelece que cada método ou atributo definido como parte da SuperClasse 
     
     void main() {
       Child child = new Child();
-      print('Nome: ${child.name}');
-      print('Sobrenome: ${child.surname}');
+      print('${child.name} ${child.surname}');
     }
 
 
     //OutPut:
 
-    Nome: Michael
-    Sobrenome: Corleone
+    Michael Corleone
 
 
 Perceba que mesmo sendo uma classe herdeira, a subClasse possui um atributo próprio. Isso permite criar um maior nível de abstração e aproveitamento de um código já criado, não sendo necessário criar os mesmos atributos em classe relacionadas.
@@ -1729,7 +1731,7 @@ Uma classe abstrata é precedida do modificador abstract, este impede a instanci
     }
 
 
-Um detalhe importante sobre classes abstratas é que seus membros também passam a ser abstratos. Um método abstrato, diferente de um método concreto, quando declarado, depende de um @override para poder ser mantido. Do contrario é gerado um erro, exigindo que o método seja sobrescrito:
+Um detalhe importante sobre classes abstratas é que seus membros também passam a ser abstratos. Um método abstrato, diferente de um método concreto, quando declarado, depende de um @override para poder ser mantido. Do contrario é gerado um erro exigindo que o método seja sobrescrito:
 
 
     abstract class Lapis {
@@ -1818,7 +1820,7 @@ Um interface por definição é uma SuperClasse abstrata cujos membros só são 
 
 Perceba que não há uma relação direta de herança entre as classes, o que ocorre é a implementação de um modelo de classe(Machine) nos demais. Isso ocorre porquê muitas vezes um trecho de código é definido como estrutura padrão de um sistema(não necessariamente sendo utilizado da mesma forma). O interface evita a repetição desnecessária de código.
 
-Um outro ponto é que uma classe pode tanto implementar quando herdar de classes distintas sem mais problemas, sendo uma alternativa a impossibilidade de herança múltipla
+Um outro ponto é que uma classe pode tanto implementar quando herdar de classes distintas sem mais problemas, sendo uma alternativa a impossibilidade de herança múltipla.
 
 
 <h2>Mixin</h2>
@@ -1935,7 +1937,7 @@ A seguir temos um exemplo de declaração e uso de uma função Future que retor
     Café  
 
 
-Por possuir um delay proposital, o método <b><i>fetchUserOrde()</i></b> é declarado como uma Future, indicando que essa função pode ser executada em segundo plano e que as demais não precisam esperá-la terminar para serem executadas.
+Por possuir um delay proposital, o método <b><i>fetchUserOrder()</i></b> é declarado como uma Future, indicando que essa função pode ser executada em segundo plano e que as demais não precisam esperá-la terminar para serem executadas.
 
 
 <h3>Retornando um Erro</h3>
@@ -1994,7 +1996,7 @@ Uma função async passa a aceitar a declaração de um await quando definida. O
 
 
     Future<void> myMethod() async { 
-      print( await createMessage());
+      print(await createMessage());
     }
 
     String createMessage() {
@@ -2010,7 +2012,7 @@ Uma função async passa a aceitar a declaração de um await quando definida. O
     Go lurn some code
 
 
-O exemplo a seguir compara as declarções de uma série de funções síncronas e seu resultado com as mesmas funções, porém, declaradas como assíncronas:
+O exemplo a seguir compara as declarações de uma série de funções síncronas e seu resultado com as mesmas funções, porém, declaradas como assíncronas:
 
 
 <h3>Exemplo de Função Síncrona</h3>

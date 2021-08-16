@@ -9,6 +9,5 @@ class Child extends Parent {
 
 void main() {
   Child child = new Child();
-  print('Nome: ${child.name}');
-  print('Sobrenome: ${child.surname}');
+  print('${child.name} ${child.surname}');
 }

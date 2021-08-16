@@ -1,4 +1,4 @@
-class Banco {
+class Conta {
   double saldo = 100;
   double _saque = 0;
 
@@ -23,7 +23,7 @@ class Banco {
 }
 
 void main() {
-  Banco conta = Banco();
+  Conta conta = Conta();
 
   conta.saque = 10;
 }
