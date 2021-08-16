@@ -124,8 +124,9 @@ Nesse ponto iremos entender as estruturas e os aspectos que compõem a linguagem
  Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos; 
 
 
-<h2>Built-in Types</h2>
-
+<div align="center">
+ <h1>Built-in Types</h1>
+</div>
 
 O Dart possui os seguintes tipos internos:
 
@@ -1965,7 +1966,9 @@ Se por alguma razão uma operação assíncrona cair ou achar uma exception, a f
     Exception: Logout failed: user ID is invalid
 
 
- A função indica que o ID do usuário é invalido, portanto, há uma exception.
+<div align="center">
+   A função indica que o ID do usuário é invalido, portanto, há uma exception.
+</div>
 
 
  <h2>async e await</h2>
@@ -2152,3 +2155,4 @@ O meio mais utilizado e recomendado para tratar erros em funções async é util
 <div align="center">
   Caso haja um exception, o catch irá executar um print do erro encontrado.
 </div>
+
