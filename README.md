@@ -26,6 +26,7 @@ O Dart possui algumas peculiaridades que o diferenciam de linguagens como Java, 
 - Diferente da linguagem Java, o Dart não possui as palavras-chave public, protected e private. Se um identificador inicia com uma underline(_), ele passa a ser private.
 - Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos. 
 
+<br>
 
 <h2>Ambiente de Desenvolvimento</h1>
 
