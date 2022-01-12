@@ -356,9 +356,9 @@ Operador |  Descrição                                   |  Exemplos
 -------- | -------------------------------------------- | -------------------------
 ==       |  Define igualdede semântica e de valor       |  assert(2 == 2); // true
 !=       |  Define diferença semântica e de valor       |  assert(2 != 3); // true
->        |  Define superioridade numérica               |  assert(3 > 2);  // true
+    >        |  Define superioridade numérica               |  assert(3 > 2);  // true
 <        |  Define inferioridade numérica               |  assert(2 < 3);  // true
->=       |  Define superioridade ou igualdade numérica  |  assert(3 >= 3); // true
+    >=       |  Define superioridade ou igualdade numérica  |  assert(3 >= 3); // true
 <=       |  Define inferioridade ou igualdade numérica  |  assert(2 <= 3); // true
 
 
