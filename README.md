@@ -6,17 +6,43 @@
 <img src="https://img.shields.io/static/v1?label=dart&message=Language&color=blue&style=for-the-badge&logo=Dart"/>
 
 
-O Dart é uma linguagem de script, type safe, multiparadigma e orienta a objetos, desenvolvida e mantida pela Google. Tem ganhado bastante popularidade por ser utilizada em conjunto com o Flutter, um dos FrameWorks mais populares da atualidade para desenvolver aplicações mobile nativas.
+O Dart é uma linguagem de script type safe, multiparadigma e orienta a objetos, desenvolvida e mantida pela Google. Tendo ganhado bastante popularidade graças ao popular Flutter, um dos Frameworks mobile native mais populares da atualidade.
 
-Por ser multeplataformas, o Dart acompanha duas ferramentas, ou soluções, que possibilitam o seu uso: o Dart Native e o Dart Web. Tendo como principal recurso a máquina virtual responsável por compilar a linguagem no Just-in-Time(JIT) process, além do AOT(Ahead-of-Time), este sendo responsável por converter o código escrito em Dart para machine code/código nativo, seja em Android ou IOS, ou para JavaScript, falando específicamente do Dart Web.
-
-
-<h2>Preparando o Ambiente</h1>
+Por ser multeplataformas, o Dart conta com duas ferramentas, ou soluções, que possibilitam o seu uso: o Dart Native e o Dart Web. Tendo como principal recurso a máquina virtual responsável por compilar a linguagem no Just-in-Time(JIT) process, além do AOT(Ahead-of-Time), este sendo responsável por converter o código escrito em Dart para machine code/código nativo, seja em Android ou IOS, ou para JavaScript, falando específicamente do Dart Web.
 
 
-A seguir estão dispostos uma série de passos para a instalação das ferramentas e preparo do ambiente de desenvolvimento. Não sendo cem porcento necessário seguir as intalações para iniciar o estudo da linguagem, mas recomendado. 
+<h2>Características Básicas</h2>
 
-Uma forma mais simples de executar códigos dart é ter uma IDE(recomendo o vscode) e plugins que aceitem a sintaxe do dart. Com isso só é preciso criar uma file com a extenção .dark e executá-la com o comando <b><i>dart run</i></b>. Não sendo necessário a criação de um projeto para tal.
+
+O Dart possui algumas peculiaridades que o diferenciam de linguagens como Java, C# e o popular Javascript. Tendo um biblioteca de tipos bastante diversa, o que lhe dá o status de fortemente tipada. No entanto, antes de abordarmos tais especificidades, é importante entender alguns conceitos básicos que devem ser levados durante toda a leitura:
+
+
+ - Tudo o que pode ser acoplado a uma variável é um objeto, e todo objeto é uma instância de uma classe, mesmo números, funções e null são objetos;
+
+ - Apesar de ser fortemente tipada, a definição de tipos é opcional no Dart, já que a linguagem pode inferir tipos a partir dos dados recebidos;
+
+ - É possível tornar uma variável nullable usando o marcador (?) no fim da sua definição de tipo. O oposto disso é definir o marcador (!). Por exemplo: int? (integers ou nullable)  /  int x = nullableButNotNullInt!;
+
+ - O Dart suporta tipagem genérica, como List<int>(uma lista de integers) ou List<Object>(uma lista de objetos de qualquer tipo);
+
+ - O Dart suporta funções de alto nível(como main()), assim como funções amarradas a classes ou objetos(static e instâncias de métodos, respectivamente). Também é possível criar funções dentro de funções(funções aninhadas ou locais);
+
+ - Da mesma forma, o Dart suporta variáveis de alto nível, assim como variáveis amarradas a uma classe ou objeto(static e variáveis instanciadas). Variáveis intanciadas são muitas vezes conhecidas como fields ou propriedades;
+
+ - Diferente da linguagem Java, o Dart não possui as palavras-chave public, protected e private. Se um identificador inicia com uma underline(_), ele passa a ser private;
+
+ - Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos; 
+
+
+<h2>Ambiente de Desenvolvimento</h1>
+
+
+A seguir estão dispostos uma série de passos para a instalação das ferramentas e preparo do ambiente de desenvolvimento. Porém, o Dart já é compatível e interpretado pelos editores mais populares, como o VSCode, que conta com plugins para complementar o ambiente de desenvolvimento. Com isso só é preciso criar uma file com a extenção .dark e executá-la com o comando <b><i>dart run</i></b>:
+
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/61476935/120421361-844c9e80-c33c-11eb-9507-c10fa62f84f7.png">
+</div>
 
 
 <h2>Instalação do Dart-SDK</h1> 
@@ -28,7 +54,7 @@ O Dart-SDK é uma biblioteca de ferramentas de linha de comando, comumente utili
 <h3>Chocolatey</h3>
 
 
-O Chocolatey é um gerenciador de pacotes para o Windows, necessário no processo de instalação do Dart Software Development Kit. O link a seguir indica o passo a passo pra obter a ferramenta: <i>[Instalar Chocolatey](https://chocolatey.org/install)</i>.
+O Chocolatey é um gerenciador de pacotes para o Windows e necessário no processo de instalação do Dart-SDK. O link a seguir indica o passo a passo pra obter a ferramenta: <i>[Instalar Chocolatey](https://chocolatey.org/install)</i>.
 
   
 Verificar instalação
@@ -46,23 +72,13 @@ Instalar Dart-SDK
 <h2>App Dart-SDK</h1> 
 
 
-A partir deste ponto, é possível utilizar os comandos Chocolatey para executar uma aplicação Dart-SDK. Sendo assim, acesse um diretório desejado através do cmd e execute:
+A partir deste ponto, é possível utilizar o Chocolatey para executar a aplicação Dart-SDK. Sendo assim, acesse um diretório de sua preferância, através do terminal, e execute:
 
 
     dart create -t console-full cli
 
 
-<h2>Extensão Dart</h2>
-
-
-Antes de executar o app criado, é importante ter instalado um editor de código(sendo o vscode o mais recomendado) e a extensão da linguagem utilizada:
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/61476935/120421361-844c9e80-c33c-11eb-9507-c10fa62f84f7.png">
-</div>
-
-
-Com os pacotes e o ambiente devidamente definidos e intalados, execute os comandos a seguir para rodar a aplicação:
+Antes de executar o app criado, é importante ter instalado a extensão recomendada anteriormente. Em seguida, com o ambiente de desenvolvimento devidamente criado, execute os comandos a seguir para fazer o run da aplicação:
 
 
     cd cli
@@ -75,62 +91,21 @@ Com os pacotes e o ambiente devidamente definidos e intalados, execute os comand
 Uma forma prática de entender a estrutura mais básica de uma linguagem de programação é o popular Hello World, sendo este executado da seguinte forma no Dart:
 
 
-      void main() 
-    {
+    void main() {
       print('Hello World');
     }
 
 
-<h3>Explicando</h3>
-
-
-<h3>void</h3> 
-
-Por ser uma linguagem fortemente tipada a definição de tipos se aplica inclusive aos métodos, sendo um método void definido por não retornar valor;<br>
-
-<h3>main()</h3>
-
-Método de execução padrão do arquivo, sendo o primeiro a ser chamado no run time;<br>
-
-<h3>print()</h3>
-
-Método padrão de impressão de valor;<br>
-
-<h3>;</h3>
-
-Um detalhe muito importante da linguagem Dart é a presença constante do ponto e vírgula após o fim de um bloco de execução, do contrário é retornado um erro de sintaxe;
-
-
-<h2>Conceitos</h2>
-
-
-Nesse ponto iremos entender as estruturas e os aspectos que compõem a linguagem Dart, seus tipos e variações. É bastante importante manter esses aspectos em mente durenate o decorrer da leitura:
-
-
- Tudo o que pode ser acoplado a uma variável é um objeto, e todo objeto é uma instância de uma classe, mesmo números, funções e null são objetos;
-
- Apesar de ser fortemente tipada, a definição de tipos é opcional no Dart, já que a linguagem pode inferir tipos a partir dos dados recebidos;
-
- É possível tornar uma variável nullable usando o marcador (?) no fim da sua definição de tipo. O oposto disso é definir o marcador (!). Por exemplo: int? (integers ou nullable)  /  int x = nullableButNotNullInt!;
-
- O Dart suporta tipagem genérica, como List<int>(uma lista de integers) ou List<Object>(uma lista de objetos de qualquer tipo);
-
- O Dart suporta funções de alto nível(como main()), assim como funções amarradas a classes ou objetos(static e instâncias de métodos, respectivamente). Também é possível criar funções dentro de funções(funções aninhadas ou locais);
-
- Da mesma forma, o Dart suporta variáveis de alto nível, assim como variáveis amarradas a uma classe ou objeto(static e variáveis instanciadas). Variáveis intanciadas são muitas vezes conhecidas como fields ou propriedades;
-
- Diferente da linguagem Java, o Dart não possui as palavras-chave public, protected e private. Se um identificador inicia com uma underline(_), ele passa a ser private;
-
- Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos; 
+Qualquer aplicação dart é inicializada a partir da chamado de um método main, que nesse caso printa o texto declarado dentro da top-level function <i>pint()</i>.
 
 
 <h1>Built-in Types</h1>
 
 
-O Dart possui os seguintes tipos internos:
+Como já foi citado, o dart possui uma tipagem bastante própria, sendo famíliar a linguagens da familia C. A seguir iremos abortar os principais tipos e comoestes devem ser utilizados:
 
 
-<h3>Number</h3>
+<h2>Number</h2>
 
 
 int - Valores inteiros não maiores que 64 bits, dependendo da plataforma:
@@ -148,7 +123,7 @@ double - Valores decimais:
     double exponents = 1.42e5;
 
 
-<h3>String</h3>
+<h2>String</h2>
 
 
 Uma string Dart (object String) contém uma sequência de unidades de código UTF-16:
@@ -179,7 +154,7 @@ A interpolação permite acessar valores identificados por unidades de armazenam
  </div>
 
 
-<h3>Booleans</h3>
+<h2>Booleans</h2>
 
 
 Para representar valores boolean o Dart possui o marcador bool, com dois tipos definidos: true e false. Exemplos de definição de um bool:
@@ -206,7 +181,7 @@ Para representar valores boolean o Dart possui o marcador bool, com dois tipos d
     assert(iMeantToDoThis.isNaN);
 
 
-<h3>Runes</h3>
+<h2>Runes</h2>
 
 
 Em Dart as Runes expõem o código unicode de uma string. O unicode define um valor numérico único para cada letra, dígito e símbolo usado em todo o sistema de escrita. Um unicode é normalmente representado da seguinte forma:
@@ -233,7 +208,7 @@ Onde XXXX é um valor hexadecimal de 4 dígitos. Por exemplo: \u{1f606}, que res
     The last character: 🇩🇰
 
 
-<h3>Symbols</h3>
+<h2>Symbols</h2>
 
 
 Um objeto Symbol representa um operador ou idetificador declarado em um programa Dart, dificilmente utilizados fora de contextos específicos de desenvolvimento. Para definir um Symbol como identificador usa-se # seguido do identificador:
@@ -243,7 +218,7 @@ Um objeto Symbol representa um operador ou idetificador declarado em um programa
     #bar
 
 
-<h3>Null</h3>
+<h2>Null</h2>
 
 
 O Dart possui um recurso chamado de Null Safety, o qual define que as variáveis de um código Dart são non-nullable, ou não anuláveis, a menos que sejam definidas como tal.
@@ -263,7 +238,7 @@ Para indicar que uma variável aceita um nullable usa-se o marcador ? em conjunt
     int? aNullableInt = null;
 
 
-<h3>Dynamic</h3>
+<h2>Dynamic</h2>
 
 
 O tipo dynamic define a aceitação de todos os demais tipos a uma variável, dando a linguagem Dart a característica de dinamicidade:
