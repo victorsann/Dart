@@ -352,14 +352,14 @@ O resultado de x-- é o valor de x antes da operação, como mostra o exemplo a 
 Relacionam operandos tendo como retorno um boolean, sendo true caso a operação seja verdadeira e false caso seja falsa. Eles são:
 
 
- Operador |  Descrição                                   |  Exemplos
- -------- | -------------------------------------------- | -------------------------
-    ==    |  Define igualdede semântica e de valor       |  assert(2 == 2); // true
-    !=    |  Define diferença semântica e de valor       |  assert(2 != 3); // true
-    >     |  Define superioridade numérica               |  assert(3 > 2);  // true
-    <     |  Define inferioridade numérica               |  assert(2 < 3);  // true
-    >=    |  Define superioridade ou igualdade numérica  |  assert(3 >= 3); // true
-    <=    |  Define inferioridade ou igualdade numérica  |  assert(2 <= 3); // true
+Operador |  Descrição                                   |  Exemplos
+-------- | -------------------------------------------- | -------------------------
+==       |  Define igualdede semântica e de valor       |  assert(2 == 2); // true
+!=       |  Define diferença semântica e de valor       |  assert(2 != 3); // true
+>        |  Define superioridade numérica               |  assert(3 > 2);  // true
+<        |  Define inferioridade numérica               |  assert(2 < 3);  // true
+>=       |  Define superioridade ou igualdade numérica  |  assert(3 >= 3); // true
+<=       |  Define inferioridade ou igualdade numérica  |  assert(2 <= 3); // true
 
 
 
