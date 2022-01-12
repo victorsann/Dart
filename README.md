@@ -279,71 +279,17 @@ Operações         | Sinais |  Descrição                                     
 ----------------- | ------ | ----------------------------------------------------------------------------- | -----------------------------------------------
  Adição           |   +    |  Soma um operando a outro                                                     |  assert(2 + 3 == 5);
  Subtração        |   -    |  Subtrai um operando de outro                                                 |  assert(2 - 3 == -1);
- -expr            |        |  Menos unário, também conhecido como negação (inverter o sinal da expressão)  |  
+ -expr            |  -expr |  Menos unário, também conhecido como negação (inverter o sinal da expressão)  |  
  Multiplicação    |   *    |  Multiplica um operando por outro                                             |  assert(2 * 3 == 6);
  Divisão          |   /    |  Divide um operando por outro                                                 |  assert(5 / 2 == 2.5); // Resulta em um double
  Divisão Inteirra |   ~/   |  Divide retornando um valor inteiro                                           |  assert(5 ~/ 2 == 2); // Resulta em um int
  Rest             |   %    |  Retorna o resto de um divisão por inteiros                                   |  assert(5 % 2 == 1); // Resto
 
 
-<h3>Adição + </h3>
-
-
-    //Soma os operandos
-
-    assert(2 + 3 == 5);
- 
-
-<h3>Subtração - </h3>
-
-
-    //Subtrai os operandos
-
-    assert(2 - 3 == -1);
-
-
-<h3>-expr</h3>
-
-
-    //Inverte o sinal da expressão
-
-
-<h3>Multiplicação * </h3>
-
-
-    //Multiplica os operandos
-
-    assert(2 * 3 == 6);
-
-
-<h3>Divisão / </h3>
-
-
-    //Divide os operandos
-
-    assert(5 / 2 == 2.5); // Resulta em um double
-
-
-<h3>Divisão Inteira ~/ </h3>
-
-
-    //Retorna um integer
-
-    assert(5 ~/ 2 == 2); // Resulta em um int
-
-
-<h3>Resto % </h3>
-
-
-    //Retorna o resto da operação
-
-    assert(5 % 2 == 1); // Resto
-
-
 <h2>Incremento</h2>
 
 
-O operador de incremento incrementa seu operando em 1. O operador de incremento é suportado em duas formas: 
+O operador de incremento incrementa seu operando em 1, sendo suportado em duas formas: 
 
 
 <h3>Pré Fixado ++X</h3>
@@ -375,7 +321,7 @@ O resultado de x ++ é o valor de x antes da operação, como mostra o exemplo a
 <h2>Decremento</h2>
 
 
-O operador de decremento diminui seu operando em 1. O operador de decremento é suportado em duas formas: 
+O operador de decremento diminui seu operando em 1, sendo suportado em duas formas: 
 
 
 <h3>Pré Fixado --X</h3>
@@ -404,6 +350,17 @@ O resultado de x-- é o valor de x antes da operação, como mostra o exemplo a 
 
 
 Relacionam operandos tendo como retorno um boolean, sendo true caso a operação seja verdadeira e false caso seja falsa. Eles são:
+
+
+  Operador |  Descrição                                   |  Exemplos
+  -------- | -------------------------------------------- | -------------------------
+     ==    |  Define igualdede semântica e de valor       |  assert(2 == 2); // true
+     !=    |  Define diferença semântica e de valor       |  assert(2 != 3); // true
+     >     |  Define superioridade numérica               |  assert(3 > 2);  // true
+     <     |  Define inferioridade numérica               |  assert(2 < 3);  // true
+     >=    |  Define superioridade ou igualdade numérica  |  assert(3 >= 3); // true
+     <=    |  Define inferioridade ou igualdade numérica  |  assert(2 <= 3); // true
+
 
 
 <h3> Igualdade == </h3>
