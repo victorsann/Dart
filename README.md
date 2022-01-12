@@ -164,16 +164,22 @@ Para representar valores boolean o Dart possui o marcador bool, com dois tipos d
 
     var fullName = '';
     assert(fullName.isEmpty);
+
+<br>
     
     // Verifica valor menor ou igual a 0
 
     var hitPoints = 0;
     assert(hitPoints <= 0);
+
+<br>
     
     // Verifica valor null
 
     var unicorn;
     assert(unicorn == null);
+
+<br>
     
     // Verifica NaN
     
@@ -238,6 +244,12 @@ Para indicar que uma variável aceita um nullable usa-se o marcador ? em conjunt
     int? aNullableInt = null;
 
 
+Para declarar umavariável como no-nullable manualmente, usa-se o marcador ! na delcaração de tipo da unidade:
+
+
+    int! aNoNullableInt = null;
+
+
 <h2>Dynamic</h2>
 
 
@@ -257,10 +269,21 @@ O tipo dynamic define a aceitação de todos os demais tipos a uma variável, da
     print(idade); // 22 anos
 
 
-<h2>Operadores Aritméticos</h2>
+<h1>Operadores Aritméticos</h1>
 
 
-O Dart suporta os operadores aritméticos usuais, como mostrado abaixo:
+O Dart suporta os operadores aritméticos usuais encontrados na maior parte das linguagens, porém, conta com algumas adições, como mostrado abaixo:
+
+
+Operações         | Sinais |  Descrição                                                                    |  Exemplos
+----------------- | ------ | ----------------------------------------------------------------------------- | -----------------------------------------------
+ Adição           |   +    |  Soma um operando a outro                                                     |  assert(2 + 3 == 5);
+ Subtração        |   -    |  Subtrai um operando de outro                                                 |  assert(2 - 3 == -1);
+ -expr            |        |  Menos unário, também conhecido como negação (inverter o sinal da expressão)  |  
+ Multiplicação    |   *    |  Multiplica um operando por outro                                             |  assert(2 * 3 == 6);
+ Divisão          |   /    |  Divide um operando por outro                                                 |  assert(5 / 2 == 2.5); // Resulta em um double
+ Divisão Inteirra |   ~/   |  Divide retornando um valor inteiro                                           |  assert(5 ~/ 2 == 2); // Resulta em um int
+ Rest             |   %    |  Retorna o resto de um divisão por inteiros                                   |  assert(5 % 2 == 1); // Resto
 
 
 <h3>Adição + </h3>
