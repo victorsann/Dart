@@ -17,11 +17,11 @@ Por ser multeplataformas, o Dart conta com duas ferramentas, ou soluções, que 
 O Dart possui algumas peculiaridades que o diferenciam de linguagens como Java, C# e o popular Javascript. Tendo um biblioteca de tipos bastante diversa, o que lhe dá o status de fortemente tipada. No entanto, antes de abordarmos tais especificidades, é importante entender alguns conceitos básicos que devem ser levados durante toda a leitura:
 
 
- - Tudo o que pode ser acoplado a uma variável é um objeto, e todo objeto é uma instância de uma classe, mesmo números, funções e null são objetos;
+ - Em Dart, patricamente tudo é um objeto;
 
- - Apesar de ser fortemente tipada, a definição de tipos é opcional no Dart, já que a linguagem pode inferir tipos a partir dos dados recebidos;
+ - No Dart é possível inferir tipos a partir dos dados recebidos;
 
- - É possível tornar uma variável nullable usando o marcador (?) no fim da sua definição de tipo. O oposto disso é definir o marcador (!). Por exemplo: int? (integers ou nullable)  /  int x = nullableButNotNullInt!;
+ - No Dart é possível tratar a obrigatoriedade da anulação nos tipos de entidades;
 
  - O Dart suporta tipagem genérica, como List<int>(uma lista de integers) ou List<Object>(uma lista de objetos de qualquer tipo);
 
@@ -352,17 +352,6 @@ O resultado de x-- é o valor de x antes da operação, como mostra o exemplo a 
 Relacionam operandos tendo como retorno um boolean, sendo true caso a operação seja verdadeira e false caso seja falsa. Eles são:
 
 
-Operador |  Descrição                                   |  Exemplos
--------- | -------------------------------------------- | -------------------------
-==       |  Define igualdede semântica e de valor       |  assert(2 == 2); // true
-!=       |  Define diferença semântica e de valor       |  assert(2 != 3); // true
-    >        |  Define superioridade numérica               |  assert(3 > 2);  // true
-<        |  Define inferioridade numérica               |  assert(2 < 3);  // true
-    >=       |  Define superioridade ou igualdade numérica  |  assert(3 >= 3); // true
-<=       |  Define inferioridade ou igualdade numérica  |  assert(2 <= 3); // true
-
-
-
 <h3> Igualdade == </h3>
 
 
@@ -669,7 +658,7 @@ São definados quando o valor recebido via parâmetro é obrigatório, gerando u
     type functionName({Key? key, required Widget child})
 
 
-<h3>A Função main()</h3>
+<h2>A Função main()</h2>
 
 
 Todas as aplicações devem conter a já mencionada função de alto-nível do tipo main(), cuja função é agir como o entrypoint do app. Retornando void, a função main também possui um parâmetro opcional do tipo List<String> como argumento:
@@ -680,7 +669,7 @@ Todas as aplicações devem conter a já mencionada função de alto-nível do t
     }
 
 
-<h3>Funções Anônimas</h3>
+<h2>Funções Anônimas</h2>
 
 
 Boa parte das funções são definidas como named, ou nomeadas, como a própria main(). Uma froma alternativa de criação de funções é omitindo seu nome ou identificador, sendo assim chamada de anonymous function, lambda ou closure. 
@@ -708,7 +697,7 @@ O exemplo abaixo define uma função anônima com um parâmetro de tipo anônimo
     2: oranges
 
 
-<h3>Lexical scope</h3>
+<h2>Lexical scope</h2>
 
 
 O Dart é uma linguagem com escopo léxico, o que significa que o escopo das variáveis é determinado estaticamente, seguindo o layout do código escrito. Basicamente, as variáveis declaradas anteriormente, ou dentro das chaves de uma estrutura de código, são definidas como parte do escopo:
@@ -1157,12 +1146,10 @@ Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou
     var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
 
 
-<div align="center">
-  <h1>Orientação a Objetos</h1>
-</div>
+<h1>Dart e a Orientação a Objetos</h1>
 
 
-Por ser uma linguagem orintada a objetos, o Dart conta com todos os recursos padrões do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. A seguir iremos entender como aplicar os conceitos da OOP com o Dart.
+Por ser uma linguagem orintada a objetos, o Dart conta com todos os recursos padrões do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. A seguir iremos entender como aplicar os conceitos da POO com o Dart.
 
 
 <h2>Classes</h2>
@@ -1203,7 +1190,7 @@ Ao definir uma classe e seus membros, é possível utilizá-la como a definiçã
     objectName.identifire = 'Some data';
 
 
-Um padrão da orintação a objetos em muitas linguagens de programação é a herança por instanciação, ou uso do (.) para acessar membros da classe, esta sendo usada como matriz de criação do objeto. Este recurso é usado acima de forma bastante simples, onde o objeto(objectName) herda o atributo(identifire) da classe(ClassName). O mesmo conceito pode ser aplicado a um método ou subclasse, mas não a um constructor.
+Um padrão da orintação a objetos em muitas linguagens de programação é a herança por instanciação, ou uso do ponto para acessar membros da classe, esta sendo usada como matriz de criação do objeto. Este recurso é usado acima de forma bastante simples, onde o objeto(objectName) herda o atributo(identifire) da classe(ClassName). O mesmo conceito pode ser aplicado a um método ou subclasse, mas não a um constructor.
 
 
 <h2>Membros de Uma Classe</h2>
@@ -1263,7 +1250,7 @@ Para fazer uso de um membro de uma classe é preciso, antes de mais nada, criar 
 
 
 <div align="center">
- Com o a definição de tipo static, a única referência necessária é ao nome da classe.
+ Com a definição de tipo static, a única referência necessária é ao nome da classe.
 </div>
 
 
