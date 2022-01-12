@@ -17,16 +17,15 @@ Por ser multeplataformas, o Dart conta com duas ferramentas, ou soluções, que 
 O Dart possui algumas peculiaridades que o diferenciam de linguagens como Java, C# e o popular Javascript. Tendo um biblioteca de tipos bastante diversa, o que lhe dá o status de fortemente tipada. No entanto, antes de abordarmos tais especificidades, é importante entender alguns conceitos básicos que devem ser levados durante toda a leitura:
 
 
-- Em Dart, patricamente tudo é um objeto.
-- No Dart é possível inferir tipos a partir dos dados recebidos.
-- No Dart é possível tratar a obrigatoriedade da anulação nos tipos de entidades.
-- O Dart suporta tipagem genérica, como List<int>(uma lista de integers) ou List<Object>(uma lista de objetos de qualquer tipo).
-- O Dart suporta funções de alto nível(como main()), assim como funções amarradas a classes ou objetos(static e instâncias de métodos, respectivamente). Também é possível criar funções dentro de funções(funções aninhadas ou locais).
-- Da mesma forma, o Dart suporta variáveis de alto nível, assim como variáveis amarradas a uma classe ou objeto(static e variáveis instanciadas). Variáveis intanciadas são muitas vezes conhecidas como fields ou propriedades.
-- Diferente da linguagem Java, o Dart não possui as palavras-chave public, protected e private. Se um identificador inicia com uma underline(_), ele passa a ser private.
-- Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos. 
+> Em Dart, patricamente tudo é um objeto.
+> No Dart é possível inferir tipos a partir dos dados recebidos.
+> No Dart é possível tratar a obrigatoriedade da anulação nos tipos de entidades.
+> O Dart suporta tipagem genérica, como List<int>(uma lista de integers) ou List<Object>(uma lista de objetos de qualquer tipo).
+> O Dart suporta funções de alto nível(como main()), assim como funções amarradas a classes ou objetos(static e instâncias de métodos, respectivamente). Também é possível criar funções dentro de funções(funções aninhadas ou locais).
+> Da mesma forma, o Dart suporta variáveis de alto nível, assim como variáveis amarradas a uma classe ou objeto(static e variáveis instanciadas). Variáveis intanciadas são muitas vezes conhecidas como fields ou propriedades.
+> Diferente da linguagem Java, o Dart não possui as palavras-chave public, protected e private. Se um identificador inicia com uma underline(_), ele passa a ser private.
+> Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos. 
 
-<br>
 
 <h2>Ambiente de Desenvolvimento</h1>
 
