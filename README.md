@@ -510,17 +510,25 @@ A definição do tipo dessa variável é inferida pelo valor que ela carrega, se
 
     Object data = 'Dart';
 
+<br>
+
     // String
 
     String data = 'Dart';
+
+<br>
 
     // Double
 
     Double data = 1.78;
 
+<br>
+
     // Int
 
     Int data = 1;
+
+<br>
 
     // O tipo num define que a variável aceita qualquer valor numérico, seja int ou double
 
@@ -719,7 +727,7 @@ O Dart é uma linguagem com escopo léxico, o que significa que o escopo das var
 <h1>Declarações de Controle de Fluxo</h1>
 
 
-O controle do fluxo de dados é, em suma, um dos aspectos mais importantes da programação. O Dart possui as seguintes estruturas para controle de fluxo de dados:
+O controle do fluxo de dados é, em suma, um dos aspectos mais importantes da programação. O Dart possui as seguintes estruturas para controle de fluxo de informações:
 
 
 <h2>If-else</h2>
@@ -1010,7 +1018,7 @@ Um array, vetor ou variável composta em Dart é definido como uma lista de obje
     ];
 
 
-<h3>Spread Operator</h3>
+<h2>Spread Operator</h2>
 
 
 O Spread define uma associação entre lists, tendo como resultado um liste apenas. O length dessa associação é equivalente aos indices de ambas as listas somados:
@@ -1030,13 +1038,13 @@ O Spread define uma associação entre lists, tendo como resultado um liste apen
     3
 
 
-<h3>Trantando Lists</h3>
+<h2>Trantando Lists</h2>
 
 
 Assim como em boa parte das linguagens que tratam de vetores, o dart conta com uma série de métodos e atributos para tratar essas estruturas. Abaixo estão listados alguns dos quais se relacionam com o tipos de list:
 
 
-<h3>Constructors</h3>
+<h2>Constructors</h2>
 
 
 Estruturas de criação de um List com diferentes restrições:
@@ -1052,7 +1060,7 @@ Estruturas de criação de um List com diferentes restrições:
 |  List.unmodifiable( iterable elements )                 |  Cria um List inalterável contendo todos os elements                            |
 
 
-<h3>Proprieties</h3>
+<h2>Proprieties</h2>
 
 
 Atributos de consulta dos lists:
@@ -1070,7 +1078,7 @@ Atributos de consulta dos lists:
 |  .single                |  E                     |  Verifica se há apenas um elemento no Iterable e retorna esse elemento           |
  
 
-<h3>Methods</h3>
+<h2>Methods</h2>
 
 Métodos de execução de um List:
 
@@ -1686,7 +1694,7 @@ Um detalhe importante sobre classes abstratas é que seus membros também passam
 Perceba que um método abstrato pode ser declarado sem corpo. Isso ocorre graças a natureza abstrata do mesmo, pois ele sempre vai sofrer um @override. 
 
 
-<h3>Corrigindo o Erro</h3>
+<h2>Corrigindo o Erro</h2>
 
 
     abstract class Lapis {
@@ -1831,19 +1839,19 @@ A seguir iremos abordar os mecanismos que a linguagem provê na prática:
 Uma <b><i>Future</i></b> é a representação do resultado de uma operação assícrona, podendo ter dois estados: uncompleted e completed.
 
 
-<h3>Uncompleted</h3>
+<h2>Uncompleted</h2>
 
 
 Quando uma chamada em uma função assíncrona é feita, seu resultado é retornado como uma <b><i>uncompleted</i></b> future. Essa future passa a esperar o fim da operação ou lança um erro.
 
 
-<h3>Completed</h3>
+<h2>Completed</h2>
 
 
 Se a operação assíncrona for bem sucedida, a future resulta em um valor de retorno, caso contrário, resulta em um erro.
 
 
-<h3>Retornando um Valor</h3>
+<h2>Retornando um Valor</h2>
 
 
 Uma future de tipo resulta em um valor do tipo <b>T</b>. Por exemplo, uma future de tipo <b><i>Future String </i></b> porduz uma string como valor. Caso uma future não retorne um valor utilizável, esta pode ser declarada como <b><i>Future void </i></b>. 
@@ -1875,7 +1883,7 @@ A seguir temos um exemplo de declaração e uso de uma função Future que retor
 Por possuir um delay proposital, o método <b><i>fetchUserOrder()</i></b> é declarado como uma Future, indicando que essa função pode ser executada em segundo plano e que as demais não precisam esperá-la terminar para serem executadas.
 
 
-<h3>Retornando um Erro</h3>
+<h2>Retornando um Erro</h2>
 
 
 Se por alguma razão uma operação assíncrona cair ou achar uma exception, a future irá completar a execução com um erro. A seguir temos um exemplo de declaração de uma Future que completa a execução com uma exception:
@@ -1950,7 +1958,7 @@ Uma função async passa a aceitar a declaração de um await quando definida. O
 O exemplo a seguir compara as declarações de uma série de funções síncronas e seu resultado com as mesmas funções, porém, declaradas como assíncronas:
 
 
-<h3>Exemplo de Função Síncrona</h3>
+<h2>Exemplo de Função Síncrona</h2>
 
 
     String createOrderMessage() {
@@ -1979,7 +1987,7 @@ O exemplo a seguir compara as declarações de uma série de funções síncrona
     Seu pedido é: Instance of 'Future<String>'
 
   
- <h3>Exemplo de Função Assíncrona com async e await</h3>
+ <h2>Exemplo de Função Assíncrona com async e await</h2>
 
 
     Future<String> createOrderMessage() async {
@@ -2015,7 +2023,7 @@ O exemplo assíncrono é diferente de três formas:
 * A palavra-chave await aparece antes da chamada das funções assíncronas fetchUserOrder() and createOrderMessage().
 
 
-<h3>Fluxo de Execução com async e await</h3>
+<h2>Fluxo de Execução com async e await</h2>
 
 
 Uma função async roda sincronicamente até o primeiro await. Isso significa que dentro de um corpo de função assíncrona, todo o código síncrono antes da primeira palavra-chave await é executado imediatamente. A seguir há um exemplo com o qual é possível entender melhor o fluxo de execução assíncrono:
@@ -2057,7 +2065,7 @@ Aqui temos basicamente quatro métodos. Três deles, incluindo o main method, s�
     Seu pedido é: Café
 
 
-O run inicia no main method, cuja função aqui é executar as demais Futures. Com isso, perceba que por mais que a função print('Aguardando pedido do usuário...') esteja dentro de uma função assíncrona, ela é executado imediatamente após a chamada do método printOrderMessage(). Isso ocorre graças a natureza síncrona da print() function. Já na chamada do método fetchUserOrder(), que também é definido como await, há um delay proposital que demonstra sua natureza assíncrona.
+O run inicia no main method, cuja função aqui é executar as demais Futures. Com isso, perceba que por mais que a função print('Aguardando pedido do usuário...') esteja dentro de uma função assíncrona, ela é executado imediatamente. Isso ocorre graças a natureza síncrona da print() function. Já na chamada do método fetchUserOrder(), que também é definido como await, há um delay proposital que demonstra sua natureza assíncrona.
 
 
 <h2>Tratando Erros</h2>
