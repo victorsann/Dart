@@ -38,7 +38,7 @@ O Dart possui algumas peculiaridades que o diferenciam de outras linguagens popu
 
 - Em Dart, patricamente tudo é um objeto.
 - No Dart é possível inferir tipos a partir dos dados recebidos.
-- No Dart é possível tratar a obrigatoriedade da anulação nos tipos de entidades.
+- No Dart é possível tratar a obrigatoriedade da anulação nos tipos de entidades. 
 <!-- - O Dart suporta tipagem genérica, como List<int>(uma lista de integers) ou List<Object>(uma lista de objetos de qualquer tipo).
 - O Dart suporta funções de alto nível(como main()), assim como funções amarradas a classes ou objetos(static e instâncias de métodos, respectivamente). Também é possível criar funções dentro de funções(funções aninhadas ou locais). -->
 
