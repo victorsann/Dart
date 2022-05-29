@@ -19,21 +19,31 @@ Por ser multiplataformas, o Dart conta com ferramentas, ou soluções, que possi
 </div>
 
 
+<h2>O tempo de execução do Dart</h2>
+
+Independentemente da plataforma utilizada ou de como o código é compilado, sua execução demanda o Dart runtime. Sendo este o responsável pelas seguintes tarefas críticas:
+
+- Gerenciando memória: o Dart usa um modelo de memória gerenciada, em que a memória não utilizada é recuperada por um coletor de lixo (GC).
+- Aplicando o sistema de tipo Dart: Embora a maioria das verificações de tipo no Dart sejam estáticas (tempo de compilação), algumas verificações de tipo são dinâmicas (tempo de execução). Por exemplo, o tempo de execução do Dart impõe verificações dinâmicas por verificação de tipo e operadores de conversão.
+- Gerenciando isolados: o tempo de execução do Dart controla o isolado principal (onde o código normalmente é executado) e quaisquer outros isolados que o aplicativo cria.
+
+Em plataformas nativas, o tempo de execução do Dart é incluído automaticamente em executáveis ​​autocontidos e faz parte da DartVM fornecida pelo comando dart run.
+
 
 <h2>Características Básicas</h2>
 
 
-O Dart possui algumas peculiaridades que o diferenciam de linguagens como Java, C# e o popular Javascript. tendo a dispor uma biblioteca de tipos bastante diversa, o que lhe dá o status de fortemente tipada. No entanto, antes de abordarmos tais especificidades, é importante entender alguns conceitos básicos que devem ser levados durante toda a leitura:
+O Dart possui algumas peculiaridades que o diferenciam de outras linguagens populares, tendo a seu dispor uma biblioteca de tipos bastante diversa. No entanto, antes de abordarmos tais especificidades, é importante entender alguns conceitos básicos que devem ser levados durante toda a leitura:
 
 
-<!-- - Em Dart, patricamente tudo é um objeto.
+- Em Dart, patricamente tudo é um objeto.
 - No Dart é possível inferir tipos a partir dos dados recebidos.
 - No Dart é possível tratar a obrigatoriedade da anulação nos tipos de entidades.
 - O Dart suporta tipagem genérica, como List<int>(uma lista de integers) ou List<Object>(uma lista de objetos de qualquer tipo).
-- O Dart suporta funções de alto nível(como main()), assim como funções amarradas a classes ou objetos(static e instâncias de métodos, respectivamente). Também é possível criar funções dentro de funções(funções aninhadas ou locais). -->
-<!-- - Da mesma forma, o Dart suporta variáveis de alto nível, assim como variáveis amarradas a uma classe ou objeto(static e variáveis instanciadas). Variáveis intanciadas são muitas vezes conhecidas como fields ou propriedades. -->
-<!-- - Diferente da linguagem Java, o Dart não possui as palavras-chave public, protected e private. Se um identificador inicia com uma underline(_), ele passa a ser private. -->
-<!-- - Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos.  -->
+- O Dart suporta funções de alto nível(como main()), assim como funções amarradas a classes ou objetos(static e instâncias de métodos, respectivamente). Também é possível criar funções dentro de funções(funções aninhadas ou locais).
+- Da mesma forma, o Dart suporta variáveis de alto nível, assim como variáveis amarradas a uma classe ou objeto(static e variáveis instanciadas). Variáveis intanciadas são muitas vezes conhecidas como fields ou propriedades.
+- Diferente da linguagem Java, o Dart não possui as palavras-chave public, protected e private. Se um identificador inicia com uma underline(_), ele passa a ser private.
+- Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos. 
 
 
 <h2>Ambiente de Desenvolvimento</h1>
