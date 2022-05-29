@@ -6,15 +6,24 @@
 <img src="https://img.shields.io/static/v1?label=dart&message=Language&color=blue&style=for-the-badge&logo=Dart"/>
 
 
-O Dart é uma linguagem de script type safe, multiparadigma e orienta a objetos, desenvolvida e mantida pela Google. Tendo ganhado bastante popularidade graças ao popular Flutter, um dos Frameworks mobile native mais populares da atualidade.
+O Dart é uma linguagem de script type safe, multiparadigma e orienta a objetos, desenvolvida e mantida pela Google. Tendo sido lançada na GOTO Conference de 2011, a linguagem tem ganhado bastante popularidade graças ao Flutter, um dos Frameworks <i>mobile native</i> mais utilizados da atualidade.
 
-Por ser multeplataformas, o Dart conta com duas ferramentas, ou soluções, que possibilitam o seu uso: o Dart Native e o Dart Web. Tendo como principal recurso a máquina virtual responsável por compilar a linguagem no Just-in-Time(JIT) process, além do AOT(Ahead-of-Time), este sendo responsável por converter o código escrito em Dart para machine code/código nativo, seja em Android ou IOS, ou para JavaScript, falando específicamente do Dart Web.
+Por ser multiplataformas, o Dart conta com ferramentas, ou soluções, que possibilitam o seu uso de formas distintas: 
+
+- <b>Dart Native</b>: Para apps direcionados a dispositivos móveis e desktop, o Dart inclui sua máquina virtual, ou DartVM, que compila o código Dart de duas formas distintas, sendo elas a compilação just-in-time (JIT) e um compilador ahead-of-time (AOT) que resultam na interpretação em machine code do código escrito.
+
+- <b>Dart Web</b>: Para aplicações direcionados à Web, o Dart inclui um compilador de tempo de desenvolvimento (dartdevc) e um compilador de tempo de produção (dart2js), tendo com resultado, em ambos os casos, a tradução do Dart para JavaScript.
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/61476935/170880065-6ef77941-7c9b-433e-8c06-825ceae2afd4.png">
+</div>
+
 
 
 <h2>Características Básicas</h2>
 
 
-O Dart possui algumas peculiaridades que o diferenciam de linguagens como Java, C# e o popular Javascript. Tendo um biblioteca de tipos bastante diversa, o que lhe dá o status de fortemente tipada. No entanto, antes de abordarmos tais especificidades, é importante entender alguns conceitos básicos que devem ser levados durante toda a leitura:
+O Dart possui algumas peculiaridades que o diferenciam de linguagens como Java, C# e o popular Javascript. tendo a dispor uma biblioteca de tipos bastante diversa, o que lhe dá o status de fortemente tipada. No entanto, antes de abordarmos tais especificidades, é importante entender alguns conceitos básicos que devem ser levados durante toda a leitura:
 
 
 <!-- - Em Dart, patricamente tudo é um objeto.
@@ -98,7 +107,7 @@ Qualquer aplicação dart é inicializada a partir da chamado de um método main
 <h1>Built-in Types</h1>
 
 
-Como já foi citado, o dart possui uma tipagem bastante própria, sendo famíliar a linguagens da familia C. A seguir iremos abortar os principais tipos e comoestes devem ser utilizados:
+Como já foi citado, o dart possui uma tipagem bastante própria, sendo famíliar a linguagens da familia C. A seguir iremos abortar os principais tipos e como estes são utilizados:
 
 
 <h2>Number</h2>
@@ -153,7 +162,7 @@ A interpolação permite acessar valores identificados por unidades de armazenam
 <h2>Booleans</h2>
 
 
-Para representar valores boolean o Dart possui o marcador bool, com dois tipos definidos: true e false. Exemplos de definição de um bool:
+Para representar valores boolean o Dart possui o marcador <i>bool</i>, com dois tipos definidos: true e false. Exemplos de definição de um bool:
 
 
     // Verifica string vazio
@@ -223,7 +232,7 @@ Um objeto Symbol representa um operador ou idetificador declarado em um programa
 <h2>Null</h2>
 
 
-O Dart possui um recurso chamado de Null Safety, o qual define que as variáveis de um código Dart são non-nullable, ou não anuláveis, a menos que sejam definidas como tal.
+O Dart possui um recurso chamado de <i>Null Safety</i>, o qual define que as variáveis de um código Dart são non-nullable, ou não anuláveis, a menos que sejam definidas como tal. Declarar uma entidade Dart como nullable define a possibilidade desta ser valorada como ```null``` em algum momento do processo de execução do código que a contém, evitando null exceptions.
 
 Com o Null safety todas as variáveis do código a seguir são non-nullable:
 
@@ -234,13 +243,13 @@ Com o Null safety todas as variáveis do código a seguir são non-nullable:
     String name = getFileName();
     final b = Foo();
 
-Para indicar que uma variável aceita um nullable usa-se o marcador ? em conjunto com a declaração do seu tipo:
+Para indicar que uma variável aceita um nullable usa-se o marcador <i>?</i> logo após sua a declaração tipo:
 
 
     int? aNullableInt = null;
 
 
-Para declarar umavariável como no-nullable manualmente, usa-se o marcador ! na delcaração de tipo da unidade:
+Para declarar uma variável como no-nullable manualmente, usa-se o marcador ! na delcaração de tipo da unidade:
 
 
     int! aNoNullableInt = null;
@@ -249,7 +258,7 @@ Para declarar umavariável como no-nullable manualmente, usa-se o marcador ! na 
 <h2>Dynamic</h2>
 
 
-O tipo dynamic define a aceitação de todos os demais tipos a uma variável, dando a linguagem Dart a característica de dinamicidade:
+O tipo dynamic define a aceitação de todos os demais tipos em uma variável, dando ao Dart a característica de dinamicidade comum a outras linguagens:
 
 
     dynamic nome = "Caio Rolla";
@@ -345,7 +354,7 @@ O resultado de x-- é o valor de x antes da operação, como mostra o exemplo a 
 <h2>Operadores Relacionais</h2>
 
 
-Relacionam operandos tendo como retorno um boolean, sendo true caso a operação seja verdadeira e false caso seja falsa. Eles são:
+Relacionam operandos tendo como retorno um boolean, sendo true caso a operação for verdadeira e false caso seja falsa. Eles são:
 
 
 <h3> Igualdade == </h3>
@@ -542,7 +551,7 @@ A definição do tipo dessa variável é inferida pelo valor que ela carrega, se
 <h2>Variáveis não Iniciadas</h2>
 
 
-Uma variável não iniciada é definida por uma unidade de armazenamento e referência cujo espaço na memória não foi ocupado no momendo da declaração, sendo possível oculpar este valor posteriormente:
+Uma variável não iniciada é definida por uma unidade de armazenamento e referência cujo espaço na memória não foi ocupado no momendo da declaração, sendo possível ocupa-lo posteriormente:
 
 
     int empty;
@@ -553,7 +562,7 @@ Uma variável não iniciada é definida por uma unidade de armazenamento e refer
 <h2>Variáveis Late</h2>
 
 
-O Dart possui, desde a versão 2.12, o modificador Late, que é usado em dois casos: 
+O Dart possui, desde a versão 2.12, o modificador <i>Late</i>, que é usado em dois casos: 
 
 - Declaração de variáveis non-nullable que são iniciadas após sua delcaração;
 - Lazily initializing de uma variável;
