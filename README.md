@@ -18,13 +18,13 @@ O Dart possui um rico conjunto de bibliotecas, porvendo recursos essenciais para
 
 A itens a seguir descrevem uma lista de bibliotecas que podem ser utilizadas em qualquer plataforma Dart:
 
-[dart:async](https://api.dart.dev/stable/dart-async/dart-async-library.html)
-[dart:collection](https://api.dart.dev/stable/dart-collection/dart-collection-library.html)
-[dart:convert](https://api.dart.dev/stable/dart-convert/dart-convert-library.html)
-[dart:core](https://api.dart.dev/stable/dart-core/dart-core-library.html)
-[dart:developer](https://api.dart.dev/stable/dart-developer/dart-developer-library.html)
-[dart:math](https://api.dart.dev/stable/dart-math/dart-math-library.html)
-[dart:typed_data](https://api.dart.dev/stable/dart-typed_data/dart-typed_data-library.html)
+[dart:async](https://api.dart.dev/stable/dart-async/dart-async-library.html): Suporte para programação assíncrona, com classes como Future e Stream.
+[dart:collection](https://api.dart.dev/stable/dart-collection/dart-collection-library.html): Classes e utilitários que complementam o suporte de collections em dart:core.
+[dart:convert](https://api.dart.dev/stable/dart-convert/dart-convert-library.html): Codificadores e decodificadores para conversão entre diferentes representações de dados, incluindo JSON e UTF-8.
+[dart:core](https://api.dart.dev/stable/dart-core/dart-core-library.html): Tipos, collections e outras funcionalidades principais incorporadas para cada programa Dart.
+[dart:developer](https://api.dart.dev/stable/dart-developer/dart-developer-library.html): Interação com ferramentas de desenvolvedor como o debugger  e o inspector.
+[dart:math](https://api.dart.dev/stable/dart-math/dart-math-library.html): Constantes matemáticas e funções, além de um gerador de números aleatórios.
+[dart:typed_data](https://api.dart.dev/stable/dart-typed_data/dart-typed_data-library.html): Listas que lidam com eficiência com dados de tamanho fixo (por exemplo, inteiros não assinados de 8 bytes) e tipos numéricos SIMD.
 
 <h2>Bibliotecas para Plataformas Nativas</h2>
 
