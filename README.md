@@ -50,21 +50,21 @@ Os itens a seguir descrevem uma lista de bibliotecas que podem ser utilizadas em
 
 Os itens a seguir listam as principais bibliotecas Dart que podem ser utilizadas em plataformas nativas do Dart (código compilado por AOT e JIT).
 
-[dart:ffi](https://api.dart.dev/stable/dart-ffi/dart-ffi-library.html): Uma interface de função externa que permite que o código Dart use APIs C nativas.<br>
-[dart:io](https://api.dart.dev/stable/dart-io/dart-io-library.html): File, socket, HTTP e outros suportes de I/O para aplicativos não Web.<br>
-[dart:isolate](https://api.dart.dev/stable/dart-isolate/dart-isolate-library.html): Programação concorrente usando isolates: trabalhadores independentes semelhantes a threads.<br>
-[dart:mirrors](https://api.dart.dev/stable/dart-mirrors/dart-mirrors-library.html): Reflexão básica com suporte para introspecção e invocação dinâmica.
+- [dart:ffi](https://api.dart.dev/stable/dart-ffi/dart-ffi-library.html): Uma interface de função externa que permite que o código Dart use APIs C nativas.<br>
+- [dart:io](https://api.dart.dev/stable/dart-io/dart-io-library.html): File, socket, HTTP e outros suportes de I/O para aplicativos não Web.<br>
+- [dart:isolate](https://api.dart.dev/stable/dart-isolate/dart-isolate-library.html): Programação concorrente usando isolates: trabalhadores independentes semelhantes a threads.<br>
+- [dart:mirrors](https://api.dart.dev/stable/dart-mirrors/dart-mirrors-library.html): Reflexão básica com suporte para introspecção e invocação dinâmica.
 
 <h2>Bibliotecas para Plataformas Web</h2>
 
 Os itens a seguir listam as principais bibliotecas do Dart que que podem ser utilizadas na plataforma da Web Dart (código compilado para JavaScript).
 
-[dart:html](https://api.dart.dev/stable/dart-html/dart-html-library.html): Elementos HTML e outros recursos para aplicativos baseados na web.<br>
-[dart:indexed_db](https://api.dart.dev/stable/dart-indexed_db/dart-indexed_db-library.html): Armazenamento de chave-valor do lado do cliente com suporte para índices.<br>
-[dart:js_util](https://api.dart.dev/stable/dart-js_util/dart-js_util-library.html): APIs para complementar a funcionalidade ausente no dart:html ou no pacote js.<br>
-[dart:svg](https://api.dart.dev/stable/dart-svg/dart-svg-library.html): Gráficos vetoriais escaláveis.<br>
-[dart:web_audio](https://api.dart.dev/stable/dart-web_audio/dart-web_audio-library.html): Programação de áudio de alta fidelidade no navegador.<br>
-[dart:web_gl](https://api.dart.dev/stable/dart-web_gl/dart-web_gl-library.html): Programação 3D no navegador.
+- [dart:html](https://api.dart.dev/stable/dart-html/dart-html-library.html): Elementos HTML e outros recursos para aplicativos baseados na web.<br>
+- [dart:indexed_db](https://api.dart.dev/stable/dart-indexed_db/dart-indexed_db-library.html): Armazenamento de chave-valor do lado do cliente com suporte para índices.<br>
+- [dart:js_util](https://api.dart.dev/stable/dart-js_util/dart-js_util-library.html): APIs para complementar a funcionalidade ausente no dart:html ou no pacote js.<br>
+- [dart:svg](https://api.dart.dev/stable/dart-svg/dart-svg-library.html): Gráficos vetoriais escaláveis.<br>
+- [dart:web_audio](https://api.dart.dev/stable/dart-web_audio/dart-web_audio-library.html): Programação de áudio de alta fidelidade no navegador.<br>
+- [dart:web_gl](https://api.dart.dev/stable/dart-web_gl/dart-web_gl-library.html): Programação 3D no navegador.
 
 <h2>Características Básicas</h2>
 
@@ -73,13 +73,12 @@ O Dart possui algumas peculiaridades que o diferenciam de outras linguagens popu
 - Em Dart, patricamente tudo é um objeto.
 - No Dart é possível inferir tipos a partir dos dados recebidos.
 - No Dart é possível tratar a obrigatoriedade da anulação nos tipos de entidades. 
-<!-- - O Dart suporta tipagem genérica, como List<int>(uma lista de integers) ou List<Object>(uma lista de objetos de qualquer tipo).
-- O Dart suporta funções de alto nível(como main()), assim como funções amarradas a classes ou objetos(static e instâncias de métodos, respectivamente). Também é possível criar funções dentro de funções(funções aninhadas ou locais). -->
+- O Dart suporta tipagem genérica, como List<int>(uma lista de integers) ou List<Object>(uma lista de objetos de qualquer tipo).
 
-
-<!-- - Da mesma forma, o Dart suporta variáveis de alto nível, assim como variáveis amarradas a uma classe ou objeto(static e variáveis instanciadas). Variáveis intanciadas são muitas vezes conhecidas como fields ou propriedades. -->
-<!-- - Diferente da linguagem Java, o Dart não possui as palavras-chave public, protected e private. Se um identificador inicia com uma underline(_), ele passa a ser private. -->
-<!-- - Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos.  -->
+- O Dart suporta funções de alto nível(como main()), assim como funções amarradas a classes ou objetos(static e instâncias de métodos, respectivamente). Também é possível criar funções dentro de funções(funções aninhadas ou locais).
+- Da mesma forma, o Dart suporta variáveis de alto nível, assim como variáveis amarradas a uma classe ou objeto(static e variáveis instanciadas). Variáveis intanciadas são muitas vezes conhecidas como fields ou propriedades.
+- Diferente da linguagem Java, o Dart não possui as palavras-chave public, protected e private. Se um identificador inicia com uma underline(_), ele passa a ser private.
+- Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos. 
 
 <h2>Ambiente de Desenvolvimento</h1>
 
