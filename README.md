@@ -8,7 +8,27 @@
 
 O Dart é uma linguagem de script type safe, multiparadigma e orienta a objetos, desenvolvida e mantida pela Google. Tendo sido lançada na GOTO Conference de 2011, a linguagem tem ganhado bastante popularidade graças ao Flutter, um dos Frameworks <i>mobile native</i> mais utilizados da atualidade.
 
-<h2></h2>
+<h1>Dart: The platforms</h1>
+
+Por ser multiplataformas, o Dart conta com ferramentas, ou soluções, que possibilitam o seu uso de formas distintas: 
+
+- <b>Dart Native</b>: Para apps direcionados a dispositivos móveis e desktop, o Dart inclui sua máquina virtual, ou DartVM, que compila o código Dart de duas formas distintas, sendo elas a compilação just-in-time (JIT) e um compilador ahead-of-time (AOT) que resultam na interpretação em machine code do código escrito.
+
+- <b>Dart Web</b>: Para aplicações direcionados à Web, o Dart inclui um compilador de tempo de desenvolvimento (dartdevc) e um compilador de tempo de produção (dart2js), tendo com resultado, em ambos os casos, a tradução do Dart para JavaScript.
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/61476935/170975443-1ec28e3b-ea5b-4c1d-9d14-68bebd2ac2fe.png">
+</div>
+
+<h2>O tempo de execução do Dart</h2>
+
+Independentemente da plataforma utilizada ou de como o código é compilado, sua execução demanda o Dart runtime. Sendo este o responsável pelas seguintes tarefas críticas:
+
+- Gerenciando memória: o Dart usa um modelo de memória gerenciada, em que a memória não utilizada é recuperada por um coletor de lixo (GC).
+- Aplicando o sistema de tipo Dart: Embora a maioria das verificações de tipo no Dart sejam estáticas (tempo de compilação), algumas verificações de tipo são dinâmicas (tempo de execução). Por exemplo, o tempo de execução do Dart impõe verificações dinâmicas por verificação de tipo e operadores de conversão.
+- Gerenciando isolados: o tempo de execução do Dart controla o isolado principal (onde o código normalmente é executado) e quaisquer outros isolados que o aplicativo cria.
+
+Em plataformas nativas, o tempo de execução do Dart é incluído automaticamente em executáveis ​​autocontidos e faz parte da DartVM fornecida pelo comando dart run.
 
 <h1>Dart: The libraries</h1>
 
@@ -45,28 +65,6 @@ Os itens a seguir listam as principais bibliotecas do Dart que que podem ser uti
 [dart:svg](https://api.dart.dev/stable/dart-svg/dart-svg-library.html): Gráficos vetoriais escaláveis.<br>
 [dart:web_audio](https://api.dart.dev/stable/dart-web_audio/dart-web_audio-library.html): Programação de áudio de alta fidelidade no navegador.<br>
 [dart:web_gl](https://api.dart.dev/stable/dart-web_gl/dart-web_gl-library.html): Programação 3D no navegador.
-
-<h1>Dart: The platforms</h1>
-
-Por ser multiplataformas, o Dart conta com ferramentas, ou soluções, que possibilitam o seu uso de formas distintas: 
-
-- <b>Dart Native</b>: Para apps direcionados a dispositivos móveis e desktop, o Dart inclui sua máquina virtual, ou DartVM, que compila o código Dart de duas formas distintas, sendo elas a compilação just-in-time (JIT) e um compilador ahead-of-time (AOT) que resultam na interpretação em machine code do código escrito.
-
-- <b>Dart Web</b>: Para aplicações direcionados à Web, o Dart inclui um compilador de tempo de desenvolvimento (dartdevc) e um compilador de tempo de produção (dart2js), tendo com resultado, em ambos os casos, a tradução do Dart para JavaScript.
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/61476935/170975443-1ec28e3b-ea5b-4c1d-9d14-68bebd2ac2fe.png">
-</div>
-
-<h2>O tempo de execução do Dart</h2>
-
-Independentemente da plataforma utilizada ou de como o código é compilado, sua execução demanda o Dart runtime. Sendo este o responsável pelas seguintes tarefas críticas:
-
-- Gerenciando memória: o Dart usa um modelo de memória gerenciada, em que a memória não utilizada é recuperada por um coletor de lixo (GC).
-- Aplicando o sistema de tipo Dart: Embora a maioria das verificações de tipo no Dart sejam estáticas (tempo de compilação), algumas verificações de tipo são dinâmicas (tempo de execução). Por exemplo, o tempo de execução do Dart impõe verificações dinâmicas por verificação de tipo e operadores de conversão.
-- Gerenciando isolados: o tempo de execução do Dart controla o isolado principal (onde o código normalmente é executado) e quaisquer outros isolados que o aplicativo cria.
-
-Em plataformas nativas, o tempo de execução do Dart é incluído automaticamente em executáveis ​​autocontidos e faz parte da DartVM fornecida pelo comando dart run.
 
 <h2>Características Básicas</h2>
 
