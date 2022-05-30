@@ -8,6 +8,43 @@
 
 O Dart é uma linguagem de script type safe, multiparadigma e orienta a objetos, desenvolvida e mantida pela Google. Tendo sido lançada na GOTO Conference de 2011, a linguagem tem ganhado bastante popularidade graças ao Flutter, um dos Frameworks <i>mobile native</i> mais utilizados da atualidade.
 
+<h2></h2>
+
+<h1>Dart: The libraries</h1>
+
+O Dart possui um rico conjunto de bibliotecas, porvendo recursos essenciais para suprir necessidades do dia a dia de um desenvolvedor, sendo as mais importantes:
+
+<h2>Bibliotecas multiplataforma</h2>
+
+A itens a seguir descrevem uma lista de bibliotecas que podem ser utilizadas em qualquer plataforma Dart:
+
+[dart:async](https://api.dart.dev/stable/dart-async/dart-async-library.html)
+[dart:collection](https://api.dart.dev/stable/dart-collection/dart-collection-library.html)
+[dart:convert](https://api.dart.dev/stable/dart-convert/dart-convert-library.html)
+[dart:core](https://api.dart.dev/stable/dart-core/dart-core-library.html)
+[dart:developer](https://api.dart.dev/stable/dart-developer/dart-developer-library.html)
+[dart:math](https://api.dart.dev/stable/dart-math/dart-math-library.html)
+[dart:typed_data](https://api.dart.dev/stable/dart-typed_data/dart-typed_data-library.html)
+
+<h2>Bibliotecas para Plataformas Nativas</h2>
+
+[dart:ffi](https://api.dart.dev/stable/dart-ffi/dart-ffi-library.html)
+[dart:io](https://api.dart.dev/stable/dart-io/dart-io-library.html)
+[dart:isolate](https://api.dart.dev/stable/dart-isolate/dart-isolate-library.html)
+[dart:mirrors](https://api.dart.dev/stable/dart-mirrors/dart-mirrors-library.html)
+
+<h2>Bibliotecas para Plataformas Web</h2>
+
+[dart:html](https://api.dart.dev/stable/dart-html/dart-html-library.html)
+[dart:indexed_db](https://api.dart.dev/stable/dart-indexed_db/dart-indexed_db-library.html)
+[dart:js](https://api.dart.dev/stable/dart-js/dart-js-library.html)
+[dart:js_util](https://api.dart.dev/stable/dart-js_util/dart-js_util-library.html)
+[dart:svg](https://api.dart.dev/stable/dart-svg/dart-svg-library.html)
+[dart:web_audio](https://api.dart.dev/stable/dart-web_audio/dart-web_audio-library.html)
+[dart:web_gl](https://api.dart.dev/stable/dart-web_gl/dart-web_gl-library.html)
+
+<h1>Dart: The platforms</h1>
+
 Por ser multiplataformas, o Dart conta com ferramentas, ou soluções, que possibilitam o seu uso de formas distintas: 
 
 - <b>Dart Native</b>: Para apps direcionados a dispositivos móveis e desktop, o Dart inclui sua máquina virtual, ou DartVM, que compila o código Dart de duas formas distintas, sendo elas a compilação just-in-time (JIT) e um compilador ahead-of-time (AOT) que resultam na interpretação em machine code do código escrito.
@@ -15,9 +52,8 @@ Por ser multiplataformas, o Dart conta com ferramentas, ou soluções, que possi
 - <b>Dart Web</b>: Para aplicações direcionados à Web, o Dart inclui um compilador de tempo de desenvolvimento (dartdevc) e um compilador de tempo de produção (dart2js), tendo com resultado, em ambos os casos, a tradução do Dart para JavaScript.
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/61476935/170880065-6ef77941-7c9b-433e-8c06-825ceae2afd4.png">
+  <img src="https://user-images.githubusercontent.com/61476935/170975443-1ec28e3b-ea5b-4c1d-9d14-68bebd2ac2fe.png">
 </div>
-
 
 <h2>O tempo de execução do Dart</h2>
 
@@ -29,12 +65,9 @@ Independentemente da plataforma utilizada ou de como o código é compilado, sua
 
 Em plataformas nativas, o tempo de execução do Dart é incluído automaticamente em executáveis ​​autocontidos e faz parte da DartVM fornecida pelo comando dart run.
 
-
 <h2>Características Básicas</h2>
 
-
 O Dart possui algumas peculiaridades que o diferenciam de outras linguagens populares, tendo a seu dispor uma biblioteca de tipos bastante diversa. No entanto, antes de abordarmos tais especificidades, é importante entender alguns conceitos básicos que devem ser levados durante toda a leitura:
-
 
 - Em Dart, patricamente tudo é um objeto.
 - No Dart é possível inferir tipos a partir dos dados recebidos.
@@ -47,9 +80,7 @@ O Dart possui algumas peculiaridades que o diferenciam de outras linguagens popu
 <!-- - Diferente da linguagem Java, o Dart não possui as palavras-chave public, protected e private. Se um identificador inicia com uma underline(_), ele passa a ser private. -->
 <!-- - Identificadores podem iniciar com uma letra ou underline(_), seguida de qualquer combinação de caracteres e dígitos.  -->
 
-
 <h2>Ambiente de Desenvolvimento</h1>
-
 
 A seguir estão dispostos uma série de passos para a instalação das ferramentas e preparo do ambiente de desenvolvimento. Porém, o Dart já é compatível e interpretado pelos editores mais populares, como o VSCode, que conta com plugins para complementar o ambiente de desenvolvimento. Com isso só é preciso criar uma file com a extenção .dark e executá-la com o comando <b><i>dart run</i></b>:
 
