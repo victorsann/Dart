@@ -8,7 +8,7 @@
 
 O Dart é uma linguagem de script type safe, multiparadigma e orienta a objetos, desenvolvida e mantida pela Google. Tendo sido lançada na GOTO Conference de 2011, a linguagem tem ganhado bastante popularidade graças ao Flutter, um dos Frameworks <i>mobile native</i> mais utilizados da atualidade.
 
-<h1>Dart: The platforms</h1>
+<h2>Dart: The platforms</h2>
 
 Por ser multiplataformas, o Dart conta com ferramentas, ou soluções, que possibilitam seu uso de formas distintas: 
 
@@ -30,7 +30,7 @@ Independentemente da plataforma utilizada ou de como o código é compilado, sua
 
 Em plataformas nativas, o tempo de execução do Dart é incluído automaticamente em executáveis ​​autocontidos e faz parte da DartVM fornecida pelo comando dart run.
 
-<h1>Dart: The libraries</h1>
+<h2>Dart: The libraries</h2>
 
 O Dart possui um rico conjunto de bibliotecas, porvendo recursos essenciais para suprir necessidades do dia a dia de um desenvolvedor, sendo as mais importantes:
 
