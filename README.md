@@ -738,8 +738,8 @@ O exemplo abaixo define uma função anônima com um parâmetro de tipo anônimo
 
 Output:
 
-> 0: apples
-> 1: bananas
+> 0: apples<br>
+> 1: bananas<br>
 > 2: oranges
 
 
@@ -1169,7 +1169,7 @@ Em geral um map é um objeto que associa chaves e valores, ambos podendo ser de 
 
 OutPut:
 
->The GodFather
+>The GodFather<br>
 >Vito Corleone
 
 
@@ -1288,7 +1288,7 @@ Para fazer uso de um membro de uma classe é preciso, antes de mais nada, criar 
     
 OutPut:
     
->Static
+>Static<br>
 >Modifier
 
 
@@ -1654,8 +1654,8 @@ Um <b><i>super</i></b> deve ser declarado dentro de um membro da classe herdeira
 
 OutPut:
 
->Something edible
->A fruit
+>Something edible<br>
+>A fruit<br>
 >A fastfood
 
 
@@ -1915,8 +1915,8 @@ A seguir temos um exemplo de declaração e uso de uma função Future que retor
 
 OutPut: 
 
->Buscando o pedido do usuário...
->//seconds: 2
+>Buscando o pedido do usuário...<br>
+>//seconds: 2<br>
 >Café  
 
 
@@ -1944,9 +1944,9 @@ Se por alguma razão uma operação assíncrona cair ou achar uma exception, a f
 
 Output:
 
->Buscando o pedido do usuário...
->//seconds: 2
->Unhandled exception:
+>Buscando o pedido do usuário...<br>
+>//seconds: 2<br>
+>Unhandled exception:<br>
 >Exception: Logout failed: user ID is invalid
 
 
@@ -2022,8 +2022,8 @@ O exemplo a seguir compara as declarações de uma série de funções síncrona
 
 Output:
 
->Buscando o pedido do usuário...
->//seconds: 2
+>Buscando o pedido do usuário...<br>
+>//seconds: 2<br>
 >Seu pedido é: Instance of 'Future<String>'
 
   
@@ -2051,8 +2051,8 @@ Output:
 
 Output:
 
->Buscando o pedido do usuário...
->//seconds: 2
+>Buscando o pedido do usuário...<br>
+>//seconds: 2<br>
 >Seu pedido é: Café
 
 
@@ -2097,11 +2097,11 @@ Aqui temos basicamente quatro métodos. Três deles, incluindo o main method, s�
 
 Output:
 
->Aguardando pedido do usuário...
->1
->2
->3
->4
+>Aguardando pedido do usuário...<br>
+>1<br>
+>2<br>
+>3<br>
+>4<br>
 >Seu pedido é: Café
 
 
@@ -2131,8 +2131,8 @@ O meio mais utilizado e recomendado para tratar erros em funções async é util
 
 Output:
     
->Aguardando pedido do usuário...
->//seconds: 4
+>Aguardando pedido do usuário...<br>
+>//seconds: 4<br>
 >Café
 
 
