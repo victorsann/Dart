@@ -508,45 +508,29 @@ Operações que relacionam dois operandos de forma que o primeiro operando receb
 
 Os operadores lógicos definem um valor boolean como o retorno entre uma operação entre dois operandos, sempre retornando true ou false:
 
-
-Operador          | Função                                                        | 
------------------ | ------------------------------------------------------------- | 
- !expr            |  inverte a expressão data(altera false para tru e vice versa) |
- ||               |  OR lógico                                                    |
- &&               |  AND logico                                                   |
-
-
 <h3>Negação !</h3>
 
+Se o valor chamado data for definido como true, ele passa a ser false, e vice versa. 
 
     if(!data) {
         ...
     }
 
-
-Se o valor chamado data for definido como true, ele passa a ser false, e vice versa. 
-
-
 <h3>Disjução ||</h3>
 
+Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao valor boolean true.
 
     if(!data || value) {
         ...
     }
 
-
-Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao valor boolean true.
-
-
 <h3>Conjunção &&</h3>
 
+O operador de conjunção, também chamado de AND lógico define que o resultado de uma operação como true se ambos os operandos forem verdadeiros.
 
     if(!data && value) {
-          ...
-      }
-
-
-O operador de conjunção, também chamado de AND lógico define que o resultado de uma operação como true se ambos os operandos forem verdadeiros.
+        ...
+    }
 
 
 <h1>Unidades de Armazenamento</h1>
