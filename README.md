@@ -195,10 +195,7 @@ A interpolação permite acessar valores identificados por unidades de armazenam
     
 >Output: String Interpolation
 
-
- <div align="center">
-  Obs: a interpolação é feita tanto entre aspas simples quanto entre aspas duplas
- </div>
+Obs: a interpolação é feita tanto entre aspas simples quanto entre aspas duplas
 
 
 <h2>Booleans</h2>
@@ -316,11 +313,21 @@ O tipo dynamic define a aceitação de todos os demais tipos em uma variável, d
     print(idade); // 22 anos
 
 
+<h2>Enumerated types,</h2>
+
+Enumerated types, geralmente chamados de <i>enumerations</i> ou <i>enums</i>, são um tipo especial de classe usado para representar um número fixo de valores constantes.
+
+>Nota: Todos os enums estendem automaticamente a classe Enum. Eles também são selados, o que significa que não podem ser subclassificados, >implementados, misturados ou instanciados explicitamente.
+>
+>Classes abstratas e mixins podem implementar ou estender explicitamente Enum, mas a menos que sejam implementados ou misturados em uma >declaração enum, nenhum objeto pode realmente implementar o tipo dessa classe ou mixin.
+
+Para declarar um tipo enumerado simples, usa-se a palavra-chave ```enum``` e lista-se os valores que serão enumerados:
+
+    enum Color { red, green, blue }
+
 <h1>Operadores Aritméticos</h1>
 
-
 O Dart suporta os operadores aritméticos usuais encontrados na maior parte das linguagens, porém, conta com algumas adições, como mostrado abaixo:
-
 
 Operações         | Sinais |  Descrição                                                                    |  Exemplos
 ----------------- | ------ | ----------------------------------------------------------------------------- | -----------------------------------------------
