@@ -10,7 +10,7 @@ O Dart é uma linguagem de script type safe, multiparadigma e orienta a objetos,
 
 <h1>Dart: The platforms</h1>
 
-Por ser multiplataformas, o Dart conta com ferramentas, ou soluções, que possibilitam o seu uso de formas distintas: 
+Por ser multiplataformas, o Dart conta com ferramentas, ou soluções, que possibilitam seu uso de formas distintas: 
 
 - <b>Dart Native</b>: Para apps direcionados a dispositivos móveis e desktop, o Dart inclui sua máquina virtual, ou DartVM, que compila o código Dart de duas formas distintas, sendo elas a compilação just-in-time (JIT) e um compilador ahead-of-time (AOT) que resultam na interpretação em machine code do código escrito.
 
@@ -24,9 +24,9 @@ Por ser multiplataformas, o Dart conta com ferramentas, ou soluções, que possi
 
 Independentemente da plataforma utilizada ou de como o código é compilado, sua execução demanda o Dart runtime. Sendo este o responsável pelas seguintes tarefas críticas:
 
-- Gerenciando memória: o Dart usa um modelo de memória gerenciada, em que a memória não utilizada é recuperada por um coletor de lixo (GC).
-- Aplicando o sistema de tipo Dart: Embora a maioria das verificações de tipo no Dart sejam estáticas (tempo de compilação), algumas verificações de tipo são dinâmicas (tempo de execução). Por exemplo, o tempo de execução do Dart impõe verificações dinâmicas por verificação de tipo e operadores de conversão.
-- Gerenciando isolados: o tempo de execução do Dart controla o isolado principal (onde o código normalmente é executado) e quaisquer outros isolados que o aplicativo cria.
+- Gerenciamento de memória: o Dart usa um modelo de memória gerenciada, em que a memória não utilizada é recuperada por um coletor de lixo (GC).
+- Aplicação do sistema de tipo Dart: Embora a maioria das verificações de tipo no Dart sejam estáticas (tempo de compilação), algumas verificações de tipo são dinâmicas (tempo de execução). Por exemplo, o tempo de execução do Dart impõe verificações dinâmicas por verificação de tipo e operadores de conversão.
+- Gerenciamento de isolates: o tempo de execução do Dart controla o isolate principal (onde o código normalmente é executado) e quaisquer outros isolates que o aplicativo cria.
 
 Em plataformas nativas, o tempo de execução do Dart é incluído automaticamente em executáveis ​​autocontidos e faz parte da DartVM fornecida pelo comando dart run.
 
@@ -36,15 +36,15 @@ O Dart possui um rico conjunto de bibliotecas, porvendo recursos essenciais para
 
 <h2>Bibliotecas multiplataforma</h2>
 
-A itens a seguir descrevem uma lista de bibliotecas que podem ser utilizadas em qualquer plataforma Dart:
+Os itens a seguir descrevem uma lista de bibliotecas que podem ser utilizadas em qualquer plataforma Dart:
 
-[dart:async](https://api.dart.dev/stable/dart-async/dart-async-library.html): Suporte para programação assíncrona, com classes como Future e Stream.<br>
-[dart:collection](https://api.dart.dev/stable/dart-collection/dart-collection-library.html): Classes e utilitários que complementam o suporte de collections em dart:core.<br>
-[dart:convert](https://api.dart.dev/stable/dart-convert/dart-convert-library.html): Codificadores e decodificadores para conversão entre diferentes representações de dados, incluindo JSON e UTF-8.<br>
-[dart:core](https://api.dart.dev/stable/dart-core/dart-core-library.html): Tipos, collections e outras funcionalidades principais incorporadas para cada programa Dart.<br>
-[dart:developer](https://api.dart.dev/stable/dart-developer/dart-developer-library.html): Interação com ferramentas de desenvolvedor como o debugger  e o inspector.<br>
-[dart:math](https://api.dart.dev/stable/dart-math/dart-math-library.html): Constantes matemáticas e funções, além de um gerador de números aleatórios.<br>
-[dart:typed_data](https://api.dart.dev/stable/dart-typed_data/dart-typed_data-library.html): Listas que lidam com eficiência com dados de tamanho fixo (por exemplo, inteiros não assinados de 8 bytes) e tipos numéricos SIMD.
+- [dart:async](https://api.dart.dev/stable/dart-async/dart-async-library.html): Suporte para programação assíncrona, com classes como Future e Stream.<br>
+- [dart:collection](https://api.dart.dev/stable/dart-collection/dart-collection-library.html): Classes e utilitários que complementam o suporte de collections em dart:core.<br>
+- [dart:convert](https://api.dart.dev/stable/dart-convert/dart-convert-library.html): Codificadores e decodificadores para conversão entre diferentes representações de dados, incluindo JSON e UTF-8.<br>
+- [dart:core](https://api.dart.dev/stable/dart-core/dart-core-library.html): Tipos, collections e outras funcionalidades principais incorporadas para cada programa Dart.<br>
+- [dart:developer](https://api.dart.dev/stable/dart-developer/dart-developer-library.html): Interação com ferramentas de desenvolvedor como o debugger  e o inspector.<br>
+- [dart:math](https://api.dart.dev/stable/dart-math/dart-math-library.html): Constantes matemáticas e funções, além de um gerador de números aleatórios.<br>
+- [dart:typed_data](https://api.dart.dev/stable/dart-typed_data/dart-typed_data-library.html): Listas que lidam com eficiência com dados de tamanho fixo (por exemplo, inteiros não assinados de 8 bytes) e tipos numéricos SIMD.
 
 <h2>Bibliotecas para Plataformas Nativas</h2>
 
