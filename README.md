@@ -736,11 +736,11 @@ O exemplo abaixo define uma função anônima com um parâmetro de tipo anônimo
       print('${list.indexOf(item)}: $item');
     });
 
-    //Output:
+Output:
 
-    0: apples
-    1: bananas
-    2: oranges
+> 0: apples
+> 1: bananas
+> 2: oranges
 
 
 <h2>Lexical scope</h2>
@@ -980,7 +980,7 @@ Para tratar um código que pode lançar mais de um tipo de exceção, é possív
     }
 
 
-<h3>Finally</h3>
+<h2>Finally</h2>
 
 
 Para garantir que o trecho de código será executado mesmo se uma exceção for lançada, usa-se a clausula finally. Se a exceção não combinar com a nenhum dos cases, a exceção é propagada depois que a clausula finilly for executada:
@@ -1045,21 +1045,18 @@ Um array, vetor ou variável composta em Dart é definido como uma lista de obje
 
     // List de Objetos
 
-    class Products {
+    class Product {
       String nome;
       double preco;
     
       Products(this.nome, this.preco);
     }
     
-    List<Products> listaDeCompras = [
-    
-    // Products(item, preco)
-    
-      Products("Feijão", 7.80),
-      Products("Arroz", 4.50),
-      Products("Macarrão", 3.45),
-      Products("Frango", 8.90)
+    List<Product> listaDeCompras = [
+      Product("Feijão", 7.80),
+      Product("Arroz", 4.50),
+      Product("Macarrão", 3.45),
+      Product("Frango", 8.90)
     ];
 
 
@@ -1078,9 +1075,9 @@ O Spread define uma associação entre lists, tendo como resultado um liste apen
 
     }
 
-    //OutPut: 
+OutPut: 
 
-    3
+>3
 
 
 <h2>Trantando Lists</h2>
@@ -1170,10 +1167,10 @@ Em geral um map é um objeto que associa chaves e valores, ambos podendo ser de 
       print(characters[1]);
     }
 
-    //OutPut:
+OutPut:
 
-    The GodFather
-    Vito Corleone
+>The GodFather
+>Vito Corleone
 
 
 <h2>Set</h2>
@@ -1289,10 +1286,10 @@ Para fazer uso de um membro de uma classe é preciso, antes de mais nada, criar 
       ClassName.method();
     }
     
-    //OutPut:
+OutPut:
     
-    Static
-    Modifier
+>Static
+>Modifier
 
 
 <div align="center">
@@ -1492,14 +1489,12 @@ Com isso é possível acessar o atributo <b><i>_attributeName</i></b> por meio d
 
 O exemplo acima usa os conceitos de Getter e Setter para simular um saque em uma conta bancária, tendo como private o valor a ser sacado. Este passa a ser acessível através de um get, sendo posteriormente configurado através de um set. A seguir temos o resultado do exemplo acima:
 
-  
-    //Output:
 
-    Valor sacado: 10.0
-
-    -------------------
-
-    Saldo atual:  90.0
+>Valor sacado: 10.0
+>
+>-------------------
+>
+>Saldo atual:  90.0
 
 
 <h2>Herança</h2>
@@ -1545,9 +1540,9 @@ Isso estabelece que cada método ou atributo definido como parte da SuperClasse 
     }
 
 
-    //OutPut:
+OutPut:
 
-    Michael Corleone
+>Michael Corleone
 
 
 Perceba que mesmo sendo uma classe herdeira, a subClasse possui um atributo próprio. Isso permite criar um maior nível de abstração e aproveitamento de um código já criado, não sendo necessário criar os mesmos atributos em classe relacionadas.
@@ -1597,9 +1592,9 @@ Quando a subClasse for intanciada, o método herdado será sobrescrito pelo mét
       apple.definition();
     }
 
-    //OutPut:
+OutPut:
 
-    A fruit
+>A fruit
 
 
 <h2>super.method()</h2>
@@ -1657,11 +1652,11 @@ Um <b><i>super</i></b> deve ser declarado dentro de um membro da classe herdeira
       hotDog.definition();
     }
 
-    //OutPut:
+OutPut:
 
-    Something edible
-    A fruit
-    A fastfood
+>Something edible
+>A fruit
+>A fastfood
 
 
 <h2>constructor() : super()</h2>
@@ -1692,9 +1687,9 @@ O super também pode definir uma relação entre classes atráves dos constructo
       margherita.definition();
     }
 
-    //OutPut:
+OutPut:
 
-    Margherita
+>Margherita
 
 
 Isso se dá quando uma subClasse é instanciada tendo um valor recebito em seu constructor, sendo necessário ter este mesmo valor na SuperClasse. No caso acima essa informação é o sabor da pizza criada.
@@ -1758,9 +1753,9 @@ Perceba que um método abstrato pode ser declarado sem corpo. Isso ocorre graça
       caneta.escrever();
     }
   
-    //OutPut:
+OutPut:
 
-    Texto
+>Texto
 
 
 <h2>Interfaces</h2>
@@ -1848,16 +1843,16 @@ O mixin é um método de definição de acesso a recursos de uma classe de forma
       common.balance();
     }
 
-    //OutPut:
+OutPut:
 
-    O Cliente Premium tem: 
-
-    Cash
-    Credit
-    
-    O Cliente Common tem: 
-    
-    Cash
+>O Cliente Premium tem: 
+>
+>Cash
+>Credit
+>
+>O Cliente Common tem: 
+>
+>Cash
 
 
 O exemplo define dois tipos de clientes, um Premium e um Common. Por possuir mais privilégios, um cliente Premium possuiria acesso ao mixin Score, tendo acesso exclusivo ao método credit. O mixin é extremamente importante no processo de declaração de relações e acesso a informação entre classes, tornando o código ainda mais seguro.
@@ -1918,11 +1913,11 @@ A seguir temos um exemplo de declaração e uso de uma função Future que retor
       print('Buscando o pedido do usuário...');
     }
 
-    // OutPut: 
+OutPut: 
 
-    Buscando o pedido do usuário...
-    //seconds: 2
-    Café  
+>Buscando o pedido do usuário...
+>//seconds: 2
+>Café  
 
 
 Por possuir um delay proposital, o método <b><i>fetchUserOrder()</i></b> é declarado como uma Future, indicando que essa função pode ser executada em segundo plano e que as demais não precisam esperá-la terminar para serem executadas.
@@ -1947,12 +1942,12 @@ Se por alguma razão uma operação assíncrona cair ou achar uma exception, a f
       print('Buscando o pedido do usuário...');
     }
 
-    //Output:
+Output:
 
-    Buscando o pedido do usuário...
-    //seconds: 2
-    Unhandled exception:
-    Exception: Logout failed: user ID is invalid
+>Buscando o pedido do usuário...
+>//seconds: 2
+>Unhandled exception:
+>Exception: Logout failed: user ID is invalid
 
 
 <div align="center">
@@ -1995,9 +1990,9 @@ Uma função async passa a aceitar a declaração de um await quando definida. O
       myMethod();
     }
     
-    //Output:
-  
-    Go lurn some code
+Output:
+
+>Go lurn some code
 
 
 O exemplo a seguir compara as declarações de uma série de funções síncronas e seu resultado com as mesmas funções, porém, declaradas como assíncronas:
@@ -2025,11 +2020,11 @@ O exemplo a seguir compara as declarações de uma série de funções síncrona
       print(createOrderMessage());
     }
 
-    //Output:
+Output:
 
-    Buscando o pedido do usuário...
-    //seconds: 2
-    Seu pedido é: Instance of 'Future<String>'
+>Buscando o pedido do usuário...
+>//seconds: 2
+>Seu pedido é: Instance of 'Future<String>'
 
   
  <h2>Exemplo de Função Assíncrona com async e await</h2>
@@ -2054,11 +2049,11 @@ O exemplo a seguir compara as declarações de uma série de funções síncrona
       print(await createOrderMessage());
     }
 
-    //Output:
+Output:
 
-    Buscando o pedido do usuário...
-    //seconds: 2
-    Seu pedido é: Café
+>Buscando o pedido do usuário...
+>//seconds: 2
+>Seu pedido é: Café
 
 
 O exemplo assíncrono é diferente de três formas:
@@ -2100,14 +2095,14 @@ Uma função async roda sincronicamente até o primeiro await. Isso significa qu
 Aqui temos basicamente quatro métodos. Três deles, incluindo o main method, são de execução assícrona, ou seja, são Futures que executam ações de acordo com o tempo de retorno das chamadas. O quarto método torna visível o delay de quatro segundos que cada await demora para retornar um valor.
 
 
-    //Output:
+Output:
 
-    Aguardando pedido do usuário...
-    1
-    2
-    3
-    4
-    Seu pedido é: Café
+>Aguardando pedido do usuário...
+>1
+>2
+>3
+>4
+>Seu pedido é: Café
 
 
 O run inicia no main method, cuja função aqui é executar as demais Futures. Com isso, perceba que por mais que a função print('Aguardando pedido do usuário...') esteja dentro de uma função assíncrona, ela é executado imediatamente. Isso ocorre graças a natureza síncrona da print() function. Já na chamada do método fetchUserOrder(), que também é definido como await, há um delay proposital que demonstra sua natureza assíncrona.
@@ -2134,11 +2129,11 @@ O meio mais utilizado e recomendado para tratar erros em funções async é util
      }
     }
 
-    //Output:
+Output:
     
-    Aguardando pedido do usuário...
-    //seconds: 4
-    Café
+>Aguardando pedido do usuário...
+>//seconds: 4
+>Café
 
 
 <div align="center">
