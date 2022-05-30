@@ -313,7 +313,7 @@ O tipo dynamic define a aceitação de todos os demais tipos em uma variável, d
     print(idade); // 22 anos
 
 
-<h2>Enumerated types,</h2>
+<h2>Enumerated types</h2>
 
 Enumerated types, geralmente chamados de <i>enumerations</i> ou <i>enums</i>, são um tipo especial de classe usado para representar um número fixo de valores constantes.
 
