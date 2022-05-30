@@ -18,30 +18,33 @@ O Dart possui um rico conjunto de bibliotecas, porvendo recursos essenciais para
 
 A itens a seguir descrevem uma lista de bibliotecas que podem ser utilizadas em qualquer plataforma Dart:
 
-[dart:async](https://api.dart.dev/stable/dart-async/dart-async-library.html): Suporte para programação assíncrona, com classes como Future e Stream.
-[dart:collection](https://api.dart.dev/stable/dart-collection/dart-collection-library.html): Classes e utilitários que complementam o suporte de collections em dart:core.
-[dart:convert](https://api.dart.dev/stable/dart-convert/dart-convert-library.html): Codificadores e decodificadores para conversão entre diferentes representações de dados, incluindo JSON e UTF-8.
-[dart:core](https://api.dart.dev/stable/dart-core/dart-core-library.html): Tipos, collections e outras funcionalidades principais incorporadas para cada programa Dart.
-[dart:developer](https://api.dart.dev/stable/dart-developer/dart-developer-library.html): Interação com ferramentas de desenvolvedor como o debugger  e o inspector.
-[dart:math](https://api.dart.dev/stable/dart-math/dart-math-library.html): Constantes matemáticas e funções, além de um gerador de números aleatórios.
+[dart:async](https://api.dart.dev/stable/dart-async/dart-async-library.html): Suporte para programação assíncrona, com classes como Future e Stream.<br>
+[dart:collection](https://api.dart.dev/stable/dart-collection/dart-collection-library.html): Classes e utilitários que complementam o suporte de collections em dart:core.<br>
+[dart:convert](https://api.dart.dev/stable/dart-convert/dart-convert-library.html): Codificadores e decodificadores para conversão entre diferentes representações de dados, incluindo JSON e UTF-8.<br>
+[dart:core](https://api.dart.dev/stable/dart-core/dart-core-library.html): Tipos, collections e outras funcionalidades principais incorporadas para cada programa Dart.<br>
+[dart:developer](https://api.dart.dev/stable/dart-developer/dart-developer-library.html): Interação com ferramentas de desenvolvedor como o debugger  e o inspector.<br>
+[dart:math](https://api.dart.dev/stable/dart-math/dart-math-library.html): Constantes matemáticas e funções, além de um gerador de números aleatórios.<br>
 [dart:typed_data](https://api.dart.dev/stable/dart-typed_data/dart-typed_data-library.html): Listas que lidam com eficiência com dados de tamanho fixo (por exemplo, inteiros não assinados de 8 bytes) e tipos numéricos SIMD.
 
 <h2>Bibliotecas para Plataformas Nativas</h2>
 
-[dart:ffi](https://api.dart.dev/stable/dart-ffi/dart-ffi-library.html)
-[dart:io](https://api.dart.dev/stable/dart-io/dart-io-library.html)
-[dart:isolate](https://api.dart.dev/stable/dart-isolate/dart-isolate-library.html)
-[dart:mirrors](https://api.dart.dev/stable/dart-mirrors/dart-mirrors-library.html)
+Os itens a seguir listam as principais bibliotecas Dart que podem ser utilizadas em plataformas nativas do Dart (código compilado por AOT e JIT).
+
+[dart:ffi](https://api.dart.dev/stable/dart-ffi/dart-ffi-library.html): Uma interface de função externa que permite que o código Dart use APIs C nativas.<br>
+[dart:io](https://api.dart.dev/stable/dart-io/dart-io-library.html): File, socket, HTTP e outros suportes de I/O para aplicativos não Web.<br>
+[dart:isolate](https://api.dart.dev/stable/dart-isolate/dart-isolate-library.html): Programação concorrente usando isolates: trabalhadores independentes semelhantes a threads.<br>
+[dart:mirrors](https://api.dart.dev/stable/dart-mirrors/dart-mirrors-library.html): Reflexão básica com suporte para introspecção e invocação dinâmica.
 
 <h2>Bibliotecas para Plataformas Web</h2>
 
-[dart:html](https://api.dart.dev/stable/dart-html/dart-html-library.html)
-[dart:indexed_db](https://api.dart.dev/stable/dart-indexed_db/dart-indexed_db-library.html)
-[dart:js](https://api.dart.dev/stable/dart-js/dart-js-library.html)
-[dart:js_util](https://api.dart.dev/stable/dart-js_util/dart-js_util-library.html)
-[dart:svg](https://api.dart.dev/stable/dart-svg/dart-svg-library.html)
-[dart:web_audio](https://api.dart.dev/stable/dart-web_audio/dart-web_audio-library.html)
-[dart:web_gl](https://api.dart.dev/stable/dart-web_gl/dart-web_gl-library.html)
+Os itens a seguir listam as principais bibliotecas do Dart que que podem ser utilizadas na plataforma da Web Dart (código compilado para JavaScript).
+
+[dart:html](https://api.dart.dev/stable/dart-html/dart-html-library.html): Elementos HTML e outros recursos para aplicativos baseados na web.<br>
+[dart:indexed_db](https://api.dart.dev/stable/dart-indexed_db/dart-indexed_db-library.html): Armazenamento de chave-valor do lado do cliente com suporte para índices.<br>
+[dart:js_util](https://api.dart.dev/stable/dart-js_util/dart-js_util-library.html): APIs para complementar a funcionalidade ausente no dart:html ou no pacote js.<br>
+[dart:svg](https://api.dart.dev/stable/dart-svg/dart-svg-library.html): Gráficos vetoriais escaláveis.<br>
+[dart:web_audio](https://api.dart.dev/stable/dart-web_audio/dart-web_audio-library.html): Programação de áudio de alta fidelidade no navegador.<br>
+[dart:web_gl](https://api.dart.dev/stable/dart-web_gl/dart-web_gl-library.html): Programação 3D no navegador.
 
 <h1>Dart: The platforms</h1>
 
