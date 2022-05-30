@@ -192,8 +192,6 @@ A interpolação permite acessar valores identificados por unidades de armazenam
     string person = "Interpolation";
     
     print('${greeting}, ${person}!');
-
-<br>
     
 >Output: String Interpolation
 
