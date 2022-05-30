@@ -285,13 +285,13 @@ Com o Null safety todas as variáveis do código a seguir são non-nullable:
     String name = getFileName();
     final b = Foo();
 
-Para indicar que uma variável aceita um nullable usa-se o marcador <i>?</i> logo após sua a declaração tipo:
+Para indicar que uma variável aceita um nullable usa-se o marcador ```?``` logo após sua a declaração tipo:
 
 
     int? aNullableInt = null;
 
 
-Para declarar uma variável como no-nullable manualmente, usa-se o marcador ! na delcaração de tipo da unidade:
+Para declarar uma variável como no-nullable manualmente, usa-se o marcador ```!``` na delcaração de tipo da unidade:
 
 
     int! aNoNullableInt = null;
@@ -507,6 +507,13 @@ Operações que relacionam dois operandos de forma que o primeiro operando receb
 
 
 Os operadores lógicos definem um valor boolean como o retorno entre uma operação entre dois operandos, sempre retornando true ou false:
+
+
+Operador          | Função                                                        | 
+----------------- | ------------------------------------------------------------- | 
+ !expr            |  inverte a expressão data(altera false para tru e vice versa) |
+ ||               |  OR lógico                                                    |
+ &&               |  AND logico                                                   |
 
 
 <h3>Negação !</h3>
