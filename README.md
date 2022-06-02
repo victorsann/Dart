@@ -379,7 +379,7 @@ O operador de decremento diminui seu operando em 1, sendo suportado em duas form
 
 > -1 == -1
     
-<b>Pós Fixado X--</b> - O resultado de x-- é o valor de x antes da operação, como mostra o exemplo a seguir:
+<b>Pós Fixado</b> - O resultado de x-- é o valor de x antes da operação, como mostra o exemplo a seguir:
 
     a = 0;
     b = a--; 
@@ -417,13 +417,11 @@ Relacionam operandos tendo como retorno um boolean, sendo true caso a operação
 
 > output: false
 
-
 <b>Maior ou igual</b> - Retorna true caso o valor numérico do operando da esquerda seja maior ou igual ao do operando da direita:
 
      assert(3 >= 3); 
 
 > output: true
-
 
 <b>Menor ou igual</b> - Retorna true caso o valor numérico do operando da esquerda seja menor ou igual ao do operando da direita:
 
@@ -437,30 +435,18 @@ Relacionam operandos tendo como retorno um boolean, sendo true caso a operação
 
 Os operadores type test definem tipos no processo compilação. Eles são definidos em três:
 
-
-<h3>as</h3>
-
-
-    //Typecast
+<b>as</b> - Typecast
 
     (employee as Person).firstName = 'Bob';
 
-
-<h3>is</h3>
-
-
-    //Retorna true caso o objeto tenha o tipo especificado
+<b>is</b> - Retorna true caso o objeto tenha o tipo especificado
 
     if (employee is Person) {
       // Type check
       employee.firstName = 'Bob';
     }
 
-
-<h3>is!</h3>
-
-
-    //Retorna true caso o objeto tenha o tipo diferente do especificado
+<b>is!</b> - Retorna true caso o objeto tenha o tipo diferente do especificado
 
     if (employee is! Person) {
       // Type check
@@ -487,25 +473,19 @@ Operações que relacionam dois operandos de forma que o primeiro operando receb
 
 Os operadores lógicos definem um valor boolean como o retorno entre uma operação entre dois operandos, sempre retornando true ou false:
 
-<h3>Negação !</h3>
-
-Se o valor chamado data for definido como true, ele passa a ser false, e vice versa. 
+<b>Negação</b> - Se o valor chamado data for definido como true, ele passa a ser false, e vice versa. 
 
     if(!data) {
         ...
     }
 
-<h3>Disjução ||</h3>
-
-Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao valor boolean true.
+<b>Disjução ||</b> - Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao valor boolean true.
 
     if(!data || value) {
         ...
     }
 
-<h3>Conjunção &&</h3>
-
-O operador de conjunção, também chamado de AND lógico define que o resultado de uma operação como true se ambos os operandos forem verdadeiros.
+<b>Conjunção &&</b> - O operador de conjunção, também chamado de AND lógico define que o resultado de uma operação como true se ambos os operandos forem verdadeiros.
 
     if(!data && value) {
         ...
