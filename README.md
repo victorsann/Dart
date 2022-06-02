@@ -479,7 +479,7 @@ Os operadores lógicos definem um valor boolean como o retorno entre uma operaç
         ...
     }
 
-<b><h3>Disjução</h3></b> - Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao valor boolean true.
+<b>Disjução</b> - Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao valor boolean true.
 
     if(!data || value) {
         ...
