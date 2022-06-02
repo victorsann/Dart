@@ -479,13 +479,13 @@ Os operadores lógicos definem um valor boolean como o retorno entre uma operaç
         ...
     }
 
-<b>Disjução ||</b> - Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao valor boolean true.
+<b><h3>Disjução</h3></b> - Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao valor boolean true.
 
     if(!data || value) {
         ...
     }
 
-<b>Conjunção &&</b> - O operador de conjunção, também chamado de AND lógico define que o resultado de uma operação como true se ambos os operandos forem verdadeiros.
+<b>Conjunção</b> - O operador de conjunção, também chamado de AND lógico define que o resultado de uma operação como true se ambos os operandos forem verdadeiros.
 
     if(!data && value) {
         ...
