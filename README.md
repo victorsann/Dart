@@ -345,9 +345,7 @@ Operações         | Sinais |  Descrição                                     
 
 O operador de incremento incrementa seu operando em 1, sendo suportado em duas formas: 
 
-
-<b>Pré Fixado ++X</b> - O resultado de ++ x é o valor de x após a operação, como mostra o exemplo a seguir:
-
+<b>Pré Fixado</b> - O resultado de ++ x é o valor de x após a operação, como mostra o exemplo a seguir:
 
     var a, b;
     
@@ -357,17 +355,15 @@ O operador de incremento incrementa seu operando em 1, sendo suportado em duas f
 
 > 1 == 1
 
-<h3>Pós Fixado X++</h3>
-
-
-O resultado de x ++ é o valor de x antes da operação, como mostra o exemplo a seguir:
-
+<b>Pós Fixado</b> - O resultado de x ++ é o valor de x antes da operação, como mostra o exemplo a seguir:
 
     var a, b;
 
     a = 0;
     b = a++; 
-    assert(a != b); // 1 != 0
+    assert(a != b); 
+
+> 1 != 0
 
 
 <h2>Decremento</h2>
@@ -375,27 +371,21 @@ O resultado de x ++ é o valor de x antes da operação, como mostra o exemplo a
 
 O operador de decremento diminui seu operando em 1, sendo suportado em duas formas: 
 
-
-<h3>Pré Fixado --X</h3>
-
-
-O resultado de --x é o valor de x após a operação, como mostra o exemplo a seguir:
-
+<b>Pré Fixado</b> - O resultado de --x é o valor de x após a operação, como mostra o exemplo a seguir:
 
     a = 0;
     b = --a; 
-    assert(a == b); // -1 == -1
+    assert(a == b); 
+
+> -1 == -1
     
-
-<h3>Pós Fixado X--</h3>
-
-
-O resultado de x-- é o valor de x antes da operação, como mostra o exemplo a seguir:
-
+<b>Pós Fixado X--</b> - O resultado de x-- é o valor de x antes da operação, como mostra o exemplo a seguir:
 
     a = 0;
     b = a--; 
-    assert(a != b); // -1 != 0
+    assert(a != b); 
+
+> -1 != 0
 
 
 <h2>Operadores Relacionais</h2>
@@ -403,59 +393,43 @@ O resultado de x-- é o valor de x antes da operação, como mostra o exemplo a 
 
 Relacionam operandos tendo como retorno um boolean, sendo true caso a operação for verdadeira e false caso seja falsa. Eles são:
 
+<b>Igualdade</b> - Retorna true caso o valor numérico dos operandos seja igual:
 
-<h3> Igualdade == </h3>
+    assert(2 == 2); 
 
+> output: true
 
-Retorna true caso o valor numérico dos operandos seja igual:
+<b>Diferença</b> - Retorna true caso o valor numérico dos operandos for diferente:
 
+    assert(3 != 3); 
 
-    assert(2 == 2); //output: true
+>output: false 
 
+<b>Maior que</b> - Retorna true caso o valor numérico do operando da esquerda seja maior que o da direita:
 
-<h3> Diferença != </h3>
+    assert(3 > 2); 
 
+> output: true
 
-Retorna true caso o valor numérico dos operandos for diferente:
+<b>Menor que</b> - Retorna true caso o valor numérico do operando da esquerda seja menor que o da direita:
 
+     assert(4 < 3); 
 
-    assert(3 != 3); //output: false 
-
-
-<h3> Maior que > </h3>
-
-
-Retorna true caso o valor numérico do operando da esquerda seja maior que o da direita:
-
-
-    assert(3 > 2); //output: true
+> output: false
 
 
-<h3> Menor que < </h3>
+<b>Maior ou igual</b> - Retorna true caso o valor numérico do operando da esquerda seja maior ou igual ao do operando da direita:
+
+     assert(3 >= 3); 
+
+> output: true
 
 
-Retorna true caso o valor numérico do operando da esquerda seja menor que o da direita:
+<b>Menor ou igual</b> - Retorna true caso o valor numérico do operando da esquerda seja menor ou igual ao do operando da direita:
 
+     assert(4 <= 3); 
 
-     assert(4 < 3); //output: false
-
-
-<h3> Maior ou igual >= </h3>
-
-
-Retorna true caso o valor numérico do operando da esquerda seja maior ou igual ao do operando da direita:
-
-
-     assert(3 >= 3); //output: true
-
-
-<h3>Menor ou igual <= </h3>
-
-
-Retorna true caso o valor numérico do operando da esquerda seja menor ou igual ao do operando da direita:
-
-
-     assert(4 <= 3); //output: false
+> output: false
 
 
 <h2>Operadores de Teste</h2>
