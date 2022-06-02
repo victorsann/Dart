@@ -346,18 +346,16 @@ Operações         | Sinais |  Descrição                                     
 O operador de incremento incrementa seu operando em 1, sendo suportado em duas formas: 
 
 
-<h3>Pré Fixado ++X</h3>
-
-
-O resultado de ++ x é o valor de x após a operação, como mostra o exemplo a seguir:
+<b>Pré Fixado ++X</b> - O resultado de ++ x é o valor de x após a operação, como mostra o exemplo a seguir:
 
 
     var a, b;
     
     a = 0;
     b = ++a; 
-    assert(a == b); // 1 == 1
+    assert(a == b);
 
+> 1 == 1
 
 <h3>Pós Fixado X++</h3>
 
