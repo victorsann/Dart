@@ -1820,7 +1820,7 @@ O exemplo define dois tipos de clientes, um Premium e um Common. Por possuir mai
 <h1>Programação Assíncrona</h1>
 
 
-Com a necessidade de acesso a recursos externos, os modelos de comunicação e execução visando performance se tornaram cada vez mais importantes para os desenvolvedores. Termos como Threads são bastentes conhecidos dos que já possuem certa experiência, porém, os modelos que envolvem single-thread, multi-thread e outros, ainda são desconhecidos por muitos. Os modelos síncronos e assíncronos possibilitam o uso de diferentes meios para criar um sistema que se comunique, trate e use as informações obtidas.
+Com o avanço da comunicação entre diferentes sistemas, os modelos de execução que priorizam performance se tornaram cada vez mais importantes quando se visa eficiência no desenvolvimento de aplicações. Com isso, entender modelos síncronos e assíncronos, e como seu uso possibilita a criação de diferentes meios para desenvolver um sistema que se comunique, trate e use as informações obtidas passou a ser essencial.
 
 
 <h2>Por que o código assíncrono é importante</h2>
@@ -1828,35 +1828,30 @@ Com a necessidade de acesso a recursos externos, os modelos de comunicação e e
 
 O modelo assíncrono, associado ao multi-thread, conta com a vantegem de permitir a execução de uma tarefa enquanto aguarda a finalização de outra. Esta que pode estar buscando ou respondendo uma aplicação externa, sendo mantida em hold enquanto não há uma resposta. Quando há um retorno, a tarefa é retomada do ponto em que havia sido suspensa, permitindo um processo de execução muito mais fluido e eficaz do que o modelo single-thread ofereceria.
 
-Por ser uma linguagem moderna, o Dart conta com um modelo de execução que suporta a programação assíncrona, permitindo que o desenvolvedor trate com muito mais eficácia suas requisições e possíveis erros no processo de consumo de API's exeternas.
-A seguir iremos abordar os mecanismos que a linguagem provê na prática:
+Por ser uma linguagem moderna, o Dart conta com um modelo de execução que suporta a programação assíncrona, permitindo que o desenvolvedor trate com muito mais eficácia suas requisições e possíveis erros no processo de consumo de serviços exeternas, por exemplo. A seguir iremos abordar os mecanismos que a linguagem provê na prática:
 
 
 <h2>O que é uma Future ?</h2>
 
 
-Uma <b><i>Future</i></b> é a representação do resultado de uma operação assícrona, podendo ter dois estados: uncompleted e completed.
+Uma <b><i>Future</i></b> é a representação do resultado de uma operação assícrona, ou uma promise, podendo ter dois estados: uncompleted e completed.
 
 
-- Uncompleted: Quando uma chamada em uma função assíncrona é feita, seu resultado é retornado como uma <b><i>uncompleted</i></b> future. Essa future passa a esperar o fim da operação ou lança um erro.
+- <b><i>Uncompleted</i></b>: Quando uma chamada em uma função assíncrona é feita, seu resultado é retornado como uma uncompleted future. Essa future passa a esperar o fim da operação ou lança um erro.
 
-- Completed: Se a operação assíncrona for bem sucedida, a future resulta em um valor de retorno, caso contrário, resulta em um erro.
+- <b><i>Completed</i></b>: Se a operação assíncrona for bem sucedida, a future resulta em um valor de retorno, caso contrário, resulta em um erro.
 
 
 <h2>Retornando um Valor</h2>
 
 
-Uma future de tipo resulta em um valor do tipo <b>T</b>. Por exemplo, uma future de tipo <b><i>Future String </i></b> porduz uma string como valor. Caso uma future não retorne um valor utilizável, esta pode ser declarada como <b><i>Future void </i></b>. 
+Uma future de tipo <b>T</b> resulta em um valor do tipo <b>T</b>. Por exemplo, uma future de tipo <b><i>String </i></b> porduz uma string como valor. Caso uma future não retorne um valor utilizável, esta pode ser declarada como <b><i>Future void</i></b>. 
 
-A seguir temos um exemplo de declaração e uso de uma função Future que retorna um valor:
+A seguir temos um exemplo de declaração e uso de uma Future tipada:
 
 
     Future<void> fetchUserOrder() {
-
-      // Imagine que esta função está buscando informações de um usuário de um service ou base de dados
-
       return Future.delayed(const Duration(seconds: 2), 
-      
       () => print('Café'));
     }
     
@@ -1921,12 +1916,6 @@ Output:
     void myMethod() async { ... }
 
 
-Caso a função criada possua uma declaração de tipo, ou seja, um retorno, declare a função como Future T , onde T é o tipo correspondente a seu valor de retorno. Caso o valor de retorno não seja explícito, defina a função como Future void :
-
-
-    Future<void> myMethod() async { ··· }
-
-
 Uma função async passa a aceitar a declaração de um await quando definida. O exemplo a seguir mostra como declarar um await:
 
 
@@ -1960,12 +1949,11 @@ O exemplo a seguir compara as declarações de uma série de funções síncrona
     
     Future<String> fetchUserOrder() =>
 
-       // Imagine uma função mais complexa e lenta
-
-        Future.delayed(
-          const Duration(seconds: 2),
-          () => 'Café',
-        );
+      // Imagine uma função mais complexa e lenta
+      Future.delayed(
+        const Duration(seconds: 2),
+        () => 'Café',
+      );
     
     void main() {
       print('Buscando o pedido do usuário...');
@@ -1989,12 +1977,11 @@ Output:
     
     Future<String> fetchUserOrder() =>
 
-        // Imagine uma função mais complexa e lenta
-
-        Future.delayed(
-          const Duration(seconds: 2),
-          () => 'Café',
-        );
+      // Imagine uma função mais complexa e lenta
+      Future.delayed(
+        const Duration(seconds: 2),
+        () => 'Café',
+      );
     
     Future<void> main() async {
       print('Buscando o pedido do usuário...');
@@ -2008,7 +1995,7 @@ Output:
 >Seu pedido é: Café
 
 
-O exemplo assíncrono é diferente de três formas:
+O exemplo assíncrono se difere por três razões:
 
 * O tipo de retorno para createOrderMessage() muda de um simple String para um Future do tipo String.
 * A palavra-chave async aparece antes dos corpos das funções createOrderMessage() e main().
@@ -2018,7 +2005,7 @@ O exemplo assíncrono é diferente de três formas:
 <h2>Fluxo de Execução com async e await</h2>
 
 
-Uma função async roda sincronicamente até o primeiro await. Isso significa que dentro de um corpo de função assíncrona, todo o código síncrono antes da primeira palavra-chave await é executado imediatamente. A seguir há um exemplo com o qual é possível entender melhor o fluxo de execução assíncrono:
+Uma função async é executada sincronicamente até o primeiro await. Isso significa que dentro de um corpo de função assíncrona, todo o código síncrono antes da primeira palavra-chave await é executado imediatamente. A seguir há um exemplo com o qual é possível entender melhor o fluxo de execução assíncrono:
 
 
     Future<void> printOrderMessage() async {
