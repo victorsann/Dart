@@ -1838,16 +1838,9 @@ A seguir iremos abordar os mecanismos que a linguagem provê na prática:
 Uma <b><i>Future</i></b> é a representação do resultado de uma operação assícrona, podendo ter dois estados: uncompleted e completed.
 
 
-<h2>Uncompleted</h2>
+- Uncompleted: Quando uma chamada em uma função assíncrona é feita, seu resultado é retornado como uma <b><i>uncompleted</i></b> future. Essa future passa a esperar o fim da operação ou lança um erro.
 
-
-Quando uma chamada em uma função assíncrona é feita, seu resultado é retornado como uma <b><i>uncompleted</i></b> future. Essa future passa a esperar o fim da operação ou lança um erro.
-
-
-<h2>Completed</h2>
-
-
-Se a operação assíncrona for bem sucedida, a future resulta em um valor de retorno, caso contrário, resulta em um erro.
+- Completed: Se a operação assíncrona for bem sucedida, a future resulta em um valor de retorno, caso contrário, resulta em um erro.
 
 
 <h2>Retornando um Valor</h2>
