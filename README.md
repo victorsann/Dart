@@ -1309,7 +1309,7 @@ Métodos de execução de Sets:
 |  whereType T () -> Iterable T     |   Retorna um novo Iterable lento com todos os elementos que possuem o tipo T                 |
 
 
-<h1>Dart e a Orientação a Objetos</h1>
+<h1>Dart Orientado a Objetos</h1>
 
 
 Por ser uma linguagem orintada a objetos, o Dart conta com todos os recursos padrões do paradigma, como Classes, Constructors, herança baseada em hierarquia, além de muitos outros conceitos. A seguir iremos entender como aplicar os conceitos da POO com o Dart.
@@ -1318,7 +1318,7 @@ Por ser uma linguagem orintada a objetos, o Dart conta com todos os recursos pad
 <h2>Classes</h2>
 
 
-Sendo uma classe a matriz de criação de um objeto, pode-se dizer que os objetos possuem membros, sendo estes os métodos ou funções, e os dados ou atributos que a classe permite. A declaração de uma classe no Dart se dá pelo modelo a seguir
+Sendo uma classe a matriz de criação de um objeto, pode-se dizer que os objetos possuem membros, sendo estes os métodos ou funções, e os dados ou atributos que a classe permite. A declaração de uma classe no Dart se dá pelo modelo a seguir:
 
 
     class ClasseName {
@@ -1433,10 +1433,10 @@ O modificador final define um valor fixo para determinada unidade de código, n�
     
     }
 
-    //Erro
+Erro:
 
-    "'title' can't be used as a setter because it's final.
-    Try finding a different setter, or making 'title' non-final."
+>"'title' can't be used as a setter because it's final.<br>
+>Try finding a different setter, or making 'title' non-final."
 
 
 O final é utilizado como mecanismo de alerta ao desenvolvedor, definindo que o valor correspondente a um final é imutável, sendo o valor final daquela unidade de código.
@@ -1450,21 +1450,7 @@ Um constructor é definido por inicializar um objeto no processo de criação do
 
     class ClasseName {
 
-      //Attributes
-
-        ...
-
-      //Constructor
-
-      ClassName() {
-
-        ...
-
-      }
-
-      //Methods
-
-        ...
+      ClassName() { }
 
     }
 
@@ -1475,24 +1461,17 @@ Um constructor é definido por inicializar um objeto no processo de criação do
 
 
     class Usuarios {
-      // Atributos
     
       var usuario;
       var password;
-    
-      // Constructor
     
       Usuarios(String usuario, String password) {
         this.usuario = usuario;
         this.password = password;
       }
 
-      ------------------- ou -------------------
-    
-       Usuarios(this.usuario, this.password)
+      // Usuarios(this.usuario, this.password)
 
-      // Método
-    
       authentication() {
         if (this.usuario == usuario && this.password == password) {
           return true;
@@ -1524,21 +1503,7 @@ Um named constructor é uma definição de identificador para o constructor de u
 
     class ClassName {
 
-      //Attributes
-
-        ...
-
-      //Constructor
-
-      ClassName.ConstructorName() {
-
-        ...
-
-      }
-
-      //Methods
-
-        ...
+      ClassName.ConstructorName() { }
 
     }
 
@@ -1559,13 +1524,9 @@ O Dart, assim como muitas linguagens de programação modernas possui um recurso
         return _attributeName;
       }
       
-      ------------------ ou -------------------
-
-      Type get atribute => _attributeName;
+      // Type get atribute => _attributeName;
 
       set attributeName(type attributeName) {
-
-            ...
 
       }
 
@@ -1675,19 +1636,16 @@ O @override é um recurso ligado diretamente com classes e a herança de seus me
 
 
     class SuperClasse {
-    
-       void method() {
-         print('Something');
-       }
-    
+      void method() {
+        print('Something');
+      }
     }
     
     class SubClasse extends SuperClasse {
-      
-       @override
-       void method() {
-         print('Something new');
-       }
+      @override
+      void method() {
+        print('Something new');
+      }
     }
 
 
@@ -1720,24 +1678,21 @@ OutPut:
 <h2>super.method()</h2>
 
 
-Em contraponto ao @override, o super é utilizado para tornar acessível um método sobrescrito de uma SuperClasse. Tendo o mesmo princípio, porém, aplicado de forma invertida. Exemplo:
+Em contraponto ao @override, o super é utilizado para tornar acessível um método sobrescrito de uma SuperClasse, tendo o mesmo princípio, porém, aplicado de forma invertida. Exemplo:
 
 
     class SuperClasse {
-    
-       void method() {
-         print('Something');
-       }
-    
+      void method() {
+        print('Something');
+      }
     }
     
     class SubClasse extends SuperClasse {
-      
-       @override
-       void method() {
-         super.method();
-         print('Something new');
-       }
+      @override
+      void method() {
+        super.method();
+        print('Something new');
+      }
     }
 
 
@@ -1992,7 +1947,7 @@ O modelo assíncrono, associado ao multi-thread, conta com a vantegem de permiti
 Por ser uma linguagem moderna, o Dart conta com um modelo de execução que suporta a programação assíncrona, permitindo que o desenvolvedor trate com muito mais eficácia suas requisições e possíveis erros no processo de consumo de serviços exeternas, por exemplo. A seguir iremos abordar os mecanismos que a linguagem provê na prática:
 
 
-<h2>O que é uma Future ?</h2>
+<h1>O que é uma Future ?</h1>
 
 
 Uma <b><i>Future</i></b> é a representação do resultado de uma operação assícrona, ou uma promise, podendo ter dois estados: uncompleted e completed.
@@ -2240,3 +2195,239 @@ Output:
   Caso haja um exception, o catch irá executar um print do erro encontrado.
 </div>
 
+
+<h1>O que é uma Stream ?</h1>
+
+
+A programação assíncrona em Dart se caracteriza pelo uso de ambas as classes ```Future``` e ```Stream```. Uma Future representa uma computação cuja conclusão não se dá de imediato. Uma função comum retorna o resultado; uma função assíncrona retorna uma Future que pode eventualmente conter o resultado. A Future em si se responsabiliza por avisar quando o resultado estiver pronto.
+
+Uma Stream é uma sequência de eventos assíncronos. Sendo comparável a um Iterable assíncrono, onde, ao invés de obter o próximo evento quando solicitado, notifica quando o evento estiver disponível. Além disso, cabe ressaltar alguns conceitos básicos sobre as Streams:
+
+<h2>listen() & StreamSubscription</h2>
+
+O método ```listen``` aplica o conceito de observer ao uso das Streams, conceito este que é bastante comum na programação reativa. Um listen, quando aplicado a uma Stream, passa a monitorar seu fluxo de dados, retornando um objeto ```StreamSubscription```, o qual trata os eventos através dos manipuladores ```onData```, ```onError ``` e ```onDone```:
+
+    StreamSubscription<int> listen(
+      void Function(int)? onData, {
+      Function? onError,
+      void Function()? onDone,
+      bool? cancelOnError,
+    })
+
+O manipulador <i>onData</i> é uma callBack function que permite tratar o event T em cada retorno de uma Stream. Já os demais são utilizados em situações em que o event não foi emitido, seja pela ocorrencia de um erro ou pela conclusão da Stream. Além disso, há o manipulador adicional <i>cancelOnError</i>, o qual permite forçar a Stream a continuar mesmo após a ocorrencia de um erro(sendo true por padrão). O exemplo a seguir trata estes conceitos de maneira prática:
+
+    void main () {
+    
+      final streamSubscription = Stream<int>.periodic(
+        Duration(seconds: 1),
+        (index) => ++index
+      ).take(5);
+    
+      streamSubscription.listen((event) { 
+         print(event);
+       },
+       onError: (err) {
+         if(err) {
+           print('Error!');
+         }
+       },
+       onDone: () {
+         print('Done!');
+       },
+       cancelOnError: false,
+      );
+      
+    }
+
+Output:
+
+>1<br>
+>2<br>
+>3<br>
+>4<br>
+>5<br>
+>Done!
+
+No exemplo, a final streamSubscription recebe uma Stream de cinco integers que são emitidos um por um em intervalos de 1 segundo. Na mesma final é aplicado um listen method, o qual opera a subscription da final através dos seus manipuladores.
+
+Além disso, é importante mencionar que o objeto ```streamSubscription```, assim com a Stream que o origina, também possui métodos bastante usuais, estes que podem ser utilizados durante o processo de listening.
+
+Para <i>pausar</i> uma subscription:
+
+    // Do some work.
+    streamSubscription.pause();
+    print(streamSubscription.isPaused); // true
+
+Para <i>retomar</i> uma subscription:
+
+    // Do some work.
+    subscription.resume();
+    print(subscription.isPaused); // false
+
+Para <i>cancela</i> uma subscription:
+
+    // Do some work.
+    subscription.cancel();
+
+
+<h2>Single Subscription Streams</h2>
+
+O tipo mais comum de Stream contem uma sequência de eventos que compõem um todo. Tais eventos precisam ser entregues em uma ordem específica, sem que nenhum se perca no processo. Este seria o tipo de Stream obtido a partir da leitura de um arquivo ou de um web request.
+
+Uma Single Subscription Stream pode sofrer um listen uma única vez. Caso sofra novamente, os eventos iniciais podem ser sobrescritos ou perdidos, o que torna o restante da Stream sem sentido. Quando o processo de listening se inicia os dados são obtidos e retornados em partes.
+
+Exemplo:
+
+
+
+<h2>Broadcast Streams</h2>
+
+Uma Broadcast Stream é própria para eventos individuais que serão tratados um por vez, sendo utilizada para responder a mouse events em um navegador, por exemplo. Tais Streams podem sofrer um listen a qualquer momento, e múltiplos listeners podem operar ao mesmo tempo. Além disso, uma Broadcast Stream pode sofrer um listen após o cancelamento da subcription anterior.
+
+Exemplo:
+
+
+<h2>Gerando Streams</h2>
+
+Sendo um Iterable de promises, uma Stream pode retornar resultados multiplas vezes, diferente de uma Future, que retorna apenas um resultado por interação. Há formas distintas de gerar Streams, sendo uma das mais simples a interação em loop:
+
+    Stream<int> countStream(int to) async* {
+      for (int i = 0; i <= to; i++) {
+        yield i;
+      }
+    }
+
+Por ser um conjunto de promises, a interação com uma Stream demanda o uso da função ```async*```(async generator), além disso, outro aspecto próprio da interação com Streams é o seu retorno, cuja acesso se dá não pela palavra-chave <i>return</i>, mas sim pela palavra-chave ```yield```.
+
+O exemplo a seguir usa o código do exemplo anterior para gerar uma Stream de integers fazendo uso de uma async generator:
+
+    Future<int> sumStream(Stream<int> stream) async {
+      var sum = 0;
+      await for (final value in stream) {
+        sum += value;
+      }
+      return sum;
+    }
+    
+    Stream<int> countStream(int to) async* {
+      for (int i = 1; i <= to; i++) {
+        yield i;
+      }
+    }
+    
+    void main() async {
+      var stream = countStream(10);
+      var sum = await sumStream(stream);
+      print(sum); // 55
+    }
+
+Output: 
+
+>55
+
+
+<h2>Interagindo com Stream Events</h2>
+
+
+<h2>await for</h2>
+
+As Streams podem ser criadas de várias maneiras, mas todas podem ser usadas ​​da mesma forma: o ```loop for``` assíncrono (comumente chamado de await for) intera sobre os eventos de uma Stream como o ```loop for``` intera sobre um [Iterable](https://api.dart.dev/stable/dart-core/Iterable-class.html), o que permite acessar seus eventos. Exemplo:
+
+    Future<int> sumStream(Stream<int> stream) async {
+      var sum = 0;
+      await for (final value in stream) {
+        sum += value;
+      }
+      return sum;
+    }
+
+O código acima recebe cada evento de uma Stream de integer events, o adiciona e retorna a soma (uma Future). Quando o corpo do loop termina, a função é pausada até que o próximo evento chegue ou a Stream seja concluído.
+
+
+
+<h2>Error Events</h2>
+
+Uma Stream é concluída quando todos os eventos nela contidos são executados, e da mesma forma que a Stream notifica a entidade que recebe seus resultados caso um evento seja iniciado, o mesmo ocorre ao finalizá-los. Além dos eventos que retornam informações, Streams podem ter que tratar error events. Quando um erro event ocorre duranto o processo de execução de uma Stream, seja por falha de conexão durante a leitura de dados retornados por um endpoit, ou mesmo bugs no código que executa a Stream, é possível tratá-los da mesma forma que quando utilizamos Futures: ```try-catch```.
+
+O exemplo a seguir retorna um erro quando o iterator do loop <i>await for</i> for igual a 4:
+
+    Future<int> sumStream(Stream<int> stream) async {
+      var sum = 0;
+      try {
+        await for (final value in stream) {
+          sum += value;
+        }
+      } catch (e) {
+        return -1;
+      }
+      return sum;
+    }
+    
+    Stream<int> countStream(int to) async* {
+      for (int i = 1; i <= to; i++) {
+        if (i == 4) {
+          throw Exception('Intentional exception');
+        } else {
+          yield i;
+        }
+      }
+    }
+    
+    void main() async {
+      var stream = countStream(10);
+      var sum = await sumStream(stream);
+      print(sum); // -1
+    }
+
+
+<h2>Trabalhando com Streams</h2>
+
+A classe Stream contém um número de métodos auxiliares que permitem realizar operações comuns em Streams, similarmente aos métodos utilizados para tratar um Iterable. Por exemplo, é possível encontrar o último integer positivo em uma Stream utilizando o método <i>lastWhere()</i>, o qual compõe a Stream API.
+
+    Future<int> lastPositive(Stream<int> stream) => stream.lastWhere((x) => x >= 0);
+
+Outros metodos que podem ser citados são:
+
+>Future T get first;<br>
+>Future bool get isEmpty;<br>
+>Future T get last;<br>
+>Future int get length;<br>
+>Future T get single;<br>
+>Future bool any(bool Function(T element) test);<br>
+>Future bool  contains(Object? needle);<br>
+>Future E drain E ([E? futureValue]);<br>
+>Future T elementAt(int index);<br>
+>Future bool every(bool Function(T element) test);<br>
+>Future T firstWhere(bool Function(T element) test, {T Function()? orElse});<br>
+>Future fold(S initialValue, S Function(S previous, T element) combine);<br>
+>Future forEach(void Function(T element) action);<br>
+>Future String join([String separator = '']);<br>
+>Future T lastWhere(bool Function(T element) test, {T Function()? orElse});<br>
+>Future pipe(StreamConsumer T  streamConsumer);<br>
+>Future T reduce(T Function(T previous, T element) combine);<br>
+>Future T singleWhere(bool Function(T element) test, {T Function()? orElse});<br>
+>Future List T toList();<br>
+>Future Set T toSet();
+
+Todos os métodos acima, exceto ```drain()``` e ```pipe()```, correspondem a uma função similar de Iterable. Cada uma delas pode ser escrita facilmente através de uma função async em conjunto com um <i>await for</i> loop. Alguns exemplos de sua implementação seriam: 
+
+    Future<bool> contains(Object? needle) async {
+      await for (final event in this) {
+        if (event == needle) return true;
+      }
+      return false;
+    }
+    
+    Future forEach(void Function(T element) action) async {
+      await for (final event in this) {
+        action(event);
+      }
+    }
+    
+    Future<List<T>> toList() async {
+      final result = <T>[];
+      await forEach(result.add);
+      return result;
+    }
+    
+    Future<String> join([String separator = '']) async => (await toList()).join(separator);
