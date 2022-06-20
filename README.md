@@ -1051,7 +1051,7 @@ Estruturas de criação de uma List com diferentes restrições:
 |  List.unmodifiable( iterable elements )                 |  Cria um List inalterável contendo todos os elements                            |
 
 
-<h2>Proprieties</h2>
+<h2>Properties</h2>
 
 
 Atributos de consulta das lists:
@@ -1119,7 +1119,7 @@ Métodos de execução de uma List:
 |  sublist(int start, [int? end])         |   Retorna uma nova lista contendo os elementos entre start e end                                 |
 |  take(int count)                        |   Retorna um iterable lento dos primeiros elementos de count da lista                            |
 |  takeWhile(bool test(value))            |   Retorna um iterable lento dos principais elementos que satisfazem o test                       |
-|  toList()                               |   Cria uma outra lsita contendo os elementos da lista                                            |
+|  toList()                               |   Cria uma outra lista contendo os elementos da lista                                            |
 |  toSet()                                |   Cria um Set contendo os mesmos elementos que a lista                                           |
 |  toString()                             |   Retorna uma representação de string deste objeto                                               |
 |  where(bool test(element))              |   Retorna um novo Iterable lento com todos os elementos que satisfazem test                      |
@@ -1158,6 +1158,64 @@ OutPut:
 >Vito Corleone
 
 
+<h2>Constructors</h2>
+
+
+Estruturas de criação de Maps com diferentes restrições:
+
+|        Constructor                   |                                   Descrição                                                  |
+| ------------------------------------ | -------------------------------------------------------------------------------------------- |
+|  Map()                               |  Cria um LinkedHashMap vazio                                                                 | 
+|  Map.from(Map other)                 |  Cria um LinkedHashMap com as mesmas chavez e valores que other                              |
+|  Map.fromEntries(Iterable entries)   |  Cria um novo Map e adiciona entries a ele                                                   |
+|  Map.fromIterable(iterable, {})      |  Cria a instância de Map na qual as chaves e os valores são calculados a partir de iterable  |
+|  Map.fromIterables(keys, Iterable)   |  Cria um Map associando as chaves fornecidas aos valores fornecidos                          |
+|  Map.identity()                      |  Cria um mapa de identidade com a implementação padrão, LinkedHashMap                        |
+|  Map.of(Map<K, V> other)             |  Cria um LinkedHashMap com as mesmas chaves e valores que other                              |
+|  Map.unmodifiable(Map other)         |  Cria um Map baseado em hash não modificável contendo as entradas de other                   |
+
+
+<h2>Properties</h2>
+
+
+Atributos de consulta de um Map:
+
+|       Proprieties       |                                 Descrição                                       |
+| ----------------------  | ------------------------------------------------------------------------------- |
+|  .entries -> Iterable   |  Retorna as entries presentes no Map                                            | 
+|  .hashCode              |  Retorna um intenger que representa o código hash para o objeto Map em questão  |
+|  .isEmpty               |  Retorna true caso não haja pares de chave/valor no Map                         |
+|  .isNotEmpty            |  Retorna true caso haja pelo menos um par de chave/valor no Map                 |
+|  .keys                  |  Retorna as keys do Map                                                         |
+|  .length                |  Retorna um intenger que representa o número de pares de chave/valor no Map     |
+|  .runtimeType           |  Retorna uma representação do de tipo de runtime do objeto                      |
+|  .values -> Iterable    |  Retorna os valores presentes no Map                                            |
+ 
+
+<h2>Methods</h2>
+
+Métodos de execução de um Map:
+
+|                Methods                  |                                          Descrição                                  |
+| --------------------------------------- |  ---------------------------------------------------------------------------------- |
+|  addAll(Map other)                      |   Adiciona todos os pares de chave/valor de other ao Map                            | 
+|  addEntries(Interable newEntries)       |   Adiciona todos os pares de chave/valor de newEntries ao Map                       |
+|  cast RK, RV () -> cast RK, RV ()       |   Fornece uma visão do Map como tendo chaves RK e instâncias RV, se necessário      |
+|  clear()                                |   Remove todas as entries do Map                                                    |
+|  containsKey(Object? key)               |   Retorna true caso o Map contenha a chave fornecida                                |
+|  containsValue(Object? value)           |   Retorna true caso o Map contenha o valor fornecido                                |
+|  forEach(void action(K key, V value))   |   Aplica action a cada par de chave/valor do Map                                    |
+|  map()                                  |   Retorna em um novo Map todas as entries do Map transformadas pela função convert  |
+|  noSuchMethod(invocation)               |   Invocado quando um método ou propriedade inexistente é acessado                   |
+|  putIfAbsent(K key, V ifAbsent())       |   Procura o valor de uma chave ou adiciona uma nova entrie caso esta não exista     |
+|  remove(Object? key)                    |   Remove do Map chave e valor associado, se presente                                |
+|  removeWhere(bool test(key, value))     |   Remove todas as entries do Map que satisfazem o test                              |
+|  toString()                             |   Retorna uma representação de string deste objeto                                  |
+|  update(K key, V update(V value), {})   |   Atualiza o valor da chave fornecida                                               |
+|  updateAll(V update(K key, V value))    |   Atualiza todos os valores                                                         |
+
+
+
 <h2>Set</h2>
 
 
@@ -1172,6 +1230,83 @@ Um set é uma coleção não ordenada de itens únicos, semelhante a um array ou
     //Set preenchido
 
     var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+
+
+<h2>Constructors</h2>
+
+
+Estruturas de criação de Sets com diferentes restrições:
+
+|        Constructor                     |                     Descrição                        |
+| -------------------------------------- | ---------------------------------------------------- |
+|  Set()                                 |  Cria um Set vazio                                   | 
+|  Set.from(iterable elements)           |  Cria um Set contento todo os elementos de elements  |
+|  Set.identity()                        |  Cria um Set de identidades vazio                    |
+|  Set.of(iterables elements)            |  Cria um Set a partir de elements                    |
+|  List.unmodifiable(iterable elements)  |  Cria um Set não modificável a partir de elements    |
+
+
+<h2>Properties</h2>
+
+
+Atributos de consulta de Sets:
+
+|       Proprieties      |                                   Descrição                                      |
+| ---------------------- | -------------------------------------------------------------------------------- |
+|  .first                |  Retorna o primeiro elemento                                                     | 
+|  .hashCode             |  Retorna um intenger que representa o código hash para o objeto Set em questão   |
+|  .isEmpty              |  Retorna um boolean true se não houver elementos nesta conllection               |
+|  .isNotEmpty           |  Retorna um boolean true se houver amenos um elemento do collection              |
+|  .iterator             |  Retorna um novo Iterator que permite iterar os elementos do Iterable            |
+|  .last                 |  Retorna o último elemento                                                       |
+|  .length               |  Retorna um intenger que representa o número de objetos no Set                   |
+|  .runtimeType          |  Um Iterable do objeto List na ordem reversa                                     |
+|  .single               |  Verifica se há apenas um elemento no Iterable e retorna esse elemento           |
+ 
+
+<h2>Methods</h2>
+
+Métodos de execução de Sets:
+
+|                Methods            |                                          Descrição                                           |
+| --------------------------------- |  ------------------------------------------------------------------------------------------- |
+|  add(value)                       |   Adiciona um valor ao final do Ser, extendendo o tamanho em 1                               | 
+|  addAll(interable)                |   Adiciona todos os objetos de interable ao fim do Set, extendendo seu tamanho               |
+|  any(bool test(element))          |   Verifica se algum elemento deste Iterable satisfaz o test                                  |
+|  asMap()                          |   Exibe um Map não modificável desta lista                                                   |
+|  cast R -> List R                 |   Retorna uma exibição do Set como uma conjuto de instâncias R                               |
+|  clear()                          |   Remove todos os objetos do Set; o comprimento do Set torna-se zero                         |
+|  contains(Object? value)          |   Verifica se a collection possui um elemento igual a value                                  |
+|  containsAll(Iterable other)      |   Retorna true caso a collection possua todo os elementos contidos em other                  |
+|  difference(Set other)            |   Cria um novo Set com os elementos do Set que não constam em other                          |
+|  elementAt(int index)             |   Retorna o elemento no index                                                                |
+|  every(bool test(element))        |   Verifica se cada elemento do Set satisfaz test                                             |
+|  expand()                         |   Expande cada elemento da List em zero ou mais elementos                                    |
+|  firstWhere(bool test)            |   Retorna o primeiro elemento que satisfaz test                                              |
+|  fold(T initialValue, T combine)  |   Reduz uma collection a um único valor combinando seus elementos com um valor existente     |
+|  followedBy(Iterable other)       |   Retorna a concatenação lenta do Set e de other                                             |
+|  forEach(void action(E element))  |   Invoca a action em cada elemento do Set em ordem de iteração                               |
+|  intersection(Set other)          |   Cria um novo Set a partir da interseção com other                                          |
+|  join([String separator = ""])    |   Converte cada elemento da lsita em uma String e os concatena                               |
+|  lastWhere(bool test(element))    |   Retorna o último elemento que satisfaz o teste de predicado fornecido                      |
+|  map(T toElement())               |   Retorna os elementos atuais do Set modificados por toElement                               |
+|  noSuchMethod(invocation)         |   Invocado quando um método ou propriedade inexistente é acessado                            |
+|  reduce(E combine())              |   Reduz uma collection a um único valor combinando seus elementos usando a função fornecida  |
+|  remove(Object? value)            |   Remove a primeira ocorrência de value do Set                                               |
+|  removeAll(Iterable elements)     |   Remove cada elemento presente em elements do Set                                           |
+|  removeWhere(bool test(element))  |   Remove todos os elementos do Set que satisfazem test                                       |
+|  retainAll(Iterable elements)     |   Remove todos os elementos do Set que não estão presentes em elements                       |
+|  retainWhere(Iterable elements)   |   Remove todos os elementos do Set que não satisfazem test                                   |
+|  singleWhere(bool test(element))  |   Retorna o único elemento que satisfaz test                                                 |
+|  skip(int count)                  |   Retorna um Iterable que fornece todos os elementos exceto o primeiro count                 |
+|  skipWhile(bool test(value)       |   Retorna um Iterable que ignora os elementos principais enquanto test for satisfeito        |
+|  take(int count)                  |   Retorna um iterable lento dos primeiros elementos de count do Set                          |
+|  takeWhile(bool test(value))      |   Retorna um iterable lento dos principais elementos que satisfazem o test                   |
+|  toList()                         |   Cria uma lista contendo os elementos do Set                                                |
+|  toSet()                          |   Cria um Set contendo os mesmos elementos e comportamentp que o Set                         |
+|  toString()                       |   Retorna uma representação de string deste objeto                                           |
+|  where(bool test(element))        |   Retorna um novo Iterable lento com todos os elementos que satisfazem test                  |
+|  whereType T () -> Iterable T     |   Retorna um novo Iterable lento com todos os elementos que possuem o tipo T                 |
 
 
 <h1>Dart e a Orientação a Objetos</h1>
