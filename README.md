@@ -1073,57 +1073,57 @@ Atributos de consulta das lists:
 
 Métodos de execução de uma List:
 
-|              Methods               |                                    Descrição                                            |
-| ---------------------------------- |  -------------------------------------------------------------------------------------- |
-|  add(value)                        |   Adiciona um valor ao final da List, extendendo o tamanho em 1                         | 
-|  addAll(Interable)                 |   Adiciona todos os objetos de um interable ao fim de uma list, extendendo seu tamanho  |
-|  any(bool test(element))           |   Verifica se algum elemento deste iterável satisfaz o test                             |
-|  asMap()                           |   Uma exibe um Map não modificável desta lista.   |
-|  cast R -> List R                  |   Retorna uma exibição desta lista como uma lista de instâncias R.  |
-|  clear()                           |   Remove todos os objetos desta lista; o comprimento da lista torna-se zero.  |
-|  contains(Object? element)         |   Verifica se a collection possui um elemento igual a element.  |
-|  elementAt(int index)              |   Retorna o elemento indexth.  |
-|  every(bool test(element))         |   Verifica se cada elemento da List satisfaz o test.  |
-|  expand()                          |   Expande cada elemento deste Iterable em zero ou mais elementos.  |
-|  fillRange(start, end, fillValue)  |   Substitui um intervalo de elementos com fillValue.  |
-|  firstWhere(bool test)             |   Retorna o primeiro elemento que satisfaz o test de predicado fornecido  |
-|  fold(T initialValue, T combine)   |   Reduz uma collection a um único valor combinando seus elementos com um valor existente  |
-|  followedBy(Iterable other)        |   Retorna a concatenação lenta deste iterável e de other.  |
-|  forEach(void action(E element))   |   Invoca a action em cada elemento deste iterable em ordem de iteração  |
-|  getRange(int start, int end)      |   Cria um Iterable que itera em um intervalo de elementos.  |
-|  indexOf(E element)                |   O primeiro index de element nesta lista.  |
-|  indexWhere(bool test(element))    |   O primeiro index na lista que satisfaz o teste fornecido  |
-|  insert(int index, E element)      |   Insere element no index de posição nesta lista.  |
-|  insertAll(int index, iterable)    |   Insere todos os elementos de iterable no index de posição nesta lista.  |
-|  join([String separator = ""])     |   Converte cada elemento em uma String e as concatena.  |
-|  lastIndex(E element)              |   Identifica a último index de element nesta lista.  |
-|  lastIndexWhere(bool test)         |   O último index na lista que satisfaz o teste fornecido.  |
-|  lastWhere(bool test(element))     |   Retorna o último elemento que satisfaz o teste de predicado fornecido.  |
-|  map(T toElement())                |   Retorna os elementos atuais deste iterable modificados por toElement  |
-|  noSuchMethod(invocation)          |   Invocado quando um método ou propriedade inexistente é acessado.  |
-|  reduce(E combine())               |   Reduz uma collection a um único valor combinando elementos da collection usando a função fornecida.  |
-|  remove(Object? value)             |   Remove a primeira ocorrência de vale desta lista.  |
-|  removeAt(int index)               |   Remove o objeto no index de posição desta lista.  |
-|  removeLast()                      |   Remove e retorna o último objeto nesta lista.  |
-|  removeRange(start, end)           |   Remove um intervalo de elementos da lista  |
-|  removeWhere(bool test(element))   |   Remove todos os objetos desta lista que satisfazem test.  |
-|  replaceRange(start, end, replacement)  |   Substitui um intervalo de elementos pelos elementos de replacement.  |
-|  retainWhere(bool test(element))   |   Remove todos os objetos desta lista que não satisfazem test.   |
-|  setAll(index, iterable)           |   Substitui elementos com os objetos de iterable.  |
-|  setRange(start, end, iterable)    |   Grava elementos de iterable em um intervalo desta lista.  |
-|  shuffle()                         |   Embaralha os elementos desta lista aleatoriamente.  |
-|  singleWhere(bool test(element))   |   Retorna o único elemento que satisfaz test  |
-|  skip(int count)                   |   Retorna um Iterable que fornece todos os elementos de contagem, exceto o primeiro count.  |
-|  skipWhile(bool test(value)        |   Retorna um Iterable que ignora os elementos principais enquanto test é satisfeito.  |
-|  sort([compare(a, b)?])            |   Classifica essa lista de acordo com a ordem especificada pela função compare.  |
-|  sublist(int start, [int? end])    |   Retorna uma nova lista contendo os elementos entre start e end.  |
-|  take(int count)                   |   Retorna um iterable lento dos primeiros elementos de contagem da lista.   |
-|  takeWhile(bool test(value))       |   Retorna um iterable lento dos principais elementos que satisfazem o test.  |
-|  toList()                          |   Cria uma List contendo os elementos deste Iterable.  |
-|  toSet()                           |   Cria um Set contendo os mesmos elementos que a lista.  |
-|  toString()                        |   Uma representação de string deste objeto.  |
-|  where(bool test(element))         |   Retorna um novo Iterable lento com todos os elementos que satisfazem test.  |
-|  whereType T () -> Iterable T      |   Retorna um novo Iterable lento com todos os elementos que possuem o tipo T.  |
+|                Methods                  |                                          Descrição                                               |
+| --------------------------------------- |  ----------------------------------------------------------------------------------------------- |
+|  add(value)                             |   Adiciona um valor ao final da List, extendendo o tamanho em 1                                  | 
+|  addAll(Interable)                      |   Adiciona todos os objetos de um interable ao fim de uma list, extendendo seu tamanho           |
+|  any(bool test(element))                |   Verifica se algum elemento deste iterável satisfaz o test                                      |
+|  asMap()                                |   Exibe um Map não modificável desta lista                                                       |
+|  cast R -> List R                       |   Retorna uma exibição da list como uma lista de instâncias R                                    |
+|  clear()                                |   Remove todos os objetos da list; o comprimento da lista torna-se zero                          |
+|  contains(Object? element)              |   Verifica se a collection possui um elemento igual a element                                    |
+|  elementAt(int index)                   |   Retorna o elemento no index                                                                    |
+|  every(bool test(element))              |   Verifica se cada elemento da List satisfaz test                                                |
+|  expand()                               |   Expande cada elemento da List em zero ou mais elementos                                        |
+|  fillRange(start, end, fillValue)       |   Substitui um intervalo de elementos por fillValue                                              |
+|  firstWhere(bool test)                  |   Retorna o primeiro elemento que satisfaz test                                                  |
+|  fold(T initialValue, T combine)        |   Reduz uma collection a um único valor combinando seus elementos com um valor existente         |
+|  followedBy(Iterable other)             |   Retorna a concatenação lenta da List e de other                                                |
+|  forEach(void action(E element))        |   Invoca a action em cada elemento deste iterable em ordem de iteração                           |
+|  getRange(int start, int end)           |   Cria um Iterable que itera em um intervalo de elementos                                        |
+|  indexOf(E element)                     |   Retorna o primeiro index de element nesta lista                                                |
+|  indexWhere(bool test(element))         |   Tetorna o primeiro index na lista que satisfaz o test fornecido                                |
+|  insert(int index, E element)           |   Insere element na posição de index na lista                                                    |
+|  insertAll(int index, iterable)         |   Insere todos os elementos de iterable na posição de index nesta lista                          |
+|  join([String separator = ""])          |   Converte cada elemento da lsita em uma String e os concatena                                   |
+|  lastIndex(E element)                   |   Identifica o último index de element nesta lista                                               |
+|  lastIndexWhere(bool test)              |   Retorna o último index na lista que satisfaz o teste fornecido                                 |
+|  lastWhere(bool test(element))          |   Retorna o último elemento que satisfaz o teste de predicado fornecido                          |
+|  map(T toElement())                     |   Retorna os elementos atuais da lista modificados por toElement                                 |
+|  noSuchMethod(invocation)               |   Invocado quando um método ou propriedade inexistente é acessado                                |
+|  reduce(E combine())                    |   Reduz uma collection a um único valor combinando seus elementos usando a função fornecida      |
+|  remove(Object? value)                  |   Remove a primeira ocorrência de value desta lista                                              |
+|  removeAt(int index)                    |   Remove o objeto na posição de index desta lista                                                |
+|  removeLast()                           |   Remove e retorna o último objeto na lista                                                      |
+|  removeRange(start, end)                |   Remove um intervalo de elementos da lista                                                      |
+|  removeWhere(bool test(element))        |   Remove todos os objetos da lista que satisfazem test                                           |
+|  replaceRange(start, end, replacement)  |   Substitui um intervalo de elementos pelos elementos de replacement                             |
+|  retainWhere(bool test(element))        |   Remove todos os objetos da lista que não satisfazem test                                       |
+|  setAll(index, iterable)                |   Substitui elementos com os objetos de iterable                                                 |
+|  setRange(start, end, iterable)         |   Grava elementos de iterable em um intervalo da lista                                           |
+|  shuffle()                              |   Embaralha os elementos da lista aleatoriamente                                                 |
+|  singleWhere(bool test(element))        |   Retorna o único elemento que satisfaz test                                                     |
+|  skip(int count)                        |   Retorna um Iterable que fornece todos os elementos exceto o primeiro count                     |
+|  skipWhile(bool test(value)             |   Retorna um Iterable que ignora os elementos principais enquanto test for satisfeito            |
+|  sort([compare(a, b)?])                 |   Classifica a lista de acordo com a ordem especificada pela função compare                      |
+|  sublist(int start, [int? end])         |   Retorna uma nova lista contendo os elementos entre start e end                                 |
+|  take(int count)                        |   Retorna um iterable lento dos primeiros elementos de count da lista                            |
+|  takeWhile(bool test(value))            |   Retorna um iterable lento dos principais elementos que satisfazem o test                       |
+|  toList()                               |   Cria uma outra lsita contendo os elementos da lista                                            |
+|  toSet()                                |   Cria um Set contendo os mesmos elementos que a lista                                           |
+|  toString()                             |   Retorna uma representação de string deste objeto                                               |
+|  where(bool test(element))              |   Retorna um novo Iterable lento com todos os elementos que satisfazem test                      |
+|  whereType T () -> Iterable T           |   Retorna um novo Iterable lento com todos os elementos que possuem o tipo T                     |
 
 
 <h2>Map</h2>
