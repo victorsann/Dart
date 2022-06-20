@@ -132,7 +132,7 @@ Antes de executar o app criado, é importante ter instalado a extensão recomend
     dart run
 
 
-<h2>Hello World</h2>
+<h1>Hello World</h1>
 
 
 Uma forma prática de entender a estrutura mais básica de uma linguagem de programação é o popular Hello World, sendo este executado da seguinte forma no Dart:
@@ -143,7 +143,7 @@ Uma forma prática de entender a estrutura mais básica de uma linguagem de prog
     }
 
 
-Qualquer aplicação dart é inicializada a partir da chamado de um método main, que nesse caso printa o texto declarado dentro da top-level function <i>pint()</i>.
+Qualquer aplicação dart é inicializada a partir da chamado de um método main, que neste caso, printa o texto declarado dentro da top-level function <i>print()</i>.
 
 
 <h1>Built-in Types</h1>
@@ -176,10 +176,10 @@ double - Valores decimais:
 Uma string Dart (object String) contém uma sequência de unidades de código UTF-16:
 
 
-    string s1 = 'Single quotes work well for string literals.';
-    string s2 = "Double quotes work just as well.";
-    string s3 = 'It\'s easy to escape the string delimiter.';
-    string s4 = "It's even easier to use the other delimiter.";
+    String s1 = 'Single quotes work well for string literals.';
+    String s2 = "Double quotes work just as well.";
+    String s3 = 'It\'s easy to escape the string delimiter.';
+    String s4 = "It's even easier to use the other delimiter.";
 
 
 <h2>Interpolação de String</h2> 
@@ -188,12 +188,15 @@ Uma string Dart (object String) contém uma sequência de unidades de código UT
 A interpolação permite acessar valores identificados por unidades de armazenamento dentro de um string type:
 
 
-    string greeting = "String";
-    string person = "Interpolation";
+    String greeting = "String";
+    String person = "Interpolation";
+    String multiLine = '''You can create
+    multi-line strings like this one''';
     
-    print('${greeting}, ${person}!');
+    print('${greeting} ${person} and ${multiLine}!');
     
->Output: String Interpolation
+>Output: String Interpolation and You can create
+> multi-line strings like this one!
 
 Obs: a interpolação é feita tanto entre aspas simples quanto entre aspas duplas
 
