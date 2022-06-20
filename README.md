@@ -580,7 +580,7 @@ Usa-se <i>const</i> em variáveis que pretendem ser contantes em tempo de compil
 <h1>Functions</h1>
 
 
-Por ter uma forte presença da orientação a objetos, mesmo as funções são objetos possuidoras de tipos. Isso torna possível a atribuir funções a variáveis ou torná-las argumentos em outras funções. Abaixo segue a estrutura básica de uma função no Dart:
+Por ter uma forte presença da orientação a objetos, mesmo as funções são objetos possuidoras de tipos. Isso torna possível atribuir funções a variáveis ou torná-las argumentos em outras funções. Abaixo segue a estrutura básica de uma função no Dart:
 
 
     type functionName(arguments) {
@@ -667,7 +667,7 @@ Todas as aplicações devem conter a já mencionada função de alto-nível do t
 <h2>Funções Anônimas</h2>
 
 
-Boa parte das funções são definidas como named, ou nomeadas, como a própria main(). Uma froma alternativa de criação de funções é omitindo seu nome ou identificador, sendo assim chamada de anonymous function, lambda ou closure. 
+Boa parte das funções são definidas como named, ou nomeadas, como a própria main(). Uma forma alternativa de criação de funções é omitir seu nome ou identificador, sendo assim chamada de anonymous function, lambda ou closure. 
 
 
     ([[Type] param1[, …]]) {
@@ -825,7 +825,7 @@ Um do-while avalia a condição depois do loop:
     } while (booleanExpression);
 
 
-<h3>Break e continue</h3>
+<h2>Break e continue</h2>
 
 
 O <b><i>break</i></b> é utilizado para quebrar um loop em execução quando o valor definido em uma condicional é encrontrado:
@@ -950,7 +950,7 @@ Para garantir que o trecho de código será executado mesmo se uma exceção for
 
 <h1>Collections</h1>
 
-Collections são implementações de estruturas de dados, normalmente associadas ao armazenamento de informações. Cada collection possui um tipo associado e define um tipo, sendo possível agrupa-los gerando collections que armazenam collections por exemplo. O Dart possui os collections a seguir:
+Collections são implementações de estruturas de dados, normalmente associadas ao armazenamento de informações. Cada collection possui um tipo associado e define um tipo, sendo possível agrupa-los gerando collections que armazenam collections, por exemplo. O Dart possui as collections a seguir:
 
 
 <h2>List</h2>
@@ -1038,12 +1038,12 @@ Assim como em boa parte das linguagens que tratam de vetores, o dart conta com u
 <h2>Constructors</h2>
 
 
-Estruturas de criação de um List com diferentes restrições:
+Estruturas de criação de uma List com diferentes restrições:
 
 |        Constructor                                      |                                   Descrição                                     |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------- |
 |  List[ type length ]                                    |  Cria um List de comprimento definido                                           | 
-|  List.empty()                                           |  Cria uma nova lista vazia de tamnho fixo                                       |
+|  List.empty()                                           |  Cria uma nova lista vazia de tamanho fixo                                       |
 |  List.filled( type length value )                       |  Cria um List de tamanho fixo com comprimento definido e preenche cada posição  |
 |  List.from( iterables elements )                        |  Cria um List de tamanho cultivável contendo todos os elements                  |
 |  List.generate( type length, E generator(type index) )  |  Gera uma lista de tamanho cultivável com valores                               |
@@ -1054,7 +1054,7 @@ Estruturas de criação de um List com diferentes restrições:
 <h2>Proprieties</h2>
 
 
-Atributos de consulta dos lists:
+Atributos de consulta das lists:
 
 |       Proprieties       |    Valor de Retorno    |                                   Descrição                                      |
 | ----------------------  | ---------------------- | -------------------------------------------------------------------------------- |
@@ -1071,23 +1071,57 @@ Atributos de consulta dos lists:
 
 <h2>Methods</h2>
 
-Métodos de execução de um List:
+Métodos de execução de uma List:
 
-|         Methods         |                                    Descrição                                            |
-| ----------------------  |  -------------------------------------------------------------------------------------- |
-|  add(value)             |   Adiciona um valor ao final do List, extendendo o tamanho em 1                         | 
-|  addAll(Interable)      |   Adiciona todos os objetos de um interable ao fim de uma list, extendendo seu tamanho  |
-|                         |                                      |
-|                         |                                      |
-|                         |                                      |
-|                         |                                      |
-|                         |                                      |
-|                         |                                      |
-|                         |                                      |
-|                         |                                      |
-|                         |                                      |
-|                         |                                      |
-|                         |                                      |
+|           Methods           |                                    Descrição                                            |
+| --------------------------- |  -------------------------------------------------------------------------------------- |
+|  add(value)                 |   Adiciona um valor ao final do List, extendendo o tamanho em 1                         | 
+|  addAll(Interable)          |   Adiciona todos os objetos de um interable ao fim de uma list, extendendo seu tamanho  |
+|  any(E element)             |     |
+|  asMap()                    |     |
+|  cast                       |     |
+|  clear()                    |     |
+|  contains(Object? element)  |     |
+|  elementAt(int index)       |     |
+|  every(E element)           |     |
+|  expand()                   |     |
+|  fillRange()                |     |
+|  firstWhere()               |     |
+|  fold()                     |     |
+|  followedBy()               |     |
+|  forEach()                  |     |
+|  getRange()                 |     |
+|  indexOf()                  |     |
+|  indexWhere()               |     |
+|  insert()                   |     |
+|  insertAll()                |     |
+|  join()                     |     |
+|  lastIndex()                |     |
+|  lastIndexWhere()           |     |
+|  map()                      |     |
+|  noSuchMethod()             |     |
+|  reduce()                   |     |
+|  remove()                   |     |
+|  removeAt()                 |     |
+|  removeLast()               |     |
+|  removeRange()              |     |
+|  removeWhere()              |     |
+|  replaceRange()             |     |
+|  retainWhere()              |     |
+|  setAll()                   |     |
+|  setRange()                 |     |
+|  shuffle()                  |     |
+|  singleWhere()              |     |
+|  skip()                     |     |
+|  skipWhile()                |     |
+|  sort()                     |     |
+|  sublist()                  |     |
+|  takeWhile()                |     |
+|  toList()                   |     |
+|  toSet()                    |     |
+|  toString()                 |     |
+|  where()                    |     |
+|  whereType()                |     |
 
 
 <h2>Map</h2>
