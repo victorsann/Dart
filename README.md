@@ -1986,7 +1986,7 @@ OutPut:
 Por possuir um delay proposital, o método <b><i>fetchUserOrder()</i></b> é declarado como uma Future, indicando que essa função pode ser executada em segundo plano e que as demais não precisam esperá-la terminar para serem executadas.
 
 
-<h2>Retornando um Erro</h2>
+<h2>Future Exception</h2>
 
 
 Se por alguma razão uma operação assíncrona cair ou achar uma exception, a future irá completar a execução com um erro. A seguir temos um exemplo de declaração de uma Future que completa a execução com uma exception:
@@ -2023,8 +2023,8 @@ Output:
 
  As palavras-chave <b><i>async</i></b> e <b><i>await</i></b> fornecem um meio declarativo de definição de funções assíncronas e de uso de seus resultados. É importante se ater às seguintes regras ao fazer uso de async e await:
 
- * Para definir uma função async, adicione async antes do corpo da função.
- * A palavra-chave await só funciona em funções async.
+ * Para definir uma função async, é preciso adicionar a palavra-chave async antes do corpo da função.
+ * A palavra-chave await só funciona em funções declaradas como async.
 
  A seguir temos um exemplo de declaração de função async:
 
@@ -2055,7 +2055,7 @@ Output:
 O exemplo a seguir compara as declarações de uma série de funções síncronas e seu resultado com as mesmas funções, porém, declaradas como assíncronas:
 
 
-<h2>Exemplo de Função Síncrona</h2>
+<h2>Função Síncrona</h2>
 
 
     String createOrderMessage() {
@@ -2083,7 +2083,7 @@ Output:
 >Seu pedido é: Instance of 'Future<String>'
 
   
- <h2>Exemplo de Função Assíncrona com async e await</h2>
+ <h2>Função Assíncrona</h2>
 
 
     Future<String> createOrderMessage() async {
@@ -2118,7 +2118,7 @@ O exemplo assíncrono se difere por três razões:
 * A palavra-chave await aparece antes da chamada das funções assíncronas fetchUserOrder() and createOrderMessage().
 
 
-<h2>Fluxo de Execução com async e await</h2>
+<h2>Fluxo de Execução Assíncrono</h2>
 
 
 Uma função async é executada sincronicamente até o primeiro await. Isso significa que dentro de um corpo de função assíncrona, todo o código síncrono antes da primeira palavra-chave await é executado imediatamente. A seguir há um exemplo com o qual é possível entender melhor o fluxo de execução assíncrono:
@@ -2199,9 +2199,9 @@ Output:
 <h1>O que é uma Stream ?</h1>
 
 
-A programação assíncrona em Dart se caracteriza pelo uso de ambas as classes ```Future``` e ```Stream```. Uma Future representa uma computação cuja conclusão não se dá de imediato. Uma função comum retorna o resultado; uma função assíncrona retorna uma Future que pode eventualmente conter o resultado. A Future em si se responsabiliza por avisar quando o resultado estiver pronto.
+A programação assíncrona em Dart não só se caracteriza pelo uso de Futures mas também da ```Stream``` class. Uma Future representa uma computação cuja conclusão não se dá de imediato. Uma função comum retorna o resultado; uma função assíncrona retorna uma Future que pode eventualmente conter o resultado. A Future em si se responsabiliza por avisar quando o resultado estiver pronto.
 
-Uma Stream é uma sequência de eventos assíncronos. Sendo comparável a um Iterable assíncrono, onde, ao invés de obter o próximo evento quando solicitado, notifica quando o evento estiver disponível. Além disso, cabe ressaltar alguns conceitos básicos sobre as Streams:
+Uma Stream é uma sequência de eventos assíncronos. Sendo comparável a um Iterable assíncrono, onde, ao invés de obter o próximo evento quando solicitado, notifica quando o evento estiver disponível. Com isso, cabe ressaltar alguns conceitos básicos sobre as Streams:
 
 <h2>listen() & StreamSubscription</h2>
 
