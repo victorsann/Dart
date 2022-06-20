@@ -195,7 +195,7 @@ A interpolação permite acessar valores identificados por unidades de armazenam
     
     print('${greeting} ${person} and ${multiLine}!');
     
->Output: String Interpolation and You can create
+>Output: String Interpolation and You can create<br>
 > multi-line strings like this one!
 
 Obs: a interpolação é feita tanto entre aspas simples quanto entre aspas duplas
