@@ -157,14 +157,11 @@ Como já foi citado, o dart possui uma tipagem bastante própria, sendo família
 
 int - Valores inteiros não maiores que 64 bits, dependendo da plataforma:
 
-
     int x = 1;
     int hex = 0xDEADBEEF;
     int exponent = 8e5;
 
-
 double - Valores decimais:
-
 
     double y = 1.1;
     double exponents = 1.42e5;
@@ -174,7 +171,6 @@ double - Valores decimais:
 
 
 Uma string Dart (object String) contém uma sequência de unidades de código UTF-16:
-
 
     String s1 = 'Single quotes work well for string literals.';
     String s2 = "Double quotes work just as well.";
@@ -186,7 +182,6 @@ Uma string Dart (object String) contém uma sequência de unidades de código UT
 
 
 A interpolação permite acessar valores identificados por unidades de armazenamento dentro de um string type:
-
 
     String greeting = "String";
     String person = "Interpolation";
@@ -239,12 +234,9 @@ Para representar valores boolean o Dart possui o marcador <i>bool</i>, com dois 
 
 Em Dart as Runes expõem o código unicode de uma string. O unicode define um valor numérico único para cada letra, dígito e símbolo usado em todo o sistema de escrita. Um unicode é normalmente representado da seguinte forma:
 
-
     \uXXXX
 
-
 Onde XXXX é um valor hexadecimal de 4 dígitos. Por exemplo: \u{1f606}, que respesenta o seguinte emoji :satisfied:. O Dart possui um módulo específico para trabalhar esse tipo de dado, sendo definido abaixo:
-
 
     import 'package:characters/characters.dart'; <==
     ...
@@ -266,7 +258,6 @@ Onde XXXX é um valor hexadecimal de 4 dígitos. Por exemplo: \u{1f606}, que res
 
 Um objeto Symbol representa um operador ou idetificador declarado em um programa Dart, dificilmente utilizados fora de contextos específicos de desenvolvimento. Para definir um Symbol como identificador usa-se # seguido do identificador:
 
-
     #radix
     #bar
 
@@ -278,21 +269,15 @@ O Dart possui um recurso chamado de <i>Null Safety</i>, o qual define que as var
 
 Com o Null safety todas as variáveis do código a seguir são non-nullable:
 
-
-    // Com o Null-safe, nenhum destes podem ser null
-
     var i = 42;
     String name = getFileName();
     final b = Foo();
 
-Para indicar que uma variável aceita um nullable usa-se o marcador ```?``` logo após sua a declaração tipo:
-
+Para indicar que uma variável aceita um nullable usa-se o marcador ```?``` logo após sua a declaração de tipo:
 
     int? aNullableInt = null;
 
-
 Para declarar uma variável como no-nullable manualmente, usa-se o marcador ```!``` na delcaração de tipo da unidade:
-
 
     int! aNoNullableInt = null;
 
@@ -301,7 +286,6 @@ Para declarar uma variável como no-nullable manualmente, usa-se o marcador ```!
 
 
 O tipo dynamic define a aceitação de todos os demais tipos em uma variável, dando ao Dart a característica de dinamicidade comum a outras linguagens:
-
 
     dynamic nome = "Caio Rolla";
     
@@ -318,6 +302,7 @@ O tipo dynamic define a aceitação de todos os demais tipos em uma variável, d
 
 <h2>Enumerated types</h2>
 
+
 Enumerated types, geralmente chamados de <i>enumerations</i> ou <i>enums</i>, são um tipo especial de classe usado para representar um número fixo de valores constantes.
 
 >Nota: Todos os enums estendem automaticamente a classe Enum. Eles também são selados, o que significa que não podem ser subclassificados, >implementados, misturados ou instanciados explicitamente.
@@ -328,7 +313,9 @@ Para declarar um tipo enumerado simples, usa-se a palavra-chave ```enum``` e lis
 
     enum Color { red, green, blue }
 
+
 <h1>Operadores Aritméticos</h1>
+
 
 O Dart suporta os operadores aritméticos usuais encontrados na maior parte das linguagens, porém, conta com algumas adições, como mostrado abaixo:
 
@@ -402,7 +389,7 @@ Relacionam operandos tendo como retorno um boolean, sendo true caso a operação
 
 > output: true
 
-<b>Diferença</b> - Retorna true caso o valor numérico dos operandos for diferente:
+<b>Diferença</b> - Retorna true caso o valor numérico dos operandos seja diferente:
 
     assert(3 != 3); 
 
@@ -438,18 +425,18 @@ Relacionam operandos tendo como retorno um boolean, sendo true caso a operação
 
 Os operadores type test definem tipos no processo compilação. Eles são definidos em três:
 
-<b>as</b> - Typecast
+<b>as</b> - O Typecast é usado para converter um objeto em um tipo específico
 
     (employee as Person).firstName = 'Bob';
 
-<b>is</b> - Retorna true caso o objeto tenha o tipo especificado
+<b>is</b> - Retorna true caso o objeto possua a tipagem especificada
 
     if (employee is Person) {
       // Type check
       employee.firstName = 'Bob';
     }
 
-<b>is!</b> - Retorna true caso o objeto tenha o tipo diferente do especificado
+<b>is!</b> - Retorna true caso o objeto ão possua a tipagem especificada
 
     if (employee is! Person) {
       // Type check
@@ -474,7 +461,7 @@ Operações que relacionam dois operandos de forma que o primeiro operando receb
 <h2>Operadores Lógicos</h2>
 
 
-Os operadores lógicos definem um valor boolean como o retorno entre uma operação entre dois operandos, sempre retornando true ou false:
+Os operadores lógicos definem um valor boolean como o retorno de uma operação entre dois operandos, sempre retornando true ou false:
 
 <b>Negação</b> - Se o valor chamado data for definido como true, ele passa a ser false, e vice versa. 
 
@@ -482,7 +469,7 @@ Os operadores lógicos definem um valor boolean como o retorno entre uma operaç
         ...
     }
 
-<b>Disjução</b> - Chamado de OR lógico, só retorna true caso um dos operandos corresponda ao valor boolean true.
+<b>Disjução</b> - Chamado de OR lógico, retorna true caso um dos operandos corresponda ao valor boolean true.
 
     if(!data || value) {
         ...
@@ -575,19 +562,19 @@ Caso o desenvolvedor esteja seguro de que a variável foi definida antes de ser 
     }
 
 
-<h2>Const</h2>
+<h2>Final e Const</h2>
 
 
-Definir um valor como fixo ou constante demanda o uso da palavra chave const, dando à unidade de armazenamento e referência a característica de imutabilidade do seu valor em tempo de compilação:
+Definir um valor como fixo ou constante demanda o uso da palavra chave <i>final</i> o <i>const</i>, dando à unidade de armazenamento e referência a característica de imutabilidade do seu valor em tempo de compilação:
 
+    final name = 'Bob'; // Sem definição de tipo
+    final String nickname = 'Bobby';
 
-    // Sem definição de tipo
+Caso uma mudança seja aplicada a uma final, um erro resuultande da ação será lançado:
 
-    const name = 'Bob';
+    name = 'Alice'; // Error: a final variable can only be set once.
 
-    // Com definição de tipo
-
-    const String nickname = 'Bobby';
+Usa-se <i>const</i> em variáveis que pretendem ser contantes em tempo de compilação. Uma const ocupa menos espaço em memória que uma var devido a sua natuuraza imutável.
 
 
 <h1>Functions</h1>
