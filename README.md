@@ -1932,197 +1932,76 @@ OutPut:
 
 O exemplo define dois tipos de clientes, um Premium e um Common. Por possuir mais privilégios, um cliente Premium possuiria acesso ao mixin Score, tendo acesso exclusivo ao método credit. O mixin é extremamente importante no processo de declaração de relações e acesso a informação entre classes, tornando o código ainda mais seguro.
 
-
 <h1>Programação Assíncrona</h1>
-
 
 Com o avanço da comunicação entre diferentes sistemas, os modelos de execução que priorizam performance se tornaram cada vez mais importantes quando se visa eficiência no desenvolvimento de aplicações. Com isso, entender modelos síncronos e assíncronos, e como seu uso possibilita a criação de diferentes meios para desenvolver um sistema que se comunique, trate e use as informações obtidas passou a ser essencial.
 
-
 <h2>Por que o código assíncrono é importante</h2>
 
-
-O modelo assíncrono, associado ao multi-thread, conta com a vantegem de permitir a execução de uma tarefa enquanto aguarda a finalização de outra. Esta que pode estar buscando ou respondendo uma aplicação externa, sendo mantida em hold enquanto não há uma resposta. Quando há um retorno, a tarefa é retomada do ponto em que havia sido suspensa, permitindo um processo de execução muito mais fluido e eficaz do que o modelo single-thread ofereceria.
-
-Por ser uma linguagem moderna, o Dart conta com um modelo de execução que suporta a programação assíncrona, permitindo que o desenvolvedor trate com muito mais eficácia suas requisições e possíveis erros no processo de consumo de serviços exeternas, por exemplo. A seguir iremos abordar os mecanismos que a linguagem provê na prática:
-
+Uma computação assíncrona não pode fornecer um resultado imediatamente quando é iniciada, sendo o oposto de uma computação síncrona, cujo resultado é calculado e retornado de forma imediata. Tal recurso é essencial quando se pretende obter informações externas ao programa (ler um arquivo, consultar um banco de dados, buscar uma página da Web), o que demanda tempo. Em vez de bloquear toda a computação até que o resultado esteja disponível, a computação assíncrona imediatamente retorna uma Future que eventualmente "completará" com o resultado. Ou seja, a programação assíncrona permite criar com base em uma arquitetura multi-thread não bloqueante, sendo o modelo ideal quando é a performance é priorizada.
 
 <h1>O que é uma Future ?</h1>
 
-
 Uma <b><i>Future</i></b> é a representação do resultado de uma operação assícrona, ou uma promise, podendo ter dois estados: uncompleted e completed.
-
 
 - <b><i>Uncompleted</i></b>: Quando uma chamada em uma função assíncrona é feita, seu resultado é retornado como uma uncompleted future. Essa future passa a esperar o fim da operação ou lança um erro.
 
 - <b><i>Completed</i></b>: Se a operação assíncrona for bem sucedida, a future resulta em um valor de retorno, caso contrário, resulta em um erro.
 
-
-<h2>Retornando um Valor</h2>
-
-
-Uma future de tipo <b>T</b> resulta em um valor do tipo <b>T</b>. Por exemplo, uma future de tipo <b><i>String </i></b> porduz uma string como valor. Caso uma future não retorne um valor utilizável, esta pode ser declarada como <b><i>Future void</i></b>. 
-
-A seguir temos um exemplo de declaração e uso de uma Future tipada:
+<h2>async e await</h2>
 
 
-    Future<void> fetchUserOrder() {
-      return Future.delayed(const Duration(seconds: 2), 
-      () => print('Café'));
-    }
-    
-    void main() {
-      fetchUserOrder();
-      print('Buscando o pedido do usuário...');
+As palavras-chave <b><i>async</i></b> e <b><i>await</i></b> fornecem um meio declarativo de definição de funções assíncronas e de uso de seus resultados. Para performar uma computação assíncrona, é preciso criar uma função assíncrona, a qual sempre produz uma futuro. Dentro de tal função é possível operar um await para atrasar a execução até que outra computação assíncrona tenha um resultado. Enquanto a execução da função em espera está atrasada, o programa não é bloqueado e pode continuar fazendo outras coisas.
+
+Exemplo:
+
+    import "dart:io";
+
+    Future<bool> fileContains(String path, String needle) async {
+       var haystack = await File(path).readAsString();
+       return haystack.contains(needle);
     }
 
-OutPut: 
+Aqui, o método File.readAsString, oriundo do dart:io, é uma função assíncrona que retorna uma Future String. A função fileContains é marcada com async logo antes de seu corpo, o que a torna uma promise. A chamada de File(path).readAsString() inicia a leitura do arquivo em uma string e produz um Future String que eventualmente irá conter um resultado. 
 
->Buscando o pedido do usuário...<br>
->//seconds: 2<br>
->Café  
+O await então espera que a Future seja concluída com uma string (ou um erro, se a leitura do arquivo falhar). Enquanto espera, o programa pode fazer outras coisas. Quando o futuro é concluído com uma string, a função fileContains calcula um booleano e o retorna, o que então completa o futuro original que retornou quando chamado pela primeira vez.
 
-
-Por possuir um delay proposital, o método <b><i>fetchUserOrder()</i></b> é declarado como uma Future, indicando que essa função pode ser executada em segundo plano e que as demais não precisam esperá-la terminar para serem executadas.
-
+Com isso se conclui que uma future de tipo <b>T</b> resulta em um valor do tipo <b>T</b>. Sendo este o caso da função fileContains.
 
 <h2>Future Exception</h2>
 
+Caso uma Future retorne um <i>error</i>, aguardar sua conclusão (re)lançará o error em questão. Para trarar possíveis erros no processo de obtenção de uma Future, usa-se o error catcher ```try catch```:
 
-Se por alguma razão uma operação assíncrona cair ou achar uma exception, a future irá completar a execução com um erro. A seguir temos um exemplo de declaração de uma Future que completa a execução com uma exception:
-
-
-    Future<void> fetchUserOrder() {
-
-    // Imagine que esta função está buscando informações de um usuário mas encontrou um bug
-
-      return Future.delayed(const Duration(seconds: 2),
-          () => throw Exception('Logout failed: user ID is invalid'));
-    }
+    import "dart:io";
     
-    void main() {
-      fetchUserOrder();
-      print('Buscando o pedido do usuário...');
+    Future<bool> fileContains(String path, String needle) async {
+      try {
+        var haystack = await File(path).readAsString();
+        return haystack.contains(needle);
+      } on FileSystemException catch (exception, stack) {
+        _myLog.logError(exception, stack);
+        return false;
+      }
     }
 
-Output:
+Em geral, ao escrever código assíncrono, é essencial aguardar uma Futuro quando ele for produzido e não esperar até depois de outro atraso assíncrono. Isso garante o preparo antecipado para receber qualquer erro que o futuro possa produzir, o que é importante já que um erro assíncrono não aguardado é um erro não detectado, o que pode encerrar o programa em execução.
 
->Buscando o pedido do usuário...<br>
->//seconds: 2<br>
->Unhandled exception:<br>
->Exception: Logout failed: user ID is invalid
+<h2>Future API </h2>
 
+A classe Future também fornece uma funcionalidade mais direta e de baixo nível para acessar o resultado com o qual ela é concluída. Os recursos async e await são criados com base nessa funcionalidade e, às vezes, faz sentido usá-lo diretamente. Há casos em que não é possível executar determinadas ações apenas esperando uma Futuro de cada vez.
 
-<div align="center">
-   A função indica que o ID do usuário é invalido, portanto, há uma exception.
-</div>
+Com uma Future, é possível registrar manualmente os retornos de chamadas que tratam do valor, ou erro, assim que estiver disponível. Por exemplo:
 
+    Future<int> future = getFuture();
+    future.then((value) => handleValue(value)).catchError((error) => handleError(error));
 
- <h2>async e await</h2>
-
-
- As palavras-chave <b><i>async</i></b> e <b><i>await</i></b> fornecem um meio declarativo de definição de funções assíncronas e de uso de seus resultados. É importante se ater às seguintes regras ao fazer uso de async e await:
-
- * Para definir uma função async, é preciso adicionar a palavra-chave async antes do corpo da função.
- * A palavra-chave await só funciona em funções declaradas como async.
-
- A seguir temos um exemplo de declaração de função async:
-
-
-    void myMethod() async { ... }
-
-
-Uma função async passa a aceitar a declaração de um await quando definida. O exemplo a seguir mostra como declarar um await:
-
-
-    Future<void> myMethod() async { 
-      print(await createMessage());
-    }
-
-    String createMessage() {
-      return 'Go learn some code';
-    }
-
-    main() {
-      myMethod();
-    }
-    
-Output:
-
->Go lurn some code
-
-
-O exemplo a seguir compara as declarações de uma série de funções síncronas e seu resultado com as mesmas funções, porém, declaradas como assíncronas:
-
-
-<h2>Função Síncrona</h2>
-
-
-    String createOrderMessage() {
-      var order = fetchUserOrder();
-      return 'Seu pedido é: $order';
-    }
-    
-    Future<String> fetchUserOrder() =>
-
-      // Imagine uma função mais complexa e lenta
-      Future.delayed(
-        const Duration(seconds: 2),
-        () => 'Café',
-      );
-    
-    void main() {
-      print('Buscando o pedido do usuário...');
-      print(createOrderMessage());
-    }
-
-Output:
-
->Buscando o pedido do usuário...<br>
->//seconds: 2<br>
->Seu pedido é: Instance of 'Future<String>'
-
-  
- <h2>Função Assíncrona</h2>
-
-
-    Future<String> createOrderMessage() async {
-      var order = await fetchUserOrder();
-      return 'Seu pedido é: $order';
-    }
-    
-    Future<String> fetchUserOrder() =>
-
-      // Imagine uma função mais complexa e lenta
-      Future.delayed(
-        const Duration(seconds: 2),
-        () => 'Café',
-      );
-    
-    Future<void> main() async {
-      print('Buscando o pedido do usuário...');
-      print(await createOrderMessage());
-    }
-
-Output:
-
->Buscando o pedido do usuário...<br>
->//seconds: 2<br>
->Seu pedido é: Café
-
-
-O exemplo assíncrono se difere por três razões:
-
-* O tipo de retorno para createOrderMessage() muda de um simple String para um Future do tipo String.
-* A palavra-chave async aparece antes dos corpos das funções createOrderMessage() e main().
-* A palavra-chave await aparece antes da chamada das funções assíncronas fetchUserOrder() and createOrderMessage().
+Como uma Future pode ser concluída de duas maneiras, com um valor (se a computação assíncrona for bem-sucedida) ou com um erro (se a computação falhar), é possível instalar retornos de chamada para um ou ambos os casos.
 
 
 <h2>Fluxo de Execução Assíncrono</h2>
 
 
 Uma função async é executada sincronicamente até o primeiro await. Isso significa que dentro de um corpo de função assíncrona, todo o código síncrono antes da primeira palavra-chave await é executado imediatamente. A seguir há um exemplo com o qual é possível entender melhor o fluxo de execução assíncrono:
-
 
     Future<void> printOrderMessage() async {
       print('Aguardando pedido do usuário...');
@@ -2146,9 +2025,7 @@ Uma função async é executada sincronicamente até o primeiro await. Isso sign
       }
     }
 
-
 Aqui temos basicamente quatro métodos. Três deles, incluindo o main method, são de execução assícrona, ou seja, são Futures que executam ações de acordo com o tempo de retorno das chamadas. O quarto método torna visível o delay de quatro segundos que cada await demora para retornar um valor.
-
 
 Output:
 
@@ -2159,41 +2036,7 @@ Output:
 >4<br>
 >Seu pedido é: Café
 
-
-O run inicia no main method, cuja função aqui é executar as demais Futures. Com isso, perceba que por mais que a função print('Aguardando pedido do usuário...') esteja dentro de uma função assíncrona, ela é executado imediatamente. Isso ocorre graças a natureza síncrona da print() function. Já na chamada do método fetchUserOrder(), que também é definido como await, há um delay proposital que demonstra sua natureza assíncrona.
-
-
-<h2>Tratando Erros</h2>
-
-
-O meio mais utilizado e recomendado para tratar erros em funções async é utilizando o try-catch, graças a possibilidade de tratar erros distintos de diferentes formas. A seguir há um exemplo de uso do try-catch em uma operação assíncrona:
-
-
-    Future<String> fetchUserOrder() {
-       return Future.delayed(const Duration(seconds: 4), () => 'Café');
-    }
-     
-    Future<void> main() async {
-     try {
-       print('Aguardando pedido do usuário...');
-       var order = await fetchUserOrder();
-       print(order);
-     
-     } catch (err) {
-       print('Caught error: $err');
-     }
-    }
-
-Output:
-    
->Aguardando pedido do usuário...<br>
->//seconds: 4<br>
->Café
-
-
-<div align="center">
-  Caso haja um exception, o catch irá executar um print do erro encontrado.
-</div>
+O run inicia no main method, cuja função aqui é executar as demais Futures. Com isso, perceba que por mais que a função print('Aguardando pedido do usuário...') esteja dentro de uma função assíncrona, ela é executado imediatamente. Isso ocorre graças a natureza síncrona da print() function. Já na chamada do método fetchUserOrder(), que também é instanciado com um await, há um delay proposital que demonstra sua natureza assíncrona.
 
 
 <h1>O que é uma Stream ?</h1>
@@ -2272,6 +2115,7 @@ Para <i>cancela</i> uma subscription:
 
 <h2>Single Subscription Streams</h2>
 
+
 O tipo mais comum de Stream contem uma sequência de eventos que compõem um todo. Tais eventos precisam ser entregues em uma ordem específica, sem que nenhum se perca no processo. Este seria o tipo de Stream obtido a partir da leitura de um arquivo ou de um web request.
 
 Uma Single Subscription Stream pode sofrer um listen uma única vez. Caso sofra novamente, os eventos iniciais podem ser sobrescritos ou perdidos, o que torna o restante da Stream sem sentido. Quando o processo de listening se inicia os dados são obtidos e retornados em partes.
@@ -2331,6 +2175,7 @@ Output:
 
 <h2>await for</h2>
 
+
 As Streams podem ser criadas de várias maneiras, mas todas podem ser usadas ​​da mesma forma: o ```loop for``` assíncrono (comumente chamado de await for) intera sobre os eventos de uma Stream como o ```loop for``` intera sobre um [Iterable](https://api.dart.dev/stable/dart-core/Iterable-class.html), o que permite acessar seus eventos. Exemplo:
 
     Future<int> sumStream(Stream<int> stream) async {
@@ -2346,6 +2191,7 @@ O código acima recebe cada evento de uma Stream de integer events, o adiciona e
 
 
 <h2>Error Events</h2>
+
 
 Uma Stream é concluída quando todos os eventos nela contidos são executados, e da mesma forma que a Stream notifica a entidade que recebe seus resultados caso um evento seja iniciado, o mesmo ocorre ao finalizá-los. Além dos eventos que retornam informações, Streams podem ter que tratar error events. Quando um erro event ocorre duranto o processo de execução de uma Stream, seja por falha de conexão durante a leitura de dados retornados por um endpoit, ou mesmo bugs no código que executa a Stream, é possível tratá-los da mesma forma que quando utilizamos Futures: ```try-catch```.
 
@@ -2381,6 +2227,7 @@ O exemplo a seguir retorna um erro quando o iterator do loop <i>await for</i> fo
 
 
 <h2>Trabalhando com Streams</h2>
+
 
 A classe Stream contém um número de métodos auxiliares que permitem realizar operações comuns em Streams, similarmente aos métodos utilizados para tratar um Iterable. Por exemplo, é possível encontrar o último integer positivo em uma Stream utilizando o método <i>lastWhere()</i>, o qual compõe a Stream API.
 
