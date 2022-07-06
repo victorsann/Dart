@@ -1,22 +1,34 @@
+
 void main () async {
   
-  final streamSubscription = Stream<int>.periodic(
-    Duration(seconds: 1),
-    (index) => ++index
-  ).take(10);
+  final myStream = Stream<int>.multi((controller) async {
+    for(var i = 0; i <= 100; i++) {
+      controller.add(i);
+      await Future.delayed(Duration(seconds: 2));
+    }
+  });
 
-  streamSubscription.listen((event) { 
-     print(event);
-   },
-   onError: (err) {
-     if(err) {
-       print('Error!');
-     }
-   },
-   onDone: () {
-     print('Done!');
-   },
-   cancelOnError: false,
-  );
+  myStream.listen((event) { 
+    print(event);
+  });
+
+  // final streamSubscription = Stream<int>.periodic(
+  //   Duration(seconds: 1),
+  //   (index) => ++index
+  // ).take(10);
+
+  // streamSubscription.listen((event) { 
+  //    print(event);
+  //  },
+  //  onError: (err) {
+  //    if(err) {
+  //      print('Error!');
+  //    }
+  //  },
+  //  onDone: () {
+  //    print('Done!');
+  //  },
+  //  cancelOnError: false,
+  // );
 
 }

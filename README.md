@@ -2048,7 +2048,7 @@ Uma Stream é uma sequência de eventos assíncronos. Sendo comparável a um Ite
 
 <h2>listen() & StreamSubscription</h2>
 
-O método ```listen``` aplica o conceito de observer ao uso das Streams, conceito este que é bastante comum na programação reativa. Um listen, quando aplicado a uma Stream, passa a monitorar seu fluxo de dados, retornando um objeto ```StreamSubscription```, o qual trata os eventos através dos manipuladores ```onData```, ```onError ``` e ```onDone```:
+Streams usam um pattern bastante comum à programação reativa, o chamado observer pattern. O método ```listen``` aplica o conceito de observer ao uso das Streams, o qual passa a monitorar seu fluxo de dados, retornando um objeto ```StreamSubscription```, o qual trata os eventos através dos manipuladores ```onData```, ```onError ``` e ```onDone```:
 
     StreamSubscription<int> listen(
       void Function(int)? onData, {
@@ -2093,6 +2093,10 @@ Output:
 
 No exemplo, a final streamSubscription recebe uma Stream de cinco integers que são emitidos um por um em intervalos de 1 segundo. Na mesma final é aplicado um listen method, o qual opera a subscription da final através dos seus manipuladores.
 
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/61476935/177454233-564a377a-aa2f-4fed-8bd2-b03350f72170.png">
+</div>
+
 Além disso, é importante mencionar que o objeto ```streamSubscription```, assim com a Stream que o origina, também possui métodos bastante usuais, estes que podem ser utilizados durante o processo de listening.
 
 Para <i>pausar</i> uma subscription:
@@ -2107,7 +2111,7 @@ Para <i>retomar</i> uma subscription:
     subscription.resume();
     print(subscription.isPaused); // false
 
-Para <i>cancela</i> uma subscription:
+Para <i>cancelar</i> uma subscription:
 
     // Do some work.
     subscription.cancel();
@@ -2116,7 +2120,7 @@ Para <i>cancela</i> uma subscription:
 <h2>Single Subscription Streams</h2>
 
 
-O tipo mais comum de Stream contem uma sequência de eventos que compõem um todo. Tais eventos precisam ser entregues em uma ordem específica, sem que nenhum se perca no processo. Este seria o tipo de Stream obtido a partir da leitura de um arquivo ou de um web request.
+O tipo mais comum de Stream contem uma sequência de eventos que compõem um todo. Tais eventos precisam ser entregues em uma ordem específica, sem que nenhum se perca no processo. Este seria o tipo de Stream obtido a partir da leitura de um arquivo ou de um request.
 
 Uma Single Subscription Stream pode sofrer um listen uma única vez. Caso sofra novamente, os eventos iniciais podem ser sobrescritos ou perdidos, o que torna o restante da Stream sem sentido. Quando o processo de listening se inicia os dados são obtidos e retornados em partes.
 
