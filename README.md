@@ -2091,11 +2091,17 @@ Output:
 >5<br>
 >Done!
 
-No exemplo, a final streamSubscription recebe uma Stream de cinco integers que são emitidos um por um em intervalos de 1 segundo. Na mesma final é aplicado um listen method, o qual opera a subscription da final através dos seus manipuladores.
+No exemplo, a final streamSubscription recebe uma Stream de cinco integers que são emitidos um por um em intervalos de 1 segundo. Na mesma final é aplicado um listen method, o qual opera a subscription da final através dos seus manipuladores. 
+
+O Diagrama a seguir ilustra como a chamada do método listen funciona:
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/61476935/177454578-e234e8c6-def6-4fb3-a3d9-37918b9972cf.png">
 </div>
+
+Associando o diagrama ao exemplo anterior temos o método <i>periodic</i> agindo como <i>event source</i> criando uma stream, onde ++index é o evento; o método <i>listen</i> aplicado a final <i>streamSubscription</i> agindo como <i>subscriber</i>; e os manipuladores do método listen agindo como <i>event callbacks</i>.
+
+Também é importante destacar que, uma vez sendo invocado, o método listen permite que a stream (single-subscription) não precise manter uma referência ao event source. Já o event source não precisa ter acesso a stream.
 
 Além disso, é importante mencionar que o objeto ```streamSubscription```, assim com a Stream que o origina, também possui métodos bastante usuais, estes que podem ser utilizados durante o processo de listening.
 
@@ -2124,8 +2130,43 @@ O tipo mais comum de Stream contem uma sequência de eventos que compõem um tod
 
 Uma Single Subscription Stream pode sofrer um listen uma única vez. Caso sofra novamente, os eventos iniciais podem ser sobrescritos ou perdidos, o que torna o restante da Stream sem sentido. Quando o processo de listening se inicia os dados são obtidos e retornados em partes.
 
-Exemplo:
 
+<h2>Stream Controller</h2>
+
+
+A forma mais simples de criar uma stream é fazendo uso de um <i>StreamController</i>, o qual implementa a classe [StreamSink](https://api.flutter.dev/flutter/dart-async/StreamSink-class.html), esta sendo detentora de métodos como o <i>add</i>, <i>addError</i> e <i>close</i>, os quais permitem operar diferentes ações durante o ciclo de vida da stream. O exemplo a seguir trata estes conceitos de maneira prática:
+
+
+    void main () async {
+      
+      final myStream = Stream<int>.multi((controller) async {
+        for(var i = 0; i <= 100; i++) {
+          controller.add(i);
+          await Future.delayed(Duration(seconds: 2));
+        }
+      });
+    
+      myStream.listen((event) { 
+        print(event);
+      });
+    
+    }
+
+Output: 
+
+>1<br>
+>2<br>
+>3<br>
+>...<br>
+>100
+
+Diagrama a seguir ilustra os conceitos aplicados no exemplo acima:
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/61476935/177463833-4551e6c0-f26f-4d60-a01a-1e08b3da4206.png">
+</div>
+
+Neste caso, o event source 
 
 
 <h2>Broadcast Streams</h2>
