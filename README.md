@@ -2046,7 +2046,7 @@ A programação assíncrona em Dart não só se caracteriza pelo uso de Futures 
 
 Uma Stream é uma sequência de eventos assíncronos. Sendo comparável a um Iterable assíncrono, onde, ao invés de obter o próximo evento quando solicitado, notifica quando o evento estiver disponível. Com isso, cabe ressaltar alguns conceitos básicos sobre as Streams:
 
-<h2>listen() & StreamSubscription</h2>
+<h2>StreamSubscription</h2>
 
 Streams usam um pattern bastante comum à programação reativa, o chamado observer pattern. O método ```listen``` aplica o conceito de observer ao uso das Streams, o qual passa a monitorar seu fluxo de dados, retornando um objeto ```StreamSubscription```, o qual trata os eventos através dos manipuladores ```onData```, ```onError ``` e ```onDone```:
 
@@ -2101,9 +2101,7 @@ O diagrama a seguir ilustra como uma stream subscription funciona:
 
 Associando o diagrama ao exemplo anterior, temos o método <i>periodic</i> agindo como <i>event source</i> criando uma stream, onde ++index é o evento, o método <i>listen</i> aplicado a final <i>streamSubscription</i> agindo como <i>subscriber</i> e os manipuladores do método listen agindo como <i>event callbacks</i>.
 
-Também é importante destacar que, uma vez sendo invocado, o método listen permite que a stream (single-subscription) não precise manter uma referência do event source. Já o event source não precisa ter acesso a stream.
-
-Além disso, é importante mencionar que o objeto ```streamSubscription```, assim com a Stream que o origina, também possui métodos bastante usuais, estes que podem ser utilizados durante o processo de listening.
+<!-- Além disso, é importante mencionar que o objeto ```streamSubscription```, assim com a Stream que o origina, também possui métodos bastante usuais, estes que podem ser utilizados durante o processo de listening.
 
 Para <i>pausar</i> uma subscription:
 
@@ -2121,50 +2119,66 @@ Para <i>cancelar</i> uma subscription:
 
     // Do some work.
     subscription.cancel();
+     -->
 
 <h2>Single Subscription Streams</h2>
+
 
 O tipo mais comum de Stream contem uma sequência de eventos que compõem um todo. Tais eventos precisam ser entregues em uma ordem específica, sem que nenhum se perca no processo. Este seria o tipo de Stream obtido a partir da leitura de um arquivo ou de um request.
 
 Uma Single Subscription Stream pode sofrer um listen uma única vez. Caso sofra novamente, os eventos iniciais podem ser sobrescritos ou perdidos, o que torna o restante da Stream sem sentido. Quando o processo de listening se inicia os dados são obtidos e retornados em partes.
 
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/61476935/177463833-4551e6c0-f26f-4d60-a01a-1e08b3da4206.png">
+</div>
+
+
 <h2>Stream Controller</h2>
 
-A forma mais simples de criar uma stream é fazendo uso de um <i>StreamController</i>, o qual implementa a classe [StreamSink](https://api.flutter.dev/flutter/dart-async/StreamSink-class.html), esta sendo detentora de métodos como o <i>add</i>, <i>addError</i> e <i>close</i>, os quais permitem operar diferentes ações durante o ciclo de vida da stream. O exemplo a seguir trata estes conceitos de maneira prática:
 
+A forma mais simples de criar uma stream é fazendo uso de um <i>StreamController</i>, o qual implementa a classe [StreamSink](https://api.flutter.dev/flutter/dart-async/StreamSink-class.html). A StreamSink permite tratar stream events tanto de forma síncrona quanto de forma assíncrona através de métodos como o <i>add</i>, <i>addError</i> e o <i>close</i>, os quais permitem iniciar, tratar erros e finalizar streams repectivamente. O exemplo a seguir trata estes conceitos de maneira prática:
 
+    import 'dart:async';
+
+    StreamController controller = StreamController();
+      
+    generateEvents() async {
+      for(var i = 0; i <= 10; i++) {
+        controller.add(i);
+        await Future.delayed(Duration(seconds: 1));
+      }
+    }
+    
     void main () async {
       
-      final myStream = Stream<int>.multi((controller) async {
-        for(var i = 0; i <= 100; i++) {
-          controller.add(i);
-          await Future.delayed(Duration(seconds: 2));
-        }
-      });
-    
-      myStream.listen((event) { 
+      generateEvents();
+      
+      controller.stream.listen((event) { 
         print(event);
       });
     
     }
 
-Output: 
-
->1<br>
->2<br>
->3<br>
->...<br>
->100
-
-O diagrama a seguir ilustra os conceitos aplicados no exemplo acima:
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/61476935/177463833-4551e6c0-f26f-4d60-a01a-1e08b3da4206.png">
-</div>
 
 Como os controllers existem antes do processo de listening ser iniciado, o event source pode adicionar eventos ao controller de forma premeditada, e para evitar a perda de dados, o controller armazena os dados em buffer até que o listening se inicie.
 
-<h3>Stream.multi</h3>
+
+<h2>Broadcast Streams</h2>
+
+
+Uma Broadcast Stream é própria para eventos individuais que serão tratados um por vez, sendo utilizada para responder a mouse events em um navegador, por exemplo. Tais Streams podem sofrer um listen a qualquer momento, e múltiplos listeners podem operar ao mesmo tempo. Além disso, uma Broadcast Stream pode sofrer um listen após o cancelamento da subcription anterior.
+
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/61476935/177640641-4d4594fd-4163-4d5f-a5b4-d90cc09922c2.png">
+</div>
+
+
+
+
+
+
+<!-- <h3>Stream.multi</h3>
 
 Sendo o event souce do exemplo, o método <i>multi</i> cria uma multi-subscription stream. Uma multi-subscription stream permite a emissão de multiplos eventos a partir de um Stream controller:
 
@@ -2172,16 +2186,7 @@ Sendo o event souce do exemplo, o método <i>multi</i> cria uma multi-subscripti
 
 Cada vez que a stream criada sofre um listen, a callback function onListen é invocado com um novo ```MultiStreamController```, o qual emite os eventos obtidos e os encaminha apara a streamSubscription através do método <i>add(event)</i>.
 
-Uma multi-subscription stream pode se comportar como qualquer outra stream. Se o callback onListen for lançado em todas as chamadas após a primeira, a stream irá se comportar como uma <i>Single Subscription Stream</i>. Se a stream emitir os mesmos eventos para todos os listeners atuais, ela irá se comportar como uma broadcast stream.
-
-<h2>Broadcast Streams</h2>
-
-Uma Broadcast Stream é própria para eventos individuais que serão tratados um por vez, sendo utilizada para responder a mouse events em um navegador, por exemplo. Tais Streams podem sofrer um listen a qualquer momento, e múltiplos listeners podem operar ao mesmo tempo. Além disso, uma Broadcast Stream pode sofrer um listen após o cancelamento da subcription anterior.
-
-
-
-
-Exemplo:
+Uma multi-subscription stream pode se comportar como qualquer outra stream. Se o callback onListen for lançado em todas as chamadas após a primeira, a stream irá se comportar como uma <i>Single Subscription Stream</i>. Se a stream emitir os mesmos eventos para todos os listeners atuais, ela irá se comportar como uma broadcast stream. -->
 
 <h2>Gerando Streams</h2>
 
