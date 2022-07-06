@@ -2130,7 +2130,7 @@ Uma Single Subscription Stream pode sofrer um listen uma única vez. Caso sofra 
 
 <h2>Stream Controller</h2>
 
-A forma mais simples de criar uma single subscription stream é fazendo uso de um <i>StreamController</i>, o qual implementa a classe [StreamSink](https://api.flutter.dev/flutter/dart-async/StreamSink-class.html), esta sendo detentora de métodos como o <i>add</i>, <i>addError</i> e <i>close</i>, os quais permitem operar diferentes ações durante o ciclo de vida da stream. O exemplo a seguir trata estes conceitos de maneira prática:
+A forma mais simples de criar uma stream é fazendo uso de um <i>StreamController</i>, o qual implementa a classe [StreamSink](https://api.flutter.dev/flutter/dart-async/StreamSink-class.html), esta sendo detentora de métodos como o <i>add</i>, <i>addError</i> e <i>close</i>, os quais permitem operar diferentes ações durante o ciclo de vida da stream. O exemplo a seguir trata estes conceitos de maneira prática:
 
 
     void main () async {
@@ -2162,17 +2162,17 @@ O diagrama a seguir ilustra os conceitos aplicados no exemplo acima:
   <img src="https://user-images.githubusercontent.com/61476935/177463833-4551e6c0-f26f-4d60-a01a-1e08b3da4206.png">
 </div>
 
-Como os controllers existem antes do porcesso de listening ser iniciado, o event source pode adicionar eventos ao controller de forma premeditada, e para evitar a perda de dados, o controller armazena os dados em buffer até que o listening se inicie.
-
-Associando o exemplo anterior ao diagrama, podemos entender que:
+Como os controllers existem antes do processo de listening ser iniciado, o event source pode adicionar eventos ao controller de forma premeditada, e para evitar a perda de dados, o controller armazena os dados em buffer até que o listening se inicie.
 
 <h3>Stream.multi</h3>
 
-Sendo o event souce do exemplo, o método <i>multi</i> cria uma multi-subscription stream. Uma multi-subscription stream
+Sendo o event souce do exemplo, o método <i>multi</i> cria uma multi-subscription stream. Uma multi-subscription stream permite a emissão de multiplos eventos a partir de um Stream controller:
 
     Stream.multi(void Function(MultiStreamController<int>) onListen, {bool isBroadcast = false})
 
-Cada vez que a stream criada sofre um listen, a callback function onListen é invocado com um novo ```MultiStreamController```, o qual emite os eventos obtidos e os encaminha apara a streamSubscription.
+Cada vez que a stream criada sofre um listen, a callback function onListen é invocado com um novo ```MultiStreamController```, o qual emite os eventos obtidos e os encaminha apara a streamSubscription através do método <i>add(event)</i>.
+
+Uma multi-subscription stream pode se comportar como qualquer outra stream. Se o callback onListen for lançado em todas as chamadas após a primeira, a stream irá se comportar como uma <i>Single Subscription Stream</i>. Se a stream emitir os mesmos eventos para todos os listeners atuais, ela irá se comportar como uma broadcast stream.
 
 <h2>Broadcast Streams</h2>
 
