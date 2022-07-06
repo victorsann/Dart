@@ -1,7 +1,7 @@
 
 import 'dart:async';
 
-StreamController controller = StreamController();
+final controller = StreamController();
   
 generateEvents() async {
   for(var i = 0; i <= 10; i++) {
