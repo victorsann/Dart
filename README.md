@@ -2159,6 +2159,19 @@ A forma mais simples de criar uma stream é fazendo uso de um <i>StreamControlle
     
     }
 
+>0<br>
+>1<br>
+>2<br>
+>3<br>
+>4<br>
+>5<br>
+>6<br>
+>7<br>
+>8<br>
+>9<br>
+>10
+
+A classe StreamController, a qual compõe a bibliotéca async do Dart, é uma classe que possui uma stream controlada por si. Com esta classe é possível criar streams simples as quais podem sofrer um listen e emitir eventos para outras streams. Também é possível verificar se a stream está pausado ou não, e se possui subscribers ou não, além de receber um retorno de chamada quando um deles mudar.
 
 Como os controllers existem antes do processo de listening ser iniciado, o event source pode adicionar eventos ao controller de forma premeditada, e para evitar a perda de dados, o controller armazena os dados em buffer até que o listening se inicie.
 
@@ -2168,13 +2181,9 @@ Como os controllers existem antes do processo de listening ser iniciado, o event
 
 Uma Broadcast Stream é própria para eventos individuais que serão tratados um por vez, sendo utilizada para responder a mouse events em um navegador, por exemplo. Tais Streams podem sofrer um listen a qualquer momento, e múltiplos listeners podem operar ao mesmo tempo. Além disso, uma Broadcast Stream pode sofrer um listen após o cancelamento da subcription anterior.
 
-
 <div align="center">
   <img src="https://user-images.githubusercontent.com/61476935/177640641-4d4594fd-4163-4d5f-a5b4-d90cc09922c2.png">
 </div>
-
-
-
 
 
 
