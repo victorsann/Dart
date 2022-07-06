@@ -2094,7 +2094,7 @@ Output:
 No exemplo, a final streamSubscription recebe uma Stream de cinco integers que são emitidos um por um em intervalos de 1 segundo. Na mesma final é aplicado um listen method, o qual opera a subscription da final através dos seus manipuladores.
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/61476935/177454233-564a377a-aa2f-4fed-8bd2-b03350f72170.png">
+  <img src="https://user-images.githubusercontent.com/61476935/177454578-e234e8c6-def6-4fb3-a3d9-37918b9972cf.png">
 </div>
 
 Além disso, é importante mencionar que o objeto ```streamSubscription```, assim com a Stream que o origina, também possui métodos bastante usuais, estes que podem ser utilizados durante o processo de listening.
