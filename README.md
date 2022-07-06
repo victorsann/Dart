@@ -2182,7 +2182,7 @@ Como os controllers existem antes do processo de listening ser iniciado, o event
 Uma Broadcast Stream é própria para eventos individuais que serão tratados um por vez, sendo utilizada para responder a mouse events em um navegador, por exemplo. Tais Streams podem sofrer um listen a qualquer momento, e múltiplos listeners podem operar ao mesmo tempo. Além disso, uma Broadcast Stream pode sofrer um listen após o cancelamento da subcription anterior.
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/61476935/177640641-4d4594fd-4163-4d5f-a5b4-d90cc09922c2.png">
+  <img src="https://user-images.githubusercontent.com/61476935/177642427-1ff95157-cf73-431c-b1f4-79ef6d065fcd.png">
 </div>
 
 
