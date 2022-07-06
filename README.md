@@ -2091,17 +2091,17 @@ Output:
 >5<br>
 >Done!
 
-No exemplo, a final streamSubscription recebe uma Stream de cinco integers que são emitidos um por um em intervalos de 1 segundo. Na mesma final é aplicado um listen method, o qual opera a subscription da final através dos seus manipuladores. 
+No exemplo, a final streamSubscription recebe uma Stream de cinco integers que são emitidos um por um em intervalos de 1 segundo. Na mesma final é aplicado um listen method, o qual opera a subscription através dos seus manipuladores. 
 
-O Diagrama a seguir ilustra como a chamada do método listen funciona:
+O diagrama a seguir ilustra como uma stream subscription funciona:
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/61476935/177454578-e234e8c6-def6-4fb3-a3d9-37918b9972cf.png">
 </div>
 
-Associando o diagrama ao exemplo anterior temos o método <i>periodic</i> agindo como <i>event source</i> criando uma stream, onde ++index é o evento; o método <i>listen</i> aplicado a final <i>streamSubscription</i> agindo como <i>subscriber</i>; e os manipuladores do método listen agindo como <i>event callbacks</i>.
+Associando o diagrama ao exemplo anterior, temos o método <i>periodic</i> agindo como <i>event source</i> criando uma stream, onde ++index é o evento, o método <i>listen</i> aplicado a final <i>streamSubscription</i> agindo como <i>subscriber</i> e os manipuladores do método listen agindo como <i>event callbacks</i>.
 
-Também é importante destacar que, uma vez sendo invocado, o método listen permite que a stream (single-subscription) não precise manter uma referência ao event source. Já o event source não precisa ter acesso a stream.
+Também é importante destacar que, uma vez sendo invocado, o método listen permite que a stream (single-subscription) não precise manter uma referência do event source. Já o event source não precisa ter acesso a stream.
 
 Além disso, é importante mencionar que o objeto ```streamSubscription```, assim com a Stream que o origina, também possui métodos bastante usuais, estes que podem ser utilizados durante o processo de listening.
 
@@ -2122,19 +2122,15 @@ Para <i>cancelar</i> uma subscription:
     // Do some work.
     subscription.cancel();
 
-
 <h2>Single Subscription Streams</h2>
-
 
 O tipo mais comum de Stream contem uma sequência de eventos que compõem um todo. Tais eventos precisam ser entregues em uma ordem específica, sem que nenhum se perca no processo. Este seria o tipo de Stream obtido a partir da leitura de um arquivo ou de um request.
 
 Uma Single Subscription Stream pode sofrer um listen uma única vez. Caso sofra novamente, os eventos iniciais podem ser sobrescritos ou perdidos, o que torna o restante da Stream sem sentido. Quando o processo de listening se inicia os dados são obtidos e retornados em partes.
 
-
 <h2>Stream Controller</h2>
 
-
-A forma mais simples de criar uma stream é fazendo uso de um <i>StreamController</i>, o qual implementa a classe [StreamSink](https://api.flutter.dev/flutter/dart-async/StreamSink-class.html), esta sendo detentora de métodos como o <i>add</i>, <i>addError</i> e <i>close</i>, os quais permitem operar diferentes ações durante o ciclo de vida da stream. O exemplo a seguir trata estes conceitos de maneira prática:
+A forma mais simples de criar uma single subscription stream é fazendo uso de um <i>StreamController</i>, o qual implementa a classe [StreamSink](https://api.flutter.dev/flutter/dart-async/StreamSink-class.html), esta sendo detentora de métodos como o <i>add</i>, <i>addError</i> e <i>close</i>, os quais permitem operar diferentes ações durante o ciclo de vida da stream. O exemplo a seguir trata estes conceitos de maneira prática:
 
 
     void main () async {
@@ -2160,21 +2156,32 @@ Output:
 >...<br>
 >100
 
-Diagrama a seguir ilustra os conceitos aplicados no exemplo acima:
+O diagrama a seguir ilustra os conceitos aplicados no exemplo acima:
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/61476935/177463833-4551e6c0-f26f-4d60-a01a-1e08b3da4206.png">
 </div>
 
-Neste caso, o event source 
+Como os controllers existem antes do porcesso de listening ser iniciado, o event source pode adicionar eventos ao controller de forma premeditada, e para evitar a perda de dados, o controller armazena os dados em buffer até que o listening se inicie.
 
+Associando o exemplo anterior ao diagrama, podemos entender que:
+
+<h3>Stream.multi</h3>
+
+Sendo o event souce do exemplo, o método <i>multi</i> cria uma multi-subscription stream. Uma multi-subscription stream
+
+    Stream.multi(void Function(MultiStreamController<int>) onListen, {bool isBroadcast = false})
+
+Cada vez que a stream criada sofre um listen, a callback function onListen é invocado com um novo ```MultiStreamController```, o qual emite os eventos obtidos e os encaminha apara a streamSubscription.
 
 <h2>Broadcast Streams</h2>
 
 Uma Broadcast Stream é própria para eventos individuais que serão tratados um por vez, sendo utilizada para responder a mouse events em um navegador, por exemplo. Tais Streams podem sofrer um listen a qualquer momento, e múltiplos listeners podem operar ao mesmo tempo. Além disso, uma Broadcast Stream pode sofrer um listen após o cancelamento da subcription anterior.
 
-Exemplo:
 
+
+
+Exemplo:
 
 <h2>Gerando Streams</h2>
 
