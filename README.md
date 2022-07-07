@@ -2044,11 +2044,11 @@ O run inicia no main method, cuja função aqui é executar as demais Futures. C
 
 Há diferentes formas de consumir dados dentro da programação, sendo o Stream um dos mais utilizados, mas pouco compreendido. O Stream de dados consiste no consumo de um fluxo variável de informações, o qual pode se comportar de forma síncrona ou assíncrona. Plataformas de áudio como Spotify, Dezzer, Apple Music; e de vídeo como Netflix, Prime Video e o YouTube, são exemplos populares do uso do Stream de dados.
 
-<h3>Stream vs Future</h3>
+<h2>Stream vs Future</h2>
 
 Uma Future representa uma computação cuja conclusão não se dá de imediato. Uma função comum retorna o resultado; uma função assíncrona retorna uma Future que pode eventualmente conter o resultado. A Future em si se responsabiliza por avisar quando o resultado estiver pronto.
 
-Uma Stream é uma sequência de eventos assíncronos. Sendo comparável a um Iterable assíncrono, onde, ao invés de obter o próximo evento quando solicitado, notifica quando o evento estiver disponível. A classe ```Stream``` do Dart permite operar o fluxo de dados aplicando os conceitos do Streaming. Com isso, cabe ressaltar alguns conceitos básicos sobre as Streams:
+Uma Stream é uma sequência de eventos assíncronos. Sendo comparável a um Iterable assíncrono, onde, ao invés de obter o próximo evento quando solicitado, notifica quando o evento estiver disponível. A classe ```Stream``` do Dart permite operar o fluxo de dados aplicando os conceitos do Streaming. Com isso, cabe ressaltar alguns conceitos básicos sobre tal classe:
 
 <h2>StreamSubscription</h2>
 
@@ -2175,7 +2175,38 @@ A forma mais simples de criar uma stream é fazendo uso de um <i>StreamControlle
 >9<br>
 >10
 
-A classe StreamController, a qual compõe a biblioteca async do Dart, é uma classe que possui uma stream controlada por si. Com esta classe é possível criar streams simples as quais podem sofrer um listen e emitir eventos para outras streams. Também é possível verificar o estado da stream criada, ou seja, se a stream está pausado ou não, e se possui subscribers ou não, além de receber uma callback quando detectar uma mudança.
+A classe StreamController, a qual compõe a biblioteca async do Dart, é uma classe que possui uma stream controlada por si. Com esta classe é possível criar streams simples as quais podem sofrer um listen e emitir eventos para outras streams. Também é possível verificar o estado da stream criada, ou seja, se a stream está pausado ou não, e se possui subscribers ou não, além de receber uma callback que trata a ocorrencia de mudanças.
+
+<h2>Bad State</h2>
+
+Como foi dito anteriormente, uma Single subscription stream sofrer um listen uma única vez, do contrário, uma exception será lançada. Isso se dá pois tal Stream precisa garantir a obtenção das informações como um todo, e só assim tornar a fazer um listen. Observe o exemplo a seguir:
+
+    import 'dart:async';
+    
+    final controller = StreamController();
+    
+    generateStream() {
+      controller.add(1);
+    }
+    
+    main () {
+    
+      generateStream();
+    
+      controller.stream.listen((event) {
+        print(event);
+       });
+    
+      controller.stream.listen((event) {
+        print(event);
+       });
+    
+    }
+
+Output:
+
+>Unhandled exception:<br>
+>Bad state: Stream has already been listened to.
 
 Como os controllers existem antes do processo de listening ser iniciado, o event source pode adicionar eventos ao controller de forma premeditada, e para evitar a perda de dados, caso seja uma single-subscrption stream, o controller armazena os dados em buffer até que o listening se inicie.
 
