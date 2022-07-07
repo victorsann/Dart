@@ -2147,7 +2147,7 @@ A forma mais simples de criar uma stream é fazendo uso de um <i>StreamControlle
     final controller = StreamController();
       
     generateEvents() async {
-      for(var i = 0; i <= 10; i++) {
+      for(var i = 0; i <= 5; i++) {
         controller.add(i);
         await Future.delayed(Duration(seconds: 1));
       }
@@ -2168,12 +2168,7 @@ A forma mais simples de criar uma stream é fazendo uso de um <i>StreamControlle
 >2<br>
 >3<br>
 >4<br>
->5<br>
->6<br>
->7<br>
->8<br>
->9<br>
->10
+>5
 
 A classe StreamController, a qual compõe a biblioteca async do Dart, é uma classe que possui uma stream controlada por si. Com esta classe é possível criar streams simples as quais podem sofrer um listen e emitir eventos para outras streams. Também é possível verificar o estado da stream criada, ou seja, se a stream está pausado ou não, e se possui subscribers ou não, além de receber uma callback que trata a ocorrencia de mudanças.
 
@@ -2188,7 +2183,7 @@ Como foi dito anteriormente, uma Single subscription stream sofrer um listen uma
     final controller = StreamController();
       
     generateEvents() async {
-      for(var i = 0; i <= 10; i++) {
+      for(var i = 0; i <= 5; i++) {
         controller.add(i);
         await Future.delayed(Duration(seconds: 1));
       }
@@ -2223,14 +2218,14 @@ Uma Broadcast Stream é própria para eventos individuais que serão tratados um
   <img src="https://user-images.githubusercontent.com/61476935/177642427-1ff95157-cf73-431c-b1f4-79ef6d065fcd.png">
 </div>
 
-O exemplo a seguir demonstra a capacidade da Broadcast stream de sofrer multiplos subscribes ao mesmo tempo:
+O exemplo a seguir demonstra a capacidade da Broadcast stream de sofrer multiplos subscribe's ao mesmo tempo:
 
     import 'dart:async';
     
     final controller = StreamController.broadcast();
     
     generateStream() async {
-      for(var i = 0; i <= 10; i++) {
+      for(var i = 0; i <= 5; i++) {
         controller.add(i);
         await Future.delayed(Duration(seconds: 1));
       }
@@ -2262,12 +2257,9 @@ Output:
 >5<br>
 >5
 
-O método ```broadcast()```, invocado na declaração do stream controller, criar um controller cuja stream pode sofrer multiplos subscribes, evitando não só um bad state, mas também tornando o uso da Stream class ainda mais versátil. No contexto da programação reativa, por exemplo, uma broadcast stream poderia permitir a atualização de estados em partes distintas da aplicação a partir de um único ponto.
+O método ```broadcast()```, invocado na declaração do stream controller, cria um controller cuja stream pode sofrer multiplos subscribe's, evitando não só um bad state, mas também tornando o uso da Stream class ainda mais versátil. No contexto da programação reativa, por exemplo, uma broadcast stream poderia permitir a atualização de estados em partes distintas da aplicação a partir de um único ponto.
 
-
-
-
-<h2>Gerando Streams</h2>
+<h2>Async Generator</h2>
 
 Sendo um Iterable de promises, uma Stream pode retornar resultados multiplas vezes, diferente de uma Future, que retorna apenas um resultado por interação. Há formas distintas de gerar Streams, sendo uma das mais simples a interação em loop:
 
@@ -2305,31 +2297,9 @@ Output:
 
 >55
 
-
-<h2>Interagindo com Stream Events</h2>
-
-
-<h2>await for</h2>
-
-
-As Streams podem ser criadas de várias maneiras, mas todas podem ser usadas ​​da mesma forma: o ```loop for``` assíncrono (comumente chamado de await for) intera sobre os eventos de uma Stream como o ```loop for``` intera sobre um [Iterable](https://api.dart.dev/stable/dart-core/Iterable-class.html), o que permite acessar seus eventos. Exemplo:
-
-    Future<int> sumStream(Stream<int> stream) async {
-      var sum = 0;
-      await for (final value in stream) {
-        sum += value;
-      }
-      return sum;
-    }
-
-O código acima recebe cada evento de uma Stream de integer events, o adiciona e retorna a soma (uma Future). Quando o corpo do loop termina, a função é pausada até que o próximo evento chegue ou a Stream seja concluído.
-
-
-
 <h2>Error Events</h2>
 
-
-Uma Stream é concluída quando todos os eventos nela contidos são executados, e da mesma forma que a Stream notifica a entidade que recebe seus resultados caso um evento seja iniciado, o mesmo ocorre ao finalizá-los. Além dos eventos que retornam informações, Streams podem ter que tratar error events. Quando um erro event ocorre duranto o processo de execução de uma Stream, seja por falha de conexão durante a leitura de dados retornados por um endpoit, ou mesmo bugs no código que executa a Stream, é possível tratá-los da mesma forma que quando utilizamos Futures: ```try-catch```.
+Uma Stream é concluída quando todos os eventos nela contidos são executados, e da mesma forma que a Stream notifica a entidade que recebe seus resultados caso um evento seja iniciado, o mesmo ocorre ao finalizá-los. Além dos eventos que retornam informações, Streams podem ter que tratar error events. Quando um error event ocorre duranto o processo de execução de uma Stream, seja por falha de conexão durante a leitura de dados retornados por um endpoit, ou mesmo bugs no código que executa a Stream, é possível tratá-los da mesma forma que quando utilizamos Futures: ```try-catch```.
 
 O exemplo a seguir retorna um erro quando o iterator do loop <i>await for</i> for igual a 4:
 
@@ -2361,9 +2331,7 @@ O exemplo a seguir retorna um erro quando o iterator do loop <i>await for</i> fo
       print(sum); // -1
     }
 
-
 <h2>Trabalhando com Streams</h2>
-
 
 A classe Stream contém um número de métodos auxiliares que permitem realizar operações comuns em Streams, similarmente aos métodos utilizados para tratar um Iterable. Por exemplo, é possível encontrar o último integer positivo em uma Stream utilizando o método <i>lastWhere()</i>, o qual compõe a Stream API.
 
