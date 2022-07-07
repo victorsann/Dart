@@ -2042,9 +2042,13 @@ O run inicia no main method, cuja função aqui é executar as demais Futures. C
 <h1>O que é uma Stream ?</h1>
 
 
-A programação assíncrona em Dart não só se caracteriza pelo uso de Futures mas também da ```Stream``` class. Uma Future representa uma computação cuja conclusão não se dá de imediato. Uma função comum retorna o resultado; uma função assíncrona retorna uma Future que pode eventualmente conter o resultado. A Future em si se responsabiliza por avisar quando o resultado estiver pronto.
+Há diferentes formas de consumir dados dentro da programação, sendo o Stream um dos mais utilizados, mas pouco compreendido. O Stream de dados consiste no consumo de um fluxo variável de informações, o qual pode se comportar de forma síncrona ou assíncrona. Plataformas de áudio como Spotify, Dezzer, Apple Music; e de vídeo como Netflix, Prime Video e o YouTube, são exemplos populares do uso do Stream de dados.
 
-Uma Stream é uma sequência de eventos assíncronos. Sendo comparável a um Iterable assíncrono, onde, ao invés de obter o próximo evento quando solicitado, notifica quando o evento estiver disponível. Com isso, cabe ressaltar alguns conceitos básicos sobre as Streams:
+<h3>Stream vs Future</h3>
+
+Uma Future representa uma computação cuja conclusão não se dá de imediato. Uma função comum retorna o resultado; uma função assíncrona retorna uma Future que pode eventualmente conter o resultado. A Future em si se responsabiliza por avisar quando o resultado estiver pronto.
+
+Uma Stream é uma sequência de eventos assíncronos. Sendo comparável a um Iterable assíncrono, onde, ao invés de obter o próximo evento quando solicitado, notifica quando o evento estiver disponível. A classe ```Stream``` do Dart permite operar o fluxo de dados aplicando os conceitos do Streaming. Com isso, cabe ressaltar alguns conceitos básicos sobre as Streams:
 
 <h2>StreamSubscription</h2>
 
