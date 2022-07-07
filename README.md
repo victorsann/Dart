@@ -2177,6 +2177,8 @@ A forma mais simples de criar uma stream é fazendo uso de um <i>StreamControlle
 
 A classe StreamController, a qual compõe a biblioteca async do Dart, é uma classe que possui uma stream controlada por si. Com esta classe é possível criar streams simples as quais podem sofrer um listen e emitir eventos para outras streams. Também é possível verificar o estado da stream criada, ou seja, se a stream está pausado ou não, e se possui subscribers ou não, além de receber uma callback que trata a ocorrencia de mudanças.
 
+Como os controllers existem antes do processo de listening ser iniciado, o event source pode adicionar eventos ao controller de forma premeditada, e para evitar a perda de dados, caso seja uma single-subscrption stream, o controller armazena os dados em buffer até que o listening se inicie.
+
 <h2>Bad State</h2>
 
 Como foi dito anteriormente, uma Single subscription stream sofrer um listen uma única vez, do contrário, uma exception será lançada. Isso se dá pois tal Stream precisa garantir a obtenção das informações como um todo, e só assim tornar a fazer um listen. Observe o exemplo a seguir:
@@ -2207,8 +2209,6 @@ Output:
 
 >Unhandled exception:<br>
 >Bad state: Stream has already been listened to.
-
-Como os controllers existem antes do processo de listening ser iniciado, o event source pode adicionar eventos ao controller de forma premeditada, e para evitar a perda de dados, caso seja uma single-subscrption stream, o controller armazena os dados em buffer até que o listening se inicie.
 
 
 <h2>Broadcast Streams</h2>
