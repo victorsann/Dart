@@ -1,22 +1,24 @@
 
 import 'dart:async';
 
-final controller = StreamController();
+final controller = StreamController.broadcast();
 
-generateStream() {
-  controller.add(1);
+generateStream() async {
+  for(var i = 0; i <= 5; i++) {
+    controller.add(i);
+    await Future.delayed(Duration(seconds: 1));
+  }
 }
 
-main () {
+main() {
 
   generateStream();
 
   controller.stream.listen((event) {
     print(event);
-   });
+  });
 
   controller.stream.listen((event) {
     print(event);
-   });
-
+  });
 }

@@ -2184,24 +2184,27 @@ Como os controllers existem antes do processo de listening ser iniciado, o event
 Como foi dito anteriormente, uma Single subscription stream sofrer um listen uma única vez, do contrário, uma exception será lançada. Isso se dá pois tal Stream precisa garantir a obtenção das informações como um todo, e só assim tornar a fazer um listen. Observe o exemplo a seguir:
 
     import 'dart:async';
-    
+
     final controller = StreamController();
-    
-    generateStream() {
-      controller.add(1);
+      
+    generateEvents() async {
+      for(var i = 0; i <= 10; i++) {
+        controller.add(i);
+        await Future.delayed(Duration(seconds: 1));
+      }
     }
     
-    main () {
-    
-      generateStream();
-    
-      controller.stream.listen((event) {
+    void main () async {
+      
+      generateEvents();
+      
+      controller.stream.listen((event) { 
         print(event);
-       });
-    
-      controller.stream.listen((event) {
+      });
+
+      controller.stream.listen((event) { 
         print(event);
-       });
+      });
     
     }
 
@@ -2220,17 +2223,49 @@ Uma Broadcast Stream é própria para eventos individuais que serão tratados um
   <img src="https://user-images.githubusercontent.com/61476935/177642427-1ff95157-cf73-431c-b1f4-79ef6d065fcd.png">
 </div>
 
+O exemplo a seguir demonstra a capacidade da Broadcast stream de sofrer multiplos subscribes ao mesmo tempo:
+
+    import 'dart:async';
+    
+    final controller = StreamController.broadcast();
+    
+    generateStream() async {
+      for(var i = 0; i <= 10; i++) {
+        controller.add(i);
+        await Future.delayed(Duration(seconds: 1));
+      }
+    }
+    
+    main() {
+    
+      generateStream();
+    
+      controller.stream.listen((event) {
+        print(event);
+      });
+    
+      controller.stream.listen((event) {
+        print(event);
+      });
+    }
+
+Output:
+
+>1<br>
+>1<br>
+>2<br>
+>2<br>
+>3<br>
+>3<br>
+>4<br>
+>4<br>
+>5<br>
+>5
+
+O método ```broadcast()```, invocado na declaração do stream controller, criar um controller cuja stream pode sofrer multiplos subscribes, evitando não só um bad state, mas também tornando o uso da Stream class ainda mais versátil. No contexto da programação reativa, por exemplo, uma broadcast stream poderia permitir a atualização de estados em partes distintas da aplicação a partir de um único ponto.
 
 
-<!-- <h3>Stream.multi</h3>
 
-Sendo o event souce do exemplo, o método <i>multi</i> cria uma multi-subscription stream. Uma multi-subscription stream permite a emissão de multiplos eventos a partir de um Stream controller:
-
-    Stream.multi(void Function(MultiStreamController<int>) onListen, {bool isBroadcast = false})
-
-Cada vez que a stream criada sofre um listen, a callback function onListen é invocado com um novo ```MultiStreamController```, o qual emite os eventos obtidos e os encaminha apara a streamSubscription através do método <i>add(event)</i>.
-
-Uma multi-subscription stream pode se comportar como qualquer outra stream. Se o callback onListen for lançado em todas as chamadas após a primeira, a stream irá se comportar como uma <i>Single Subscription Stream</i>. Se a stream emitir os mesmos eventos para todos os listeners atuais, ela irá se comportar como uma broadcast stream. -->
 
 <h2>Gerando Streams</h2>
 
