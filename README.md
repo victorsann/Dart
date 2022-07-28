@@ -2042,17 +2042,17 @@ O run inicia no main method, cuja função aqui é executar as demais Futures. C
 <h1>O que é uma Stream ?</h1>
 
 
-Há diferentes formas de consumir dados dentro da programação, sendo o Stream um dos mais utilizados, mas pouco compreendido. O Stream de dados consiste no consumo de um fluxo variável de informações, o qual pode se comportar de forma síncrona ou assíncrona. Plataformas de áudio como Spotify, Dezzer, Apple Music; e de vídeo como Netflix, Prime Video e o YouTube, são exemplos populares do uso do Stream de dados.
+Há diferentes formas de consumir dados dentro da programação, sendo o Stream um dos mais utilizados, mas pouco compreendido. O Stream de dados consiste no consumo de um fluxo variável de informações, o qual pode se comportar de forma síncrona ou assíncrona. Plataformas de áudio como Spotify, Dezzer, Apple Music; e de vídeo como Netflix, Prime Video e YouTube, são exemplos populares do uso do Stream de dados.
 
 <h2>Stream vs Future</h2>
 
-Uma Future representa uma computação cuja conclusão não se dá de imediato. Uma função comum retorna o resultado; uma função assíncrona retorna uma Future que pode eventualmente conter o resultado. A Future em si se responsabiliza por avisar quando o resultado estiver pronto.
+Uma Future representa uma computação cuja conclusão não se dá de imediato. Uma função comum retorna o resultado, uma função assíncrona retorna uma Future que pode eventualmente conter o resultado. A Future em si se responsabiliza por avisar quando o resultado estiver pronto.
 
 Uma Stream é uma sequência de eventos assíncronos. Sendo comparável a um Iterable assíncrono, onde, ao invés de obter o próximo evento quando solicitado, notifica quando o evento estiver disponível. A classe ```Stream``` do Dart permite operar o fluxo de dados aplicando os conceitos do Streaming. Com isso, cabe ressaltar alguns conceitos básicos sobre tal classe:
 
 <h2>StreamSubscription</h2>
 
-Streams usam um pattern bastante comum à programação reativa, o chamado observer pattern. O método ```listen``` aplica o conceito de observer ao uso das Streams, o qual passa a monitorar seu fluxo de dados, retornando um objeto ```StreamSubscription```, o qual trata os eventos através dos manipuladores ```onData```, ```onError ``` e ```onDone```:
+Streams usam um pattern bastante comum à programação reativa, o chamado observer pattern. Tal conceito é aplicado através do método ```listen```, o qual passa a operar na stream em questão, monitorando seu fluxo de dados, e, por fim, retornando um objeto ```StreamSubscription```, o qual trata os eventos através dos manipuladores ```onData```, ```onError ``` e ```onDone```:
 
     StreamSubscription<int> listen(
       void Function(int)? onData, {
@@ -2061,7 +2061,7 @@ Streams usam um pattern bastante comum à programação reativa, o chamado obser
       bool? cancelOnError,
     })
 
-O manipulador <i>onData</i> é uma callBack function que permite tratar o event T em cada retorno de uma Stream. Já os demais são utilizados em situações em que o event não foi emitido, seja pela ocorrencia de um erro ou pela conclusão da Stream. Além disso, há o manipulador adicional <i>cancelOnError</i>, o qual permite forçar a Stream a continuar mesmo após a ocorrencia de um erro(sendo true por padrão). O exemplo a seguir trata estes conceitos de maneira prática:
+O manipulador <i>onData</i> é uma callBack function que permite tratar o event T em cada retorno de uma Stream. Já os demais são utilizados em situações em que o event não foi emitido, seja pela ocorrência de um erro ou pela conclusão da Stream. Além disso, há o manipulador adicional <i>cancelOnError</i>, o qual permite forçar a Stream a continuar mesmo após a ocorrência de um erro(sendo true por padrão). O exemplo a seguir trata estes conceitos de maneira prática:
 
     void main () {
     
@@ -2095,7 +2095,7 @@ Output:
 >5<br>
 >Done!
 
-No exemplo, a final streamSubscription recebe uma Stream de cinco integers que são emitidos um por um em intervalos de 1 segundo. Na mesma final é aplicado um listen method, o qual opera a subscription através dos seus manipuladores. 
+No exemplo, a final streamSubscription recebe uma Stream de cinco integers que são emitidos um por um em intervalos de 1 segundo. Na mesma final o listen method é aplicado, assim operando a subscription através dos seus manipuladores. 
 
 O diagrama a seguir ilustra como uma stream subscription funciona:
 
@@ -2103,7 +2103,7 @@ O diagrama a seguir ilustra como uma stream subscription funciona:
   <img src="https://user-images.githubusercontent.com/61476935/177454578-e234e8c6-def6-4fb3-a3d9-37918b9972cf.png">
 </div>
 
-Associando o diagrama ao exemplo anterior, temos o método <i>periodic</i> agindo como <i>event source</i> criando uma stream, onde ++index é o evento, o método <i>listen</i> aplicado a final <i>streamSubscription</i> agindo como <i>subscriber</i> e os manipuladores do método listen agindo como <i>event callbacks</i>.
+Associando o diagrama ao exemplo anterior, temos o método <i>periodic</i> agindo como <i>event source</i> e criando uma stream, onde ++index é o evento, o método <i>listen</i> aplicado a final <i>streamSubscription</i> agindo como <i>subscriber</i> e os manipuladores do método listen agindo como <i>event callbacks</i>.
 
 <!-- Além disso, é importante mencionar que o objeto ```streamSubscription```, assim com a Stream que o origina, também possui métodos bastante usuais, estes que podem ser utilizados durante o processo de listening.
 
@@ -2130,7 +2130,7 @@ Para <i>cancelar</i> uma subscription:
 
 O tipo mais comum de Stream contem uma sequência de eventos que compõem um todo. Tais eventos precisam ser entregues em uma ordem específica, sem que nenhum se perca no processo. Este seria o tipo de Stream obtido a partir da leitura de um arquivo ou de um request.
 
-Uma Single Subscription Stream pode sofrer um listen uma única vez. Caso sofra novamente, os eventos iniciais podem ser sobrescritos ou perdidos, o que torna o restante da Stream sem sentido. Quando o processo de listening se inicia os dados são obtidos e retornados em partes.
+Uma Single Subscription Stream pode sofrer um listen uma única vez. Caso sofra novamente, os eventos iniciais serão ser sobrescritos ou perdidos e uma exception será lançada. Quando o processo de listening se inicia os dados são obtidos e retornados em partes.
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/61476935/177463833-4551e6c0-f26f-4d60-a01a-1e08b3da4206.png">
@@ -2170,7 +2170,7 @@ A forma mais simples de criar uma stream é fazendo uso de um <i>StreamControlle
 >4<br>
 >5
 
-A classe StreamController, a qual compõe a biblioteca async do Dart, é uma classe que possui uma stream controlada por si. Com esta classe é possível criar streams simples as quais podem sofrer um listen e emitir eventos para outras streams. Também é possível verificar o estado da stream criada, ou seja, se a stream está pausado ou não, e se possui subscribers ou não, além de receber uma callback que trata a ocorrencia de mudanças.
+A classe StreamController, a qual compõe a biblioteca async do Dart, é uma classe que possui uma stream controlada por si. Com esta classe é possível criar streams simples as quais podem sofrer um listen e emitir eventos para outras streams. Também é possível verificar o estado da stream criada, ou seja, se a stream está pausada ou não, e se possui subscribers ou não, além de receber uma callback que trata a ocorrência de mudanças.
 
 Como os controllers existem antes do processo de listening ser iniciado, o event source pode adicionar eventos ao controller de forma premeditada, e para evitar a perda de dados, caso seja uma single-subscrption stream, o controller armazena os dados em buffer até que o listening se inicie.
 
